@@ -5,21 +5,12 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : NetworkBehaviour
 {
-    [Header("References")]
-    [SerializeField] private Transform cameraTarget;
-    [SerializeField] private Transform graphics;
-
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float rotationSpeed = 12f;
-
-    [Header("Gravity")]
     [SerializeField] private float gravity = -20f;
 
     private CharacterController controller;
     private InputSystem_Actions controls;
-
-    private Camera mainCamera;
 
     private Vector2 moveInput;
 
@@ -30,7 +21,6 @@ public class PlayerMovement : NetworkBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
-
         controls = new InputSystem_Actions();
     }
     private void Update()
@@ -44,8 +34,6 @@ public class PlayerMovement : NetworkBehaviour
     {
         if (!IsOwner)
             return;
-
-        mainCamera = Camera.main;
 
         controls.Enable();
 
@@ -65,17 +53,14 @@ public class PlayerMovement : NetworkBehaviour
     private void OnMove(InputAction.CallbackContext ctx)
     {
         moveInput = ctx.ReadValue<Vector2>();
+        moveDirection = new Vector3(moveInput.x, 0f, moveInput.y);
+
     }
     private void HandleMovement()
     {
         ReadCameraDirection();
-
         CalculateMovement();
-
-        RotatePlayer();
-
         ApplyGravity();
-
         MoveCharacter();
     }
     void ReadCameraDirection()
@@ -88,11 +73,6 @@ public class PlayerMovement : NetworkBehaviour
 
     }
 
-    void RotatePlayer()
-    {
-
-    }
-
     void ApplyGravity()
     {
 
@@ -100,6 +80,6 @@ public class PlayerMovement : NetworkBehaviour
 
     void MoveCharacter()
     {
- 
+
     }
 }
