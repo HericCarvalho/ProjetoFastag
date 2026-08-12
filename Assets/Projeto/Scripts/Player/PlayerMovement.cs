@@ -11,17 +11,18 @@ public class PlayerMovement : NetworkBehaviour
 
     private CharacterController controller;
     private InputSystem_Actions controls;
+    private Animator animator;
 
     private Vector2 moveInput;
-
-    private Vector3 moveDirection;
-
     private float verticalVelocity;
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+
         controls = new InputSystem_Actions();
+
+        animator = GetComponentInChildren<Animator>();
     }
     private void Update()
     {
@@ -29,9 +30,13 @@ public class PlayerMovement : NetworkBehaviour
             return;
 
         HandleMovement();
+        UpdateAnimation();
     }
+
     public override void OnNetworkSpawn()
     {
+        Debug.Log($"Player Spawned | Owner: {OwnerClientId} | LocalClient: {NetworkManager.Singleton.LocalClientId} | IsOwner: {IsOwner}");
+
         if (!IsOwner)
             return;
 
@@ -40,6 +45,7 @@ public class PlayerMovement : NetworkBehaviour
         controls.Player.Move.performed += OnMove;
         controls.Player.Move.canceled += OnMove;
     }
+
     public override void OnNetworkDespawn()
     {
         if (!IsOwner)
@@ -50,36 +56,42 @@ public class PlayerMovement : NetworkBehaviour
 
         controls.Disable();
     }
+
     private void OnMove(InputAction.CallbackContext ctx)
     {
         moveInput = ctx.ReadValue<Vector2>();
-        moveDirection = new Vector3(moveInput.x, 0f, moveInput.y);
 
+        Debug.Log($"Move Input: {moveInput}");
     }
+
     private void HandleMovement()
     {
-        ReadCameraDirection();
-        CalculateMovement();
-        ApplyGravity();
-        MoveCharacter();
+        Vector3 movement = new Vector3(
+            moveInput.x,
+            0f,
+            moveInput.y
+        );
+
+        movement *= moveSpeed;
+
+        ApplyGravity(ref movement);
+
+        controller.Move(movement * Time.deltaTime);
     }
-    void ReadCameraDirection()
+    private void UpdateAnimation()
     {
-
+        float speed = new Vector3(controller.velocity.x,0f,controller.velocity.z).magnitude;
+        animator.SetFloat("Speed", speed);
     }
-
-    void CalculateMovement()
+    private void ApplyGravity(ref Vector3 movement)
     {
+        if (controller.isGrounded && verticalVelocity < 0f)
+        {
+            verticalVelocity = -2f;
+        }
 
-    }
+        verticalVelocity += gravity * Time.deltaTime;
 
-    void ApplyGravity()
-    {
-
-    }
-
-    void MoveCharacter()
-    {
-
+        movement.y = verticalVelocity;
     }
 }
