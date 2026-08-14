@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 151
+  controlID: 43
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 112}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 45
+  controlID: 44
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 46
+  controlID: 45
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -255,8 +255,10 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -80572
-      - m_Data: -76636
+      - m_Data: -80210
+      - m_Data: -90
+      - m_Data: 88612
+      - m_Data: 88638
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -311,7 +313,7 @@ MonoBehaviour:
   - {fileID: 11}
   - {fileID: 12}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 0
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -921,9 +923,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -9.524838, y: 6.206481, z: 2.1871219}
+    m_Target: {x: 1.59449, y: 7.5088606, z: 0.3010764}
     speed: 2
-    m_Value: {x: -9.524838, y: 6.206481, z: 2.1871219}
+    m_Value: {x: 1.59449, y: 7.5088606, z: 0.3010764}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -969,13 +971,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.02522026, y: -0.71297973, z: 0.025678368, w: 0.7002602}
+    m_Target: {x: -0.025746468, y: -0.69833034, z: 0.025150683, w: -0.714871}
     speed: 2
-    m_Value: {x: 0.025220262, y: -0.7129798, z: 0.02567837, w: 0.7002603}
+    m_Value: {x: -0.025746454, y: -0.6983299, z: 0.025150668, w: -0.7148706}
   m_Size:
-    m_Target: 15.109152
+    m_Target: 8.709839
     speed: 2
-    m_Value: 15.109152
+    m_Value: 8.709839
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1249,7 +1251,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 124
+  controlID: 57
   draggingID: 0
 --- !u!114 &14
 MonoBehaviour:
@@ -1328,7 +1330,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Projeto/Scripts/Player
+    - Assets/Projeto/UI
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1338,7 +1340,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Projeto/Scripts/Player
+  - Assets/Projeto/UI
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\RA00352511\Documents\GitHub\ProjetoFastag
   m_LockTracker:
@@ -1347,15 +1349,15 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
     m_SelectedIDs:
-    - m_Data: 88666
+    - m_Data: 88500
     m_LastClickedID:
-      m_Data: 88666
+      m_Data: 88500
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 88332
-    - m_Data: 88334
-    - m_Data: 88390
-    - m_Data: 88510
+    - m_Data: 88404
+    - m_Data: 88406
+    - m_Data: 88508
+    - m_Data: 88656
     - m_Data: 1000000000
     - m_Data: 2147483647
     m_RenameOverlay:
@@ -1416,8 +1418,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 63184
-    m_LastClickedInstanceID: 63184
+    - m_Data: 87350
+    m_LastClickedInstanceID: 87350
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 52898
@@ -1784,8 +1786,8 @@ MonoBehaviour:
     y: 0
     width: 407
     height: 933
-  m_MinSize: {x: 276, y: 76}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -1835,7 +1837,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -1
+  m_LastInspectedObjectInstanceID: 87350
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

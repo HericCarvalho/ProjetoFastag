@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\RA00352511\\Documents\\GitHub\\ProjetoFastag\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3836D999-2D5E-2252-618E-FF4682CFB78B}|Assembly-CSharp.csproj|c:\\users\\ra00352511\\documents\\github\\projetofastag\\assets\\projeto\\scripts\\player\\playercamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3836D999-2D5E-2252-618E-FF4682CFB78B}|Assembly-CSharp.csproj|solutionrelative:assets\\projeto\\scripts\\player\\playercamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3836D999-2D5E-2252-618E-FF4682CFB78B}|Assembly-CSharp.csproj|c:\\users\\ra00352511\\documents\\github\\projetofastag\\assets\\projeto\\ui\\controladorui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3836D999-2D5E-2252-618E-FF4682CFB78B}|Assembly-CSharp.csproj|solutionrelative:assets\\projeto\\ui\\controladorui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3836D999-2D5E-2252-618E-FF4682CFB78B}|Assembly-CSharp.csproj|C:\\Users\\RA00352511\\Documents\\GitHub\\ProjetoFastag\\assets\\projeto\\scripts\\rede\\teste\\rpcteste.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3836D999-2D5E-2252-618E-FF4682CFB78B}|Assembly-CSharp.csproj|solutionrelative:assets\\projeto\\scripts\\rede\\teste\\rpcteste.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3836D999-2D5E-2252-618E-FF4682CFB78B}|Assembly-CSharp.csproj|C:\\Users\\RA00352511\\Documents\\GitHub\\ProjetoFastag\\assets\\projeto\\scripts\\player\\playercamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3836D999-2D5E-2252-618E-FF4682CFB78B}|Assembly-CSharp.csproj|solutionrelative:assets\\projeto\\scripts\\player\\playercamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3836D999-2D5E-2252-618E-FF4682CFB78B}|Assembly-CSharp.csproj|C:\\Users\\RA00352511\\Documents\\GitHub\\ProjetoFastag\\assets\\projeto\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,23 +22,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RpcTeste.cs",
-              "DocumentMoniker": "C:\\Users\\RA00352511\\Documents\\GitHub\\ProjetoFastag\\Assets\\Projeto\\Scripts\\Rede\\Teste\\RpcTeste.cs",
-              "RelativeDocumentMoniker": "Assets\\Projeto\\Scripts\\Rede\\Teste\\RpcTeste.cs",
-              "ToolTip": "C:\\Users\\RA00352511\\Documents\\GitHub\\ProjetoFastag\\Assets\\Projeto\\Scripts\\Rede\\Teste\\RpcTeste.cs",
-              "RelativeToolTip": "Assets\\Projeto\\Scripts\\Rede\\Teste\\RpcTeste.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ControladorUI.cs",
+              "DocumentMoniker": "C:\\Users\\RA00352511\\Documents\\GitHub\\ProjetoFastag\\Assets\\Projeto\\UI\\ControladorUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Projeto\\UI\\ControladorUI.cs",
+              "ToolTip": "C:\\Users\\RA00352511\\Documents\\GitHub\\ProjetoFastag\\Assets\\Projeto\\UI\\ControladorUI.cs",
+              "RelativeToolTip": "Assets\\Projeto\\UI\\ControladorUI.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-12T00:30:27.5Z"
+              "WhenOpened": "2026-08-14T11:22:52.662Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PlayerCamera.cs",
               "DocumentMoniker": "C:\\Users\\RA00352511\\Documents\\GitHub\\ProjetoFastag\\Assets\\Projeto\\Scripts\\Player\\PlayerCamera.cs",
               "RelativeDocumentMoniker": "Assets\\Projeto\\Scripts\\Player\\PlayerCamera.cs",
@@ -46,8 +47,7 @@
               "RelativeToolTip": "Assets\\Projeto\\Scripts\\Player\\PlayerCamera.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-12T00:09:12.859Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-12T00:09:12.859Z"
             },
             {
               "$type": "Document",
