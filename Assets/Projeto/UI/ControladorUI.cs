@@ -12,7 +12,7 @@ public class ControladorUI : MonoBehaviour
     void OnEnable()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-        painelPrincipal = root.Q<VisualElement>("Painel");
+        painelPrincipal = root.Q<VisualElement>("Painel_Principal");
         painelEntrar = root.Q<VisualElement>("PainelEntrar");
         painelPort_IP = root.Q<VisualElement>("PainelPort_IP");
 
@@ -26,6 +26,9 @@ public class ControladorUI : MonoBehaviour
         if (Server != null) Server.clicked += server;
         if (Host != null) Host.clicked += host;
         if (Exit != null) Exit.clicked += exit;
+        if (Voltar != null) Voltar.clicked += OcultarPainelPort_IP;
+
+        painelPort_IP.style.display = DisplayStyle.None;
     }
 
     void OnDisable()
@@ -37,11 +40,13 @@ public class ControladorUI : MonoBehaviour
             Button Server = root.Q<Button>("Server");
             Button Host = root.Q<Button>("Host");
             Button Exit = root.Q<Button>("Exit");
+            Button Voltar = root.Q<Button>("Voltar");
 
             if (Client != null) Client.clicked -= client;
             if (Server != null) Server.clicked -= server;
             if (Host != null) Host.clicked -= host;
             if (Exit != null) Exit.clicked -= exit;
+            if (Voltar != null) Voltar.clicked -= OcultarPainelPort_IP;
         }
     }
 
