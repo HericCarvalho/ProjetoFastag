@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,7 +9,9 @@ public class PlayerMovement : NetworkBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float gravity = -20f;
+    [SerializeField] private float rotationSpeed = 10f;
 
+    [SerializeField] private Transform cameraTarget;
     private CharacterController controller;
     private InputSystem_Actions controls;
     private Animator animator;
@@ -66,11 +69,28 @@ public class PlayerMovement : NetworkBehaviour
 
     private void HandleMovement()
     {
-        Vector3 movement = new Vector3(
-            moveInput.x,
-            0f,
-            moveInput.y
-        );
+        Vector3 forward = cameraTarget.forward;
+        Vector3 right = cameraTarget.right;
+
+        forward.y = 0f;
+        right.y = 0f;
+
+        forward.Normalize();
+        right.Normalize();
+
+        Vector3 movement = forward * moveInput.y;
+        movement += right * moveInput.x;
+
+        if (movement != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(movement);
+
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                targetRotation,
+                rotationSpeed * Time.deltaTime
+            );
+        }
 
         movement *= moveSpeed;
 

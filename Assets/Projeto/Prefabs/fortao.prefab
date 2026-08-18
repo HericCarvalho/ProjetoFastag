@@ -373,6 +373,8 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   moveSpeed: 5
   gravity: -20
+  rotationSpeed: 10
+  cameraTarget: {fileID: 6847342693729218747}
 --- !u!114 &-129247458047960635
 MonoBehaviour:
   m_ObjectHideFlags: 0

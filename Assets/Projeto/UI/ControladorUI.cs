@@ -8,7 +8,6 @@ public class ControladorUI : MonoBehaviour
     private VisualElement painelPort_IP;
     private VisualElement painelEntrar;
 
-
     void OnEnable()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
@@ -28,7 +27,6 @@ public class ControladorUI : MonoBehaviour
         if (Exit != null) Exit.clicked += exit;
         if (Voltar != null) Voltar.clicked += OcultarPainelPort_IP;
 
-        painelPort_IP.style.display = DisplayStyle.None;
     }
 
     void OnDisable()

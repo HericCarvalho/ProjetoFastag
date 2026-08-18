@@ -335,6 +335,8 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   moveSpeed: 5
   gravity: -20
+  rotationSpeed: 10
+  cameraTarget: {fileID: 2477266200045673900}
 --- !u!4 &4319727047090479121 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c0ced455af4ed4a878674870a15cbf99, type: 3}
