@@ -1,0 +1,858 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-RA00352511" at "2026-08-25T10:49:36.1644686Z"
+Built from '6000.3/respin/6000.3.6f1-732c1ec89f18' branch; Version is '6000.3.6f1 (bbb010bdb8a3) revision 12300304'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) Education' Language: 'pt' Physical Memory: 16053 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-08-25T10:49:36Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker10
+-projectPath
+C:/Users/RA00352511/Documents/GitHub/ProjetoFastag
+-logFile
+Logs/AssetImportWorker10.log
+-srvPort
+61660
+-licensingIpc
+LicenseClient-RA00352511
+-job-worker-count
+9
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: C:/Users/RA00352511/Documents/GitHub/ProjetoFastag
+C:/Users/RA00352511/Documents/GitHub/ProjetoFastag
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [6252]  Target information:
+
+Player connection [6252]  * "[IP] 172.17.3.15 [Port] 0 [Flags] 2 [Guid] 2500073127 [EditorId] 2500073127 [Version] 1048832 [Id] WindowsEditor(7,DSP-BRJ3055CFQ) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [6252]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 2500073127 [EditorId] 2500073127 [Version] 1048832 [Id] WindowsEditor(7,DSP-BRJ3055CFQ) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [6252]  * "[IP] 172.21.48.1 [Port] 0 [Flags] 2 [Guid] 2500073127 [EditorId] 2500073127 [Version] 1048832 [Id] WindowsEditor(7,DSP-BRJ3055CFQ) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [6252] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [6252] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 9
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 281.64 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.6f1 (bbb010bdb8a3)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/RA00352511/Documents/GitHub/ProjetoFastag/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA T400 4GB (ID=0x1ff2)
+    Vendor:   NVIDIA
+    VRAM:     3943 MB
+    Driver:   32.0.15.8216
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              955d54b103874401a68d338a66d17711
+  Correlation Id:          3e06b58ff2be34c6f2d258dbeb8bcf91
+  External correlation Id: 6133066675765928757
+  Machine Id:              xUTvb3X9otE1BN01ilU3rmr6g3U=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-RA00352511" (connect: 0.00s, validation: 0.00s, handshake: 1.43s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-RA00352511-notifications" at "2026-08-25T10:49:37.6002612Z"
+[Licensing::Module] Licensing Background thread has ended after 1.44s
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56468
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: E4-2RMZ-WRAS-7R6G-ZJBC-XXXX
+  Product: Unity Education
+  Type: ULF
+  Expiration: 2027-08-07T18:04:47Z
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.487335 seconds.
+- Loaded All Assemblies, in 14.943 seconds
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 323 ms
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.977 seconds
+Domain Reload Profiling: 15920ms
+	BeginReloadAssembly (11611ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (503ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (527ms)
+	LoadAllAssembliesAndSetupDomain (2290ms)
+		LoadAssemblies (11628ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (2269ms)
+			TypeCache.Refresh (2267ms)
+				TypeCache.ScanAssembly (1895ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (977ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (925ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (574ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (92ms)
+			ProcessInitializeOnLoadAttributes (171ms)
+			ProcessInitializeOnLoadMethodAttributes (84ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in 17.871 seconds
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 2.18 ms, found 3 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Refreshing native plugins compatible for Editor in 1.64 ms, found 3 plugins.
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.530 seconds
+Domain Reload Profiling: 19400ms
+	BeginReloadAssembly (172ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (51ms)
+	LoadAllAssembliesAndSetupDomain (17604ms)
+		LoadAssemblies (16514ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (1179ms)
+			TypeCache.Refresh (1048ms)
+				TypeCache.ScanAssembly (1025ms)
+			BuildScriptInfoCaches (114ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (1531ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1349ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (197ms)
+			ProcessInitializeOnLoadAttributes (648ms)
+			ProcessInitializeOnLoadMethodAttributes (483ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 1.80 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 10606 unused Assets / (5.2 MB). Loaded Objects now: 11687.
+Memory consumption went from 240.5 MB to 235.3 MB.
+Total: 12.736300 ms (FindLiveObjects: 1.111800 ms CreateObjectMapping: 1.157700 ms MarkObjects: 6.576000 ms  DeleteObjects: 3.889500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1395.926941 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/Materials
+  artifactKey: Guid(f8525b84493ea524989fb5cb2f109277) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/Materials using Guid(f8525b84493ea524989fb5cb2f109277) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '367a94a5e10b9ef830af5730da5b5fd1') in 0.0522553 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 146.439717 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/Materials
+  artifactKey: Guid(f8525b84493ea524989fb5cb2f109277) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/Materials using Guid(f8525b84493ea524989fb5cb2f109277) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1983f6fc2b8b40373f7c8c2d38c33b7c') in 0.0005259 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 225.553116 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Base_color.png
+  artifactKey: Guid(e41c6215ab6824896b4f732b34f7058c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Base_color.png using Guid(e41c6215ab6824896b4f732b34f7058c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+ -> (artifact id: '465a0a83e75da12875b6fa1ce7459a3c') in 0.0949539 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Base_metalness.png
+  artifactKey: Guid(e3cf604e60a4543ae84abc8fb71da4b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Base_metalness.png using Guid(e3cf604e60a4543ae84abc8fb71da4b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6ad26736d955825f05124236a6c87e7d') in 0.0272344 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/Material.mat
+  artifactKey: Guid(1188249411c704cb68232eac82b05b77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/Material.mat using Guid(1188249411c704cb68232eac82b05b77) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b1f2fa71bfb498ccc63325174195a6bf') in 1.4452257 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Specular_roughness.png
+  artifactKey: Guid(4a9e5ad02ad124eba86d95376e1bf65b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Specular_roughness.png using Guid(4a9e5ad02ad124eba86d95376e1bf65b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ddf31674f910cbe6dc0425140cefc8cb') in 0.1392368 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Base_metalness.png
+  artifactKey: Guid(e3cf604e60a4543ae84abc8fb71da4b8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Base_metalness.png using Guid(e3cf604e60a4543ae84abc8fb71da4b8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '54f9258a86e3c1c04c2e5456789d2fde') in 0.0290802 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Specular_roughness.png
+  artifactKey: Guid(4a9e5ad02ad124eba86d95376e1bf65b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Specular_roughness.png using Guid(4a9e5ad02ad124eba86d95376e1bf65b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '74da693608e0355ccfc5e4e679df118f') in 0.0243621 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Height.png
+  artifactKey: Guid(e59d20f8a75824677b72c6b9d985c001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Height.png using Guid(e59d20f8a75824677b72c6b9d985c001) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f0c4c19667d1f33ed6e74812486c1daf') in 0.03053 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Mixed_AO.png
+  artifactKey: Guid(c8ca7583915b34dce933aba4b5f3d187) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Mixed_AO.png using Guid(c8ca7583915b34dce933aba4b5f3d187) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '08c42fb3cbbb46ea6295e3d94a75129e') in 0.0300133 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Mixed_AO.png
+  artifactKey: Guid(2517534967a764330aba767113ee70e9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Mixed_AO.png using Guid(2517534967a764330aba767113ee70e9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '33ebf692a856c56a328086f69e0ca448') in 0.0237544 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Mixed_AO.png
+  artifactKey: Guid(c8ca7583915b34dce933aba4b5f3d187) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Mixed_AO.png using Guid(c8ca7583915b34dce933aba4b5f3d187) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a31309da618e06b14d401385dc469be6') in 0.0237508 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Base_metalness.png
+  artifactKey: Guid(a9c257732568a45b1ba67bf20b257b1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Base_metalness.png using Guid(a9c257732568a45b1ba67bf20b257b1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c495b543acdf3f8980c6612624052c2c') in 0.0148616 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Height.png
+  artifactKey: Guid(fa611ab82706e404fa372c7efc187b17) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Height.png using Guid(fa611ab82706e404fa372c7efc187b17) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fb8bdcefdc93423fbb16399132d438ac') in 0.0206799 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Normal_OpenGL.png
+  artifactKey: Guid(51bbeb1abea9f408cacdcaccc81476dc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Normal_OpenGL.png using Guid(51bbeb1abea9f408cacdcaccc81476dc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '698ff26f8dfb066bb6d7816ad9fd3341') in 0.0228156 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Base_color.png
+  artifactKey: Guid(a3ee56a4b85f04970b2fa3eda6cf06fd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Base_color.png using Guid(a3ee56a4b85f04970b2fa3eda6cf06fd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f26fd40a7bae8374bed0c676209a19ca') in 0.0252839 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Height.png
+  artifactKey: Guid(e59d20f8a75824677b72c6b9d985c001) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Height.png using Guid(e59d20f8a75824677b72c6b9d985c001) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c3ec94b5173da08f21eeb8f50de74040') in 0.0226474 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Normal_OpenGL.png
+  artifactKey: Guid(51bbeb1abea9f408cacdcaccc81476dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Normal_OpenGL.png using Guid(51bbeb1abea9f408cacdcaccc81476dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4e6125b61026fc0fd2453408ed6dee61') in 0.0331294 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Base_metalness.png
+  artifactKey: Guid(a9c257732568a45b1ba67bf20b257b1d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Base_metalness.png using Guid(a9c257732568a45b1ba67bf20b257b1d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fa66edb1ce40214eb5b2ea7fec8d343f') in 0.018922 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Normal_OpenGL.png
+  artifactKey: Guid(e8ad3bab1c9434f94bc72dd86654aafa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Normal_OpenGL.png using Guid(e8ad3bab1c9434f94bc72dd86654aafa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd3ed509285444b322aed33732cadfff2') in 0.028141 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Base_color.png
+  artifactKey: Guid(a3ee56a4b85f04970b2fa3eda6cf06fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Base_color.png using Guid(a3ee56a4b85f04970b2fa3eda6cf06fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd74b7d9bba35b0eba564a15475e75d9e') in 0.0200321 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Mixed_AO.png
+  artifactKey: Guid(2517534967a764330aba767113ee70e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/pret_Mixed_AO.png using Guid(2517534967a764330aba767113ee70e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '34acb07e51955761f17f7a9c044f3d98') in 0.0196963 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Emission_color.png
+  artifactKey: Guid(a6e217dee4c8245de857c28a223c9118) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/mulher do mal_Emission_color.png using Guid(a6e217dee4c8245de857c28a223c9118) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '443af03483cac268009567473624e845') in 0.0209695 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 206.127741 seconds.
+  path: Assets/Projeto/Prefabs/Fortao.prefab
+  artifactKey: Guid(19477ad89e14f2242afd340bb019fb89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/Fortao.prefab using Guid(19477ad89e14f2242afd340bb019fb89) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)Asset '(FB)AnimatorCharacter': Transition 'Armature|interact -> Armature|idle' in state 'Armature|interact' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1861]
+
+ -> (artifact id: 'f32ce180d51d636c4883ca6f591da836') in 0.1017584 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 197
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.752537 seconds.
+  path: Assets/Projeto/Prefabs/Fortao.prefab
+  artifactKey: Guid(19477ad89e14f2242afd340bb019fb89) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Prefabs/Fortao.prefab using Guid(19477ad89e14f2242afd340bb019fb89) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3c1c6049953e0954e81f1e81b2dae0ef') in 0.0677576 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 194
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.870059 seconds.
+  path: Assets/Projeto/Prefabs/Fortão.prefab
+  artifactKey: Guid(19477ad89e14f2242afd340bb019fb89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/Fortão.prefab using Guid(19477ad89e14f2242afd340bb019fb89) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)Asset '(FB)AnimatorCharacter': Transition 'Armature|interact -> Armature|idle' in state 'Armature|interact' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1861]
+
+ -> (artifact id: 'a3d34395fb60e66a7b3bfb65c9dee209') in 0.0141827 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 197
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.862609 seconds.
+  path: Assets/Projeto/Prefabs/Fortão.prefab
+  artifactKey: Guid(19477ad89e14f2242afd340bb019fb89) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Prefabs/Fortão.prefab using Guid(19477ad89e14f2242afd340bb019fb89) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0c1da4fd54e084c65b4e283a9690177b') in 0.0197069 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 194
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.855793 seconds.
+  path: Assets/Projeto/Prefabs/FortãoDoMal.prefab
+  artifactKey: Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/FortãoDoMal.prefab using Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b5f1d7077a7c7ec8b4ad8701bcffa717') in 0.0629759 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 199
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.798194 seconds.
+  path: Assets/Projeto/Prefabs/FortãoDoMal.prefab
+  artifactKey: Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Prefabs/FortãoDoMal.prefab using Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '00932cac1b339d9c245d0941bdcd68fa') in 0.0218194 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 194
+
+========================================================================
+Received Import Request.
+  Time since last request: 29.309490 seconds.
+  path: Assets/Projeto/Prefabs/FortãoDoMal.prefab
+  artifactKey: Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/FortãoDoMal.prefab using Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)NullReferenceException: Object reference not set to an instance of an object
+  at Unity.Netcode.Components.NetworkAnimator.BuildTransitionStateInfoList () [0x0001a] in .\Library\PackageCache\com.unity.netcode.gameobjects@d43d28498f17\Runtime\Components\NetworkAnimator.cs:403 
+  at Unity.Netcode.Components.NetworkAnimator.OnValidate () [0x00000] in .\Library\PackageCache\com.unity.netcode.gameobjects@d43d28498f17\Runtime\Components\NetworkAnimator.cs:512 
+
+(Filename: ./Library/PackageCache/com.unity.netcode.gameobjects@d43d28498f17/Runtime/Components/NetworkAnimator.cs Line: 403)
+
+ -> (artifact id: '49dc636afceed806696ead09668558eb') in 0.0156932 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 187
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.885226 seconds.
+  path: Assets/Projeto/Prefabs/FortãoDoMal.prefab
+  artifactKey: Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Prefabs/FortãoDoMal.prefab using Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter)NullReferenceException: Object reference not set to an instance of an object
+  at Unity.Netcode.Components.NetworkAnimator.BuildTransitionStateInfoList () [0x0001a] in .\Library\PackageCache\com.unity.netcode.gameobjects@d43d28498f17\Runtime\Components\NetworkAnimator.cs:403 
+  at Unity.Netcode.Components.NetworkAnimator.OnValidate () [0x00000] in .\Library\PackageCache\com.unity.netcode.gameobjects@d43d28498f17\Runtime\Components\NetworkAnimator.cs:512 
+UnityEditor.AssetDatabase:LoadAssetAtPath_Injected(ManagedSpanWrapper&, Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath(String, Type)
+UnityEditor.AssetDatabase:LoadAssetAtPath(String)
+UnityEditor.Search.AssetIndexer:IndexDocument(String, Boolean)
+UnityEditor.Search.SearchIndexArtifactImporter:OnImportAsset(AssetImportContext)
+UnityEditor.AssetImporters.ScriptedImporter:GenerateAssetData(AssetImportContext)
+
+(Filename: ./Library/PackageCache/com.unity.netcode.gameobjects@d43d28498f17/Runtime/Components/NetworkAnimator.cs Line: 403)
+
+ -> (artifact id: '2611bac71f87d40a80d2c63ac2adaa73') in 0.0224865 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 182
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.603474 seconds.
+  path: Assets/Projeto/Prefabs/FortãoDoMal.prefab
+  artifactKey: Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/FortãoDoMal.prefab using Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '35599ac5a9e950e8886b08f6e7e07c87') in 0.0150442 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 199
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.929994 seconds.
+  path: Assets/Projeto/Prefabs/fortao do mal.prefab
+  artifactKey: Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/fortao do mal.prefab using Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '19873824f63fd3d05dc2e781f3dca034') in 0.0131729 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 199
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.869795 seconds.
+  path: Assets/Projeto/Prefabs/fortao do mal.prefab
+  artifactKey: Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Prefabs/fortao do mal.prefab using Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7fd519c248e837d2fcb6bbbf735e3e7f') in 0.0166406 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 194
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.297192 seconds.
+  path: Assets/Projeto/Prefabs/FortãoDoMal.prefab
+  artifactKey: Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Prefabs/FortãoDoMal.prefab using Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'acb4a17f1214569880fb17830f5ac401') in 0.0186139 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 194
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.388020 seconds.
+  path: Assets/Projeto/Prefabs/(FM)AnimatorCharacter.controller
+  artifactKey: Guid(c0d642f6f3207c741abfb3321048a98a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/(FM)AnimatorCharacter.controller using Guid(c0d642f6f3207c741abfb3321048a98a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b0108e82f4179ce1eb5da19228ac3929') in 0.0016719 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.392610 seconds.
+  path: Assets/Projeto/Prefabs/(MB)AnimatorCharacter.controller
+  artifactKey: Guid(e868549413a3c4a488e078846535e153) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/(MB)AnimatorCharacter.controller using Guid(e868549413a3c4a488e078846535e153) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '923053c9b09fb77711bdfb8d66ea60e8') in 0.0009371 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.880400 seconds.
+  path: Assets/Projeto/Prefabs/(MB)AnimatorCharacter.controller
+  artifactKey: Guid(e868549413a3c4a488e078846535e153) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Prefabs/(MB)AnimatorCharacter.controller using Guid(e868549413a3c4a488e078846535e153) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cf11e6c2f24f649df9c6fa51bea3748d') in 0.0129705 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 63.125527 seconds.
+  path: Assets/Projeto/Prefabs/(MB)AnimatorCharacter.controller
+  artifactKey: Guid(e868549413a3c4a488e078846535e153) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Prefabs/(MB)AnimatorCharacter.controller using Guid(e868549413a3c4a488e078846535e153) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fcc7e461b2ad8dba4601abf211c1ac22') in 0.0123241 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Projeto/Scena/Teste.unity
+  artifactKey: Guid(2e39151abca46654f9aa73ec65e54a42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Teste.unity using Guid(2e39151abca46654f9aa73ec65e54a42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b860110f802da9538d3da4d60372524d') in 0.0100792 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.784535 seconds.
+  path: Assets/Projeto/Prefabs/Fortão.prefab
+  artifactKey: Guid(19477ad89e14f2242afd340bb019fb89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/Fortão.prefab using Guid(19477ad89e14f2242afd340bb019fb89) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)Asset '(FB)AnimatorCharacter': Transition 'Armature|interact -> Armature|idle' in state 'Armature|interact' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1861]
+
+ -> (artifact id: 'e4af80995060a8388f6f91efb2e9a2ca') in 0.0140103 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 197
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.869205 seconds.
+  path: Assets/Projeto/Prefabs/Fortão.prefab
+  artifactKey: Guid(19477ad89e14f2242afd340bb019fb89) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Prefabs/Fortão.prefab using Guid(19477ad89e14f2242afd340bb019fb89) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '97fc6a62c14e8d9c1dd2e52c31917fa8') in 0.0197166 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 194
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.470935 seconds.
+  path: Assets/Projeto/Prefabs/FortãoDoMal.prefab
+  artifactKey: Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/FortãoDoMal.prefab using Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f27fdb7b3d25fb5e01f4ede310eb652c') in 0.0263741 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 199
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.848788 seconds.
+  path: Assets/Projeto/Prefabs/FortãoDoMal.prefab
+  artifactKey: Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Prefabs/FortãoDoMal.prefab using Guid(c9d4dc62472744c49bfb2979ad46836b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cc2f2f245f8c7c4458440d3f4f1b3641') in 0.021628 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 194
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.771506 seconds.
+  path: Assets/Projeto/Scena/Teste.unity
+  artifactKey: Guid(2e39151abca46654f9aa73ec65e54a42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Teste.unity using Guid(2e39151abca46654f9aa73ec65e54a42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7aeb0e0521400f570a3dd2ac1306a21f') in 0.0126117 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.334131 seconds.
+  path: Assets/Projeto/Prefabs/Macabea.prefab
+  artifactKey: Guid(6e7808476cbd4e944bb1136fc411f8e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/Macabea.prefab using Guid(6e7808476cbd4e944bb1136fc411f8e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd5ed857318c7067d7cb2519d61ddbf51') in 0.02532 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 236
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.873043 seconds.
+  path: Assets/Projeto/Prefabs/Macabea.prefab
+  artifactKey: Guid(6e7808476cbd4e944bb1136fc411f8e9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Prefabs/Macabea.prefab using Guid(6e7808476cbd4e944bb1136fc411f8e9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '78734429037b233d63bfc9a2edd4137a') in 0.0219291 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 232
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.976330 seconds.
+  path: Assets/Projeto/Prefabs/(MB)AnimatorCharacter.controller
+  artifactKey: Guid(e868549413a3c4a488e078846535e153) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/(MB)AnimatorCharacter.controller using Guid(e868549413a3c4a488e078846535e153) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '13e94f3494901977d7f595de488c2f75') in 0.0009801 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.997710 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Anton SDF - Drop Shadow.mat
+  artifactKey: Guid(749b9069dc4742c5bfa5c74644049926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Anton SDF - Drop Shadow.mat using Guid(749b9069dc4742c5bfa5c74644049926) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '53228d650e6813286f50142abfea75d6') in 0.0495111 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF Glow.mat
+  artifactKey: Guid(d75b8f41e959450c84ac6e967084d3e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF Glow.mat using Guid(d75b8f41e959450c84ac6e967084d3e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4732699ae3f79212e6fc9d66007d3335') in 0.0698703 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF - Outline.mat
+  artifactKey: Guid(f629c6e43dba4bf38cb74d8860150664) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF - Outline.mat using Guid(f629c6e43dba4bf38cb74d8860150664) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2a0617ef56a7eb2e5bb2d99e9605ec3e') in 0.0134512 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Anton SDF - Sunny Days.mat
+  artifactKey: Guid(6522f30e342599e4e9dd4cc2cc03c830) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Anton SDF - Sunny Days.mat using Guid(6522f30e342599e4e9dd4cc2cc03c830) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8ee83b475dc9997fba6227601cd2b7af') in 0.0718271 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.786510 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/Materials/pret_Base_metalness.mat
+  artifactKey: Guid(8b8161635035ad9419dcba3455a8313f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/Materials/pret_Base_metalness.mat using Guid(8b8161635035ad9419dcba3455a8313f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '93720804ff7610b46d89972ae27dbc30') in 0.0213776 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.149649 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF Logo - URP.mat
+  artifactKey: Guid(6751ce1a4611b3940812c13a6847d94f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF Logo - URP.mat using Guid(6751ce1a4611b3940812c13a6847d94f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6b044ae5af9101582b2d220f7f04fefd') in 0.0307271 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF.asset
+  artifactKey: Guid(125cb55b44b24c4393181402bc6200e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF.asset using Guid(125cb55b44b24c4393181402bc6200e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '28dc754e444b2dd05bfff7ea4ffc4fde') in 0.0403016 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.409287 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
+  artifactKey: Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat using Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'eba5d8f8fd5bbd52189e163be6201a41') in 0.0285916 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 419.104829 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/Material.mat
+  artifactKey: Guid(1188249411c704cb68232eac82b05b77) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/Material.mat using Guid(1188249411c704cb68232eac82b05b77) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '670b02b4d10be3eafe808034cf43b4d6') in 0.0192223 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Projeto/Scena/Teste.unity
+  artifactKey: Guid(2e39151abca46654f9aa73ec65e54a42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Teste.unity using Guid(2e39151abca46654f9aa73ec65e54a42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5eb0b35aba2eaba5644522451ce6acb3') in 0.0131462 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 87.819582 seconds.
+  path: Assets/Projeto/Scena/Teste.unity
+  artifactKey: Guid(2e39151abca46654f9aa73ec65e54a42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Teste.unity using Guid(2e39151abca46654f9aa73ec65e54a42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '244cabb0c3a13d8b7e48848705478552') in 0.0133705 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 46.449550 seconds.
+  path: Assets/Projeto/Assets/Guilherme/personagens/Baiana/Material.mat
+  artifactKey: Guid(1188249411c704cb68232eac82b05b77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Assets/Guilherme/personagens/Baiana/Material.mat using Guid(1188249411c704cb68232eac82b05b77) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'eb29f59402c7415e3d9517f2269741f4') in 0.2729268 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 196.560753 seconds.
+  path: Assets/DefaultNetworkPrefabs.asset
+  artifactKey: Guid(2a6c7d045cce1fa4080993542974c493) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/DefaultNetworkPrefabs.asset using Guid(2a6c7d045cce1fa4080993542974c493) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2fcc69ac773c71df8af55689751bd468') in 0.0214642 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 471
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.848031 seconds.
+  path: Assets/Projeto/Prefabs/Macabea.prefab
+  artifactKey: Guid(6e7808476cbd4e944bb1136fc411f8e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/Macabea.prefab using Guid(6e7808476cbd4e944bb1136fc411f8e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '20da7146baa1afeb7a95a67ba913e7d5') in 0.1894485 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 246
+
+========================================================================
+Received Import Request.
+  Time since last request: 166.113537 seconds.
+  path: Assets/Projeto/Prefabs/(MB)AnimatorCharacter.controller
+  artifactKey: Guid(e868549413a3c4a488e078846535e153) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Prefabs/(MB)AnimatorCharacter.controller using Guid(e868549413a3c4a488e078846535e153) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '479b1c54561c45d99df6c4e7ed09f44c') in 0.0165787 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Projeto/Scena/Teste.unity
+  artifactKey: Guid(2e39151abca46654f9aa73ec65e54a42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Teste.unity using Guid(2e39151abca46654f9aa73ec65e54a42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7103dea88a36c5f434caee9616280340') in 0.0134365 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Projeto/Prefabs/(FB)AnimatorCharacter.controller
+  artifactKey: Guid(dd82d98de34e9b74c8377f168f30480d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Prefabs/(FB)AnimatorCharacter.controller using Guid(dd82d98de34e9b74c8377f168f30480d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3125cd4d8dd66b51fa73cdc89d54a567') in 0.0104335 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.664362 seconds.
+  path: Assets/Projeto/Prefabs/Fortão.prefab
+  artifactKey: Guid(19477ad89e14f2242afd340bb019fb89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/Fortão.prefab using Guid(19477ad89e14f2242afd340bb019fb89) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)Asset '(FB)AnimatorCharacter': Transition 'Armature|interact -> Exit' in state 'Armature|interact' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1861]
+
+ -> (artifact id: 'c9f3073dd9ccf79161dc15beb58bdd04') in 0.0264796 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 197
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

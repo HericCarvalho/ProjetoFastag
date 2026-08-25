@@ -101,7 +101,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2e7b2063d16e04751b9054a6315830f9, type: 3}
       propertyPath: m_Name
-      value: fortao
+      value: "Fort\xE3o"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e7b2063d16e04751b9054a6315830f9, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8879528566716807029, guid: 2e7b2063d16e04751b9054a6315830f9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -197,7 +201,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: -5495902117074765545, guid: c0ced455af4ed4a878674870a15cbf99, type: 3}
 --- !u!143 &7206355623096707716
 CharacterController:
   m_ObjectHideFlags: 0
