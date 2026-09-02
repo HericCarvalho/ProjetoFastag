@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 5430
+  controlID: 44
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 112}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 5431
+  controlID: 45
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 5432
+  controlID: 46
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -1169,9 +1169,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -11.83463, y: 4.606921, z: 8.391652}
+    m_Target: {x: -9.177319, y: 18.063795, z: 12.020885}
     speed: 2
-    m_Value: {x: -11.83463, y: 4.606921, z: 8.391652}
+    m_Value: {x: -9.177319, y: 18.063795, z: 12.020885}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1209,21 +1209,21 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 1, y: 1}
+      m_Size: {x: 0.5, y: 0.5}
     m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.41646168, y: 0.5412379, z: -0.35220706, w: 0.639978}
+    m_Target: {x: 0.0692429, y: 0.7906245, z: -0.6015333, w: 0.09101608}
     speed: 2
-    m_Value: {x: 0.4174211, y: 0.54070884, z: -0.35301843, w: 0.6393524}
+    m_Value: {x: 0.06834026, y: 0.79075706, z: -0.6016341, w: 0.08982969}
   m_Size:
-    m_Target: 10.984149
+    m_Target: 6.371696
     speed: 2
-    m_Value: 10.5111475
+    m_Value: 6.0973167
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1241,7 +1241,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LastSceneViewRotation: {x: 0.5291833, y: 0.46682617, z: -0.45438898, w: 0.54366827}
   m_LastSceneViewOrtho: 0
   m_Viewpoint:
     m_SceneView: {fileID: 13}
@@ -1302,18 +1302,9 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -47244
-      - m_Data: -37544
-      - m_Data: -23162
-      - m_Data: -22150
-      - m_Data: -20548
-      - m_Data: -20042
-      - m_Data: -18324
-      - m_Data: -13290
-      - m_Data: -10222
-      - m_Data: -6730
-      - m_Data: -3202
-      - m_Data: 68476
+      - m_Data: -1300
+      - m_Data: 64814
+      - m_Data: 65106
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1493,7 +1484,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Projeto/Prefabs
+    - "Assets/Projeto/Materials/Materials provis\xF3rios"
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1503,27 +1494,27 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Projeto/Prefabs
+  - "Assets/Projeto/Materials/Materials provis\xF3rios"
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\USER\Documents\GitHub\ProjetoFastag
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 76}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 67164
+    - m_Data: 67616
     m_LastClickedID:
-      m_Data: 67164
+      m_Data: 67616
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 67148
-    - m_Data: 67152
-    - m_Data: 67154
-    - m_Data: 67156
-    - m_Data: 67158
-    - m_Data: 67166
-    - m_Data: 70214
+    - m_Data: 66018
+    - m_Data: 66020
+    - m_Data: 66022
+    - m_Data: 66024
+    - m_Data: 66026
+    - m_Data: 66306
+    - m_Data: 66316
     - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1557,13 +1548,11 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 67148
-    - m_Data: 67152
-    - m_Data: 67154
-    - m_Data: 67156
-    - m_Data: 67158
-    - m_Data: 67166
-    - m_Data: 1000000000
+    - m_Data: 66018
+    - m_Data: 66020
+    - m_Data: 66022
+    - m_Data: 66024
+    - m_Data: 66026
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
