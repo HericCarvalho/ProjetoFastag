@@ -1,0 +1,365 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/respin/6000.3.6f1-732c1ec89f18' branch; Version is '6000.3.6f1 (bbb010bdb8a3) revision 12300304'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) Education' Language: 'pt' Physical Memory: 16053 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-ra00352581" at "2026-09-08T11:30:34.9410335Z"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-09-08T11:30:34Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/ra00352581/Documents/GitHub/ProjetoFastag
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+52110
+-licensingIpc
+LicenseClient-ra00352581
+-job-worker-count
+9
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: C:/Users/ra00352581/Documents/GitHub/ProjetoFastag
+C:/Users/ra00352581/Documents/GitHub/ProjetoFastag
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [18720]  Target information:
+
+Player connection [18720]  * "[IP] 172.17.3.11 [Port] 0 [Flags] 2 [Guid] 230431142 [EditorId] 230431142 [Version] 1048832 [Id] WindowsEditor(7,DSP-BRJ3055CFK) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [18720]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 230431142 [EditorId] 230431142 [Version] 1048832 [Id] WindowsEditor(7,DSP-BRJ3055CFK) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [18720]  * "[IP] 172.30.112.1 [Port] 0 [Flags] 2 [Guid] 230431142 [EditorId] 230431142 [Version] 1048832 [Id] WindowsEditor(7,DSP-BRJ3055CFK) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [18720] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [18720] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 9
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 2.20 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.6f1 (bbb010bdb8a3)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/ra00352581/Documents/GitHub/ProjetoFastag/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA T400 4GB (ID=0x1ff2)
+    Vendor:   NVIDIA
+    VRAM:     3943 MB
+    Driver:   32.0.15.8216
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56616
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              d1f99961e6cf4fe097effe20771d12fe
+  Correlation Id:          f1f1a9fd5e3d06d3ad60ab37000f8542
+  External correlation Id: 9014999836729696960
+  Machine Id:              4rCuaYXzXQM6GRnCmke7kOtmjmY=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-ra00352581" (connect: 0.00s, validation: 0.00s, handshake: 0.97s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-ra00352581-notifications" at "2026-09-08T11:30:35.9104458Z"
+[Licensing::Module] Licensing Background thread has ended after 0.97s
+[Licensing::Module] Licensing is initialized (took 0.27s).
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: E4-2RMZ-WRAS-7R6G-ZJBC-XXXX
+  Product: Unity Education
+  Type: ULF
+  Expiration: 2027-08-07T18:04:47Z
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.285308 seconds.
+- Loaded All Assemblies, in  0.634 seconds
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 2163 ms
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.559 seconds
+Domain Reload Profiling: 3193ms
+	BeginReloadAssembly (122ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (35ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (322ms)
+	LoadAllAssembliesAndSetupDomain (143ms)
+		LoadAssemblies (121ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (139ms)
+			TypeCache.Refresh (138ms)
+				TypeCache.ScanAssembly (127ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (2559ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (2530ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2241ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (71ms)
+			ProcessInitializeOnLoadAttributes (148ms)
+			ProcessInitializeOnLoadMethodAttributes (66ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.938 seconds
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 1.53 ms, found 3 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Refreshing native plugins compatible for Editor in 1.28 ms, found 3 plugins.
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.093 seconds
+Domain Reload Profiling: 2029ms
+	BeginReloadAssembly (169ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (48ms)
+	LoadAllAssembliesAndSetupDomain (677ms)
+		LoadAssemblies (340ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (427ms)
+			TypeCache.Refresh (285ms)
+				TypeCache.ScanAssembly (265ms)
+			BuildScriptInfoCaches (121ms)
+			ResolveRequiredComponents (15ms)
+	FinalizeReload (1093ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (945ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (178ms)
+			ProcessInitializeOnLoadAttributes (385ms)
+			ProcessInitializeOnLoadMethodAttributes (364ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 1.59 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 10606 unused Assets / (6.6 MB). Loaded Objects now: 11682.
+Memory consumption went from 240.8 MB to 234.1 MB.
+Total: 10.820300 ms (FindLiveObjects: 0.798500 ms CreateObjectMapping: 0.780500 ms MarkObjects: 5.734900 ms  DeleteObjects: 3.505300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1382.308229 seconds.
+  path: Assets/Projeto/Scena/Teste.unity
+  artifactKey: Guid(2e39151abca46654f9aa73ec65e54a42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Teste.unity using Guid(2e39151abca46654f9aa73ec65e54a42) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'bb68bf4d84e72876f58770a5458873bd') in 0.0579217 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 34.152213 seconds.
+  path: Assets/Projeto/Prefabs
+  artifactKey: Guid(1a255852ab78cfc4b83a0e327bbe5cb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs using Guid(1a255852ab78cfc4b83a0e327bbe5cb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dd14918e54be76d68cdb0e57066a1049') in 0.0005302 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001899 seconds.
+  path: Assets/Projeto/Prefabs/Fortão.prefab
+  artifactKey: Guid(19477ad89e14f2242afd340bb019fb89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/Fortão.prefab using Guid(19477ad89e14f2242afd340bb019fb89) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)Asset '(FB)AnimatorCharacter': Transition 'Armature|interact -> Exit' in state 'Armature|interact' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1861]
+
+ -> (artifact id: '9502587df6557ceb49e775764829a17a') in 0.8623668 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 198
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Projeto/Prefabs/MacabeaDoMal.prefab
+  artifactKey: Guid(f3dd227d9a6fe224bbaef8c03d5f4c42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/MacabeaDoMal.prefab using Guid(f3dd227d9a6fe224bbaef8c03d5f4c42) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)Asset '(MM)AnimatorCharacter': Transition 'Armature|interact -> Exit' in state 'Armature|interact' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object,bool)
+UnityEditor.GameObjectInspector:GetPreviewData (bool)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\build\output\unity\unity\Editor\Src\Animation\StateMachine.cpp line 1861]
+
+ -> (artifact id: '52510cca0342bcf14192c2946edbc1b7') in 0.2854859 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 247
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.208411 seconds.
+  path: Assets/Projeto/Prefabs/CAmera
+  artifactKey: Guid(d987c1e68d9daa843bd531781fb47326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/CAmera using Guid(d987c1e68d9daa843bd531781fb47326) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ed5434ccaefdcc653cb09f637f79ce5d') in 0.0004503 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.883712 seconds.
+  path: Assets/Projeto/Prefabs/CAmera
+  artifactKey: Guid(d987c1e68d9daa843bd531781fb47326) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Prefabs/CAmera using Guid(d987c1e68d9daa843bd531781fb47326) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e53dbe0f614fe48f01467ad475f4e972') in 0.0060868 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.890969 seconds.
+  path: Assets/Projeto/Prefabs/CAmera/Camera.prefab
+  artifactKey: Guid(859c9ebca66f87a48aa536951bfae4d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/CAmera/Camera.prefab using Guid(859c9ebca66f87a48aa536951bfae4d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '73926b89097f60d71dddfe54dd526ecd') in 0.0039491 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Projeto/Prefabs/CAmera/_HUD.prefab
+  artifactKey: Guid(103d1f37db4b0da4d868042565960fa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Prefabs/CAmera/_HUD.prefab using Guid(103d1f37db4b0da4d868042565960fa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1fcad63646fa578010565ae365038dcf') in 0.0602261 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 37
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.752198 seconds.
+  path: Assets/Projeto/Prefabs/CAmera/_HUD.prefab
+  artifactKey: Guid(103d1f37db4b0da4d868042565960fa4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Prefabs/CAmera/_HUD.prefab using Guid(103d1f37db4b0da4d868042565960fa4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '342a87774fb6023667c6aa26924c05df') in 0.0547599 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 37
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Projeto/Prefabs/CAmera/Camera pixelada.prefab
+  artifactKey: Guid(89713638444642a41bc95b964b351797) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Prefabs/CAmera/Camera pixelada.prefab using Guid(89713638444642a41bc95b964b351797) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '20c43e9c4eb5ea2fd62688015d14ba80') in 0.0409521 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.920518 seconds.
+  path: Assets/Projeto/Assets/Torres/Shader/Pixelation.renderTexture
+  artifactKey: Guid(3043b5ed93d2ee74db06a72e98437898) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Torres/Shader/Pixelation.renderTexture using Guid(3043b5ed93d2ee74db06a72e98437898) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '470a56c89e870a2c20f87c600ec7d08d') in 0.0150322 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
