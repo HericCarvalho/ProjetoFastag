@@ -1,0 +1,29 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="TelaInicial" style="flex-grow: 1; display: flex;">
+        <ui:Image source="project://database/Assets/Teste/Ui%20coisas/placeholder.jpg?fileID=2800000&amp;guid=d641457690b245a419807bbad29f9f4e&amp;type=3#placeholder" name="FUNDO" style="height: 1080px; background-image: url(&quot;project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder.jpg?fileID=2800000&amp;guid=da8f093fc0e9eb94da7c0223446f8c82&amp;type=3#placeholder&quot;);"/>
+        <ui:VisualElement name="TituloJogo" style="flex-grow: 1; top: 398px; bottom: 246px; left: 501px; right: 501px; position: absolute; justify-content: center; align-items: auto; align-self: center;">
+            <ui:Label text="FAST TAG" name="TITULO" style="-unity-text-align: middle-center; color: rgb(127, 255, 0); font-size: 200px; top: -110px;"/>
+            <ui:Label text="CLIQUE PARA CONTINUAR" style="top: -94px; left: -197px; color: rgb(126, 255, 0); font-size: 46px; -unity-font-style: normal; -unity-text-align: middle-center;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="TelaMenu" enabled="true" style="flex-grow: 1; opacity: 1; flex-shrink: 0; display: none; visibility: visible;">
+        <ui:VisualElement name="FUNDO" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder.jpg?fileID=2800000&amp;guid=da8f093fc0e9eb94da7c0223446f8c82&amp;type=3#placeholder&quot;);"/>
+        <ui:VisualElement picking-mode="Position" name="TITULO" style="flex-grow: 1; top: 335px; left: 52px; bottom: 555px; right: 1411px; position: absolute; align-items: center; justify-content: center;">
+            <ui:Label text="FAST TAG" style="-unity-font-style: bold; font-size: 79px; -unity-text-align: middle-center; color: rgb(127, 255, 0);"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="BOTOES" style="opacity: 1; left: 0; bottom: 90px; right: 1392px; top: 464px; position: absolute; align-items: flex-end; justify-content: space-between; align-self: auto; display: flex; visibility: visible; overflow: visible; align-content: auto;">
+            <ui:Button text="JOGAR" name="play" style="white-space: nowrap; left: -213px; top: 75px; right: auto; bottom: auto; height: 80px; width: 232px; opacity: 1; position: relative; aspect-ratio: auto; -unity-font-style: bold; font-size: 29px; text-overflow: clip; background-color: rgb(0, 206, 209); color: rgb(255, 255, 255);"/>
+            <ui:Button text="SAIR" name="Quit" style="left: -213px; top: 75px; width: 232px; height: 80px; font-size: 29px; -unity-font-style: bold;"/>
+            <ui:Button text="OPÇÕES" name="OPTIONS" style="left: -213px; top: -254px; width: 232px; height: 80px; font-size: 29px; -unity-font-style: bold;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="TelaSelect" style="flex-grow: 1; display: none;">
+        <ui:Image name="Fundo_borrado" source="project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder.jpg?fileID=2800000&amp;guid=da8f093fc0e9eb94da7c0223446f8c82&amp;type=3#placeholder" style="display: flex; aspect-ratio: auto; filter: blur(10); position: absolute; width: 1920px; height: 1080px;"/>
+        <ui:VisualElement name="Selecao" style="flex-grow: 1; width: 100%; height: 100%; min-width: 10%; max-width: 60%; min-height: 30%; max-height: 60%; top: 293px; right: 472px; left: 371px;">
+            <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder%201.png?fileID=2800000&amp;guid=ee1afd58bafe2c04880b7e239a57586f&amp;type=3#placeholder 1" scale-mode="StretchToFill" name="Imagem1" style="width: 350px; height: 350px; right: -145px; top: 121px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;"/>
+            <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder2.png?fileID=2800000&amp;guid=7fdaec9e2d7ce44418fd1baaf3282d9a&amp;type=3#placeholder2" scale-mode="StretchToFill" style="width: 350px; height: 350px; right: -636px; top: -120px;"/>
+            <ui:Button text="Button" style="width: 232px; height: 80px; white-space: pre; right: -194px; top: -94px;"/>
+            <ui:Button text="Button" style="width: 232px; height: 80px; top: -176px; right: -698px;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
