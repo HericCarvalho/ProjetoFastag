@@ -13,6 +13,14 @@
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
+    border-right-color: rgb(175, 238, 238);
+    border-left-color: rgb(175, 238, 238);
+    border-bottom-color: rgb(175, 238, 238);
+    border-top-color: rgb(175, 238, 238);
+    border-top-width: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 4px;
 }
 
 .botao-menu {
@@ -47,3 +55,5 @@
     top: -176px;
     right: -698px;
 }
+
+

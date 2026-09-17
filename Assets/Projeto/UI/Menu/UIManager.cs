@@ -4,66 +4,113 @@ using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
-    VisualElement telaInicial;
-    VisualElement telaMenu;
-    VisualElement telaSelect;
+    private VisualElement telaInicial;
+    private VisualElement telaMenu;
+    private VisualElement telaSelect;
+    private VisualElement telaOptions;
 
-    Button Jogar;
-    Button Options;
-    Button Sair;
-    Button Partida;
-    Button Criar;
+    private VisualElement[] telas;
 
+    private Button jogar;
+    private Button options;
+    private Button sair;
+    private Button partida;
+    private Button criar;
+    private Button sair2;
+    private Button inicio;
+    private Button sair3;
 
     private void OnEnable()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
-        //Telas
+        // Telas
         telaInicial = root.Q<VisualElement>("TelaInicial");
         telaMenu = root.Q<VisualElement>("TelaMenu");
         telaSelect = root.Q<VisualElement>("TelaSelect");
+        telaOptions = root.Q<VisualElement>("TelaOPtions");
 
-        //Botoes
-        Jogar = root.Q<Button>("play");
-        Options = root.Q<Button>("OPTIONS");
-        Sair = root.Q<Button>("Quit");
-        Partida = root.Q<Button>("Partidinha");
-        Criar = root.Q<Button>("CriarSala");
+        telas = new VisualElement[]
+        {
+            telaInicial,
+            telaMenu,
+            telaSelect,
+            telaOptions
+        };
 
 
-        //Eventos
-        Jogar.clicked += AbrirJogo;
-        //Options.clicked += AbrirOptions;
-        Sair.clicked += SairJogo;
-        Partida.clicked += InicioJogo;
-        Criar.clicked += InicioJogo;
+        // Botões
+        jogar = root.Q<Button>("play");
+        options = root.Q<Button>("OPTIONS");
+        sair = root.Q<Button>("Quit");
+        partida = root.Q<Button>("Partidinha");
+        criar = root.Q<Button>("CriarSala");
+        sair2 = root.Q<Button>("Sair");
+        sair3 = root.Q<Button>("Close");
+        inicio = root.Q<Button>("Iniciar");
 
+
+        // Eventos
+        jogar.clicked += AbrirJogo;
+        options.clicked += AbrirOptions;
+        sair.clicked += SairJogo;
+
+        partida.clicked += InicioJogo;
+        criar.clicked += InicioJogo;
+
+        inicio.clicked += AbrirMenu;
+        sair2.clicked += VoltarTela;
+        sair3.clicked += VoltarTela;
+
+
+        // Tela inicial
         AbrirInicio();
     }
 
-    void AbrirInicio()
+    private void MostrarTela(VisualElement tela)
     {
-        telaInicial.style.display = DisplayStyle.None;
-        telaMenu.style.display = DisplayStyle.Flex;
-        telaSelect.style.display = DisplayStyle.None;
+        foreach (VisualElement t in telas)
+        {
+            t.style.display = DisplayStyle.None;
+        }
+
+        tela.style.display = DisplayStyle.Flex;
     }
 
-    void AbrirJogo()
+    private void AbrirInicio()
     {
-        telaInicial.style.display= DisplayStyle.None;
-        telaMenu.style.display = DisplayStyle.None;
-        telaSelect.style.display =DisplayStyle.Flex;
+        MostrarTela(telaInicial);
     }
 
-    void InicioJogo()
+    private void AbrirMenu()
+    {
+        MostrarTela(telaMenu);
+    }
+
+    private void AbrirJogo()
+    {
+        MostrarTela(telaSelect);
+    }
+
+    private void AbrirOptions()
+    {
+        MostrarTela(telaOptions);
+    }
+
+    private void InicioJogo()
     {
         SceneManager.LoadScene("Cadeia_Dentro");
     }
 
-    void SairJogo()
+    private void VoltarTela()
     {
-        Application.Quit();
+        MostrarTela(telaMenu);
     }
 
+    private void SairJogo()
+    {
+        Debug.Log("Saindo");
+
+        Application.Quit();
+    }
 }
