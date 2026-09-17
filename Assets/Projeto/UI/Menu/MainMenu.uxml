@@ -1,6 +1,6 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Projeto/UI/Menu/botao-menu.uss?fileID=7433441132597879392&amp;guid=c5d6cf822fdb42946b7d8416b06944bd&amp;type=3#botao-menu"/>
-    <ui:VisualElement name="TelaInicial" style="flex-grow: 1; display: flex;">
+    <ui:VisualElement name="TelaInicial" style="flex-grow: 1; display: none;">
         <ui:Image source="project://database/Assets/Teste/Ui%20coisas/placeholder.jpg?fileID=2800000&amp;guid=d641457690b245a419807bbad29f9f4e&amp;type=3#placeholder" name="FUNDO" style="height: 1080px; background-image: url(&quot;project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder.jpg?fileID=2800000&amp;guid=da8f093fc0e9eb94da7c0223446f8c82&amp;type=3#placeholder&quot;);"/>
         <ui:VisualElement name="TituloJogo" style="flex-grow: 1; top: 398px; bottom: 246px; left: 501px; right: 501px; position: absolute; justify-content: center; align-items: auto; align-self: center;">
             <ui:Label text="FAST TAG" name="TITULO" style="-unity-text-align: middle-center; color: rgb(127, 255, 0); font-size: 200px; top: -110px;"/>
@@ -18,13 +18,13 @@
             <ui:Button text="OPÇÕES" name="OPTIONS" class="botao-menu" style="top: -251px;"/>
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="TelaSelect" style="flex-grow: 1; display: none;">
+    <ui:VisualElement name="TelaSelect" style="flex-grow: 1; display: flex;">
         <ui:Image name="Fundo_borrado" source="project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder.jpg?fileID=2800000&amp;guid=da8f093fc0e9eb94da7c0223446f8c82&amp;type=3#placeholder" style="display: flex; aspect-ratio: auto; filter: blur(10); position: absolute; width: 1920px; height: 1080px; top: 2px; left: -1px;"/>
         <ui:VisualElement name="Selecao" style="flex-grow: 1; width: 100%; height: 100%; min-width: 10%; max-width: 60%; min-height: 30%; max-height: 60%; top: 293px; right: 472px; left: 371px;">
             <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder%201.png?fileID=2800000&amp;guid=ee1afd58bafe2c04880b7e239a57586f&amp;type=3#placeholder 1" scale-mode="StretchToFill" name="Imagem1" style="width: 350px; height: 350px; right: -145px; top: 121px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;"/>
             <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder2.png?fileID=2800000&amp;guid=7fdaec9e2d7ce44418fd1baaf3282d9a&amp;type=3#placeholder2" scale-mode="StretchToFill" style="width: 350px; height: 350px; right: -636px; top: -120px;"/>
-            <ui:Button text="PARTIDINHA" class="botao-menu" style="right: auto; left: 195px; top: -96px;"/>
-            <ui:Button text="CRIAR SALA" class="botao-menu" style="left: 692px; top: -179px;"/>
+            <ui:Button text="PARTIDINHA" name="Partidinha" class="botao-menu" style="right: auto; left: 195px; top: -96px;"/>
+            <ui:Button text="CRIAR SALA" name="CriarSala" class="botao-menu" style="left: 692px; top: -179px;"/>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
