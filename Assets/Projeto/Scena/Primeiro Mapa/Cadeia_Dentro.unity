@@ -23916,6 +23916,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1234766475}
     m_Modifications:
+    - target: {fileID: 834479067619913071, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
+      propertyPath: Lens.FieldOfView
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231021624802824392, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
+      propertyPath: Damping.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231021624802824392, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
+      propertyPath: Damping.z
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231021624802824392, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
+      propertyPath: CameraSide
+      value: 0.688
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231021624802824392, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
+      propertyPath: CameraDistance
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231021624802824392, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
+      propertyPath: ShoulderOffset.y
+      value: -0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5720065984907458401, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17.52462
@@ -28204,6 +28228,10 @@ PrefabInstance:
     - target: {fileID: 692499377256955719, guid: 7dadd4a4bf8fafe4cb2a69b6621a4715, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1236828277573643700, guid: 7dadd4a4bf8fafe4cb2a69b6621a4715, type: 3}
+      propertyPath: field of view
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 5750054342146944917, guid: 7dadd4a4bf8fafe4cb2a69b6621a4715, type: 3}
       propertyPath: m_Name
