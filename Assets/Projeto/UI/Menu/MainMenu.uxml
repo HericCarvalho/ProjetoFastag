@@ -1,38 +1,55 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Projeto/UI/Menu/botao-menu.uss?fileID=7433441132597879392&amp;guid=c5d6cf822fdb42946b7d8416b06944bd&amp;type=3#botao-menu"/>
-    <Style src="project://database/Assets/tela_animation.uss?fileID=7433441132597879392&amp;guid=a93be2a5d2af223448a2d28ef5eb313b&amp;type=3#tela_animation"/>
-    <ui:VisualElement name="TelaInicial" style="flex-grow: 1; display: none;">
+    <Style src="project://database/Assets/Projeto/UI/Menu/transitions.uss?fileID=7433441132597879392&amp;guid=87005daf716472c4b9fa642f282df8a9&amp;type=3#transitions"/>
+    <ui:VisualElement name="TelaInicial" class="tela" style="flex-grow: 1; display: flex;">
         <ui:Button text="" name="Iniciar" style="width: 1920px; height: 1080px; background-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder.jpg?fileID=2800000&amp;guid=da8f093fc0e9eb94da7c0223446f8c82&amp;type=3#placeholder&quot;);"/>
         <ui:VisualElement name="TituloJogo" style="flex-grow: 1; top: 398px; bottom: 246px; left: 501px; right: 501px; position: absolute; justify-content: center; align-items: auto; align-self: center;">
             <ui:Label text="FAST TAG" name="TITULO" style="-unity-text-align: middle-center; color: rgb(127, 255, 0); font-size: 200px; top: -110px; -unity-font-style: bold;"/>
             <ui:Label text="CLIQUE PARA CONTINUAR" style="top: -94px; left: -197px; color: rgb(126, 255, 0); font-size: 46px; -unity-font-style: normal; -unity-text-align: middle-center;"/>
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="TelaMenu" enabled="true" style="flex-grow: 1; opacity: 1; flex-shrink: 0; display: none; visibility: visible;">
+    <ui:VisualElement name="TelaMenu" enabled="true" class="tela" style="flex-grow: 1; opacity: 1; flex-shrink: 0; display: none; visibility: visible;">
         <ui:VisualElement name="FUNDO" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder.jpg?fileID=2800000&amp;guid=da8f093fc0e9eb94da7c0223446f8c82&amp;type=3#placeholder&quot;);"/>
         <ui:VisualElement picking-mode="Position" name="TITULO" style="flex-grow: 1; top: 329px; left: -64px; bottom: 562px; right: 1194px; position: absolute; align-items: center; justify-content: center;">
             <ui:Label text="FAST TAG" style="-unity-font-style: bold; font-size: 100px; -unity-text-align: middle-center; color: rgb(127, 255, 0);"/>
         </ui:VisualElement>
         <ui:VisualElement name="BOTOES" style="opacity: 1; left: 0; bottom: 90px; right: 1392px; top: 464px; position: absolute; align-items: flex-end; justify-content: space-between; align-self: auto; display: flex; visibility: visible; overflow: visible; align-content: auto;">
             <ui:Button text="JOGAR" name="play" class="botao-menu" style="white-space: nowrap; left: -213px; top: 75px; right: auto; bottom: auto; height: 80px; width: 232px; opacity: 1; position: relative; aspect-ratio: auto; -unity-font-style: bold; font-size: 29px; text-overflow: clip; background-color: rgb(0, 206, 209); color: rgb(255, 255, 255); filter: blur(0); border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px;"/>
-            <ui:Button text="SAIR" name="Quit" class="botao-menu" style="top: 77px;"/>
-            <ui:Button text="OPÇÕES" name="OPTIONS" class="botao-menu" style="top: -251px;"/>
+            <ui:Button text="SAIR" name="Quit" class="botao-menu" style="top: 77px; left: -213px;"/>
+            <ui:Button text="OPÇÕES" name="OPTIONS" class="botao-menu" style="top: -251px; left: -213px;"/>
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="TelaSelect" style="flex-grow: 1; display: flex;">
+    <ui:VisualElement name="TelaSelect" class="tela" style="flex-grow: 1; display: none;">
         <ui:Image name="Fundo_borrado" source="project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder.jpg?fileID=2800000&amp;guid=da8f093fc0e9eb94da7c0223446f8c82&amp;type=3#placeholder" style="display: flex; aspect-ratio: auto; filter: blur(13); position: absolute; width: 1920px; height: 1080px; top: 2px; left: -1px;"/>
-        <ui:Button text="X&#10;" name="Close" style="background-color: rgb(139, 0, 0); width: 80px; height: 80px; bottom: -973px; right: -1812px; -unity-font-style: bold; font-size: 49px; color: rgb(255, 255, 255); border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; border-left-color: rgb(220, 49, 50); border-right-color: rgb(220, 49, 50); border-top-color: rgb(220, 49, 50); border-bottom-color: rgb(220, 49, 50);"/>
+        <ui:Button text="X&#10;" name="Close" class="botao-sair" style="background-color: rgb(139, 0, 0); width: 80px; height: 80px; bottom: -973px; right: -1812px; -unity-font-style: bold; font-size: 49px; color: rgb(255, 255, 255); border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; border-left-color: rgb(220, 49, 50); border-right-color: rgb(220, 49, 50); border-top-color: rgb(220, 49, 50); border-bottom-color: rgb(220, 49, 50);"/>
         <ui:VisualElement name="Selecao" style="flex-grow: 1; width: 100%; height: 100%; min-width: 10%; max-width: 60%; min-height: 30%; max-height: 60%; top: 182px; right: 472px; left: 371px;">
             <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder%201.png?fileID=2800000&amp;guid=ee1afd58bafe2c04880b7e239a57586f&amp;type=3#placeholder 1" scale-mode="StretchToFill" name="Imagem1" style="width: 350px; height: 350px; right: -145px; top: 121px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;"/>
             <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder2.png?fileID=2800000&amp;guid=7fdaec9e2d7ce44418fd1baaf3282d9a&amp;type=3#placeholder2" scale-mode="StretchToFill" style="width: 350px; height: 350px; right: -636px; top: -120px;"/>
             <ui:Button text="PARTIDINHA" name="Partidinha" class="botao-menu" style="right: auto; left: 195px; top: -96px;"/>
-            <ui:Button text="CRIAR SALA" name="CriarSala" class="botao-menu" style="left: 692px; top: -179px;"/>
+            <ui:Button text="Customizada" name="CriarSala" class="botao-menu" style="left: 692px; top: -179px;"/>
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="TelaOPtions" style="flex-grow: 1; display: none;">
+    <ui:VisualElement name="TelaOPtions" class="tela" style="flex-grow: 1; display: none;">
         <ui:Image name="Fundo" source="project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder.jpg?fileID=2800000&amp;guid=da8f093fc0e9eb94da7c0223446f8c82&amp;type=3#placeholder" scale-mode="ScaleToFit" style="width: 1920px; height: 1080px; filter: blur(13); position: absolute;"/>
         <ui:VisualElement name="Options" style="flex-grow: 1; width: 1000px; height: 1000px; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; border-top-width: 45px; border-right-width: 45px; border-bottom-width: 45px; border-left-width: 45px; right: -460px; background-color: rgb(0, 206, 209);">
-            <ui:Button text="X&#10;" name="Sair" style="width: 60px; height: 60px; background-color: rgb(139, 0, 0); color: rgb(255, 255, 255); font-size: 49px; bottom: -972px; right: -881px; -unity-font-style: bold; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-left-color: rgb(220, 49, 50); border-right-color: rgb(220, 49, 50); border-top-color: rgb(220, 49, 50); border-bottom-color: rgb(220, 49, 50);"/>
+            <ui:Button text="X&#10;" name="Sair" class="botao-sair"/>
         </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="TelaCustom" class="tela" style="flex-grow: 1; display: none; background-image: none;">
+        <ui:Image name="Fundo" source="project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder.jpg?fileID=2800000&amp;guid=da8f093fc0e9eb94da7c0223446f8c82&amp;type=3#placeholder" style="width: 1920px; height: 1080px; position: absolute; filter: blur(13);"/>
+        <ui:VisualElement name="Custombar" style="flex-grow: 1; width: 70%; min-height: auto; max-height: 10%; left: 288px; top: 186px;">
+            <ui:Button text="" icon-image="project://database/Assets/Projeto/Assets/Torres/placeholders/icon2.png?fileID=21300000&amp;guid=39ce434bc86ee374e86efe6704a746d3&amp;type=3#icon2" name="lobby" class="botao-select-icon" style="width: 180px; height: 100px; right: -856px; background-color: rgba(175, 238, 238, 0.57); border-top-width: 6px; border-right-width: 6px; border-bottom-width: 6px; border-left-width: 6px; border-top-left-radius: 31px; border-top-right-radius: 31px; border-bottom-right-radius: 31px; border-bottom-left-radius: 31px; border-right-color: rgb(95, 158, 160); border-bottom-color: rgb(0, 206, 209); border-top-color: rgb(0, 206, 209); border-left-color: rgb(95, 158, 160); left: auto; bottom: auto;"/>
+            <ui:Button text="&#10;" icon-image="project://database/Assets/Projeto/Assets/Torres/placeholders/Icon%201.png?fileID=21300000&amp;guid=4155bf72b78841e4f93f205642ead2a1&amp;type=3#Icon 1" name="create" display-tooltip-when-elided="true" triple-click-selects-line="true" class="botao-select-icon"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="createParty" style="flex-grow: 1; width: 70%; height: 0%; align-content: flex-end; max-height: 60%; top: 188px; left: 288px; background-color: rgba(224, 255, 255, 0.55); display: none;">
+            <ui:Button text="CRIAR PARTIDA" name="createLobby" class="botao-select" style="top: 100px;"/>
+            <ui:Button text="CONFIGURAÇÕES" class="botao-select"/>
+            <ui:Button text="TEM QUE VER2" class="botao-select" style="top: 165px;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="enterLobby" style="flex-grow: 1; width: 70%; max-height: 60%; top: 188px; left: 288px; background-color: rgba(224, 255, 255, 0.73);">
+            <ui:TextField label="ID SALA" placeholder-text="inserir id...." value="" readonly="false" style="opacity: 1; width: 60%; height: 10%; top: 222px; right: auto; left: 300px; background-color: rgb(0, 206, 209); font-size: 20px; -unity-text-align: middle-center; color: rgb(0, 0, 0); -unity-background-image-tint-color: rgb(255, 255, 255); border-top-left-radius: -20px; border-top-right-radius: -20px; border-bottom-right-radius: -20px; border-bottom-left-radius: -20px;"/>
+            <ui:Button text="ENTRAR&#10;" emoji-fallback-support="false" name="enter" class="botao-menu" style="top: 279px; left: 584px;"/>
+        </ui:VisualElement>
+        <ui:Button text="X" name="fechar" class="botao-sair" style="right: auto; bottom: auto; left: 1791px; top: 205px;"/>
     </ui:VisualElement>
 </ui:UXML>
