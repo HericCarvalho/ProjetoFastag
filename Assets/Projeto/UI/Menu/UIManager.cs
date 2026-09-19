@@ -203,7 +203,7 @@ public class UIManager : MonoBehaviour
 
     private void InicioJogo()
     {
-        SceneManager.LoadScene("Cadeia_Dentro");
+        SceneManager.LoadScene("LoadScene");
     }
 
     private void VoltarTela()

@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="TelaLoad" style="flex-grow: 1; background-color: rgb(0, 0, 0);">
+        <ui:ProgressBar value="0" title="" low-value="0" tabindex="0" focusable="false" name="Barra" style="width: 50%; top: 750px; left: 476px; filter: tint(rgb(0, 206, 209));"/>
+        <ui:Label text="CARREGANDO..." style="color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 44px; -unity-text-align: middle-center; width: 50%; top: 776px; left: 478px;"/>
+        <ui:Image source="project://database/Assets/Projeto/Assets/Guilherme/Barra%20de%20carregar/loadVid.renderTexture?fileID=8400000&amp;guid=98a74be2ecbe543488993d9dc6f24d94&amp;type=2#loadVid" scale-mode="ScaleToFit" style="width: 70%; height: 60%; left: 305px;"/>
+    </ui:VisualElement>
+</ui:UXML>
