@@ -17,10 +17,10 @@
     border-left-color: rgb(95, 158, 160);
     border-bottom-color: rgb(175, 238, 238);
     border-top-color: rgb(175, 238, 238);
-    border-top-width: 4px;
-    border-right-width: 4px;
-    border-bottom-width: 4px;
-    border-left-width: 4px;
+    border-top-width: 7px;
+    border-right-width: 7px;
+    border-bottom-width: 7px;
+    border-left-width: 7px;
 }
 
 .botao-select {
@@ -87,14 +87,14 @@
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
-    border-right-color: rgb(175, 238, 238);
-    border-left-color: rgb(175, 238, 238);
+    border-right-color: rgb(95, 158, 160);
+    border-left-color: rgb(95, 158, 160);
     border-bottom-color: rgb(175, 238, 238);
     border-top-color: rgb(175, 238, 238);
-    border-top-width: 4px;
-    border-right-width: 4px;
-    border-bottom-width: 4px;
-    border-left-width: 4px;
+    border-top-width: 7px;
+    border-right-width: 7px;
+    border-bottom-width: 7px;
+    border-left-width: 7px;
     rotate: 0;
     scale: 1.2 1.2;
     transition-duration: 0.5s;
@@ -287,5 +287,15 @@
 }
 
 .text {
-    -unity-font-definition: url("project://database/Assets/Projeto/Assets/Torres/fONTS/Astronomus.ttf?fileID=12800000&guid=6c1a3911a58117e44a75d8d9394f6d2d&type=3#Astronomus");
+    -unity-font-definition: url("project://database/Assets/Projeto/Assets/Torres/fONTS/TT%20Octosquares%20Trial%20Regular.ttf?fileID=12800000&guid=423adaa323f67814e991ab9b49550be4&type=3#TT Octosquares Trial Regular");
+}
+
+.text-options {
+    -unity-font-style: bold;
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-center;
+    width: 30%;
+    font-size: 23px;
+    left: 341px;
+    top: 12px;
 }

@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     private VisualElement subtelaAtual;
 
     private VisualElement TextoInicio;
+    private Label texto;
 
     private VisualElement[] telas;
 
@@ -41,6 +42,9 @@ public class UIManager : MonoBehaviour
         //secundarios
         TextoInicio =root.Q<VisualElement>("TituloJogo");
         TextoInicio.pickingMode = PickingMode.Ignore;
+        texto = root.Q<Label>("continue");
+        texto.AddToClassList("text-pisca");
+        Piscar();
 
 
         // Telas
@@ -163,6 +167,23 @@ public class UIManager : MonoBehaviour
         novaSubTela.style.display= DisplayStyle.Flex;
 
         subtelaAtual = novaSubTela;
+    }
+
+    private void Piscar()
+    {
+        texto.style.opacity = 0.5f;
+        texto.style.scale = new Scale(new Vector2(1.0f,1.0f));
+
+        texto.schedule.Execute(() =>
+        {
+            texto.style.opacity = 1f;
+            texto.style.scale = new Scale (new Vector2(1.05f,1.05f));
+            texto.schedule.Execute(() =>
+            {
+                Piscar();
+            }).StartingIn(500);
+        }).StartingIn(500);
+
     }
 
     private void AbrirInicio()

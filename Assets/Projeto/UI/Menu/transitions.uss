@@ -18,3 +18,9 @@
 .tela-entrando {
     opacity: 1;
 }
+
+.text-pisca {
+    transition-property: opacity, scale;
+    transition-duration: 0.5s, 0.8s;
+    transition-timing-function: ease-in-out, ease-in-out;
+}
