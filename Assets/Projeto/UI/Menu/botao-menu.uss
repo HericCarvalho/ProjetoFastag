@@ -13,8 +13,8 @@
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
-    border-right-color: rgb(175, 238, 238);
-    border-left-color: rgb(175, 238, 238);
+    border-right-color: rgb(95, 158, 160);
+    border-left-color: rgb(95, 158, 160);
     border-bottom-color: rgb(175, 238, 238);
     border-top-color: rgb(175, 238, 238);
     border-top-width: 4px;
@@ -286,10 +286,6 @@
     transition-timing-function: ease-in-out;
 }
 
-
-
-
-
-
-
-
+.text {
+    -unity-font-definition: url("project://database/Assets/Projeto/Assets/Torres/fONTS/Astronomus.ttf?fileID=12800000&guid=6c1a3911a58117e44a75d8d9394f6d2d&type=3#Astronomus");
+}

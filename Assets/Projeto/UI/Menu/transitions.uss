@@ -4,7 +4,7 @@
 .tela {
     transition-property: opacity, translate, filter;
     transition-duration: 0.5s, 0.5s, 0.5s;
-    transition-timing-function: ease-out, ease-out, ease-out;
+    transition-timing-function: ease-out, ease-out-elastic, ease-out;
 }
 
 .tela-saindo {
@@ -12,6 +12,7 @@
     translate: 100px 0;
     scale: 1 1;
     filter: blur(10);
+    background-size: 100% 100%;
 }
 
 .tela-entrando {
