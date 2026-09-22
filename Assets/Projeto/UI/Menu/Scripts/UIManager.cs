@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     private VisualElement telaCustom;
     private VisualElement telaLobby;
     private VisualElement telaParty;
+    private VisualElement telaCustomL;
 
     private VisualElement telaAtual;
     private VisualElement subtelaAtual;
@@ -80,6 +81,7 @@ public class UIManager : MonoBehaviour
         telaCustom = root.Q<VisualElement>("TelaCustom");
         telaLobby = root.Q<VisualElement>("enterLobby");
         telaParty = root.Q<VisualElement>("createParty");
+        telaCustomL = root.Q<VisualElement>("TelaCustomConfig");
 
         telas = new VisualElement[]
         {
@@ -88,7 +90,8 @@ public class UIManager : MonoBehaviour
             telaSelect,
             telaOptions,
             telaCustom,
-            
+            telaCustomL
+
         };
 
         telaLobby.style.display = DisplayStyle.None;
@@ -125,7 +128,7 @@ public class UIManager : MonoBehaviour
         criar.clicked += AbrirCustom;
         Lobby.clicked += AbrirLobby;
         Create.clicked += AbrirParty;
-        createLobby.clicked += InicioJogo;
+        createLobby.clicked += AbrirCustomL;
         Entrar.clicked += InicioJogo;
 
         inicio.clicked += AbrirMenu;
@@ -252,6 +255,11 @@ public class UIManager : MonoBehaviour
     private void AbrirOptions()
     {
         MostrarTela(telaOptions);
+    }
+
+    private void AbrirCustomL()
+    {
+        MostrarTela (telaCustomL);
     }
 
     private void InicioJogo()

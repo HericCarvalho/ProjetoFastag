@@ -65,10 +65,17 @@
     </ui:VisualElement>
     <ui:VisualElement name="TelaCustomConfig" class="tela" style="flex-grow: 1; background-image: none; display: flex;">
         <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/olaceholder2.png?fileID=21300000&amp;guid=807c5e6f68efd3447b8a8f9bdbccd4b4&amp;type=3#olaceholder2" style="width: 1920px; height: 1080px; position: absolute;"/>
-        <ui:VisualElement name="botao_Container" style="flex-grow: 1; width: 568px; max-height: 80%; top: 140px;">
-            <ui:Button text="MAPA&#10;" name="mapas" class="botao-custom text" style="top: 174px; left: 80px;"/>
-            <ui:Button text="CONF." class="botao-custom text" style="top: 257px; left: 80px;"/>
-            <ui:Button text="TIMES&#10;" class="botao-custom text" style="top: 342px; left: 80px;"/>
+        <ui:VisualElement name="botao_Container" style="flex-grow: 1; width: 582px; max-height: 100%; top: 140px; height: 875px; position: absolute;">
+            <ui:Button text="INICIAR" name="mapas" class="botao-custom text" style="top: 174px; left: 80px;"/>
+            <ui:Button text="CONF." name="conf" class="botao-custom text" style="top: 257px; left: 80px;"/>
+            <ui:Button text="MAPAS" name="times" class="botao-custom text" style="top: 342px; left: 80px;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="Cointaner_jogadores" style="flex-grow: 1; width: 609px; top: 187px; left: 1290px; visibility: visible; height: 1405px; position: relative; max-height: 814px; background-color: rgba(175, 238, 238, 0.84); -unity-background-scale-mode: stretch-to-fill;">
+            <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/fundo.png?fileID=21300000&amp;guid=141a9c28e48c80e4c902923638604e16&amp;type=3#fundo" scale-mode="ScaleAndCrop" name="Fundo_nome_jogad0r" style="height: 98px; top: 172px;"/>
+            <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/fundo.png?fileID=21300000&amp;guid=141a9c28e48c80e4c902923638604e16&amp;type=3#fundo" scale-mode="ScaleAndCrop" name="Fundo_nome_jogad0r" style="height: 98px; top: 212px;"/>
+            <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/fundo.png?fileID=21300000&amp;guid=141a9c28e48c80e4c902923638604e16&amp;type=3#fundo" scale-mode="ScaleAndCrop" name="Fundo_nome_jogad0r" style="height: 98px; top: 253px;"/>
+            <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/fundo.png?fileID=21300000&amp;guid=141a9c28e48c80e4c902923638604e16&amp;type=3#fundo" scale-mode="ScaleAndCrop" name="Fundo_nome_jogad0r" style="height: 98px; top: 291px;"/>
+            <ui:Label text="JOGADORES" style="-unity-font-definition: url(&quot;project://database/Assets/Projeto/Assets/Torres/fONTS/Super%20Squad.ttf?fileID=12800000&amp;guid=35c9e0ecc3cc98a44916fcba8c099fa1&amp;type=3#Super Squad&quot;); -unity-text-align: middle-center; font-size: 40px; top: -370px; color: rgb(27, 29, 27);"/>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -324,13 +324,36 @@
     -unity-text-align: middle-center;
 }
 
-
-
 .botao-custom:hover {
     width: 380px;
     height: 120px;
     top: 130px;
     background-color: rgb(255, 20, 147);
+    border-top-width: 15px;
+    border-right-width: 15px;
+    border-bottom-width: 15px;
+    border-left-width: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    left: 32px;
+    border-left-color: rgb(200, 20, 118);
+    border-right-color: rgb(202, 20, 120);
+    border-bottom-color: rgb(171, 19, 100);
+    border-top-color: rgb(241, 103, 177);
+    color: rgb(255, 235, 4);
+    font-size: 40px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    scale: 1.2 1.2;
+}
+
+.botao-custom:active {
+    width: 380px;
+    height: 120px;
+    top: 130px;
+    background-color: rgb(245, 110, 183);
     border-top-width: 15px;
     border-right-width: 15px;
     border-bottom-width: 15px;
