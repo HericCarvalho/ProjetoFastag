@@ -1,3 +1,5 @@
+using AudioSystem;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.SceneManagement;
@@ -35,12 +37,35 @@ public class UIManager : MonoBehaviour
     private Button createLobby;
     private Button Entrar;
 
+    [SerializeField] SoundData clickSound;
+    [SerializeField] SoundData exitSound;
+
     private void OnEnable()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
+        List<Button> botoes = root.Query<Button>().ToList();
+
+        foreach (Button botao in botoes)
+        {
+            if (botao.name == "Sair")
+            {
+                botao.clicked += () => TocarSom(exitSound);
+            }
+            else if (botao.name == "Close")
+            {
+
+                botao.clicked += () => TocarSom(exitSound);
+            }
+            else
+            {
+                botao.clicked += () => TocarSom(clickSound);
+            }
+        }
+
+
         //secundarios
-        TextoInicio =root.Q<VisualElement>("TituloJogo");
+        TextoInicio = root.Q<VisualElement>("TituloJogo");
         TextoInicio.pickingMode = PickingMode.Ignore;
         texto = root.Q<Label>("continue");
         texto.AddToClassList("text-pisca");
@@ -185,6 +210,13 @@ public class UIManager : MonoBehaviour
         }).StartingIn(500);
 
     }
+    private void TocarSom (SoundData som)
+    {
+        SoundManager.Instance
+            .CreateSoundBuilder()
+            .Play(som);
+    }
+
 
     private void AbrirInicio()
     {
