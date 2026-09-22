@@ -23946,7 +23946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3231021624802824392, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
       propertyPath: AvoidObstacles.CollisionFilter.m_Bits
-      value: 9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5720065984907458401, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
       propertyPath: m_LocalPosition.x
