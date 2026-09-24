@@ -149,13 +149,17 @@ public class UIManager : MonoBehaviour
         // EVENTOS DOS BOTÕES
         // =====================================================
 
+        //botões menu
         jogar?.RegisterCallback<ClickEvent>(AbrirJogo);
         options?.RegisterCallback<ClickEvent>(AbrirOptions);
         sair?.RegisterCallback<ClickEvent>(SairJogo);
 
+        //botões tela select
         partida?.RegisterCallback<ClickEvent>(InicioJogo);
         criar?.RegisterCallback<ClickEvent>(AbrirCustom);
 
+
+        //botões tela custom 
         Lobby?.RegisterCallback<ClickEvent>(AbrirLobby);
         Create?.RegisterCallback<ClickEvent>(AbrirParty);
         createLobby?.RegisterCallback<ClickEvent>(AbrirCustomL);
@@ -163,6 +167,13 @@ public class UIManager : MonoBehaviour
 
         inicio?.RegisterCallback<ClickEvent>(AbrirMenu);
 
+        //botões telaCustomL
+        Iniciar?.RegisterCallback<ClickEvent>(InicioJogo);
+        Conf?.RegisterCallback<ClickEvent>(AbrirConfig);
+        Mapa?.RegisterCallback<ClickEvent> (AbrirMapa);
+
+
+        //botoões saida
         sair2?.RegisterCallback<ClickEvent>(VoltarTela);
         sair3?.RegisterCallback<ClickEvent>(VoltarTela);
         sair4?.RegisterCallback<ClickEvent>(VoltarTela);
@@ -202,6 +213,8 @@ public class UIManager : MonoBehaviour
         // REMOVER EVENTOS DOS BOTÕES
         // =====================================================
 
+
+        //botoes 
         jogar?.UnregisterCallback<ClickEvent>(AbrirJogo);
         options?.UnregisterCallback<ClickEvent>(AbrirOptions);
         sair?.UnregisterCallback<ClickEvent>(SairJogo);
@@ -422,6 +435,16 @@ public class UIManager : MonoBehaviour
     {
         MostrarTela(telaCustomL);
         MostrarSubTela(telaInicial);
+    }
+
+    private void AbrirMapa(ClickEvent evt)
+    {
+        MostrarSubTela(telaMapa);
+    }
+
+    private void AbrirConfig(ClickEvent evt)
+    {
+        MostrarSubTela(telaConfig);
     }
 
 
