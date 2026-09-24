@@ -14,8 +14,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +28,7 @@
               "RelativeDocumentMoniker": "Assets\\Projeto\\UI\\Menu\\Scripts\\UIManager.cs",
               "ToolTip": "C:\\Users\\ra00352581\\Documents\\GitHub\\ProjetoFastag\\Assets\\Projeto\\UI\\Menu\\Scripts\\UIManager.cs",
               "RelativeToolTip": "Assets\\Projeto\\UI\\Menu\\Scripts\\UIManager.cs",
-              "ViewState": "AgIAAM8AAAAAAAAAAAAAANgAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAFMBAAAAAAAAAAAAABsBAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-23T12:10:37.649Z",
               "EditorCaption": ""

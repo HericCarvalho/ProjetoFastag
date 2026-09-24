@@ -42,6 +42,8 @@ public class UIManager : MonoBehaviour
     private Button Iniciar;
     private Button Conf;
     private Button Mapa ;
+    private Button Close2;
+    private Button Close3;
 
     [SerializeField] private SoundData clickSound;
     [SerializeField] private SoundData exitSound;
@@ -143,6 +145,8 @@ public class UIManager : MonoBehaviour
         Iniciar = root.Q<Button>("iniciar");
         Conf = root.Q<Button>("conf");
         Mapa = root.Q<Button>("mapas");
+        Close2 = root.Q<Button>("close2");
+        Close3 = root.Q<Button>("close3");
 
 
         // =====================================================
@@ -177,6 +181,9 @@ public class UIManager : MonoBehaviour
         sair2?.RegisterCallback<ClickEvent>(VoltarTela);
         sair3?.RegisterCallback<ClickEvent>(VoltarTela);
         sair4?.RegisterCallback<ClickEvent>(VoltarTela);
+        Close2.RegisterCallback<ClickEvent>(VoltarSubtela);
+        Close3.RegisterCallback<ClickEvent>(VoltarSubtela);
+
 
 
         // =====================================================
@@ -197,9 +204,16 @@ public class UIManager : MonoBehaviour
 
         inicio?.RegisterCallback<ClickEvent>(TocarSomBotao);
 
+        //botões telaCustomL
+        Iniciar?.RegisterCallback<ClickEvent>(TocarSomBotao);
+        Conf?.RegisterCallback<ClickEvent>(TocarSomBotao);
+        Mapa?.RegisterCallback<ClickEvent>(TocarSomBotao);
+
         sair2?.RegisterCallback<ClickEvent>(TocarSomBotao);
         sair3?.RegisterCallback<ClickEvent>(TocarSomBotao);
         sair4?.RegisterCallback<ClickEvent>(TocarSomBotao);
+        Close2.RegisterCallback<ClickEvent>(TocarSomBotao);
+        Close3.RegisterCallback<ClickEvent>(TocarSomBotao);
     }
 
 
@@ -229,9 +243,16 @@ public class UIManager : MonoBehaviour
 
         inicio?.UnregisterCallback<ClickEvent>(AbrirMenu);
 
+        //botões telaCustomL
+        Iniciar?.UnregisterCallback<ClickEvent>(InicioJogo);
+        Conf?.UnregisterCallback<ClickEvent>(AbrirConfig);
+        Mapa?.UnregisterCallback<ClickEvent>(AbrirMapa);
+
         sair2?.UnregisterCallback<ClickEvent>(VoltarTela);
         sair3?.UnregisterCallback<ClickEvent>(VoltarTela);
         sair4?.UnregisterCallback<ClickEvent>(VoltarTela);
+        Close2.UnregisterCallback<ClickEvent>(VoltarSubtela);
+        Close3.UnregisterCallback<ClickEvent>(VoltarSubtela);
 
 
         // =====================================================
@@ -252,9 +273,15 @@ public class UIManager : MonoBehaviour
 
         inicio?.UnregisterCallback<ClickEvent>(TocarSomBotao);
 
+        Iniciar?.UnregisterCallback<ClickEvent>(TocarSomBotao);
+        Conf?.UnregisterCallback<ClickEvent>(TocarSomBotao);
+        Mapa?.UnregisterCallback<ClickEvent>(TocarSomBotao);
+
         sair2?.UnregisterCallback<ClickEvent>(TocarSomBotao);
         sair3?.UnregisterCallback<ClickEvent>(TocarSomBotao);
         sair4?.UnregisterCallback<ClickEvent>(TocarSomBotao);
+        Close2.UnregisterCallback<ClickEvent>(TocarSomBotao);
+        Close3.UnregisterCallback<ClickEvent>(TocarSomBotao);
     }
 
 
@@ -434,7 +461,7 @@ public class UIManager : MonoBehaviour
     private void AbrirCustomL(ClickEvent evt)
     {
         MostrarTela(telaCustomL);
-        MostrarSubTela(telaInicial);
+        MostrarSubTela(telaPrincipal);
     }
 
     private void AbrirMapa(ClickEvent evt)
@@ -457,6 +484,10 @@ public class UIManager : MonoBehaviour
     private void VoltarTela(ClickEvent evt)
     {
         MostrarTela(telaMenu);
+    }
+    private void VoltarSubtela(ClickEvent evt)
+    {
+        MostrarSubTela(telaPrincipal);
     }
 
 

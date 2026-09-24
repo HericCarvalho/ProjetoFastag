@@ -12,7 +12,7 @@
         <ui:VisualElement name="Tempo_Container" style="flex-grow: 1; height: 269px; left: 710px; align-items: center; justify-content: center; width: 10px;">
             <ui:Label text="00:00" name="time_text" class="text" style="left: auto;"/>
         </ui:VisualElement>
-        <ui:VisualElement name="Menu_Container" style="flex-grow: 1; height: 160px; flex-direction: row; top: auto; align-self: flex-end; justify-content: flex-end; align-items: flex-end; right: auto;">
+        <ui:VisualElement name="Menu_Container" style="flex-grow: 1; height: 160px; flex-direction: row; top: auto; align-self: flex-end; justify-content: flex-end; align-items: flex-end; right: auto; display: flex;">
             <ui:Button text="Button" class="botao-menu"/>
             <ui:Button text="Button" class="botao-menu"/>
             <ui:Button text="Button" class="botao-menu"/>
