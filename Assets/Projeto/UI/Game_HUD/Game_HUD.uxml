@@ -1,10 +1,14 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Game_HUD.uss?fileID=7433441132597879392&amp;guid=380bd99719daaa6478d5d2f0a739764d&amp;type=3#Game_HUD"/>
+    <Style src="project://database/Assets/Projeto/UI/Game_HUD/Game_HUD.uss?fileID=7433441132597879392&amp;guid=380bd99719daaa6478d5d2f0a739764d&amp;type=3#Game_HUD"/>
     <ui:VisualElement name="HUD_root" style="flex-grow: 1; flex-direction: row;">
         <ui:VisualElement name="Score_Container" style="flex-grow: 1; height: 242px; width: 0; min-width: 0; max-width: 345px; align-items: center; justify-content: center;">
             <ui:Label text="0/0" name="score_text" class="text" style="-unity-text-align: middle-center; font-size: 100px; width: 332px; left: auto;"/>
         </ui:VisualElement>
-        <ui:VisualElement name="Powerups_Container" style="flex-grow: 1; height: 517px; top: 566px; right: 343px;"/>
+        <ui:VisualElement name="Powerups_Container" style="flex-grow: 1; height: 517px; top: 566px; right: 343px; flex-direction: column; width: 67px;">
+            <ui:Button text="" name="power_button" class="botao_powerup" style="width: 150px; height: 150px; top: 28px; left: auto; right: 127px;"/>
+            <ui:Button text="Button" name="power_button2" class="botao_powerup" style="background-image: url(&quot;project://database/Assets/Projeto/Assets/Torres/placeholders/sdasdad.png?fileID=21300000&amp;guid=1507b5fa3e124b54fad8fa27f71c76a9&amp;type=3#sdasdad&quot;); left: 34px; top: 14px;"/>
+            <ui:Button text="Button" name="power_button3" class="botao_powerup" style="background-image: url(&quot;project://database/Assets/Projeto/Assets/Torres/placeholders/iuyiyuirtert.png?fileID=21300000&amp;guid=eadd3aacf015c994781e24aa5e71631b&amp;type=3#iuyiyuirtert&quot;); top: 46px; right: -133px;"/>
+        </ui:VisualElement>
         <ui:VisualElement name="Tempo_Container" style="flex-grow: 1; height: 269px; left: 710px; align-items: center; justify-content: center; width: 10px;">
             <ui:Label text="00:00" name="time_text" class="text" style="left: auto;"/>
         </ui:VisualElement>

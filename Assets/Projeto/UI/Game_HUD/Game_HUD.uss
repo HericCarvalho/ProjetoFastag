@@ -1,0 +1,37 @@
+:root {
+}
+
+.text {
+    -unity-text-align: middle-center;
+    -unity-font-definition: url("project://database/Assets/Projeto/Assets/Torres/fONTS/Super%20Squad.ttf?fileID=12800000&guid=35c9e0ecc3cc98a44916fcba8c099fa1&type=3#Super Squad");
+    font-size: 100px;
+    width: 413px;
+    color: rgb(111, 255, 0);
+}
+
+.botao-menu {
+    height: 77px;
+    top: auto;
+    background-color: rgb(255, 0, 0);
+}
+
+.botao-menu:hover {
+    height: 300px;
+    top: auto;
+    background-color: rgb(255, 0, 0);
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in;
+}
+
+.botao_powerup {
+    width: 150px;
+    height: 150px;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 90px;
+    border-bottom-right-radius: 90px;
+    border-bottom-left-radius: 90px;
+    background-image: url("project://database/Assets/Projeto/Assets/Torres/placeholders/fewfwdfsf.png?fileID=21300000&guid=782c705215bc3e54f82e4ae0acfa73e8&type=3#fewfwdfsf");
+    background-color: rgb(188, 188, 188);
+    align-items: center;
+    align-self: center;
+}
