@@ -173,8 +173,8 @@
     border-bottom-left-radius: 15px;
     border-bottom-color: rgb(175, 238, 238);
     border-top-color: rgb(175, 238, 238);
-    border-right-color: rgb(95, 158, 160);
-    border-left-color: rgb(95, 158, 160);
+    border-right-color: rgb(175, 238, 238);
+    border-left-color: rgb(175, 238, 238);
     font-size: 35px;
     color: rgb(255, 255, 255);
     -unity-text-align: middle-center;
@@ -248,18 +248,18 @@
     top: auto;
     bottom: 106px;
     left: 278px;
-    border-top-width: 6px;
-    border-right-width: 6px;
-    border-bottom-width: 6px;
-    border-left-width: 6px;
+    border-top-width: 12px;
+    border-right-width: 12px;
+    border-bottom-width: 12px;
+    border-left-width: 12px;
     border-top-left-radius: 31px;
     border-top-right-radius: 31px;
     border-bottom-right-radius: 31px;
     border-bottom-left-radius: 31px;
-    border-left-color: rgb(95, 158, 160);
-    border-right-color: rgb(95, 158, 160);
-    border-top-color: rgb(0, 206, 209);
-    border-bottom-color: rgb(0, 206, 209);
+    border-left-color: rgb(90, 210, 214);
+    border-right-color: rgb(90, 210, 214);
+    border-top-color: rgb(160, 255, 255);
+    border-bottom-color: rgb(49, 180, 180);
     background-color: rgba(175, 238, 238, 0.57);
 }
 
@@ -277,10 +277,10 @@
     border-top-right-radius: 31px;
     border-bottom-right-radius: 31px;
     border-bottom-left-radius: 31px;
-    border-left-color: rgb(95, 158, 160);
-    border-right-color: rgb(95, 158, 160);
-    border-top-color: rgb(0, 206, 209);
-    border-bottom-color: rgb(0, 206, 209);
+    border-left-color: rgb(243, 243, 243);
+    border-right-color: rgb(243, 243, 243);
+    border-top-color: rgb(243, 243, 243);
+    border-bottom-color: rgb(243, 243, 243);
     background-color: rgba(243, 243, 243, 0.87);
     transition-duration: 0.1s;
     transition-timing-function: ease-in-out;
@@ -347,6 +347,7 @@
     -unity-font-style: bold;
     -unity-text-align: middle-center;
     scale: 1.2 1.2;
+    transition-duration: 0.5s;
 }
 
 .botao-custom:active {
@@ -363,10 +364,10 @@
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
     left: 32px;
-    border-left-color: rgb(200, 20, 118);
-    border-right-color: rgb(202, 20, 120);
-    border-bottom-color: rgb(171, 19, 100);
-    border-top-color: rgb(241, 103, 177);
+    border-left-color: rgb(245, 110, 183);
+    border-right-color: rgb(245, 110, 183);
+    border-bottom-color: rgb(245, 110, 183);
+    border-top-color: rgb(245, 110, 183);
     color: rgb(255, 235, 4);
     font-size: 40px;
     -unity-font-style: bold;
@@ -492,13 +493,13 @@
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
-    background-color: rgb(241, 255, 76);
+    background-color: rgb(243, 250, 164);
     -unity-font-definition: url("project://database/Assets/Projeto/Assets/Torres/fONTS/Super%20Squad.ttf?fileID=12800000&guid=35c9e0ecc3cc98a44916fcba8c099fa1&type=3#Super Squad");
     -unity-text-align: middle-center;
-    border-top-color: rgb(236, 248, 104);
-    border-left-color: rgb(203, 219, 13);
-    border-bottom-color: rgb(184, 200, 1);
-    border-right-color: rgb(203, 219, 13);
+    border-top-color: rgb(243, 250, 164);
+    border-left-color: rgb(243, 250, 164);
+    border-bottom-color: rgb(243, 250, 164);
+    border-right-color: rgb(243, 250, 164);
     font-size: 40px;
     transition-duration: 0.5s;
     justify-content: flex-start;

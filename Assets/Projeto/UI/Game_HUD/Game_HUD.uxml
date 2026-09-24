@@ -1,24 +1,24 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Projeto/UI/Game_HUD/Game_HUD.uss?fileID=7433441132597879392&amp;guid=380bd99719daaa6478d5d2f0a739764d&amp;type=3#Game_HUD"/>
     <ui:VisualElement name="HUD_root" style="flex-grow: 1; flex-direction: row;">
-        <ui:VisualElement name="Score_Container" style="flex-grow: 1; height: 242px; width: 0; min-width: 0; max-width: 345px; align-items: center; justify-content: center;">
+        <ui:VisualElement name="Score_Container" style="flex-grow: 1; height: 242px; width: 0; min-width: 0; max-width: 345px; align-items: flex-start; justify-content: flex-start;">
             <ui:Label text="0/0" name="score_text" class="text" style="-unity-text-align: middle-center; font-size: 100px; width: 332px; left: auto;"/>
         </ui:VisualElement>
-        <ui:VisualElement name="Powerups_Container" style="flex-grow: 1; height: 517px; top: 566px; right: 343px; flex-direction: column; width: 67px;">
+        <ui:VisualElement name="Powerups_Container" style="flex-grow: 1; height: 517px; top: -65px; right: auto; flex-direction: column; width: 67px; align-items: flex-start; justify-content: flex-end; align-self: flex-end; bottom: auto; left: -441px; flex-wrap: wrap; flex-shrink: 0; align-content: center;">
             <ui:Button text="" name="power_button" class="botao_powerup" style="width: 150px; height: 150px; top: 28px; left: auto; right: 127px;"/>
             <ui:Button text="Button" name="power_button2" class="botao_powerup" style="background-image: url(&quot;project://database/Assets/Projeto/Assets/Torres/placeholders/sdasdad.png?fileID=21300000&amp;guid=1507b5fa3e124b54fad8fa27f71c76a9&amp;type=3#sdasdad&quot;); left: 34px; top: 14px;"/>
             <ui:Button text="Button" name="power_button3" class="botao_powerup" style="background-image: url(&quot;project://database/Assets/Projeto/Assets/Torres/placeholders/iuyiyuirtert.png?fileID=21300000&amp;guid=eadd3aacf015c994781e24aa5e71631b&amp;type=3#iuyiyuirtert&quot;); top: 46px; right: -133px;"/>
         </ui:VisualElement>
-        <ui:VisualElement name="Tempo_Container" style="flex-grow: 1; height: 269px; left: 710px; align-items: center; justify-content: center; width: 10px;">
+        <ui:VisualElement name="Tempo_Container" style="flex-grow: 0; height: 269px; left: auto; align-items: flex-end; justify-content: flex-start; width: 10px; flex-shrink: 0; flex-direction: column; align-self: auto;">
             <ui:Label text="00:00" name="time_text" class="text" style="left: auto;"/>
         </ui:VisualElement>
-        <ui:VisualElement name="Menu_Container" style="flex-grow: 1; height: 160px; flex-direction: row; top: auto; align-self: flex-end; justify-content: flex-end; align-items: flex-end; right: auto; display: flex;">
-            <ui:Button text="Button" class="botao-menu"/>
-            <ui:Button text="Button" class="botao-menu"/>
-            <ui:Button text="Button" class="botao-menu"/>
-            <ui:Button text="Button" class="botao-menu"/>
+        <ui:VisualElement name="Menu_Container" style="flex-grow: 1; height: 160px; flex-direction: row; top: auto; align-self: flex-end; justify-content: flex-end; align-items: flex-end; right: auto; display: none;">
+            <ui:Button text="🔥" class="botao-menu" style="font-size: 33px; color: rgb(255, 255, 255);"/>
+            <ui:Button text="🫠" name="Button" class="botao-menu" style="font-size: 33px; color: rgb(255, 255, 255);"/>
+            <ui:Button text="😹" class="botao-menu" style="font-size: 33px; color: rgb(255, 255, 255);"/>
+            <ui:Button text="🥀" class="botao-menu" style="font-size: 33px; color: rgb(255, 255, 255);"/>
         </ui:VisualElement>
-        <ui:VisualElement name="Text_Container" style="flex-grow: 1; width: 1007px; height: 462px; align-items: center; justify-content: center; align-self: center; right: auto; display: none; position: absolute; bottom: 0; top: 337px; left: 449px;">
+        <ui:VisualElement name="Text_Container" style="flex-grow: 1; width: 1007px; height: 462px; align-items: center; justify-content: center; align-self: center; right: auto; display: flex; position: absolute; bottom: 0; top: 337px; left: 449px;">
             <ui:Label text="VITÓRIA! 🤩🤩" name="win_text" style="font-size: 150px; color: rgb(255, 235, 4); -unity-font-definition: url(&quot;project://database/Assets/Projeto/Assets/Torres/fONTS/Super%20Squad.ttf?fileID=12800000&amp;guid=35c9e0ecc3cc98a44916fcba8c099fa1&amp;type=3#Super Squad&quot;); text-overflow: clip; -unity-text-align: middle-center; -unity-font-style: normal; display: none;"/>
             <ui:Label text="DERROTA! 😭😭 " enable-rich-text="false" name="lose_text" style="-unity-font-definition: url(&quot;project://database/Assets/Projeto/Assets/Torres/fONTS/Super%20Squad.ttf?fileID=12800000&amp;guid=35c9e0ecc3cc98a44916fcba8c099fa1&amp;type=3#Super Squad&quot;); font-size: 150px; color: rgb(255, 235, 4); display: none;"/>
         </ui:VisualElement>
