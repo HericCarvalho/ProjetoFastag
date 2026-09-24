@@ -1,7 +1,7 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Projeto/UI/Menu/botao-menu.uss?fileID=7433441132597879392&amp;guid=c5d6cf822fdb42946b7d8416b06944bd&amp;type=3#botao-menu"/>
     <Style src="project://database/Assets/Projeto/UI/Menu/transitions.uss?fileID=7433441132597879392&amp;guid=87005daf716472c4b9fa642f282df8a9&amp;type=3#transitions"/>
-    <ui:VisualElement name="TelaInicial" class="tela" style="flex-grow: 1; display: none;">
+    <ui:VisualElement name="TelaInicial" class="tela" style="flex-grow: 1; display: flex;">
         <ui:Button text="" name="Iniciar" style="width: 1920px; height: 1080px; background-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Projeto/Assets/Torres/placeholders/placeholder.jpg?fileID=2800000&amp;guid=da8f093fc0e9eb94da7c0223446f8c82&amp;type=3#placeholder&quot;); background-size: 120% 120%;"/>
         <ui:VisualElement name="TituloJogo" style="flex-grow: 1; top: 398px; bottom: 246px; left: 501px; right: 501px; position: absolute; justify-content: center; align-items: auto; align-self: center;">
             <ui:Label text="FAST TAG" name="TITULO" style="-unity-text-align: middle-center; color: rgb(127, 255, 0); font-size: 200px; top: -110px; -unity-font-style: bold; -unity-font-definition: url(&quot;project://database/Assets/Projeto/Assets/Torres/fONTS/Super%20Squad%20Italic.ttf?fileID=12800000&amp;guid=a059b2e76c87bf64d83657f0282cfe20&amp;type=3#Super Squad Italic&quot;); -unity-text-outline-color: rgb(0, 163, 255); -unity-text-outline-width: 13px; text-shadow: 200px 200px 10px rgb(91, 11, 255);"/>
@@ -63,9 +63,9 @@
         </ui:VisualElement>
         <ui:Button text="X" name="fechar" class="botao-sair" style="right: auto; bottom: auto; left: 1791px; top: 205px;"/>
     </ui:VisualElement>
-    <ui:VisualElement name="TelaCustomConfig" class="tela" style="flex-grow: 1; background-image: none; display: flex; flex-shrink: 1; width: 100%; height: 100%;">
-        <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/olaceholder2.png?fileID=21300000&amp;guid=807c5e6f68efd3447b8a8f9bdbccd4b4&amp;type=3#olaceholder2" style="width: 1920px; height: 1080px; position: absolute;"/>
-        <ui:VisualElement name="tela_principal" style="flex-grow: 1; width: 100%; height: 100%; flex-basis: 100%; display: none;">
+    <ui:VisualElement name="TelaCustomConfig" class="tela" style="flex-grow: 1; background-image: none; display: none; flex-shrink: 1; width: 100%; height: 100%;">
+        <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/olaceholder2.png?fileID=21300000&amp;guid=807c5e6f68efd3447b8a8f9bdbccd4b4&amp;type=3#olaceholder2" style="width: 1920px; height: 1080px; position: absolute; top: 0; left: -1px;"/>
+        <ui:VisualElement name="tela_principal" style="flex-grow: 1; width: 100%; height: 100%; flex-basis: 100%; display: flex;">
             <ui:VisualElement name="botao_Container" style="flex-grow: 1; width: 582px; max-height: 100%; top: 140px; height: 875px; position: relative; flex-shrink: 0;">
                 <ui:Button text="INICIAR" name="mapas" class="botao-custom text" style="top: 174px; left: 80px;"/>
                 <ui:Button text="CONF." name="conf" class="botao-custom text" style="top: 257px; left: 80px;"/>
@@ -79,14 +79,29 @@
                 <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/fundo.png?fileID=21300000&amp;guid=141a9c28e48c80e4c902923638604e16&amp;type=3#fundo" scale-mode="ScaleAndCrop" style="height: 100px; top: 191px;"/>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="tela_mapa" style="flex-grow: 1; flex-direction: row; width: 75%; max-height: 80%; justify-content: center; align-self: center; align-items: auto; align-content: auto; top: 119px; height: 80%;">
+        <ui:VisualElement name="tela_mapa" style="flex-grow: 1; flex-direction: row; width: 75%; max-height: 80%; justify-content: center; align-self: center; align-items: auto; align-content: auto; top: 119px; height: 80%; display: none;">
             <ui:VisualElement name="mapa_1" class="mapa-fundo" style="justify-content: flex-start; align-content: center; align-items: center;">
                 <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/43dsa.png?fileID=21300000&amp;guid=dc56a7d75e4730f4eac7f08663b32127&amp;type=3#43dsa" scale-mode="StretchToFill" style="width: 300px; height: 300px; left: auto; top: 56px;"/>
                 <ui:Label text="PRISÃO&#10;" name="titulo_mapa" class="text-titulo-map"/>
-                <ui:Label text="Label"/>
+                <ui:Label text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor fringilla enim, eu condimentum lacus.&#10;" name="Label" class="text text-map"/>
+                <ui:Button text="Button" class="botao-custom text" style="top: 175px; width: 280px; height: 80px; left: auto;"/>
             </ui:VisualElement>
-            <ui:VisualElement name="mapa_2" class="mapa-fundo" style="flex-grow: 1;"/>
-            <ui:VisualElement name="mapa_3" class="mapa-fundo" style="flex-grow: 1;"/>
+            <ui:VisualElement name="mapa_2" class="mapa-fundo" style="flex-grow: 1; align-items: center; justify-content: center; align-self: auto;">
+                <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/dasda.png?fileID=21300000&amp;guid=0211a0d598f09234ab82522137353a43&amp;type=3#dasda" style="width: 300px; height: 300px; top: -48px; bottom: auto;"/>
+                <ui:Label text="mapa 2" name="ttitulo_mapa" class="text-titulo-map" style="top: -16px;"/>
+                <ui:Label text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor fringilla enim, eu condimentum lacus." class="text text-map" style="-unity-text-align: middle-center; white-space: pre-wrap; top: auto;"/>
+                <ui:Button text="Button" class="botao-custom text" style="top: 70px; left: auto; width: 280px; height: 80px;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="mapa_3" class="mapa-fundo" style="flex-grow: 1; align-items: center; justify-content: center; align-self: auto;">
+                <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/images.jpg?fileID=21300000&amp;guid=35c9d8093ec2e604e98c0dcbb30e32ef&amp;type=3#images" scale-mode="ScaleAndCrop" style="width: 300px; height: 300px; top: -48px;"/>
+                <ui:Label text="Mapa 3" double-click-selects-word="false" class="text-titulo-map" style="top: -16px;"/>
+                <ui:Label text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor fringilla enim, eu condimentum lacus." class="text-map text" style="top: auto;"/>
+                <ui:Button text="Button" name="Button" class="text botao-custom" style="width: 280px; height: 80px; left: auto; top: 70px;"/>
+            </ui:VisualElement>
+            <ui:Button text="X" selectable="true" class="botao-sair" style="bottom: auto; right: auto;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="tela_config" style="flex-grow: 1; justify-content: flex-start; background-color: rgb(255, 20, 147); width: 75%; max-height: 80%; align-items: center; align-self: center; top: 103px; display: none;">
+            <ui:Button text="X" class="botao-sair" style="top: 785px; bottom: auto; left: 664px;"/>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -1,0 +1,24 @@
+:root {
+}
+
+.text {
+    -unity-text-align: middle-center;
+    -unity-font-definition: url("project://database/Assets/Projeto/Assets/Torres/fONTS/Super%20Squad.ttf?fileID=12800000&guid=35c9e0ecc3cc98a44916fcba8c099fa1&type=3#Super Squad");
+    font-size: 100px;
+    width: 413px;
+    color: rgb(111, 255, 0);
+}
+
+
+
+.botao-menu {
+    height: 77px;
+    top: auto;
+    background-color: rgb(255, 0, 0);
+}
+
+.botao-menu:hover {
+    height: 300px;
+    top: auto;
+    background-color: rgb(255, 0, 0);
+}

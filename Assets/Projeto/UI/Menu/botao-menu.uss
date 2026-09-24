@@ -57,8 +57,8 @@
     background-color: rgb(139, 0, 0);
     color: rgb(255, 255, 255);
     font-size: 49px;
-    bottom: -972px;
-    right: -881px;
+    bottom: auto;
+    right: auto;
     -unity-font-style: bold;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -417,4 +417,17 @@
     font-size: 46px;
     -unity-font-definition: url("project://database/Assets/Projeto/Assets/Torres/fONTS/Super%20Squad.ttf?fileID=12800000&guid=35c9e0ecc3cc98a44916fcba8c099fa1&type=3#Super Squad");
     color: rgb(255, 235, 4);
+}
+
+.text-map {
+    top: 104px;
+    white-space: pre-wrap;
+    font-size: 20px;
+    -unity-text-align: middle-center;
+    color: rgb(255, 235, 4);
+    background-color: rgb(144, 29, 91);
+    border-top-left-radius: 34px;
+    border-top-right-radius: 34px;
+    border-bottom-right-radius: 34px;
+    border-bottom-left-radius: 34px;
 }
