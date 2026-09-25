@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   clickSound:
-    clip: {fileID: 8300000, guid: bb8348e21d8ae3648a59c9e328176f10, type: 3}
+    clip: {fileID: 8300000, guid: dca5cc6b151b9b047863cfd5a1ab1c52, type: 3}
     mixerGroup: {fileID: -5467003678921378695, guid: 0c1abade3cfa41842ac0b0814586a494, type: 2}
     loop: 0
     playOnAwake: 0
@@ -211,7 +211,7 @@ MonoBehaviour:
     ignoreListenerPause: 0
     rolloffMode: 0
   exitSound:
-    clip: {fileID: 8300000, guid: 495e0f2ce94a9ee49834fcae6dab8fda, type: 3}
+    clip: {fileID: 8300000, guid: ce18ca9ae00a9ca43a9d430ed8b50a95, type: 3}
     mixerGroup: {fileID: -5467003678921378695, guid: 0c1abade3cfa41842ac0b0814586a494, type: 2}
     loop: 0
     playOnAwake: 0
@@ -263,7 +263,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: f3a7b5d737a279841aff2c3ecd33a527, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.19
   m_Pitch: 1
   Loop: 1
   Mute: 0
