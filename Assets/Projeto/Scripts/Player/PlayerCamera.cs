@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class PlayerCamera : NetworkBehaviour
 {
     [SerializeField] private Transform cameraTarget;
-
     [SerializeField] private float sensitivity = 0.1f;
 
     private InputSystem_Actions controls;
@@ -27,13 +26,18 @@ public class PlayerCamera : NetworkBehaviour
 
         cinemachine = FindFirstObjectByType<CinemachineCamera>();
 
-        cinemachine.Follow = cameraTarget;
-        cinemachine.LookAt = cameraTarget;
+        if (cinemachine != null)
+        {
+            cinemachine.Follow = cameraTarget;
+            cinemachine.LookAt = cameraTarget;
+        }
 
         controls.Enable();
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        yaw = transform.eulerAngles.y;
     }
 
     private void Update()
@@ -53,7 +57,10 @@ public class PlayerCamera : NetworkBehaviour
 
         pitch = Mathf.Clamp(pitch, -40f, 70f);
 
-        cameraTarget.rotation = Quaternion.Euler(pitch, yaw, 0f);
+        if (cameraTarget != null)
+        {
+            cameraTarget.rotation = Quaternion.Euler(pitch, yaw, 0f);
+        }
     }
 
     public override void OnNetworkDespawn()

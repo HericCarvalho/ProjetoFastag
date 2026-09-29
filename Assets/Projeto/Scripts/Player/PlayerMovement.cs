@@ -16,24 +16,13 @@ public class PlayerMovement : NetworkBehaviour
     private InputSystem_Actions controls;
     private Animator animator;
 
-    private Vector2 moveInput;
     private float verticalVelocity;
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
-
         controls = new InputSystem_Actions();
-
         animator = GetComponentInChildren<Animator>();
-    }
-    private void Update()
-    {
-        if (!IsOwner)
-            return;
-
-        HandleMovement();
-        UpdateAnimation();
     }
 
     public override void OnNetworkSpawn()
@@ -44,9 +33,6 @@ public class PlayerMovement : NetworkBehaviour
             return;
 
         controls.Enable();
-
-        controls.Player.Move.performed += OnMove;
-        controls.Player.Move.canceled += OnMove;
     }
 
     public override void OnNetworkDespawn()
@@ -54,23 +40,26 @@ public class PlayerMovement : NetworkBehaviour
         if (!IsOwner)
             return;
 
-        controls.Player.Move.performed -= OnMove;
-        controls.Player.Move.canceled -= OnMove;
-
         controls.Disable();
     }
 
-    private void OnMove(InputAction.CallbackContext ctx)
+    private void Update()
     {
-        moveInput = ctx.ReadValue<Vector2>();
+        if (!IsOwner)
+            return;
 
-        Debug.Log($"Move Input: {moveInput}");
+        HandleMovement();
+        UpdateAnimation();
     }
 
     private void HandleMovement()
     {
-        Vector3 forward = cameraTarget.forward;
-        Vector3 right = cameraTarget.right;
+        Vector2 moveInput = controls.Player.Move.ReadValue<Vector2>();
+
+        Transform camTransform = Camera.main != null ? Camera.main.transform : (cameraTarget != null ? cameraTarget : transform);
+
+        Vector3 forward = camTransform.forward;
+        Vector3 right = camTransform.right;
 
         forward.y = 0f;
         right.y = 0f;
@@ -78,13 +67,11 @@ public class PlayerMovement : NetworkBehaviour
         forward.Normalize();
         right.Normalize();
 
-        Vector3 movement = forward * moveInput.y;
-        movement += right * moveInput.x;
+        Vector3 movement = forward * moveInput.y + right * moveInput.x;
 
-        if (movement != Vector3.zero)
+        if (movement.sqrMagnitude > 0.01f)
         {
             Quaternion targetRotation = Quaternion.LookRotation(movement);
-
             transform.rotation = Quaternion.Slerp(
                 transform.rotation,
                 targetRotation,
@@ -93,16 +80,19 @@ public class PlayerMovement : NetworkBehaviour
         }
 
         movement *= moveSpeed;
-
         ApplyGravity(ref movement);
 
         controller.Move(movement * Time.deltaTime);
     }
+
     private void UpdateAnimation()
     {
-        float speed = new Vector3(controller.velocity.x,0f,controller.velocity.z).magnitude;
+        if (animator == null) return;
+
+        float speed = new Vector3(controller.velocity.x, 0f, controller.velocity.z).magnitude;
         animator.SetFloat("Speed", speed);
     }
+
     private void ApplyGravity(ref Vector3 movement)
     {
         if (controller.isGrounded && verticalVelocity < 0f)
@@ -111,7 +101,6 @@ public class PlayerMovement : NetworkBehaviour
         }
 
         verticalVelocity += gravity * Time.deltaTime;
-
         movement.y = verticalVelocity;
     }
 }
