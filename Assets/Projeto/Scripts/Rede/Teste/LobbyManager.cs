@@ -1,103 +1,348 @@
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using Unity.Services.Authentication;
-using Unity.Services.Core;
-using Unity.Services.Lobbies;
-using Unity.Services.Lobbies.Models;
-using Unity.Services.Relay;
-using Unity.Services.Relay.Models;
+using System.Collections;
 using Unity.Netcode;
-using Unity.Netcode.Transports.UTP;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class LobbyManager : MonoBehaviour
+public class LobbyManager : NetworkBehaviour
 {
-    private Lobby hostLobby;
-    private string relayJoinCodeKey = "RelayJoinCode";
+    public static LobbyManager Singleton;
 
-    private async void Start()
+    private const int MAX_JOGADORES = 4;
+
+    [Header("Prefab do Personagem")]
+    [SerializeField] private GameObject playerPrefab;
+
+    [Header("Configuração de Sprites")]
+    [SerializeField] private Sprite[] spritesPersonagens;
+
+    // Estrutura para sincronizar os dados de cada slot na rede
+    public struct DadosJogador : INetworkSerializable, System.IEquatable<DadosJogador>
     {
-        // 1. Inicializa os serviços da Unity e faz login anônimo
-        await UnityServices.InitializeAsync();
-        if (!AuthenticationService.Instance.IsSignedIn)
+        public ulong ClientId;
+        public int PersonagemIndex;
+        public bool IsReady;
+        public bool IsOccupied;
+
+        public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
         {
-            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+            serializer.SerializeValue(ref ClientId);
+            serializer.SerializeValue(ref PersonagemIndex);
+            serializer.SerializeValue(ref IsReady);
+            serializer.SerializeValue(ref IsOccupied);
+        }
+
+        public bool Equals(DadosJogador other)
+        {
+            return ClientId == other.ClientId &&
+                   PersonagemIndex == other.PersonagemIndex &&
+                   IsReady == other.IsReady &&
+                   IsOccupied == other.IsOccupied;
         }
     }
 
-    // Chamado pelo botão de "Criar Sala" na UI
-    public async void CriarLobby()
+    public NetworkList<DadosJogador> slotsJogadores;
+
+    private UIDocument uiDocument;
+    private VisualElement root;
+    private VisualElement painelLobby;
+
+    private VisualElement[] cardSlots = new VisualElement[MAX_JOGADORES];
+    private VisualElement[] imgPersonagens = new VisualElement[MAX_JOGADORES];
+    private Label[] lblTipos = new Label[MAX_JOGADORES];
+    private Button[] btnAnterior = new Button[MAX_JOGADORES];
+    private Button[] btnProximo = new Button[MAX_JOGADORES];
+    private Button[] btnPronto = new Button[MAX_JOGADORES];
+
+    private Button btnIniciarPartida;
+    private Label txtContagemRegressiva;
+
+    private void Awake()
     {
-        try
+        Singleton = this;
+        slotsJogadores = new NetworkList<DadosJogador>();
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        uiDocument = GetComponent<UIDocument>();
+        if (uiDocument != null) root = uiDocument.rootVisualElement;
+
+        MapearElementosUI();
+
+        slotsJogadores.OnListChanged += OnSlotsMudaram;
+
+        if (IsServer)
         {
-            int maxJogadores = 4;
+            NetworkManager.Singleton.OnClientConnectedCallback += OnClientConectou;
+            NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDesconectou;
 
-            // 2. Cria a alocação no Unity Relay
-            Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxJogadores - 1);
-            string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
-
-            // CORREÇÃO: Usando AllocationUtils para converter os dados para o formato correto exigido pelo UnityTransport
-            var relayServerData = AllocationUtils.ToRelayServerData(allocation, "dtls");
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
-
-            // 3. CORREÇÃO: A propriedade correta da API é "Data", e não "DataObject"
-            CreateLobbyOptions options = new CreateLobbyOptions
+            // Inicializa os 4 slots vazios
+            for (int i = 0; i < MAX_JOGADORES; i++)
             {
-                IsPrivate = false,
-                Data = new Dictionary<string, DataObject>
+                slotsJogadores.Add(new DadosJogador { IsOccupied = false });
+            }
+
+            // O Host já ocupa o Slot 0
+            AdicionarJogadorAoLobby(NetworkManager.Singleton.LocalClientId);
+        }
+
+        AtualizarUI();
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        if (IsServer && NetworkManager.Singleton != null)
+        {
+            NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConectou;
+            NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDesconectou;
+        }
+        slotsJogadores.OnListChanged -= OnSlotsMudaram;
+    }
+
+    private void MapearElementosUI()
+    {
+        if (root == null) return;
+
+        // Ajustado para 'Painel_Lobby' com underline exatamente como no seu UXML
+        painelLobby = root.Q<VisualElement>("Painel_Lobby");
+        btnIniciarPartida = root.Q<Button>("BtnIniciarPartida"); // Verifique se no UXML é "IniciarPartida" ou "BtnIniciarPartida"
+        if (btnIniciarPartida != null)
+        {
+            btnIniciarPartida.clicked -= SolicitarInicioPartida; // Evita inscricao duplicada
+            btnIniciarPartida.clicked += SolicitarInicioPartida;
+        }
+        txtContagemRegressiva = root.Q<Label>("TxtContagemRegressiva");
+
+        for (int i = 0; i < MAX_JOGADORES; i++)
+        {
+            int index = i;
+            VisualElement slot = root.Q<VisualElement>($"Slot_{index}");
+            if (slot == null) continue;
+
+            cardSlots[index] = slot;
+            imgPersonagens[index] = slot.Q<VisualElement>("ImgPersonagem");
+            lblTipos[index] = slot.Q<Label>("LblTipoJogador");
+
+            btnAnterior[index] = slot.Q<Button>("BtnAnterior");
+            btnProximo[index] = slot.Q<Button>("BtnProximo");
+            btnPronto[index] = slot.Q<Button>("BtnPronto");
+
+            if (btnAnterior[index] != null) btnAnterior[index].clicked += () => TrocarPersonagemRpc(index, -1);
+            if (btnProximo[index] != null) btnProximo[index].clicked += () => TrocarPersonagemRpc(index, 1);
+            if (btnPronto[index] != null) btnPronto[index].clicked += () => AlternarProntoRpc(index);
+        }
+
+        if (btnIniciarPartida != null)
+        {
+            btnIniciarPartida.clicked += SolicitarInicioPartida;
+            btnIniciarPartida.SetEnabled(false);
+        }
+    }
+
+    private void OnClientConectou(ulong clientId)
+    {
+        if (!IsServer) return;
+        AdicionarJogadorAoLobby(clientId);
+    }
+
+    private void OnClientDesconectou(ulong clientId)
+    {
+        if (!IsServer) return;
+        for (int i = 0; i < slotsJogadores.Count; i++)
+        {
+            if (slotsJogadores[i].IsOccupied && slotsJogadores[i].ClientId == clientId)
+            {
+                slotsJogadores[i] = new DadosJogador { IsOccupied = false };
+                break;
+            }
+        }
+    }
+
+    private void AdicionarJogadorAoLobby(ulong clientId)
+    {
+        // 1. Evita duplicidade (Impede o Host de ser contado 2 vezes)
+        for (int i = 0; i < slotsJogadores.Count; i++)
+        {
+            if (slotsJogadores[i].IsOccupied && slotsJogadores[i].ClientId == clientId)
+            {
+                return;
+            }
+        }
+
+        // 2. Preenche no primeiro slot vago
+        for (int i = 0; i < slotsJogadores.Count; i++)
+        {
+            if (!slotsJogadores[i].IsOccupied)
+            {
+                slotsJogadores[i] = new DadosJogador
                 {
-                    { relayJoinCodeKey, new DataObject(DataObject.VisibilityOptions.Member, joinCode) }
+                    ClientId = clientId,
+                    PersonagemIndex = 0,
+                    IsReady = false,
+                    IsOccupied = true
+                };
+                break;
+            }
+        }
+    }
+
+    [Rpc(SendTo.Server)]
+    private void TrocarPersonagemRpc(int slotIndex, int direcao)
+    {
+        if (slotIndex < 0 || slotIndex >= slotsJogadores.Count) return;
+
+        DadosJogador dados = slotsJogadores[slotIndex];
+        if (!dados.IsOccupied) return;
+
+        int novoIndex = dados.PersonagemIndex + direcao;
+        if (spritesPersonagens != null && spritesPersonagens.Length > 0)
+        {
+            if (novoIndex < 0) novoIndex = spritesPersonagens.Length - 1;
+            if (novoIndex >= spritesPersonagens.Length) novoIndex = 0;
+        }
+
+        dados.PersonagemIndex = novoIndex;
+        slotsJogadores[slotIndex] = dados;
+    }
+
+    [Rpc(SendTo.Server)]
+    private void AlternarProntoRpc(int slotIndex)
+    {
+        if (slotIndex < 0 || slotIndex >= slotsJogadores.Count) return;
+
+        DadosJogador dados = slotsJogadores[slotIndex];
+        if (!dados.IsOccupied) return;
+
+        dados.IsReady = !dados.IsReady;
+        slotsJogadores[slotIndex] = dados;
+    }
+
+    private void OnSlotsMudaram(NetworkListEvent<DadosJogador> changeEvent)
+    {
+        AtualizarUI();
+    }
+
+    private void AtualizarUI()
+    {
+        bool todosProntos = true;
+        int jogadoresAtivos = 0;
+
+        for (int i = 0; i < MAX_JOGADORES; i++)
+        {
+            if (cardSlots[i] == null) continue;
+
+            if (i < slotsJogadores.Count && slotsJogadores[i].IsOccupied)
+            {
+                DadosJogador dados = slotsJogadores[i];
+                jogadoresAtivos++;
+
+                cardSlots[i].style.display = DisplayStyle.Flex;
+
+                if (lblTipos[i] != null)
+                {
+                    lblTipos[i].text = (dados.ClientId == NetworkManager.ServerClientId) ? "Host" : "Client";
                 }
-            };
 
-            // 4. Cria o Lobby na nuvem
-            hostLobby = await LobbyService.Instance.CreateLobbyAsync("Minha Sala 3D", maxJogadores, options);
+                if (imgPersonagens[i] != null && spritesPersonagens != null && spritesPersonagens.Length > dados.PersonagemIndex)
+                {
+                    imgPersonagens[i].style.backgroundImage = new StyleBackground(spritesPersonagens[dados.PersonagemIndex]);
+                }
 
-            // Envia batimentos cardíacos para manter o lobby ativo na lista pública
-            InvokeRepeating(nameof(KeepLobbyAlive), 15f, 15f);
+                bool eMeuSlot = (dados.ClientId == NetworkManager.Singleton.LocalClientId);
 
-            // 5. Inicia o Netcode como Host
-            NetworkManager.Singleton.StartHost();
-            Debug.Log($"Lobby Criado! Código Relay: {joinCode}");
+                if (btnAnterior[i] != null) btnAnterior[i].style.display = eMeuSlot ? DisplayStyle.Flex : DisplayStyle.None;
+                if (btnProximo[i] != null) btnProximo[i].style.display = eMeuSlot ? DisplayStyle.Flex : DisplayStyle.None;
+                if (btnPronto[i] != null)
+                {
+                    btnPronto[i].style.display = eMeuSlot ? DisplayStyle.Flex : DisplayStyle.None;
+                    btnPronto[i].text = dados.IsReady ? "Pronto!" : "Está Pronto?";
+                }
+
+                // Apenas verifica readiness de outros jogadores se não for o host isolado
+                if (!dados.IsReady) todosProntos = false;
+            }
+            else
+            {
+                cardSlots[i].style.display = DisplayStyle.None;
+            }
         }
-        catch (LobbyServiceException e)
+
+        if (btnIniciarPartida != null)
         {
-            Debug.LogError(e);
+            btnIniciarPartida.style.display = IsHost ? DisplayStyle.Flex : DisplayStyle.None;
+
+            // Se houver apenas 1 jogador (o Host), ele pode iniciar diretamente sem precisar clicar em "Está Pronto"
+            bool podeIniciar = IsHost && jogadoresAtivos > 0 && (jogadoresAtivos == 1 || todosProntos);
+            btnIniciarPartida.SetEnabled(podeIniciar);
         }
     }
 
-    // Chamado pelo botão de "Entrar na Sala" (passando o ID do lobby encontrado na busca)
-    public async void EntrarNoLobby(string lobbyId)
+    private void SolicitarInicioPartida()
     {
-        try
+        if (!IsHost) return;
+        IniciarContagemRegressivaClientRpc();
+    }
+
+    [Rpc(SendTo.ClientsAndHost)]
+    private void IniciarContagemRegressivaClientRpc()
+    {
+        StartCoroutine(RoutineContagemRegressiva());
+    }
+
+    private IEnumerator RoutineContagemRegressiva()
+    {
+        int tempo = 5;
+        while (tempo > 0)
         {
-            // 1. Entra no Lobby da Unity
-            Lobby lobby = await LobbyService.Instance.JoinLobbyByIdAsync(lobbyId);
-
-            // 2. Recupera o código do Relay salvo dentro do Lobby
-            string relayJoinCode = lobby.Data[relayJoinCodeKey].Value;
-
-            // 3. Junta-se à alocação do Relay
-            JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(relayJoinCode);
-
-            // CORREÇÃO: Usando AllocationUtils para converter a entrada do cliente também
-            var relayServerData = AllocationUtils.ToRelayServerData(joinAllocation, "dtls");
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
-
-            // 4. Inicia o Netcode como Cliente
-            NetworkManager.Singleton.StartClient();
+            if (txtContagemRegressiva != null)
+            {
+                txtContagemRegressiva.text = $"A partida começará em: {tempo}...";
+            }
+            yield return new WaitForSeconds(1f);
+            tempo--;
         }
-        catch (LobbyServiceException e)
+
+        EsconderUILobbyLocalmente();
+
+        if (IsServer)
         {
-            Debug.LogError(e);
+            SpawnarTodosOsJogadores();
         }
     }
 
-    private async void KeepLobbyAlive()
+    private void EsconderUILobbyLocalmente()
     {
-        if (hostLobby != null)
+        if (painelLobby == null && uiDocument != null)
         {
-            await LobbyService.Instance.SendHeartbeatPingAsync(hostLobby.Id);
+            painelLobby = uiDocument.rootVisualElement.Q<VisualElement>("Painel_Lobby");
         }
+
+        if (painelLobby != null)
+        {
+            painelLobby.style.display = DisplayStyle.None;
+        }
+    }
+
+    private void SpawnarTodosOsJogadores()
+    {
+        foreach (var slot in slotsJogadores)
+        {
+            if (slot.IsOccupied && playerPrefab != null)
+            {
+                Vector3 posSpawn = new Vector3(slot.ClientId * 2f, 1f, 0f);
+                GameObject jogadorInstanciado = Instantiate(playerPrefab, posSpawn, Quaternion.identity);
+
+                jogadorInstanciado.GetComponent<NetworkObject>().SpawnWithOwnership(slot.ClientId);
+            }
+        }
+
+        BloquearCursorClientRpc();
+    }
+
+    [Rpc(SendTo.ClientsAndHost)]
+    private void BloquearCursorClientRpc()
+    {
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        UnityEngine.Cursor.visible = false;
     }
 }

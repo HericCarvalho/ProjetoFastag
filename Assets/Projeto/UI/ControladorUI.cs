@@ -8,6 +8,7 @@ public class ControladorUI : MonoBehaviour
     private VisualElement painelPrincipal;
     private VisualElement painelPort_IP;
     private VisualElement painelEntrar;
+    private VisualElement painelLobby;
 
     private TextField campoIP;
     private TextField campoPorta;
@@ -15,13 +16,18 @@ public class ControladorUI : MonoBehaviour
     void OnEnable()
     {
         UIDocument uiDoc = GetComponent<UIDocument>();
-        if (uiDoc == null) return;
+        if (uiDoc == null)
+        {
+            Debug.LogError("UIDocument não encontrado no GameObject!");
+            return;
+        }
 
         VisualElement root = uiDoc.rootVisualElement;
 
         painelPrincipal = root.Q<VisualElement>("Painel_Principal");
         painelEntrar = root.Q<VisualElement>("Painel_Entrar");
         painelPort_IP = root.Q<VisualElement>("Painel_Port-IP");
+        painelLobby = root.Q<VisualElement>("Painel_Lobby");
 
         campoIP = root.Q<TextField>("IP");
         campoPorta = root.Q<TextField>("Port");
@@ -39,6 +45,9 @@ public class ControladorUI : MonoBehaviour
         if (btnHost != null) btnHost.clicked += IniciarHost;
         if (btnExit != null) btnExit.clicked += Sair;
         if (btnVoltar != null) btnVoltar.clicked += OcultarPainelPort_IP;
+
+        // Garante que no início apenas o painel principal esteja visível
+        if (painelLobby != null) painelLobby.style.display = DisplayStyle.None;
     }
 
     void OnDisable()
@@ -85,33 +94,59 @@ public class ControladorUI : MonoBehaviour
             Debug.Log($"Conectando ao servidor em {ip}:{porta}...");
         }
 
-        NetworkManager.Singleton.StartClient();
-        OcultarPainelPrincipal();
+        if (NetworkManager.Singleton.StartClient())
+        {
+            ExibirLobby();
+        }
     }
 
     void IniciarServer()
     {
         Debug.Log("Iniciando Servidor Dedicado...");
-        if (NetworkManager.Singleton != null) NetworkManager.Singleton.StartServer();
-        OcultarPainelPrincipal();
+        if (NetworkManager.Singleton != null && NetworkManager.Singleton.StartServer())
+        {
+            ExibirLobby();
+        }
     }
 
     void IniciarHost()
     {
-        Debug.Log("Iniciando Host (Servidor + Cliente)...");
-        if (NetworkManager.Singleton != null) NetworkManager.Singleton.StartHost();
-        OcultarPainelPrincipal();
+        Debug.Log("Iniciando Host...");
+        if (NetworkManager.Singleton != null && NetworkManager.Singleton.StartHost())
+        {
+            ExibirLobby();
+        }
+    }
+
+    void ExibirLobby()
+    {
+        // Esconde telas de menu
+        if (painelPrincipal != null) painelPrincipal.style.display = DisplayStyle.None;
+        if (painelPort_IP != null) painelPort_IP.style.display = DisplayStyle.None;
+        if (painelEntrar != null) painelEntrar.style.display = DisplayStyle.None;
+
+        // Tenta reconectar a referência caso tenha sido perdida
+        if (painelLobby == null)
+        {
+            UIDocument uiDoc = GetComponent<UIDocument>();
+            if (uiDoc != null) painelLobby = uiDoc.rootVisualElement.Q<VisualElement>("Painel_Lobby");
+        }
+
+        // Exibe o painel do Lobby
+        if (painelLobby != null)
+        {
+            painelLobby.style.display = DisplayStyle.Flex;
+            Debug.Log("Painel_Lobby exibido com sucesso!");
+        }
+        else
+        {
+            Debug.LogError("ERRO: Não foi possível encontrar o elemento 'Painel_Lobby' no UXML!");
+        }
     }
 
     void Sair()
     {
-        Debug.Log("Saindo do jogo...");
         Application.Quit();
-    }
-
-    void OcultarPainelPrincipal()
-    {
-        if (painelPrincipal != null) painelPrincipal.style.display = DisplayStyle.None;
     }
 
     void OcultarPainelPort_IP()

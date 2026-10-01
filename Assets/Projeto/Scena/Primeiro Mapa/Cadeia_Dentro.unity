@@ -13264,6 +13264,8 @@ GameObject:
   - component: {fileID: 971123359}
   - component: {fileID: 971123358}
   - component: {fileID: 971123360}
+  - component: {fileID: 971123361}
+  - component: {fileID: 971123362}
   m_Layer: 5
   m_Name: _HUD
   m_TagString: Untagged
@@ -13321,6 +13323,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca9e3b8953794f48af3873161804e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControladorUI
+--- !u!114 &971123361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971123357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 323213060
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  m_InScenePlaced: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
+--- !u!114 &971123362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971123357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e39d92e7068ef045a1a3234a84fd103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LobbyManager
+  ShowTopMostFoldoutHeaderGroup: 1
+  playerPrefab: {fileID: 3510855459123362475, guid: c9d4dc62472744c49bfb2979ad46836b, type: 3}
+  spritesPersonagens:
+  - {fileID: 21300000, guid: 4155bf72b78841e4f93f205642ead2a1, type: 3}
+  - {fileID: 21300000, guid: 39ce434bc86ee374e86efe6704a746d3, type: 3}
+  - {fileID: 21300000, guid: eadd3aacf015c994781e24aa5e71631b, type: 3}
+  - {fileID: 21300000, guid: ee1afd58bafe2c04880b7e239a57586f, type: 3}
+  slotsJogadores:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
 --- !u!1 &977689937
 GameObject:
   m_ObjectHideFlags: 0
@@ -27052,7 +27103,7 @@ MonoBehaviour:
   m_DisconnectTimeoutMS: 30000
   ConnectionData:
     Address: 127.0.0.1
-    Port: 7777
+    Port: 7778
     WebSocketPath: /
     ServerListenAddress: 0.0.0.0
     ClientBindPort: 0
@@ -27076,7 +27127,7 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 1997425753}
-    PlayerPrefab: {fileID: 3510855459123362475, guid: c9d4dc62472744c49bfb2979ad46836b, type: 3}
+    PlayerPrefab: {fileID: 0}
     Prefabs:
       NetworkPrefabsLists:
       - {fileID: 11400000, guid: 2a6c7d045cce1fa4080993542974c493, type: 2}
@@ -28257,7 +28308,7 @@ PrefabInstance:
     - target: {fileID: 1236828277573643700, guid: 7dadd4a4bf8fafe4cb2a69b6621a4715, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 3043b5ed93d2ee74db06a72e98437898, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 5750054342146944917, guid: 7dadd4a4bf8fafe4cb2a69b6621a4715, type: 3}
       propertyPath: m_Name
       value: Camera
