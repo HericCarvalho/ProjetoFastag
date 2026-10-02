@@ -15,7 +15,6 @@ public class LobbyManager : NetworkBehaviour
     [Header("Configuração de Sprites")]
     [SerializeField] private Sprite[] spritesPersonagens;
 
-    // Estrutura para sincronizar os dados de cada slot na rede
     public struct DadosJogador : INetworkSerializable, System.IEquatable<DadosJogador>
     {
         public ulong ClientId;
@@ -76,13 +75,11 @@ public class LobbyManager : NetworkBehaviour
             NetworkManager.Singleton.OnClientConnectedCallback += OnClientConectou;
             NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDesconectou;
 
-            // Inicializa os 4 slots vazios
             for (int i = 0; i < MAX_JOGADORES; i++)
             {
                 slotsJogadores.Add(new DadosJogador { IsOccupied = false });
             }
 
-            // O Host já ocupa o Slot 0
             AdicionarJogadorAoLobby(NetworkManager.Singleton.LocalClientId);
         }
 
@@ -103,12 +100,11 @@ public class LobbyManager : NetworkBehaviour
     {
         if (root == null) return;
 
-        // Ajustado para 'Painel_Lobby' com underline exatamente como no seu UXML
         painelLobby = root.Q<VisualElement>("Painel_Lobby");
-        btnIniciarPartida = root.Q<Button>("BtnIniciarPartida"); // Verifique se no UXML é "IniciarPartida" ou "BtnIniciarPartida"
+        btnIniciarPartida = root.Q<Button>("BtnIniciarPartida");
         if (btnIniciarPartida != null)
         {
-            btnIniciarPartida.clicked -= SolicitarInicioPartida; // Evita inscricao duplicada
+            btnIniciarPartida.clicked -= SolicitarInicioPartida;
             btnIniciarPartida.clicked += SolicitarInicioPartida;
         }
         txtContagemRegressiva = root.Q<Label>("TxtContagemRegressiva");
@@ -130,12 +126,6 @@ public class LobbyManager : NetworkBehaviour
             if (btnAnterior[index] != null) btnAnterior[index].clicked += () => TrocarPersonagemRpc(index, -1);
             if (btnProximo[index] != null) btnProximo[index].clicked += () => TrocarPersonagemRpc(index, 1);
             if (btnPronto[index] != null) btnPronto[index].clicked += () => AlternarProntoRpc(index);
-        }
-
-        if (btnIniciarPartida != null)
-        {
-            btnIniciarPartida.clicked += SolicitarInicioPartida;
-            btnIniciarPartida.SetEnabled(false);
         }
     }
 
@@ -160,7 +150,6 @@ public class LobbyManager : NetworkBehaviour
 
     private void AdicionarJogadorAoLobby(ulong clientId)
     {
-        // 1. Evita duplicidade (Impede o Host de ser contado 2 vezes)
         for (int i = 0; i < slotsJogadores.Count; i++)
         {
             if (slotsJogadores[i].IsOccupied && slotsJogadores[i].ClientId == clientId)
@@ -169,7 +158,6 @@ public class LobbyManager : NetworkBehaviour
             }
         }
 
-        // 2. Preenche no primeiro slot vago
         for (int i = 0; i < slotsJogadores.Count; i++)
         {
             if (!slotsJogadores[i].IsOccupied)
@@ -258,7 +246,6 @@ public class LobbyManager : NetworkBehaviour
                     btnPronto[i].text = dados.IsReady ? "Pronto!" : "Está Pronto?";
                 }
 
-                // Apenas verifica readiness de outros jogadores se não for o host isolado
                 if (!dados.IsReady) todosProntos = false;
             }
             else
@@ -271,7 +258,6 @@ public class LobbyManager : NetworkBehaviour
         {
             btnIniciarPartida.style.display = IsHost ? DisplayStyle.Flex : DisplayStyle.None;
 
-            // Se houver apenas 1 jogador (o Host), ele pode iniciar diretamente sem precisar clicar em "Está Pronto"
             bool podeIniciar = IsHost && jogadoresAtivos > 0 && (jogadoresAtivos == 1 || todosProntos);
             btnIniciarPartida.SetEnabled(podeIniciar);
         }
