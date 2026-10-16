@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8417361359673230750, guid: 2e7b2063d16e04751b9054a6315830f9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f1938ccbd4fa36d4782b58f8f31af1e7, type: 2}
     - target: {fileID: 8879528566716807029, guid: 2e7b2063d16e04751b9054a6315830f9, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7072302

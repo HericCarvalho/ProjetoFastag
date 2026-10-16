@@ -58,7 +58,7 @@ Material:
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
-    - _AmbientLight: 0.212
+    - _AmbientLight: 0.022
     - _BlendMode: 0
     - _ConservativeDepthOffsetEnable: 0
     - _CullMode: 2
@@ -75,7 +75,7 @@ Material:
     - _OpaqueCullMode: 2
     - _PerPixelSorting: 0
     - _RenderQueueType: 1
-    - _RimLightPower: 5.34
+    - _RimLightPower: 7.33
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 1
@@ -99,8 +99,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _Emission: {r: 10683.345, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimLight_Collor: {r: 1.6313726, g: 0.2509804, b: 1.1294118, a: 1}
+    - _RimLight_Collor: {r: 2.6390157, g: 2.6390157, b: 2.6390157, a: 1}
     - _Tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
