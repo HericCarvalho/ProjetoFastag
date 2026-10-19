@@ -57,6 +57,11 @@ public class LobbyManager : NetworkBehaviour
 
     private void Awake()
     {
+        if (Singleton != null && Singleton != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Singleton = this;
         slotsJogadores = new NetworkList<DadosJogador>();
     }
@@ -123,9 +128,14 @@ public class LobbyManager : NetworkBehaviour
             btnProximo[index] = slot.Q<Button>("BtnProximo");
             btnPronto[index] = slot.Q<Button>("BtnPronto");
 
-            if (btnAnterior[index] != null) btnAnterior[index].clicked += () => TrocarPersonagemRpc(index, -1);
-            if (btnProximo[index] != null) btnProximo[index].clicked += () => TrocarPersonagemRpc(index, 1);
-            if (btnPronto[index] != null) btnPronto[index].clicked += () => AlternarProntoRpc(index);
+            if (btnAnterior[index] != null)
+                btnAnterior[index].clicked += () => SolicitarTrocaPersonagem(-1);
+
+            if (btnProximo[index] != null)
+                btnProximo[index].clicked += () => SolicitarTrocaPersonagem(1);
+
+            if (btnPronto[index] != null)
+                btnPronto[index].clicked += SolicitarAlternarPronto;
         }
     }
 
@@ -174,35 +184,54 @@ public class LobbyManager : NetworkBehaviour
         }
     }
 
-    [Rpc(SendTo.Server)]
-    private void TrocarPersonagemRpc(int slotIndex, int direcao)
+    private void SolicitarTrocaPersonagem(int direcao)
     {
-        if (slotIndex < 0 || slotIndex >= slotsJogadores.Count) return;
-
-        DadosJogador dados = slotsJogadores[slotIndex];
-        if (!dados.IsOccupied) return;
-
-        int novoIndex = dados.PersonagemIndex + direcao;
-        if (spritesPersonagens != null && spritesPersonagens.Length > 0)
-        {
-            if (novoIndex < 0) novoIndex = spritesPersonagens.Length - 1;
-            if (novoIndex >= spritesPersonagens.Length) novoIndex = 0;
-        }
-
-        dados.PersonagemIndex = novoIndex;
-        slotsJogadores[slotIndex] = dados;
+        ulong meuId = NetworkManager.Singleton.LocalClientId;
+        TrocarPersonagemServerRpc(meuId, direcao);
     }
 
-    [Rpc(SendTo.Server)]
-    private void AlternarProntoRpc(int slotIndex)
+    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
+    private void TrocarPersonagemServerRpc(ulong clientId, int direcao)
     {
-        if (slotIndex < 0 || slotIndex >= slotsJogadores.Count) return;
+        for (int i = 0; i < slotsJogadores.Count; i++)
+        {
+            if (slotsJogadores[i].IsOccupied && slotsJogadores[i].ClientId == clientId)
+            {
+                DadosJogador dados = slotsJogadores[i];
+                int novoIndex = dados.PersonagemIndex + direcao;
 
-        DadosJogador dados = slotsJogadores[slotIndex];
-        if (!dados.IsOccupied) return;
+                if (spritesPersonagens != null && spritesPersonagens.Length > 0)
+                {
+                    if (novoIndex < 0) novoIndex = spritesPersonagens.Length - 1;
+                    if (novoIndex >= spritesPersonagens.Length) novoIndex = 0;
+                }
 
-        dados.IsReady = !dados.IsReady;
-        slotsJogadores[slotIndex] = dados;
+                dados.PersonagemIndex = novoIndex;
+                slotsJogadores[i] = dados;
+                break;
+            }
+        }
+    }
+
+    private void SolicitarAlternarPronto()
+    {
+        ulong meuId = NetworkManager.Singleton.LocalClientId;
+        AlternarProntoServerRpc(meuId);
+    }
+
+    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
+    private void AlternarProntoServerRpc(ulong clientId)
+    {
+        for (int i = 0; i < slotsJogadores.Count; i++)
+        {
+            if (slotsJogadores[i].IsOccupied && slotsJogadores[i].ClientId == clientId)
+            {
+                DadosJogador dados = slotsJogadores[i];
+                dados.IsReady = !dados.IsReady;
+                slotsJogadores[i] = dados;
+                break;
+            }
+        }
     }
 
     private void OnSlotsMudaram(NetworkListEvent<DadosJogador> changeEvent)
@@ -213,6 +242,7 @@ public class LobbyManager : NetworkBehaviour
     private void AtualizarUI()
     {
         bool todosProntos = true;
+        ulong meuId = NetworkManager.Singleton != null ? NetworkManager.Singleton.LocalClientId : 999;
         int jogadoresAtivos = 0;
 
         for (int i = 0; i < MAX_JOGADORES; i++)
@@ -236,7 +266,7 @@ public class LobbyManager : NetworkBehaviour
                     imgPersonagens[i].style.backgroundImage = new StyleBackground(spritesPersonagens[dados.PersonagemIndex]);
                 }
 
-                bool eMeuSlot = (dados.ClientId == NetworkManager.Singleton.LocalClientId);
+                bool eMeuSlot = (dados.ClientId == meuId);
 
                 if (btnAnterior[i] != null) btnAnterior[i].style.display = eMeuSlot ? DisplayStyle.Flex : DisplayStyle.None;
                 if (btnProximo[i] != null) btnProximo[i].style.display = eMeuSlot ? DisplayStyle.Flex : DisplayStyle.None;
@@ -256,9 +286,10 @@ public class LobbyManager : NetworkBehaviour
 
         if (btnIniciarPartida != null)
         {
-            btnIniciarPartida.style.display = IsHost ? DisplayStyle.Flex : DisplayStyle.None;
+            bool ehHost = NetworkManager.Singleton != null && NetworkManager.Singleton.IsHost;
+            btnIniciarPartida.style.display = ehHost ? DisplayStyle.Flex : DisplayStyle.None;
 
-            bool podeIniciar = IsHost && jogadoresAtivos > 0 && (jogadoresAtivos == 1 || todosProntos);
+            bool podeIniciar = ehHost && jogadoresAtivos > 0 && (jogadoresAtivos == 1 || todosProntos);
             btnIniciarPartida.SetEnabled(podeIniciar);
         }
     }
@@ -318,7 +349,8 @@ public class LobbyManager : NetworkBehaviour
                 Vector3 posSpawn = new Vector3(slot.ClientId * 2f, 1f, 0f);
                 GameObject jogadorInstanciado = Instantiate(playerPrefab, posSpawn, Quaternion.identity);
 
-                jogadorInstanciado.GetComponent<NetworkObject>().SpawnWithOwnership(slot.ClientId);
+                var networkObj = jogadorInstanciado.GetComponent<NetworkObject>();
+                networkObj.SpawnAsPlayerObject(slot.ClientId, true);
             }
         }
 
