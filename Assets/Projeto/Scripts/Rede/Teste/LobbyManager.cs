@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -9,8 +10,9 @@ public class LobbyManager : NetworkBehaviour
 
     private const int MAX_JOGADORES = 4;
 
-    [Header("Prefab do Personagem")]
-    [SerializeField] private GameObject playerPrefab;
+    [Header("Prefabs dos Personagens (5 do Bem / 5 do Mal)")]
+    [SerializeField] private GameObject[] prefabsDoBem = new GameObject[5];
+    [SerializeField] private GameObject[] prefabsDoMal = new GameObject[5];
 
     [Header("Configuração de Sprites")]
     [SerializeField] private Sprite[] spritesPersonagens;
@@ -21,6 +23,7 @@ public class LobbyManager : NetworkBehaviour
         public int PersonagemIndex;
         public bool IsReady;
         public bool IsOccupied;
+        public bool IsPegador; // NOVO: Define se é pegador (true) ou vítima (false)
 
         public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
         {
@@ -28,6 +31,7 @@ public class LobbyManager : NetworkBehaviour
             serializer.SerializeValue(ref PersonagemIndex);
             serializer.SerializeValue(ref IsReady);
             serializer.SerializeValue(ref IsOccupied);
+            serializer.SerializeValue(ref IsPegador);
         }
 
         public bool Equals(DadosJogador other)
@@ -35,7 +39,8 @@ public class LobbyManager : NetworkBehaviour
             return ClientId == other.ClientId &&
                    PersonagemIndex == other.PersonagemIndex &&
                    IsReady == other.IsReady &&
-                   IsOccupied == other.IsOccupied;
+                   IsOccupied == other.IsOccupied &&
+                   IsPegador == other.IsPegador;
         }
     }
 
@@ -177,7 +182,8 @@ public class LobbyManager : NetworkBehaviour
                     ClientId = clientId,
                     PersonagemIndex = 0,
                     IsReady = false,
-                    IsOccupied = true
+                    IsOccupied = true,
+                    IsPegador = false
                 };
                 break;
             }
@@ -348,51 +354,76 @@ public class LobbyManager : NetworkBehaviour
             return;
         }
 
-        if (playerPrefab == null)
+        List<int> indicesAtivos = new List<int>();
+        for (int i = 0; i < slotsJogadores.Count; i++)
         {
-            Debug.LogError("playerPrefab não foi atribuído no LobbyManager.");
-            return;
-        }
-
-        NetworkObject prefabNetworkObject = playerPrefab.GetComponent<NetworkObject>();
-
-        if (prefabNetworkObject == null)
-        {
-            Debug.LogError(
-                "O playerPrefab precisa possuir um componente NetworkObject.");
-            return;
-        }
-
-        Debug.Log($"Iniciando spawn de {slotsJogadores.Count} slots.");
-
-        foreach (DadosJogador slot in slotsJogadores)
-        {
-            if (!slot.IsOccupied)
+            if (slotsJogadores[i].IsOccupied)
             {
-                continue;
+                indicesAtivos.Add(i);
             }
+        }
+
+        // Embaralha os jogadores para sortear os times de forma justa
+        for (int i = 0; i < indicesAtivos.Count; i++)
+        {
+            int rnd = Random.Range(i, indicesAtivos.Count);
+            int temp = indicesAtivos[i];
+            indicesAtivos[i] = indicesAtivos[rnd];
+            indicesAtivos[rnd] = temp;
+        }
+
+        int totalJogadores = indicesAtivos.Count;
+        int metade = totalJogadores / 2;
+
+        for (int i = 0; i < totalJogadores; i++)
+        {
+            int slotIndex = indicesAtivos[i];
+            DadosJogador dados = slotsJogadores[slotIndex];
+            dados.IsPegador = (i < metade);
+            slotsJogadores[slotIndex] = dados;
+        }
+
+        foreach (int slotIndex in indicesAtivos)
+        {
+            DadosJogador slot = slotsJogadores[slotIndex];
 
             if (!NetworkManager.Singleton.ConnectedClients.ContainsKey(slot.ClientId))
             {
-                Debug.LogWarning(
-                    $"O cliente {slot.ClientId} não está conectado no momento do spawn.");
                 continue;
             }
 
-            Vector3 posSpawn = new Vector3(slot.ClientId * 2f, 1f, 0f);
-            GameObject jogadorInstanciado = Instantiate(
-                playerPrefab,
-                posSpawn,
-                Quaternion.identity);
+            // Seleciona o prefab do mal se for pegador, ou do bem se for vítima
+            GameObject[] listaPrefabs = slot.IsPegador ? prefabsDoMal : prefabsDoBem;
 
-            NetworkObject networkObject =
-                jogadorInstanciado.GetComponent<NetworkObject>();
+            if (listaPrefabs == null || listaPrefabs.Length == 0)
+            {
+                Debug.LogError("A lista de prefabs está vazia!");
+                continue;
+            }
 
-            networkObject.SpawnWithOwnership(slot.ClientId);
+            int charIndex = Mathf.Clamp(slot.PersonagemIndex, 0, listaPrefabs.Length - 1);
+            GameObject prefabParaSpawnar = listaPrefabs[charIndex];
 
-            Debug.Log(
-                $"Player spawnado. ClientId: {slot.ClientId} | " +
-                $"NetworkObjectId: {networkObject.NetworkObjectId}");
+            if (prefabParaSpawnar != null)
+            {
+                Vector3 posSpawn = new Vector3(slot.ClientId * 2f, 1f, 0f);
+                GameObject jogadorInstanciado = Instantiate(prefabParaSpawnar, posSpawn, Quaternion.identity);
+
+                var networkObject = jogadorInstanciado.GetComponent<NetworkObject>();
+                if (networkObject != null)
+                {
+                    networkObject.SpawnWithOwnership(slot.ClientId);
+
+                    // Atribui o valor da NetworkVariable no player recém spawnado
+                    var playerMovement = jogadorInstanciado.GetComponent<PlayerMovement>();
+                    if (playerMovement != null)
+                    {
+                        playerMovement.isPegador.Value = slot.IsPegador;
+                    }
+
+                    Debug.Log($"Player spawnado. ClientId: {slot.ClientId} | Time: {(slot.IsPegador ? "Pegador (Mal)" : "Vítima (Bem)")}");
+                }
+            }
         }
 
         BloquearCursorClientRpc();

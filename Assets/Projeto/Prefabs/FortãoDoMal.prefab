@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5720065984907458401, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.1043909
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5720065984907458401, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
       propertyPath: m_LocalRotation.w
@@ -135,6 +135,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4212536959675753260}
   m_SourcePrefab: {fileID: 100100000, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
+--- !u!114 &1924399727849558048 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 834479067619913071, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
+  m_PrefabInstance: {fileID: 1234123810499673423}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200976289570398919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!4 &6791917126276549166 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5720065984907458401, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
@@ -475,6 +486,7 @@ MonoBehaviour:
   "velocidaderota\xE7\xE3o": 10
   alturapulo: 1.5
   distanciaInteracao: 3
+  cameraDoPrefab: {fileID: 1924399727849558048}
   cameraTarget: {fileID: 2477266200045673900}
 --- !u!4 &4319727047090479121 stripped
 Transform:
