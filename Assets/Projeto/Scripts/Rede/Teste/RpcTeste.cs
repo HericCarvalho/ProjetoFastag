@@ -5,7 +5,15 @@ public class RpcTeste : NetworkBehaviour
 {
     public override void OnNetworkSpawn()
     {
-        if (!IsServer && IsOwner) //Only send an RPC to the server from the client that owns the NetworkObject of this NetworkBehaviour instance
+        Debug.Log(
+            $"RpcTeste spawnado | " +
+            $"Owner: {OwnerClientId} | " +
+            $"LocalClient: {NetworkManager.Singleton.LocalClientId} | " +
+            $"IsOwner: {IsOwner} | " +
+            $"IsServer: {IsServer} | " +
+            $"IsClient: {IsClient}");
+
+        if (!IsServer && IsOwner)
         {
             ServerOnlyRpc(0, NetworkObjectId);
         }
@@ -15,7 +23,7 @@ public class RpcTeste : NetworkBehaviour
     private void ClientAndHostRpc(int value, ulong sourceNetworkObjectId)
     {
         Debug.Log($"Client Received the RPC #{value} on NetworkObject #{sourceNetworkObjectId}");
-        if (IsOwner) //Only send an RPC to the owner of the NetworkObject
+        if (IsOwner) 
         {
             ServerOnlyRpc(value + 1, sourceNetworkObjectId);
         }

@@ -31,8 +31,6 @@ public class PlayerMovement : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        Debug.Log($"Player Spawned | Owner: {OwnerClientId} | LocalClient: {NetworkManager.Singleton.LocalClientId} | IsOwner: {IsOwner}");
-
         if (!IsOwner)
             return;
 
@@ -40,34 +38,6 @@ public class PlayerMovement : NetworkBehaviour
         controles.Player.Jump.performed += Pular;
         controles.Player.Interact.performed += Interagir;
 
-        // Inicia a busca da câmera
-        StartCoroutine(ConectarCameraLocal());
-    }
-
-    private System.Collections.IEnumerator ConectarCameraLocal()
-    {
-        // Aguarda 1 frame para garantir o carregamento do objeto
-        yield return null;
-
-        Transform alvo = cameraTarget != null ? cameraTarget : transform;
-
-        // Procura por qualquer câmera do Cinemachine na cena
-        var cinemachineCam = FindFirstObjectByType<Unity.Cinemachine.CinemachineCamera>();
-        if (cinemachineCam != null)
-        {
-            cinemachineCam.Follow = alvo;
-            cinemachineCam.LookAt = alvo;
-            Debug.Log($"Câmera acoplada ao jogador local {OwnerClientId} com sucesso!");
-        }
-        else
-        {
-            // Tenta ativar diretamente via Câmera Principal caso não use Cinemachine
-            if (Camera.main != null)
-            {
-                Camera.main.transform.position = alvo.position - transform.forward * 5f + Vector3.up * 2f;
-                Camera.main.transform.LookAt(alvo);
-            }
-        }
     }
 
     public override void OnNetworkDespawn()
@@ -97,7 +67,7 @@ public class PlayerMovement : NetworkBehaviour
 
             if (animator != null)
             {
-                animator.SetTrigger("Jump");
+                animator.SetTrigger("Pular");
             }
         }
     }
@@ -106,7 +76,7 @@ public class PlayerMovement : NetworkBehaviour
     {
         if (animator != null)
         {
-            animator.SetTrigger("Interact");
+            animator.SetTrigger("Interagir");
         }
 
         Transform camTransform = Camera.main != null ? Camera.main.transform : (cameraTarget != null ? cameraTarget : transform);

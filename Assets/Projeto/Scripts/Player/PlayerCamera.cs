@@ -33,10 +33,6 @@ public class PlayerCamera : NetworkBehaviour
         }
 
         controls.Enable();
-        //
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
-
         yaw = transform.eulerAngles.y;
     }
 

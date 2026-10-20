@@ -342,16 +342,57 @@ public class LobbyManager : NetworkBehaviour
 
     private void SpawnarTodosOsJogadores()
     {
-        foreach (var slot in slotsJogadores)
+        if (!IsServer)
         {
-            if (slot.IsOccupied && playerPrefab != null)
-            {
-                Vector3 posSpawn = new Vector3(slot.ClientId * 2f, 1f, 0f);
-                GameObject jogadorInstanciado = Instantiate(playerPrefab, posSpawn, Quaternion.identity);
+            Debug.LogWarning("Tentativa de spawnar jogadores fora do servidor.");
+            return;
+        }
 
-                var networkObj = jogadorInstanciado.GetComponent<NetworkObject>();
-                networkObj.SpawnAsPlayerObject(slot.ClientId, true);
+        if (playerPrefab == null)
+        {
+            Debug.LogError("playerPrefab não foi atribuído no LobbyManager.");
+            return;
+        }
+
+        NetworkObject prefabNetworkObject = playerPrefab.GetComponent<NetworkObject>();
+
+        if (prefabNetworkObject == null)
+        {
+            Debug.LogError(
+                "O playerPrefab precisa possuir um componente NetworkObject.");
+            return;
+        }
+
+        Debug.Log($"Iniciando spawn de {slotsJogadores.Count} slots.");
+
+        foreach (DadosJogador slot in slotsJogadores)
+        {
+            if (!slot.IsOccupied)
+            {
+                continue;
             }
+
+            if (!NetworkManager.Singleton.ConnectedClients.ContainsKey(slot.ClientId))
+            {
+                Debug.LogWarning(
+                    $"O cliente {slot.ClientId} não está conectado no momento do spawn.");
+                continue;
+            }
+
+            Vector3 posSpawn = new Vector3(slot.ClientId * 2f, 1f, 0f);
+            GameObject jogadorInstanciado = Instantiate(
+                playerPrefab,
+                posSpawn,
+                Quaternion.identity);
+
+            NetworkObject networkObject =
+                jogadorInstanciado.GetComponent<NetworkObject>();
+
+            networkObject.SpawnWithOwnership(slot.ClientId);
+
+            Debug.Log(
+                $"Player spawnado. ClientId: {slot.ClientId} | " +
+                $"NetworkObjectId: {networkObject.NetworkObjectId}");
         }
 
         BloquearCursorClientRpc();

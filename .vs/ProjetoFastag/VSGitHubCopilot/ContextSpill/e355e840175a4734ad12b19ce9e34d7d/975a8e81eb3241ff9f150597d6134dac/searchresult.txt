@@ -1,0 +1,278 @@
+﻿20 matches found: 
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\Projeto\Scripts\Audio\SoundEmitter.cs>
+    // Lines 37 to 46
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\Projeto\Scripts\Audio\SoundEmitter.cs>
+    // Lines 19 to 37
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\Projeto\Scripts\Audio\SoundData.cs>
+    File: `Assets/Projeto/Scripts/Audio/SoundData.cs`
+```c#
+using System;
+using UnityEngine;
+using UnityEngine.Audio;
+
+namespace AudioSystem {
+    [Serializable]
+    public class SoundData {
+        public AudioClip clip;
+        public AudioMixerGroup mixerGroup;
+        public bool loop;
+        public bool playOnAwake;
+        public bool frequentSound;
+        
+        public bool mute;
+        public bool bypassEffects;
+        public bool bypassListenerEffects;
+        public bool bypassReverbZones;
+        
+        public int priority = 128;
+        public float volume = 1f;
+        public float pitch = 1f;
+        public float panStereo;
+        public float spatialBlend;
+        public float reverbZoneMix = 1f;
+        public float dopplerLevel = 1f;
+        public float spread;
+        
+        public float minDistance = 1f;
+        public float maxDistance = 500f;
+        
+        public bool ignoreListenerVolume;
+        public bool ignoreListenerPause;
+        
+        public AudioRolloffMode rolloffMode = AudioRolloffMode.Logarithmic;
+    }
+}
+```
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\TutorialInfo\Layout.wlt>
+    // Lines 588 to 609
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\TutorialInfo\Layout.wlt>
+    File: `Assets/TutorialInfo/Layout.wlt`
+```wolfram language
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PixelRect:
+    serializedVersion: 2
+    x: 0
+    y: 45
+    width: 1666
+    height: 958
+  m_ShowMode: 4
+  m_Title: 
+  m_RootView: {fileID: 6}
+...
+```
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\TextMesh Pro\Examples & Extras\Scripts\TeleType.cs>
+    // Lines 75 to 79
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\TextMesh Pro\Examples & Extras\Scripts\TeleType.cs>
+    // Lines 46 to 80
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\TextMesh Pro\Examples & Extras\Scripts\WarpTextExample.cs>
+    // Lines 10 to 44
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\Projeto\Scripts\Rede\Teste\TesteM.cs>
+    // Lines 9 to 37
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\Projeto\Scripts\Rede\Teste\TesteM.cs>
+    // Lines 48 to 65
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\Projeto\Scripts\Rede\Teste\NetworkCommandLine.cs>
+    // Lines 8 to 32
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\Projeto\Scripts\Rede\Teste\NetworkCommandLine.cs>
+    // Lines 8 to 32
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\Projeto\Scripts\Rede\Teste\RpcTeste.cs>
+    File: `Assets/Projeto/Scripts/Rede/Teste/RpcTeste.cs`
+```c#
+using Unity.Netcode;
+using UnityEngine;
+
+public class RpcTeste : NetworkBehaviour
+{
+    public override void OnNetworkSpawn()
+    {
+        if (!IsServer && IsOwner) //Only send an RPC to the server from the client that owns the NetworkObject of this NetworkBehaviour instance
+        {
+            ServerOnlyRpc(0, NetworkObjectId);
+        }
+    }
+
+    [Rpc(SendTo.ClientsAndHost)]
+    private void ClientAndHostRpc(int value, ulong sourceNetworkObjectId)
+    {
+        Debug.Log($"Client Received the RPC #{value} on NetworkObject #{sourceNetworkObjectId}");
+        if (IsOwner) //Only send an RPC to the owner of the NetworkObject
+        {
+            ServerOnlyRpc(value + 1, sourceNetworkObjectId);
+        }
+    }
+
+    [Rpc(SendTo.Server)]
+    private void ServerOnlyRpc(int value, ulong sourceNetworkObjectId)
+    {
+        Debug.Log($"Server Received the RPC #{value} on NetworkObject #{sourceNetworkObjectId}");
+        ClientAndHostRpc(value, sourceNetworkObjectId);
+    }
+}
+
+```
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\Projeto\Scripts\Rede\Teste\RpcTeste.cs>
+    File: `Assets/Projeto/Scripts/Rede/Teste/RpcTeste.cs`
+```c#
+using Unity.Netcode;
+using UnityEngine;
+
+public class RpcTeste : NetworkBehaviour
+{
+    public override void OnNetworkSpawn()
+    {
+        if (!IsServer && IsOwner) //Only send an RPC to the server from the client that owns the NetworkObject of this NetworkBehaviour instance
+        {
+            ServerOnlyRpc(0, NetworkObjectId);
+        }
+    }
+
+    [Rpc(SendTo.ClientsAndHost)]
+    private void ClientAndHostRpc(int value, ulong sourceNetworkObjectId)
+    {
+        Debug.Log($"Client Received the RPC #{value} on NetworkObject #{sourceNetworkObjectId}");
+        if (IsOwner) //Only send an RPC to the owner of the NetworkObject
+        {
+            ServerOnlyRpc(value + 1, sourceNetworkObjectId);
+        }
+    }
+
+    [Rpc(SendTo.Server)]
+    private void ServerOnlyRpc(int value, ulong sourceNetworkObjectId)
+    {
+        Debug.Log($"Server Received the RPC #{value} on NetworkObject #{sourceNetworkObjectId}");
+        ClientAndHostRpc(value, sourceNetworkObjectId);
+    }
+}
+
+```
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\Projeto\Scripts\Audio\SoundManager.cs>
+    // Lines 16 to 55
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\InputSystem_Actions.cs>
+    // Lines 1560 to 1577
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\Projeto\Scripts\Rede\Teste\TestePlayer.cs>
+    File: `Assets/Projeto/Scripts/Rede/Teste/TestePlayer.cs`
+```c#
+using Unity.Netcode;
+using UnityEngine;
+
+namespace Teste
+{
+    public class TestePlayer : NetworkBehaviour
+    {
+        public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
+
+        public override void OnNetworkSpawn()
+        {
+            if (IsOwner)
+            {
+                Move();
+            }
+        }
+
+        public void Move()
+        {
+            SubmitPositionRequestRpc();
+        }
+
+        [Rpc(SendTo.Server)]
+        private void SubmitPositionRequestRpc(RpcParams rpcParams = default)
+        {
+            var randomPosition = GetRandomPositionOnPlane();
+            transform.position = randomPosition;
+            Position.Value = randomPosition;
+        }
+
+        static Vector3 GetRandomPositionOnPlane()
+        {
+            return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
+        }
+
+        private void Update()
+        {
+            transform.position = Position.Value;
+        }
+    }
+}
+
+```
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\Projeto\Scripts\Rede\Teste\TestePlayer.cs>
+    File: `Assets/Projeto/Scripts/Rede/Teste/TestePlayer.cs`
+```c#
+using Unity.Netcode;
+using UnityEngine;
+
+namespace Teste
+{
+    public class TestePlayer : NetworkBehaviour
+    {
+        public NetworkVariable<Vector3> Position = new NetworkVariable<Vector3>();
+
+        public override void OnNetworkSpawn()
+        {
+            if (IsOwner)
+            {
+                Move();
+            }
+        }
+
+        public void Move()
+        {
+            SubmitPositionRequestRpc();
+        }
+
+        [Rpc(SendTo.Server)]
+        private void SubmitPositionRequestRpc(RpcParams rpcParams = default)
+        {
+            var randomPosition = GetRandomPositionOnPlane();
+            transform.position = randomPosition;
+            Position.Value = randomPosition;
+        }
+
+        static Vector3 GetRandomPositionOnPlane()
+        {
+            return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
+        }
+
+        private void Update()
+        {
+            transform.position = Position.Value;
+        }
+    }
+}
+
+```
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_FrameRateCounter.cs>
+    // Lines 13 to 14
+</match>
+<match path=C:\Users\RA00352511\Documents\GitHub\ProjetoFastag\Assets\TextMesh Pro\Examples & Extras\Scripts\TMP_UiFrameRateCounter.cs>
+    // Lines 60 to 82
+</match>
