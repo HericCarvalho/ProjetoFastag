@@ -167,7 +167,7 @@ Material:
     - _AlphaRemapMax: 1
     - _AlphaRemapMin: 0
     - _AlphaSrcBlend: 1
-    - _AmbientLight: 0.536
+    - _AmbientLight: 0.63
     - _Anisotropy: 0
     - _BlendMode: 0
     - _CoatMask: 0
@@ -232,7 +232,7 @@ Material:
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
     - _RenderQueueType: 1
-    - _RimLightPower: 8
+    - _RimLightPower: 13
     - _Smoothness: 0.5
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
@@ -285,7 +285,7 @@ Material:
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
-    - _RimLight_Collor: {r: 2, g: 2, b: 2, a: 1}
+    - _RimLight_Collor: {r: 0.08276451, g: 1, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _Tint: {r: 1, g: 1, b: 1, a: 1}
