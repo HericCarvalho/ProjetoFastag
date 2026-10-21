@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Project
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 0
     width: 360
     height: 372
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 226}
+  m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 109
+  controlID: 54
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 107
+  controlID: 40
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 112}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 108
+  controlID: 41
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 43
+  controlID: 42
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -244,8 +244,8 @@ MonoBehaviour:
     y: 0
     width: 351
     height: 561
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 226}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -270,8 +270,8 @@ MonoBehaviour:
     y: 0
     width: 1082
     height: 561
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 226}
+  m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -326,8 +326,8 @@ MonoBehaviour:
     y: 0
     width: 487
     height: 933
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 76}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 23}
@@ -2455,15 +2455,14 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: []
+      m_SelectedIDs:
+      - m_Data: 69166
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -89744
-      - m_Data: -87416
-      - m_Data: -87028
-      - m_Data: -83090
-      - m_Data: 93280
+      - m_Data: -7888
+      - m_Data: -7148
+      - m_Data: -3026
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -3098,7 +3097,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 0.21244888, y: -7.059687, z: -3.0463634}
+    m_Target: {x: -5.7619214, y: 1.5437194, z: -3.6606212}
     speed: 2
     m_Value: {x: 0.21244888, y: -7.059687, z: -3.0463634}
   m_RenderMode: 0
@@ -3109,7 +3108,7 @@ MonoBehaviour:
   m_ValidateTrueMetals: 0
   m_DoValidateTrueMetals: 0
   m_SceneViewState:
-    m_AlwaysRefresh: 0
+    m_AlwaysRefresh: 1
     showFog: 1
     showSkybox: 1
     showFlares: 1
@@ -3146,13 +3145,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.18339641, y: -0.27119097, z: 0.05271775, w: -0.9434228}
+    m_Target: {x: 0.08891254, y: 0.69441813, z: -0.087132394, w: 0.7087603}
     speed: 2
-    m_Value: {x: -0.183396, y: -0.27119035, z: 0.05271763, w: -0.94342065}
+    m_Value: {x: -0.18339641, y: -0.27119097, z: 0.05271775, w: -0.9434228}
   m_Size:
-    m_Target: 15.352469
+    m_Target: 1.811855
     speed: 2
-    m_Value: 15.352469
+    m_Value: 1.7338325
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -3376,7 +3375,7 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Projeto/Assets/Guilherme/personagens/Baiana
+    - Assets/Projeto/Scena/Primeiro Mapa
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -3386,30 +3385,25 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Projeto/Assets/Guilherme/personagens/Baiana
+  - Assets/Projeto/Scena/Primeiro Mapa
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\ra00346808\Documents\GitHub\ProjetoFastag
+  m_LastProjectPath: C:\Users\ra00352581\Documents\GitHub\ProjetoFastag
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 93544
+    - m_Data: 69156
     m_LastClickedID:
-      m_Data: 93544
+      m_Data: 69156
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 93092
-    - m_Data: 93094
-    - m_Data: 93134
-    - m_Data: 93140
-    - m_Data: 93152
-    - m_Data: 93164
-    - m_Data: 93434
-    - m_Data: 93542
+    - m_Data: 68806
+    - m_Data: 69094
+    - m_Data: 69142
+    - m_Data: 69156
     - m_Data: 1000000000
-    - m_Data: 2147483647
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -3440,7 +3434,9 @@ MonoBehaviour:
     m_SelectedIDs: []
     m_LastClickedID:
       m_Data: 0
-    m_ExpandedIDs: []
+    m_ExpandedIDs:
+    - m_Data: 0
+    - m_Data: 68806
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -3467,8 +3463,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: []
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs:
+    - m_Data: 69166
+    m_LastClickedInstanceID: 69166
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 76050
