@@ -3222,7 +3222,7 @@ MonoBehaviour:
   m_DisconnectTimeoutMS: 30000
   ConnectionData:
     Address: 192.168.1.111
-    Port: 5058
+    Port: 5059
     WebSocketPath: /
     ServerListenAddress: 0.0.0.0
     ClientBindPort: 0
@@ -3634,15 +3634,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 692499377256955719, guid: 7dadd4a4bf8fafe4cb2a69b6621a4715, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.18800002
+      value: -2.113626
       objectReference: {fileID: 0}
     - target: {fileID: 692499377256955719, guid: 7dadd4a4bf8fafe4cb2a69b6621a4715, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4
+      value: 1.844
       objectReference: {fileID: 0}
     - target: {fileID: 692499377256955719, guid: 7dadd4a4bf8fafe4cb2a69b6621a4715, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.5
+      value: -1.0506526
       objectReference: {fileID: 0}
     - target: {fileID: 692499377256955719, guid: 7dadd4a4bf8fafe4cb2a69b6621a4715, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3686,33 +3686,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5750054342146944917, guid: 7dadd4a4bf8fafe4cb2a69b6621a4715, type: 3}
       propertyPath: m_TagString
-      value: MainCamera
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5750054342146944917, guid: 7dadd4a4bf8fafe4cb2a69b6621a4715, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5378355443068230578}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dadd4a4bf8fafe4cb2a69b6621a4715, type: 3}
---- !u!1 &5378355443068230577 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5750054342146944917, guid: 7dadd4a4bf8fafe4cb2a69b6621a4715, type: 3}
-  m_PrefabInstance: {fileID: 5378355443068230576}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5378355443068230578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5378355443068230577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc6eaa7cb8e178946810476cbd3b3b82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraLocal
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

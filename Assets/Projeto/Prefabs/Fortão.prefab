@@ -119,6 +119,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Third_Person
       objectReference: {fileID: 0}
+    - target: {fileID: 8272968313201860488, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -518,6 +522,11 @@ MonoBehaviour:
   distanciaInteracao: 3
   cameraDoPrefab: {fileID: 5685815925019929964}
   cameraTarget: {fileID: 6847342693729218747}
+  isPegador:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
 --- !u!114 &-129247458047960635
 MonoBehaviour:
   m_ObjectHideFlags: 0

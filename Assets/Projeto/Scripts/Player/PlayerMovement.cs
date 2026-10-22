@@ -26,7 +26,6 @@ public class PlayerMovement : NetworkBehaviour
 
     private float verticalVelocity;
 
-    // NOVO: Variável de rede sincronizada para saber se é pegador ou vítima
     public NetworkVariable<bool> isPegador = new NetworkVariable<bool>(false);
 
     private void Awake()
@@ -38,6 +37,11 @@ public class PlayerMovement : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
+        Debug.Log(
+            $"PlayerMovement iniciado. OwnerClientId: {OwnerClientId}, " +
+            $"LocalClientId: {NetworkManager.Singleton.LocalClientId}, " +
+            $"IsOwner: {IsOwner}");
+
         if (cameraDoPrefab != null)
         {
             if (IsOwner)
@@ -53,11 +57,16 @@ public class PlayerMovement : NetworkBehaviour
         }
 
         if (!IsOwner)
+        {
+            Debug.Log("Este jogador não é o jogador local.");
             return;
+        }
 
         controles.Enable();
         controles.Player.Jump.performed += Pular;
         controles.Player.Interact.performed += Interagir;
+
+        Debug.Log("Controles habilitados. Pressione E.");
     }
 
     public override void OnNetworkDespawn()
@@ -94,42 +103,45 @@ public class PlayerMovement : NetworkBehaviour
 
     private void Interagir(InputAction.CallbackContext context)
     {
-        // Se o jogador local não for pegador, ele não pode matar ninguém com o E
-        if (!isPegador.Value)
+        Debug.Log("Ação Interact recebida.");
+
+        Transform camTransform = Camera.main != null
+            ? Camera.main.transform
+            : cameraTarget != null
+                ? cameraTarget
+                : transform;
+
+        if (!Physics.Raycast(
+            camTransform.position,
+            camTransform.forward,
+            out RaycastHit hit,
+            distanciaInteracao))
         {
-            Debug.Log("Você é uma vítima e não pode eliminar ninguém!");
+            Debug.Log("Nenhum objeto encontrado pelo Raycast.");
             return;
         }
 
-        if (animator != null)
+        NetworkObject objRede = hit.collider.GetComponentInParent<NetworkObject>();
+
+        if (objRede == null)
         {
-            animator.SetTrigger("Interagir");
+            Debug.Log("O objeto atingido não possui NetworkObject.");
+            return;
         }
 
-        Transform camTransform = Camera.main != null ? Camera.main.transform : (cameraTarget != null ? cameraTarget : transform);
-
-        if (Physics.Raycast(camTransform.position, camTransform.forward, out RaycastHit hit, distanciaInteracao))
-        {
-            NetworkObject objRede = hit.collider.GetComponentInParent<NetworkObject>();
-
-            if (objRede != null && objRede.NetworkObjectId != NetworkObjectId)
-            {
-                SolicitarInteracaoServerRpc(objRede.NetworkObjectId);
-            }
-        }
+        if (objRede.NetworkObjectId != NetworkObjectId)
+            SolicitarInteracaoServerRpc(objRede.NetworkObjectId);
     }
 
     [ServerRpc]
     private void SolicitarInteracaoServerRpc(ulong idObjetoAlvo)
     {
-        // Validação de segurança no servidor: apenas pegadores podem executar esta ação
         if (!isPegador.Value) return;
 
         if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(idObjetoAlvo, out NetworkObject objetoAlvo))
         {
             PlayerMovement jogadorAlvo = objetoAlvo.GetComponent<PlayerMovement>();
 
-            // Verifica se o alvo é um jogador válido e se é uma VÍTIMA (!isPegador)
             if (jogadorAlvo != null && !jogadorAlvo.isPegador.Value)
             {
                 Debug.Log($"[Servidor] O pegador {OwnerClientId} eliminou a vítima {jogadorAlvo.OwnerClientId}!");
@@ -151,7 +163,6 @@ public class PlayerMovement : NetworkBehaviour
             animator.SetTrigger("Morrer");
         }
 
-        // Desativa o movimento e os controlos do jogador morto
         enabled = false;
         if (controlador != null) controlador.enabled = false;
 
@@ -163,7 +174,7 @@ public class PlayerMovement : NetworkBehaviour
 
     private IEnumerator RemoverAposMorte()
     {
-        yield return new WaitForSeconds(3f); // Espera a animação de morte tocar
+        yield return new WaitForSeconds(3f); 
         GetComponent<NetworkObject>().Despawn();
     }
 

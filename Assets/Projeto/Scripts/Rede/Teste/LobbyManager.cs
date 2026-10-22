@@ -363,7 +363,6 @@ public class LobbyManager : NetworkBehaviour
             }
         }
 
-        // Embaralha os jogadores para sortear os times de forma justa
         for (int i = 0; i < indicesAtivos.Count; i++)
         {
             int rnd = Random.Range(i, indicesAtivos.Count);
@@ -392,7 +391,6 @@ public class LobbyManager : NetworkBehaviour
                 continue;
             }
 
-            // Seleciona o prefab do mal se for pegador, ou do bem se for vítima
             GameObject[] listaPrefabs = slot.IsPegador ? prefabsDoMal : prefabsDoBem;
 
             if (listaPrefabs == null || listaPrefabs.Length == 0)
@@ -413,8 +411,6 @@ public class LobbyManager : NetworkBehaviour
                 if (networkObject != null)
                 {
                     networkObject.SpawnWithOwnership(slot.ClientId);
-
-                    // Atribui o valor da NetworkVariable no player recém spawnado
                     var playerMovement = jogadorInstanciado.GetComponent<PlayerMovement>();
                     if (playerMovement != null)
                     {
