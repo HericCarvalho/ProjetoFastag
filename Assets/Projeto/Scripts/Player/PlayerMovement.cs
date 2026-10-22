@@ -1,3 +1,5 @@
+
+using System;
 using System.Collections;
 using Unity.Cinemachine;
 using Unity.Netcode;
@@ -5,28 +7,35 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(NetworkObject))]
 public class PlayerMovement : NetworkBehaviour
 {
     [Header("Movimentação")]
     [SerializeField] private float velocidade = 5f;
     [SerializeField] private float gravidade = -20f;
-    [SerializeField] private float velocidaderotação = 10f;
-    [SerializeField] private float alturapulo = 1.5f;
+    [SerializeField] private float velocidadeRotacao = 10f;
+    [SerializeField] private float alturaPulo = 1.5f;
 
-    [Header("Interação")]
+    [Header("Captura")]
     [SerializeField] private float distanciaInteracao = 3f;
+    [SerializeField] private float distanciaCaptura = 2f;
 
-    [Header("Câmara do Prefab")]
+    [Header("Câmera")]
     [SerializeField] private CinemachineCamera cameraDoPrefab;
-
     [SerializeField] private Transform cameraTarget;
+
+    public NetworkVariable<bool> isPegador =
+        new NetworkVariable<bool>(false);
+
+    public NetworkVariable<bool> foiCapturado =
+        new NetworkVariable<bool>(false);
+
+    public static event Action<PlayerMovement> JogadorCapturadoNoServidor;
+
     private CharacterController controlador;
     private InputSystem_Actions controles;
     private Animator animator;
-
-    private float verticalVelocity;
-
-    public NetworkVariable<bool> isPegador = new NetworkVariable<bool>(false);
+    private float velocidadeVertical;
 
     private void Awake()
     {
@@ -37,79 +46,61 @@ public class PlayerMovement : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        Debug.Log(
-            $"PlayerMovement iniciado. OwnerClientId: {OwnerClientId}, " +
-            $"LocalClientId: {NetworkManager.Singleton.LocalClientId}, " +
-            $"IsOwner: {IsOwner}");
-
-        if (cameraDoPrefab != null)
-        {
-            if (IsOwner)
-            {
-                cameraDoPrefab.gameObject.SetActive(true);
-                cameraDoPrefab.Priority = 20;
-            }
-            else
-            {
-                cameraDoPrefab.gameObject.SetActive(false);
-                cameraDoPrefab.Priority = 0;
-            }
-        }
+        ConfigurarCamera();
 
         if (!IsOwner)
-        {
-            Debug.Log("Este jogador não é o jogador local.");
             return;
-        }
 
         controles.Enable();
         controles.Player.Jump.performed += Pular;
         controles.Player.Interact.performed += Interagir;
-
-        Debug.Log("Controles habilitados. Pressione E.");
     }
 
     public override void OnNetworkDespawn()
     {
-        if (!IsOwner)
+        if (IsOwner && controles != null)
+        {
+            controles.Player.Jump.performed -= Pular;
+            controles.Player.Interact.performed -= Interagir;
+            controles.Disable();
+        }
+    }
+
+    private void ConfigurarCamera()
+    {
+        if (cameraDoPrefab == null)
             return;
 
-        controles.Player.Jump.performed -= Pular;
-        controles.Player.Interact.performed -= Interagir;
-        controles.Disable();
+        cameraDoPrefab.gameObject.SetActive(IsOwner);
+        cameraDoPrefab.Priority = IsOwner ? 20 : 0;
     }
 
     private void Update()
     {
-        if (!IsOwner)
+        if (!IsOwner || foiCapturado.Value)
             return;
 
-        Movimentação();
-        AtualizaçãoAnimação();
+        Movimentar();
+        AtualizarAnimacao();
     }
 
     private void Pular(InputAction.CallbackContext context)
     {
-        if (controlador.isGrounded)
-        {
-            verticalVelocity = Mathf.Sqrt(alturapulo * -2f * gravidade);
+        if (!controlador.isGrounded || foiCapturado.Value)
+            return;
 
-            if (animator != null)
-            {
-                animator.SetTrigger("Pular");
-            }
-        }
+        velocidadeVertical = Mathf.Sqrt(alturaPulo * -2f * gravidade);
+
+        if (animator != null)
+            animator.SetTrigger("Pular");
     }
 
     private void Interagir(InputAction.CallbackContext context)
     {
-        Debug.Log("Ação Interact recebida.");
+        if (!isPegador.Value || foiCapturado.Value)
+            return;
 
-        Transform camTransform = Camera.main != null
-            ? Camera.main.transform
-            : cameraTarget != null
-                ? cameraTarget
-                : transform;
+        Transform camTransform = ObterTransformCamera();
 
         if (!Physics.Raycast(
             camTransform.position,
@@ -117,41 +108,69 @@ public class PlayerMovement : NetworkBehaviour
             out RaycastHit hit,
             distanciaInteracao))
         {
-            Debug.Log("Nenhum objeto encontrado pelo Raycast.");
             return;
         }
 
-        NetworkObject objRede = hit.collider.GetComponentInParent<NetworkObject>();
+        PlayerMovement alvo =
+            hit.collider.GetComponentInParent<PlayerMovement>();
 
-        if (objRede == null)
-        {
-            Debug.Log("O objeto atingido não possui NetworkObject.");
+        if (alvo == null || alvo == this || alvo.isPegador.Value)
             return;
-        }
 
-        if (objRede.NetworkObjectId != NetworkObjectId)
-            SolicitarInteracaoServerRpc(objRede.NetworkObjectId);
+        if (alvo.foiCapturado.Value)
+            return;
+
+        float distancia = Vector3.Distance(
+            transform.position,
+            alvo.transform.position);
+
+        if (distancia > distanciaCaptura)
+            return;
+
+        SolicitarCapturaServerRpc(alvo.NetworkObjectId);
     }
 
     [ServerRpc]
-    private void SolicitarInteracaoServerRpc(ulong idObjetoAlvo)
+    private void SolicitarCapturaServerRpc(ulong idObjetoAlvo)
     {
-        if (!isPegador.Value) return;
+        if (!isPegador.Value || foiCapturado.Value)
+            return;
 
-        if (NetworkManager.Singleton.SpawnManager.SpawnedObjects.TryGetValue(idObjetoAlvo, out NetworkObject objetoAlvo))
+        if (!NetworkManager.Singleton.SpawnManager.SpawnedObjects
+            .TryGetValue(idObjetoAlvo, out NetworkObject objetoAlvo))
         {
-            PlayerMovement jogadorAlvo = objetoAlvo.GetComponent<PlayerMovement>();
-
-            if (jogadorAlvo != null && !jogadorAlvo.isPegador.Value)
-            {
-                Debug.Log($"[Servidor] O pegador {OwnerClientId} eliminou a vítima {jogadorAlvo.OwnerClientId}!");
-                jogadorAlvo.Morrer();
-            }
+            return;
         }
+
+        PlayerMovement alvo = objetoAlvo.GetComponent<PlayerMovement>();
+
+        if (alvo == null ||
+            alvo == this ||
+            alvo.isPegador.Value ||
+            alvo.foiCapturado.Value)
+        {
+            return;
+        }
+
+        float distancia = Vector3.Distance(
+            transform.position,
+            alvo.transform.position);
+
+        if (distancia > distanciaCaptura)
+            return;
+
+        alvo.Morrer();
     }
 
     public void Morrer()
     {
+        if (!IsServer || foiCapturado.Value)
+            return;
+
+        foiCapturado.Value = true;
+
+        JogadorCapturadoNoServidor?.Invoke(this);
+
         MorrerClientRpc();
     }
 
@@ -159,74 +178,83 @@ public class PlayerMovement : NetworkBehaviour
     private void MorrerClientRpc()
     {
         if (animator != null)
-        {
             animator.SetTrigger("Morrer");
-        }
 
-        enabled = false;
-        if (controlador != null) controlador.enabled = false;
+        if (controlador != null)
+            controlador.enabled = false;
 
         if (IsServer)
-        {
             StartCoroutine(RemoverAposMorte());
-        }
     }
 
     private IEnumerator RemoverAposMorte()
     {
-        yield return new WaitForSeconds(3f); 
-        GetComponent<NetworkObject>().Despawn();
+        yield return new WaitForSeconds(0.5f);
+
+        if (IsServer && NetworkObject.IsSpawned)
+            NetworkObject.Despawn();
     }
 
-    private void Movimentação()
+    private Transform ObterTransformCamera()
     {
-        Vector2 moveInput = controles.Player.Move.ReadValue<Vector2>();
+        if (Camera.main != null)
+            return Camera.main.transform;
 
-        Transform camTransform = Camera.main != null ? Camera.main.transform : (cameraTarget != null ? cameraTarget : transform);
+        if (cameraTarget != null)
+            return cameraTarget;
 
-        Vector3 forward = camTransform.forward;
-        Vector3 right = camTransform.right;
+        return transform;
+    }
 
-        forward.y = 0f;
-        right.y = 0f;
+    private void Movimentar()
+    {
+        Vector2 entrada = controles.Player.Move.ReadValue<Vector2>();
+        Transform cameraTransform = ObterTransformCamera();
 
-        forward.Normalize();
-        right.Normalize();
+        Vector3 frente = cameraTransform.forward;
+        Vector3 direita = cameraTransform.right;
 
-        Vector3 movement = forward * moveInput.y + right * moveInput.x;
+        frente.y = 0f;
+        direita.y = 0f;
 
-        if (movement.sqrMagnitude > 0.01f)
+        frente.Normalize();
+        direita.Normalize();
+
+        Vector3 movimento = frente * entrada.y + direita * entrada.x;
+
+        if (movimento.sqrMagnitude > 0.01f)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(movement);
+            Quaternion rotacaoAlvo = Quaternion.LookRotation(movimento);
+
             transform.rotation = Quaternion.Slerp(
                 transform.rotation,
-                targetRotation,
-                velocidaderotação * Time.deltaTime
-            );
+                rotacaoAlvo,
+                velocidadeRotacao * Time.deltaTime);
         }
 
-        movement *= velocidade;
-        AplicarGravidade(ref movement);
+        movimento *= velocidade;
+        AplicarGravidade(ref movimento);
 
-        controlador.Move(movement * Time.deltaTime);
+        controlador.Move(movimento * Time.deltaTime);
     }
 
-    private void AtualizaçãoAnimação()
+    private void AtualizarAnimacao()
     {
-        if (animator == null) return;
+        if (animator == null)
+            return;
 
-        float speed = new Vector3(controlador.velocity.x, 0f, controlador.velocity.z).magnitude;
-        animator.SetFloat("Speed", speed);
+        Vector3 velocidadeHorizontal = controlador.velocity;
+        velocidadeHorizontal.y = 0f;
+
+        animator.SetFloat("Speed", velocidadeHorizontal.magnitude);
     }
 
-    private void AplicarGravidade(ref Vector3 movement)
+    private void AplicarGravidade(ref Vector3 movimento)
     {
-        if (controlador.isGrounded && verticalVelocity < 0f)
-        {
-            verticalVelocity = -2f;
-        }
+        if (controlador.isGrounded && velocidadeVertical < 0f)
+            velocidadeVertical = -2f;
 
-        verticalVelocity += gravidade * Time.deltaTime;
-        movement.y = verticalVelocity;
+        velocidadeVertical += gravidade * Time.deltaTime;
+        movimento.y = velocidadeVertical;
     }
 }
