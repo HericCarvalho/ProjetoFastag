@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2816.06 1088.67">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #180a1b;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: #3d0e45;
+      }
+
+      .cls-5 {
+        isolation: isolate;
+      }
+
+      .cls-6 {
+        fill: url(#Gradiente_sem_nome_80);
+      }
+
+      .cls-3 {
+        opacity: .42;
+      }
+
+      .cls-3, .cls-4 {
+        mix-blend-mode: multiply;
+      }
+
+      .cls-7 {
+        fill: #24dd7f;
+      }
+
+      .cls-4 {
+        opacity: .12;
+      }
+
+      .cls-8 {
+        fill: url(#Gradiente_sem_nome_96);
+      }
+    </style>
+    <linearGradient id="Gradiente_sem_nome_96" data-name="Gradiente sem nome 96" x1="969.66" y1="258.93" x2="969.66" y2="194.93" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#007c3d"/>
+      <stop offset="1" stop-color="#021"/>
+    </linearGradient>
+    <linearGradient id="Gradiente_sem_nome_80" data-name="Gradiente sem nome 80" x1="971.08" y1="207.72" x2="971.08" y2="1.73" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cc05f6"/>
+      <stop offset=".13" stop-color="#c404ec"/>
+      <stop offset=".35" stop-color="#ae04d3"/>
+      <stop offset=".47" stop-color="#a104c3"/>
+      <stop offset=".59" stop-color="#9805b8"/>
+      <stop offset=".79" stop-color="#83099c"/>
+      <stop offset="1" stop-color="#680f79"/>
+    </linearGradient>
+  </defs>
+  <g class="cls-5">
+    <g id="Layer_6" data-name="Layer 6">
+      <polygon class="cls-1" points="1929.08 303.73 10.24 278.18 10.24 13.78 1929.08 13.78 1929.08 303.73"/>
+      <polygon class="cls-7" points="1929.08 290.93 10.24 266.13 10.24 1.73 1929.08 1.73 1929.08 290.93"/>
+      <polygon class="cls-8" points="1929.08 258.93 10.24 255.83 10.24 194.93 1929.08 194.93 1929.08 258.93"/>
+      <polygon class="cls-2" points="1929.08 220.54 10.24 214.84 10.24 6.95 1929.08 6.95 1929.08 220.54"/>
+      <polygon class="cls-6" points="1930.51 207.72 11.66 202.23 11.66 1.73 1930.51 1.73 1930.51 207.72"/>
+      <polyline class="cls-3" points="11.66 1.73 268.68 150.13 300.68 70.33 699.08 146.33 721.48 74.03 1318.28 175.73 1343.88 137.33 1665.48 194.93 1291.08 65.33 1260.68 104.72 689.48 1.73 641.48 54.13 342.28 4.13"/>
+      <polyline class="cls-4" points="10.24 4.13 253.29 91.93 293.83 24.58 689.64 113.11 714.31 41.55 1307.6 162.03 1334.4 124.46 1654.02 192.17 1291.08 65.33 1260.68 104.72 689.48 1.73 641.48 54.13 342.28 4.13"/>
+    </g>
+  </g>
+</svg>

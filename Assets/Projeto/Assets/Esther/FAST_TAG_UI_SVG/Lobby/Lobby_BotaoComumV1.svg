@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2816.06 1088.67">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fec12b;
+      }
+
+      .cls-2 {
+        mix-blend-mode: multiply;
+        opacity: .48;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #3d0e45;
+      }
+
+      .cls-4 {
+        fill: #cc05f6;
+      }
+
+      .cls-5 {
+        isolation: isolate;
+      }
+
+      .cls-6 {
+        fill: #fdd98b;
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="13.57" y1="965.14" x2="747.09" y2="965.14" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#680f5a"/>
+      <stop offset="1" stop-color="#680f79"/>
+    </linearGradient>
+  </defs>
+  <g class="cls-5">
+    <g id="Layer_23" data-name="Layer 23">
+      <polygon points="721.77 1048.85 8.66 1059.57 8.66 872.35 777.89 872.35 721.77 1048.85"/>
+      <polygon class="cls-4" points="707.61 1042.11 27.61 1052.06 27.61 878.22 761.13 878.22 707.61 1042.11"/>
+      <polygon class="cls-3" points="700.92 1042.11 20.91 1052.06 20.91 878.22 754.44 878.22 700.92 1042.11"/>
+      <polygon class="cls-7" points="693.58 1042.11 13.57 1052.06 13.57 878.22 747.09 878.22 693.58 1042.11"/>
+      <polygon class="cls-2" points="673.49 1030.13 32.41 1046.51 32.41 900.11 695.66 900.11 673.49 1030.13"/>
+      <polygon class="cls-1" points="678.26 1022.79 37.17 1039.16 37.17 892.76 700.42 892.76 678.26 1022.79"/>
+      <polyline class="cls-6" points="37.17 1030.6 37.17 1039.16 678.26 1022.79 700.42 892.76 688.44 892.76 670.07 1015.63 42.81 1030.33"/>
+    </g>
+  </g>
+</svg>

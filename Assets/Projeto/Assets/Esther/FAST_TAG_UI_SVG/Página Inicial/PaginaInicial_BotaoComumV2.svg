@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2816.06 1088.67">
+  <defs>
+    <style>
+      .cls-1 {
+        mix-blend-mode: multiply;
+        opacity: .48;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #3d0e45;
+      }
+
+      .cls-3 {
+        fill: #cc05f6;
+      }
+
+      .cls-4 {
+        isolation: isolate;
+      }
+
+      .cls-5 {
+        fill: #81eeb7;
+      }
+
+      .cls-6 {
+        fill: #24dd7f;
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="71.42" y1="655.33" x2="907.81" y2="655.33" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#680f5a"/>
+      <stop offset="1" stop-color="#680f79"/>
+    </linearGradient>
+  </defs>
+  <g class="cls-4">
+    <g id="Layer_2" data-name="Layer 2">
+      <polyline points="65.5 559.75 65.5 751.69 922.42 741.43 893.89 715.97 931.7 701.58 894.91 678.35 954.13 620.11 913.17 615.04 965.77 559.75 904.24 559.75"/>
+      <polyline class="cls-3" points="79.4 568.84 79.4 741.82 898.93 732.57 871.64 709.63 907.81 696.66 872.7 683.74 928.89 629.78 886.45 622.27 940.38 568.84 881.55 568.84"/>
+      <polyline class="cls-2" points="71.42 568.41 71.42 741.39 890.94 732.14 849.59 705.77 888.06 698.47 852.79 687.42 910.6 638.14 855.19 638.14 919.54 568.41 873.56 568.41"/>
+      <polyline class="cls-7" points="71.42 568.41 71.42 742.25 879.6 732.96 838.83 706.45 876.76 699.11 841.98 688.01 898.99 638.49 844.35 638.49 907.81 568.41 862.46 568.41"/>
+      <polygon class="cls-1" points="793.57 720.71 92.07 737.09 92.07 590.69 817.82 590.69 793.57 720.71"/>
+      <polygon class="cls-6" points="802.31 707.34 100.81 723.72 100.81 577.32 826.56 577.32 802.31 707.34"/>
+      <polyline class="cls-5" points="100.81 715.16 100.81 723.72 802.31 707.34 826.56 577.32 813.45 577.32 793.35 700.19 106.98 714.89"/>
+    </g>
+  </g>
+</svg>
