@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_52" data-name="Camada 52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2816.06 1090">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ce04f6;
+      }
+
+      .cls-2 {
+        fill: #180a1b;
+      }
+
+      .cls-3 {
+        fill: url(#Gradiente_sem_nome_295);
+      }
+
+      .cls-3, .cls-4 {
+        opacity: .65;
+      }
+
+      .cls-4 {
+        fill: url(#Gradiente_sem_nome_295-2);
+      }
+    </style>
+    <linearGradient id="Gradiente_sem_nome_295" data-name="Gradiente sem nome 295" x1="1765.68" y1="994.95" x2="1765.68" y2="496.74" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#be3d8f"/>
+      <stop offset=".18" stop-color="#bf4090" stop-opacity=".98"/>
+      <stop offset=".33" stop-color="#c24a96" stop-opacity=".93"/>
+      <stop offset=".47" stop-color="#c85ba0" stop-opacity=".84"/>
+      <stop offset=".59" stop-color="#d074ae" stop-opacity=".72"/>
+      <stop offset=".72" stop-color="#da93c0" stop-opacity=".55"/>
+      <stop offset=".83" stop-color="#e7bad7" stop-opacity=".36"/>
+      <stop offset=".95" stop-color="#f6e6f1" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="Gradiente_sem_nome_295-2" data-name="Gradiente sem nome 295" x1="1768.03" y1="970.95" x2="1768.03" y2="496.74" xlink:href="#Gradiente_sem_nome_295"/>
+  </defs>
+  <g id="Camada_51" data-name="Camada 51">
+    <polygon class="cls-2" points="1860.5 1046.96 1669.71 1046.96 1669.71 535.93 1860.5 483.14 1860.5 1046.96"/>
+    <polygon class="cls-1" points="1849.7 1018.55 1684.11 1018.55 1684.11 550.33 1852.1 497.54 1849.7 1018.55"/>
+    <path class="cls-3" d="M1765.68,994.95h0c-44.64,0-80.83-37.07-80.83-82.8v-371.41l161.66-44.01v415.42c0,45.73-36.19,82.8-80.83,82.8Z"/>
+    <path class="cls-4" d="M1768.03,970.95h0c-44.64,0-80.83-35.28-80.83-78.81v-353.52l161.66-41.89v395.41c0,43.52-36.19,78.81-80.83,78.81Z"/>
+  </g>
+</svg>
