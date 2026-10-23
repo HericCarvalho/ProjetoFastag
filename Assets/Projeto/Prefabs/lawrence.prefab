@@ -255,7 +255,7 @@ Animator:
   m_GameObject: {fileID: 3714016489112029994}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b3059d0767a3f47feaaef69bdbe026c9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -309,9 +309,31 @@ MonoBehaviour:
   NetworkAnimatorExpanded: 0
   AuthorityMode: 1
   m_Animator: {fileID: 721051611439994166}
-  TransitionStateInfoList: []
+  TransitionStateInfoList:
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: -1459056457
+    DestinationState: -1623063825
+    TransitionDuration: 0.25
+    TriggerNameHash: -1481439722
+    TransitionIndex: 1
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: 110062036
+    DestinationState: -1623063825
+    TransitionDuration: 0.25
+    TriggerNameHash: -1481439722
+    TransitionIndex: 1
   AnimatorParameterEntries:
-    ParameterEntries: []
+    ParameterEntries:
+    - name: speed
+      NameHash: 254213878
+      Synchronize: 1
+      ParameterType: 1
+    - name: jump
+      NameHash: -1481439722
+      Synchronize: 1
+      ParameterType: 9
   AnimatorParametersExpanded: 0
 --- !u!114 &5165511529271943313
 MonoBehaviour:
@@ -387,11 +409,22 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   velocidade: 5
   gravidade: -20
-  "velocidaderota\xE7\xE3o": 10
-  alturapulo: 1.5
+  velocidadeRotacao: 10
+  alturaPulo: 1.5
   distanciaInteracao: 3
+  distanciaCaptura: 2
   cameraDoPrefab: {fileID: 5949591337322184367}
   cameraTarget: {fileID: 1284201491224338559}
+  isPegador:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
+  foiCapturado:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
 --- !u!114 &8353354037363743921
 MonoBehaviour:
   m_ObjectHideFlags: 0
