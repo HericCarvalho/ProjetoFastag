@@ -14,6 +14,7 @@ public class ControladorUI : MonoBehaviour
     private VisualElement painelEntrar;
     private VisualElement painelLobby;
     private VisualElement painelGameUI;
+    private VisualElement painelVitoria;
 
     private TextField campoIP;
     private TextField campoPorta;
@@ -21,13 +22,17 @@ public class ControladorUI : MonoBehaviour
     private Label textoTempo;
     private Label textoPlacar;
     private Label textoRodada;
+    private Label textoVencedor;
+    private Label textoPlacarFinal;
 
-    private Button btnClient;
-    private Button btnEntrar;
-    private Button btnServer;
-    private Button btnHost;
-    private Button btnExit;
-    private Button btnVoltar;
+    private Button botaoClient;
+    private Button botaoEntrar;
+    private Button botaoServer;
+    private Button botaoHost;
+    private Button botaoExit;
+    private Button botaoVoltar;
+    private Button botaoVoltarLobby;
+    private Button botaoMenuPrincipal;
 
     private void OnEnable()
     {
@@ -62,62 +67,79 @@ public class ControladorUI : MonoBehaviour
         painelPortIP = root.Q<VisualElement>("Painel_Port-IP");
         painelLobby = root.Q<VisualElement>("Painel_Lobby");
         painelGameUI = root.Q<VisualElement>("Painel_GameUI");
+        painelVitoria = root.Q<VisualElement>("Painel_Vitoria");
 
         campoIP = root.Q<TextField>("IP");
         campoPorta = root.Q<TextField>("Port");
 
-        textoTempo = root.Q<Label>("time_text");
-        textoPlacar = root.Q<Label>("score_text");
-        textoRodada = root.Q<Label>("round_text");
+        textoTempo = root.Q<Label>("Tempo_text");
+        textoPlacar = root.Q<Label>("Placar_text");
+        textoRodada = root.Q<Label>("Rodada_text");
+        textoVencedor = root.Q<Label>("TextoVencedor");
+        textoPlacarFinal = root.Q<Label>("TextoPlacarFinal");
 
-        btnClient = root.Q<Button>("Client");
-        btnEntrar = root.Q<Button>("Entrar");
-        btnServer = root.Q<Button>("Server");
-        btnHost = root.Q<Button>("Host");
-        btnExit = root.Q<Button>("Exit");
-        btnVoltar = root.Q<Button>("Voltar");
+        botaoClient = root.Q<Button>("Client");
+        botaoEntrar = root.Q<Button>("Entrar");
+        botaoServer = root.Q<Button>("Server");
+        botaoHost = root.Q<Button>("Host");
+        botaoExit = root.Q<Button>("Exit");
+        botaoVoltar = root.Q<Button>("Voltar");
+        botaoVoltarLobby = root.Q<Button>("BotaoVoltarLobby");
+        botaoMenuPrincipal = root.Q<Button>("BotaoMenuPrincipal");
     }
 
     private void RegistrarEventos()
     {
-        if (btnClient != null)
-            btnClient.clicked += AbrirPainelPortIP;
+        if (botaoClient != null)
+            botaoClient.clicked += AbrirPainelPortIP;
 
-        if (btnEntrar != null)
-            btnEntrar.clicked += IniciarConexaoCliente;
+        if (botaoEntrar != null)
+            botaoEntrar.clicked += IniciarConexaoCliente;
 
-        if (btnServer != null)
-            btnServer.clicked += IniciarServidor;
+        if (botaoServer != null)
+            botaoServer.clicked += IniciarServidor;
 
-        if (btnHost != null)
-            btnHost.clicked += IniciarHost;
+        if (botaoHost != null)
+            botaoHost.clicked += IniciarHost;
 
-        if (btnExit != null)
-            btnExit.clicked += Sair;
+        if (botaoExit != null)
+            botaoExit.clicked += Sair;
 
-        if (btnVoltar != null)
-            btnVoltar.clicked += VoltarAoMenuEntrar;
+        if (botaoVoltar != null)
+            botaoVoltar.clicked += VoltarAoMenuEntrar;
+
+        if (botaoVoltarLobby != null)
+            botaoVoltarLobby.clicked += VoltarParaLobby;
+
+        if (botaoMenuPrincipal != null)
+            botaoMenuPrincipal.clicked += VoltarAoMenuPrincipal;
     }
 
     private void RemoverEventos()
     {
-        if (btnClient != null)
-            btnClient.clicked -= AbrirPainelPortIP;
+        if (botaoClient != null)
+            botaoClient.clicked -= AbrirPainelPortIP;
 
-        if (btnEntrar != null)
-            btnEntrar.clicked -= IniciarConexaoCliente;
+        if (botaoEntrar != null)
+            botaoEntrar.clicked -= IniciarConexaoCliente;
 
-        if (btnServer != null)
-            btnServer.clicked -= IniciarServidor;
+        if (botaoServer != null)
+            botaoServer.clicked -= IniciarServidor;
 
-        if (btnHost != null)
-            btnHost.clicked -= IniciarHost;
+        if (botaoHost != null)
+            botaoHost.clicked -= IniciarHost;
 
-        if (btnExit != null)
-            btnExit.clicked -= Sair;
+        if (botaoExit != null)
+            botaoExit.clicked -= Sair;
 
-        if (btnVoltar != null)
-            btnVoltar.clicked -= VoltarAoMenuEntrar;
+        if (botaoVoltar != null)
+            botaoVoltar.clicked -= VoltarAoMenuEntrar;
+
+        if (botaoVoltarLobby != null)
+            botaoVoltarLobby.clicked -= VoltarParaLobby;
+
+        if (botaoMenuPrincipal != null)
+            botaoMenuPrincipal.clicked -= VoltarAoMenuPrincipal;
     }
 
     private void MostrarMenuInicial()
@@ -127,6 +149,7 @@ public class ControladorUI : MonoBehaviour
         DefinirVisibilidade(painelPortIP, false);
         DefinirVisibilidade(painelLobby, false);
         DefinirVisibilidade(painelGameUI, false);
+        DefinirVisibilidade(painelVitoria, false);
     }
 
     private void AbrirPainelPortIP()
@@ -186,6 +209,7 @@ public class ControladorUI : MonoBehaviour
         DefinirVisibilidade(painelPortIP, false);
         DefinirVisibilidade(painelLobby, true);
         DefinirVisibilidade(painelGameUI, false);
+        DefinirVisibilidade(painelVitoria, false);
     }
     public void AtualizarHUD(int segundos, int rodada, int mal, int bem)
     {
@@ -202,22 +226,22 @@ public class ControladorUI : MonoBehaviour
         }
         else
         {
-            Debug.LogError("[HUD] time_text não encontrado!");
+            Debug.LogError("[HUD] textoTempo não encontrado!");
         }
 
         if (textoRodada != null)
             textoRodada.text = rodada.ToString();
         else
-            Debug.LogError("[HUD] round_text não encontrado!");
+            Debug.LogError("[HUD] textoRodada não encontrado!");
 
         if (textoPlacar != null)
         {
             textoPlacar.text = $"{mal}/{bem}";
-            Debug.Log($"[HUD] Label score_text atualizado para {textoPlacar.text}");
+            Debug.Log($"[HUD] Label textoPlacar atualizado para {textoPlacar.text}");
         }
         else
         {
-            Debug.LogError("[HUD] score_text não encontrado!");
+            Debug.LogError("[HUD] textoPlacar não encontrado!");
         }
     }
 
@@ -236,6 +260,9 @@ public class ControladorUI : MonoBehaviour
         if (painelLobby != null)
             painelLobby.style.display = DisplayStyle.None;
 
+        if (painelVitoria != null)
+            painelVitoria.style.display = DisplayStyle.None;
+
         if (painelGameUI == null)
         {
             UIDocument documento = GetComponent<UIDocument>();
@@ -249,6 +276,8 @@ public class ControladorUI : MonoBehaviour
 
         if (painelGameUI != null)
             painelGameUI.style.display = DisplayStyle.Flex;
+
+
     }
 
     public void ExibirMenuInicial()
@@ -260,6 +289,43 @@ public class ControladorUI : MonoBehaviour
     {
         DefinirVisibilidade(painelPortIP, false);
         DefinirVisibilidade(painelEntrar, true);
+    }
+    public void ExibirTelaVitoria(string vencedor, int mal, int bem)
+    {
+        DefinirVisibilidade(painelPrincipal, false);
+        DefinirVisibilidade(painelEntrar, false);
+        DefinirVisibilidade(painelPortIP, false);
+        DefinirVisibilidade(painelLobby, false);
+        DefinirVisibilidade(painelGameUI, false);
+        DefinirVisibilidade(painelVitoria, true);
+
+        if (textoVencedor != null)
+            textoVencedor.text = $"Time vencedor: {vencedor}!";
+
+        if (textoPlacarFinal != null)
+            textoPlacarFinal.text = $"Placar final: {mal}/{bem}";
+
+        UnityEngine.Cursor.lockState = UnityEngine.CursorLockMode.None;
+        UnityEngine.Cursor.visible = true;
+    }
+
+    private void VoltarParaLobby()
+    {
+        if (LobbyManager.Singleton != null)
+            LobbyManager.Singleton.SolicitarVoltaAoLobby();
+    }
+
+    private void VoltarAoMenuPrincipal()
+    {
+        NetworkManager manager = NetworkManager.Singleton;
+
+        if (manager != null && manager.IsListening)
+            manager.Shutdown();
+
+        UnityEngine.Cursor.lockState = UnityEngine.CursorLockMode.None;
+        UnityEngine.Cursor.visible = true;
+
+        MostrarMenuInicial();
     }
 
     private void DefinirVisibilidade(

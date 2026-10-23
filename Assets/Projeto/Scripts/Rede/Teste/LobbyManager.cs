@@ -62,10 +62,10 @@ public class LobbyManager : NetworkBehaviour
     private VisualElement[] cardSlots = new VisualElement[MAX_JOGADORES];
     private VisualElement[] imgPersonagens = new VisualElement[MAX_JOGADORES];
     private Label[] lblTipos = new Label[MAX_JOGADORES];
-    private Button[] btnAnterior = new Button[MAX_JOGADORES];
-    private Button[] btnProximo = new Button[MAX_JOGADORES];
-    private Button[] btnPronto = new Button[MAX_JOGADORES];
-    private Button btnIniciarPartida;
+    private Button[] BotaoAnterior = new Button[MAX_JOGADORES];
+    private Button[] BotaoProximo = new Button[MAX_JOGADORES];
+    private Button[] BotaoPronto = new Button[MAX_JOGADORES];
+    private Button BotaoIniciarPartida;
     private Label txtContagemRegressiva;
 
     private int rodadaAtual;
@@ -140,7 +140,7 @@ public class LobbyManager : NetworkBehaviour
             return;
 
         painelLobby = root.Q<VisualElement>("Painel_Lobby");
-        btnIniciarPartida = root.Q<Button>("BtnIniciarPartida");
+        BotaoIniciarPartida = root.Q<Button>("BotaoIniciarPartida");
         txtContagemRegressiva = root.Q<Label>("TxtContagemRegressiva");
 
 
@@ -150,10 +150,10 @@ public class LobbyManager : NetworkBehaviour
         imagensVitimas[0] = root.Q<VisualElement>("Vitima_1");
         imagensVitimas[1] = root.Q<VisualElement>("Vitima_2");
 
-        if (btnIniciarPartida != null)
+        if (BotaoIniciarPartida != null)
         {
-            btnIniciarPartida.clicked -= SolicitarInicioPartida;
-            btnIniciarPartida.clicked += SolicitarInicioPartida;
+            BotaoIniciarPartida.clicked -= SolicitarInicioPartida;
+            BotaoIniciarPartida.clicked += SolicitarInicioPartida;
         }
 
         for (int i = 0; i < MAX_JOGADORES; i++)
@@ -166,24 +166,24 @@ public class LobbyManager : NetworkBehaviour
             cardSlots[index] = slot;
             imgPersonagens[index] = slot.Q<VisualElement>("ImgPersonagem");
             lblTipos[index] = slot.Q<Label>("LblTipoJogador");
-            btnAnterior[index] = slot.Q<Button>("BtnAnterior");
-            btnProximo[index] = slot.Q<Button>("BtnProximo");
-            btnPronto[index] = slot.Q<Button>("BtnPronto");
+            BotaoAnterior[index] = slot.Q<Button>("BotaoAnterior");
+            BotaoProximo[index] = slot.Q<Button>("BotaoProximo");
+            BotaoPronto[index] = slot.Q<Button>("BotaoPronto");
 
-            if (btnAnterior[index] != null)
+            if (BotaoAnterior[index] != null)
             {
-                btnAnterior[index].userData = index;
-                btnAnterior[index].clicked += () => SolicitarTrocaPersonagem(-1);
+                BotaoAnterior[index].userData = index;
+                BotaoAnterior[index].clicked += () => SolicitarTrocaPersonagem(-1);
             }
 
-            if (btnProximo[index] != null)
+            if (BotaoProximo[index] != null)
             {
-                btnProximo[index].userData = index;
-                btnProximo[index].clicked += () => SolicitarTrocaPersonagem(1);
+                BotaoProximo[index].userData = index;
+                BotaoProximo[index].clicked += () => SolicitarTrocaPersonagem(1);
             }
 
-            if (btnPronto[index] != null)
-                btnPronto[index].clicked += SolicitarAlternarPronto;
+            if (BotaoPronto[index] != null)
+                BotaoPronto[index].clicked += SolicitarAlternarPronto;
         }
     }
 
@@ -329,25 +329,25 @@ public class LobbyManager : NetworkBehaviour
             }
 
             bool eMeuSlot = dados.ClientId == meuId;
-            if (btnAnterior[i] != null) btnAnterior[i].style.display = eMeuSlot ? DisplayStyle.Flex : DisplayStyle.None;
-            if (btnProximo[i] != null) btnProximo[i].style.display = eMeuSlot ? DisplayStyle.Flex : DisplayStyle.None;
+            if (BotaoAnterior[i] != null) BotaoAnterior[i].style.display = eMeuSlot ? DisplayStyle.Flex : DisplayStyle.None;
+            if (BotaoProximo[i] != null) BotaoProximo[i].style.display = eMeuSlot ? DisplayStyle.Flex : DisplayStyle.None;
 
-            if (btnPronto[i] != null)
+            if (BotaoPronto[i] != null)
             {
-                btnPronto[i].style.display = eMeuSlot ? DisplayStyle.Flex : DisplayStyle.None;
-                btnPronto[i].text = dados.IsReady ? "Pronto!" : "Está pronto?";
+                BotaoPronto[i].style.display = eMeuSlot ? DisplayStyle.Flex : DisplayStyle.None;
+                BotaoPronto[i].text = dados.IsReady ? "Pronto!" : "Está pronto?";
             }
 
             if (!dados.IsReady)
                 todosProntos = false;
         }
 
-        if (btnIniciarPartida != null)
+        if (BotaoIniciarPartida != null)
         {
             bool ehHost = NetworkManager.Singleton.IsHost;
             bool quantidadeValida = jogadoresAtivos == 1 | jogadoresAtivos == 2 || jogadoresAtivos == 4;
-            btnIniciarPartida.style.display = ehHost ? DisplayStyle.Flex : DisplayStyle.None;
-            btnIniciarPartida.SetEnabled(
+            BotaoIniciarPartida.style.display = ehHost ? DisplayStyle.Flex : DisplayStyle.None;
+            BotaoIniciarPartida.SetEnabled(
                 ehHost && quantidadeValida && todosProntos && !contagemRegressivaEmAndamento);
         }
     }
@@ -708,6 +708,17 @@ public class LobbyManager : NetworkBehaviour
         if (pontosMal >= 2 || pontosBem >= 2 || rodadaAtual >= 3)
         {
             partidaFinalizada = true;
+
+            bool malVenceuPartida = pontosMal > pontosBem;
+
+            DesativarControlesDosJogadoresClientRpc();
+
+            ExibirVitoriaClientRpc(
+                malVenceuPartida ? "Pegadores" : "Vítimas",
+                pontosMal,
+                pontosBem
+            );
+
             return;
         }
 
@@ -788,7 +799,50 @@ public class LobbyManager : NetworkBehaviour
 
         rotinaProximaRodada = null;
     }
+    [Rpc(SendTo.ClientsAndHost)]
+    private void DesativarControlesDosJogadoresClientRpc()
+    {
+        if (NetworkManager.Singleton == null)
+            return;
 
+        foreach (NetworkObject objeto in
+                 NetworkManager.Singleton.SpawnManager.SpawnedObjectsList)
+        {
+            if (objeto == null)
+                continue;
+
+            PlayerMovement movimento =
+                objeto.GetComponentInChildren<PlayerMovement>(true);
+
+            if (movimento == null)
+                continue;
+
+            MonoBehaviour[] scripts =
+                movimento.GetComponentsInParent<MonoBehaviour>(true);
+
+            foreach (MonoBehaviour script in scripts)
+            {
+                if (script == null)
+                    continue;
+
+                script.enabled = false;
+            }
+
+            MonoBehaviour[] scriptsFilhos =
+                movimento.GetComponentsInChildren<MonoBehaviour>(true);
+
+            foreach (MonoBehaviour script in scriptsFilhos)
+            {
+                if (script == null)
+                    continue;
+
+                script.enabled = false;
+            }
+        }
+
+        UnityEngine.Cursor.lockState = UnityEngine.CursorLockMode.None;
+        UnityEngine.Cursor.visible = true;
+    }
     private void DespawnarJogadores()
     {
         if (!IsServer || NetworkManager.Singleton == null)
@@ -830,6 +884,75 @@ public class LobbyManager : NetworkBehaviour
         ControladorUI ui = FindFirstObjectByType<ControladorUI>();
         if (ui != null)
             ui.ExibirHUD();
+    }
+    [Rpc(SendTo.ClientsAndHost)]
+    private void ExibirVitoriaClientRpc(
+    string vencedor,
+    int mal,
+    int bem)
+    {
+        ControladorUI ui = FindFirstObjectByType<ControladorUI>();
+
+        if (ui != null)
+            ui.ExibirTelaVitoria(vencedor, mal, bem);
+    }
+    public void SolicitarVoltaAoLobby()
+    {
+        if (!IsSpawned || NetworkManager.Singleton == null)
+            return;
+
+        VoltarAoLobbyServerRpc();
+    }
+
+    [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Everyone)]
+    private void VoltarAoLobbyServerRpc(RpcParams rpcParams = default)
+    {
+        if (!IsServer || !partidaFinalizada)
+            return;
+
+        DespawnarJogadores();
+
+        if (rotinaCronometro != null)
+            StopCoroutine(rotinaCronometro);
+
+        if (rotinaProximaRodada != null)
+            StopCoroutine(rotinaProximaRodada);
+
+        if (rotinaContagem != null)
+            StopCoroutine(rotinaContagem);
+
+        rodadaAtual = 0;
+        pontosMal = 0;
+        pontosBem = 0;
+        rodadaEmAndamento = false;
+        partidaFinalizada = false;
+        contagemRegressivaEmAndamento = false;
+
+        for (int i = 0; i < slotsJogadores.Count; i++)
+        {
+            DadosJogador dados = slotsJogadores[i];
+
+            if (!dados.IsOccupied)
+                continue;
+
+            dados.IsReady = false;
+            dados.IsPegador = false;
+            slotsJogadores[i] = dados;
+        }
+
+        VoltarAoLobbyClientRpc();
+    }
+
+    [Rpc(SendTo.ClientsAndHost)]
+    private void VoltarAoLobbyClientRpc()
+    {
+        ControladorUI ui = FindFirstObjectByType<ControladorUI>();
+
+        if (ui != null)
+            ui.ExibirLobby();
+
+        UnityEngine.Cursor.lockState = UnityEngine.CursorLockMode.None;
+        UnityEngine.Cursor.visible = true;
     }
 
     [Rpc(SendTo.ClientsAndHost)]
