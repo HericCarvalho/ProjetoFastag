@@ -1,7 +1,7 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Projeto/UI/Game_HUD/Game_HUD.uss?fileID=7433441132597879392&amp;guid=380bd99719daaa6478d5d2f0a739764d&amp;type=3#Game_HUD"/>
     <ui:VisualElement name="HUD_root" style="flex-grow: 1; flex-direction: row;">
-        <ui:VisualElement name="Score_Container_Pegadores" style="flex-grow: 1; height: 200px; width: 400px; min-width: 0; max-width: 1000px; align-items: flex-start; justify-content: flex-start; display: flex; background-size: 100% 100%; -unity-text-align: middle-center; position: absolute; top: 0; left: 250px;">
+        <ui:VisualElement name="Score_Container_Pegadores" style="flex-grow: 1; height: 200px; width: 400px; min-width: 0; max-width: 1000px; align-items: flex-start; justify-content: flex-start; display: flex; background-size: 100% 100%; -unity-text-align: middle-center; position: absolute; top: 0; left: 250px; flex-shrink: 0; flex-direction: row;">
             <ui:Image name="Pegador_1" style="width: 50%; height: 100%; flex-direction: row; left: 0; position: absolute;"/>
             <ui:Image name="Pegador_2" style="width: 50%; height: 100%; flex-direction: row-reverse; justify-content: flex-end; align-content: stretch; align-self: flex-end; align-items: stretch; right: 0;"/>
         </ui:VisualElement>
@@ -19,7 +19,7 @@
             <ui:Button text="Button" name="power_button2" class="botao_powerup" style="background-image: url(&quot;project://database/Assets/Projeto/Assets/Torres/placeholders/sdasdad.png?fileID=21300000&amp;guid=1507b5fa3e124b54fad8fa27f71c76a9&amp;type=3#sdasdad&quot;); left: 34px; top: 14px;"/>
             <ui:Button text="Button" name="power_button3" class="botao_powerup" style="background-image: url(&quot;project://database/Assets/Projeto/Assets/Torres/placeholders/iuyiyuirtert.png?fileID=21300000&amp;guid=eadd3aacf015c994781e24aa5e71631b&amp;type=3#iuyiyuirtert&quot;); top: 46px; right: -133px;"/>
         </ui:VisualElement>
-        <ui:VisualElement name="Menu_Container" style="flex-grow: 1; height: 160px; flex-direction: row; top: auto; align-self: flex-end; justify-content: flex-end; align-items: flex-end; right: auto; display: none;">
+        <ui:VisualElement name="Menu_Container" style="flex-grow: 1; height: 160px; flex-direction: row; top: auto; align-self: flex-end; justify-content: flex-end; align-items: flex-end; right: auto; display: none; flex-shrink: 0;">
             <ui:Button text="🔥" class="botao-menu" style="font-size: 33px; color: rgb(255, 255, 255);"/>
             <ui:Button text="🫠" name="Button" class="botao-menu" style="font-size: 33px; color: rgb(255, 255, 255);"/>
             <ui:Button text="😹" class="botao-menu" style="font-size: 33px; color: rgb(255, 255, 255);"/>
