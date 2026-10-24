@@ -136,16 +136,12 @@
     align-self: center;
 }
 
-
-
-
-
 .mapa-fundo {
     flex-grow: 1;
     flex-shrink: 0;
     width: 200px;
     height: 780px;
-    background-color: rgb(255, 20, 147);
+    background-color: rgba(255, 20, 147, 0);
     margin-top: 12px;
     margin-right: 12px;
     margin-bottom: 12px;
@@ -155,34 +151,20 @@
     padding-bottom: 0;
     padding-left: 0;
     top: -20px;
-}
-
-.mapa-fundo:hover {
-    flex-grow: 1;
-    flex-shrink: 0;
-    width: 200px;
-    height: 820px;
-    background-color: rgb(255, 20, 147);
-    margin-top: 12px;
-    margin-right: 12px;
-    margin-bottom: 12px;
-    margin-left: 12px;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    top: -20px;
-    transition-duration: 0.6s;
-    transition-timing-function: ease;
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Mapas/Mapas_PlacaDeFundoSecundaria1.svg?fileID=7388822144124034973&guid=e598c10454c3f384a84221523c69b4ca&type=3#Mapas_PlacaDeFundoSecundaria1");
+    -unity-background-scale-mode: stretch-to-fill;
 }
 
 .text-titulo-map {
-    top: 90px;
+    top: auto;
     left: auto;
     -unity-font-style: normal;
     font-size: 46px;
     -unity-font-definition: url("project://database/Assets/Projeto/Assets/Torres/fONTS/Super%20Squad.ttf?fileID=12800000&guid=35c9e0ecc3cc98a44916fcba8c099fa1&type=3#Super Squad");
     color: rgb(255, 235, 4);
+    -unity-text-align: middle-center;
+    flex-shrink: 0;
+    flex-direction: row;
 }
 
 .text-map {
@@ -670,4 +652,78 @@
     -unity-text-align: upper-center;
     top: -11px;
     right: -8px;
+}
+
+.mapa-fundo .conteudo {
+    visibility: hidden;
+}
+
+.mapa-fundo:hover .conteudo {
+    visibility: visible;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out-sine;
+    transition-property: visibility;
+}
+
+.moldura-foto {
+    flex-grow: 0;
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Mapas/Mapas_MolduraParaImagem.svg?fileID=7388822144124034973&guid=06c73922d6eae4447bde3cdfdff1198e&type=3#Mapas_MolduraParaImagem");
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+    flex-direction: row;
+    visibility: visible;
+    align-self: center;
+    top: -42px;
+    left: -15px;
+}
+
+.nome-mapa {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-direction: row;
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Mapas/Mapas_PlacasParaTitulo.svg?fileID=7388822144124034973&guid=7878feca63183cd4db16a38c9cac34fd&type=3#Mapas_PlacasParaTitulo");
+    width: 520px;
+    height: 136px;
+    top: -483px;
+    right: auto;
+    left: 28px;
+}
+
+
+
+.foto-mapa {
+    flex-direction: row;
+    width: 198px;
+    height: 218px;
+    align-self: center;
+    justify-content: center;
+    left: 72px;
+    top: -5px;
+    rotate: 0 0 0 0;
+}
+
+.mapa-fundo:hover {
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: 300px;
+    height: 780px;
+    background-color: rgba(255, 20, 147, 0);
+    margin-top: 12px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    margin-left: 12px;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    top: -20px;
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Mapas/Mapas_PlacaDeFundoPrincipal.svg?fileID=7388822144124034973&guid=7a52dc88bea11964a9ce0b5114b2f045&type=3#Mapas_PlacaDeFundoPrincipal");
+    -unity-background-scale-mode: stretch-to-fill;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.conteudo {
+    visibility: hidden;
 }

@@ -83,7 +83,7 @@
     </ui:VisualElement>
     <ui:VisualElement name="TelaCustomConfig" class="tela" style="flex-grow: 1; background-image: none; display: none; flex-shrink: 1; width: 100%; height: 100%;">
         <ui:Image source="project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/backgrounds/background_vers%C3%A3o3_verde.svg?fileID=7388822144124034973&amp;guid=188c17f2958a7b34da319a22211498da&amp;type=3#background_versão3_verde" style="width: 1920px; height: 1080px; position: absolute; top: 0; left: -1px;"/>
-        <ui:VisualElement name="tela_principal" style="flex-grow: 1; width: 100%; height: 100%; flex-basis: 100%; display: flex;">
+        <ui:VisualElement name="tela_principal" style="flex-grow: 1; width: 100%; height: 100%; flex-basis: 100%; display: none;">
             <ui:VisualElement name="botao_Container" style="flex-grow: 1; width: 582px; max-height: 100%; top: 57px; height: 875px; position: relative; flex-shrink: 0;">
                 <ui:Button text="" name="iniciar" class="botao-custom text" style="top: 174px; left: 80px; -unity-text-align: middle-center;">
                     <ui:Label text="INICIO&#10;" enabled="true" class="text-custom"/>
@@ -102,26 +102,32 @@
                 <ui:Label text="JOGADORES" style="-unity-font-definition: url(&quot;project://database/Assets/Projeto/Assets/Torres/fONTS/Super%20Squad.ttf?fileID=12800000&amp;guid=35c9e0ecc3cc98a44916fcba8c099fa1&amp;type=3#Super Squad&quot;); -unity-text-align: middle-center; font-size: 40px; top: 18px; color: rgb(255, 255, 255); left: 149px;"/>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="tela_mapa" style="flex-grow: 1; flex-direction: row; width: 75%; max-height: 80%; justify-content: center; align-self: center; align-items: auto; align-content: auto; top: 119px; height: 80%; display: none;">
-            <ui:VisualElement name="mapa_1" class="mapa-fundo" style="justify-content: flex-start; align-content: center; align-items: center;">
-                <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/43dsa.png?fileID=21300000&amp;guid=dc56a7d75e4730f4eac7f08663b32127&amp;type=3#43dsa" scale-mode="StretchToFill" style="width: 300px; height: 300px; left: auto; top: 56px;"/>
-                <ui:Label text="PRISÃO&#10;" name="titulo_mapa" class="text-titulo-map"/>
-                <ui:Label text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor fringilla enim, eu condimentum lacus.&#10;" name="Label" class="text text-map"/>
-                <ui:Button text="selecionar" class="botao-map" style="top: 158px; font-size: 40px;"/>
+        <ui:VisualElement name="tela_mapa" style="flex-grow: 1; flex-direction: row; width: 75%; max-height: 80%; justify-content: center; align-self: center; align-items: auto; align-content: auto; top: 119px; height: 80%; display: flex; flex-shrink: 0;">
+            <ui:VisualElement name="mapa_1" class="mapa-fundo" style="flex-grow: 1; flex-direction: row;">
+                <ui:VisualElement name="moldura_foto" class="moldura-foto conteudo" style="flex-grow: 0; top: -33px; left: 61px;">
+                    <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/images.jpg?fileID=2800000&amp;guid=35c9d8093ec2e604e98c0dcbb30e32ef&amp;type=3#images" scale-mode="StretchToFill" class="foto-mapa" style="flex-shrink: 0;"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="nome-mapa" class="nome-mapa conteudo" style="flex-grow: 0; top: -9px; left: -307px;">
+                    <ui:Label text="LABORATÓRIO&#10;" class="text-titulo-map" style="align-self: center; left: 76px; top: -17px; color: rgb(0, 0, 0);"/>
+                </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="mapa_2" class="mapa-fundo" style="flex-grow: 1; align-items: center; justify-content: center; align-self: auto;">
-                <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/dasda.png?fileID=21300000&amp;guid=0211a0d598f09234ab82522137353a43&amp;type=3#dasda" style="width: 300px; height: 300px; top: -48px; bottom: auto;"/>
-                <ui:Label text="mapa 2" name="ttitulo_mapa" class="text-titulo-map" style="top: -16px;"/>
-                <ui:Label text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor fringilla enim, eu condimentum lacus." class="text text-map" style="-unity-text-align: middle-center; white-space: pre-wrap; top: auto;"/>
-                <ui:Button text="selecionar" class="botao-map" style="font-size: 40px;"/>
+            <ui:VisualElement name="mapa_2" class="mapa-fundo" style="flex-grow: 1; align-items: center; justify-content: center; align-self: auto; visibility: visible;">
+                <ui:VisualElement name="moldura_foto" class="moldura-foto conteudo" style="flex-grow: 0; top: 33px;">
+                    <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/dasda.png?fileID=2800000&amp;guid=0211a0d598f09234ab82522137353a43&amp;type=3#dasda" class="foto-mapa"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="nome_mapa" class="nome-mapa conteudo" style="flex-grow: 0;">
+                    <ui:Label text="PÁTIO" class="text-titulo-map" style="align-self: center; justify-content: center; color: rgb(0, 0, 0); left: 176px; bottom: 17px;"/>
+                </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="mapa_3" class="mapa-fundo" style="flex-grow: 1; align-items: center; justify-content: center; align-self: auto;">
-                <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/images.jpg?fileID=21300000&amp;guid=35c9d8093ec2e604e98c0dcbb30e32ef&amp;type=3#images" scale-mode="ScaleAndCrop" style="width: 300px; height: 300px; top: -48px;"/>
-                <ui:Label text="Mapa 3" double-click-selects-word="false" class="text-titulo-map" style="top: -16px;"/>
-                <ui:Label text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor fringilla enim, eu condimentum lacus." class="text-map text" style="top: auto;"/>
-                <ui:Button text="selecionar" class="botao-map"/>
+                <ui:VisualElement name="MOLDURA" class="moldura-foto conteudo" style="flex-grow: 0; top: 33px;">
+                    <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/43dsa.png?fileID=2800000&amp;guid=dc56a7d75e4730f4eac7f08663b32127&amp;type=3#43dsa" class="foto-mapa"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="nome-mapa" class="nome-mapa conteudo" style="flex-grow: 0;">
+                    <ui:Label text="CIDADE" class="text-titulo-map" style="align-self: center; color: rgb(0, 0, 0); left: 148px; top: -17px;"/>
+                </ui:VisualElement>
             </ui:VisualElement>
-            <ui:Button text="X" selectable="true" name="close2" class="botao-sair" style="bottom: auto; right: auto;"/>
+            <ui:Button text="" selectable="true" name="close2" class="botao-sair" style="bottom: auto; right: auto;"/>
         </ui:VisualElement>
         <ui:VisualElement name="tela_config" style="flex-grow: 1; justify-content: flex-start; background-color: rgba(255, 20, 147, 0); width: 75%; max-height: 80%; align-items: center; align-self: center; top: 103px; display: none; background-image: url(&quot;project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Configura%C3%A7%C3%B5es/Configuracoes_PlacaDeOpcoes.svg?fileID=7388822144124034973&amp;guid=cd6d88713ad6f714db5c525d3ef96899&amp;type=3#Configuracoes_PlacaDeOpcoes&quot;);">
             <ui:Button text="X" name="close3" class="botao-sair" style="top: 785px; bottom: auto; left: 664px;"/>
