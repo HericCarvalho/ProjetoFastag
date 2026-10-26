@@ -301,11 +301,22 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   velocidade: 5
   gravidade: -20
-  "velocidaderota\xE7\xE3o": 10
-  alturapulo: 1.5
+  velocidadeRotacao: 10
+  alturaPulo: 1.5
   distanciaInteracao: 3
+  distanciaCaptura: 2
   cameraDoPrefab: {fileID: 5597641397660086088}
   cameraTarget: {fileID: 8713561332766238067}
+  isPegador:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
+  foiCapturado:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
 --- !u!95 &8528366303315837411
 Animator:
   serializedVersion: 7
@@ -316,7 +327,7 @@ Animator:
   m_GameObject: {fileID: 1855978707290831395}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 10fac0655719e43329753c368e363e17, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
