@@ -20216,22 +20216,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LobbyManager
   ShowTopMostFoldoutHeaderGroup: 1
   prefabsDoBem:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6481601388569956840, guid: 19477ad89e14f2242afd340bb019fb89, type: 3}
+  - {fileID: 2057179665287026568, guid: 6e7808476cbd4e944bb1136fc411f8e9, type: 3}
+  - {fileID: 3714016489112029994, guid: 55b9bc51baed92a4898aa82e796b05d7, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   prefabsDoMal:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3510855459123362475, guid: c9d4dc62472744c49bfb2979ad46836b, type: 3}
+  - {fileID: 8397998773156279590, guid: f3dd227d9a6fe224bbaef8c03d5f4c42, type: 3}
+  - {fileID: 1855978707290831395, guid: 44da0be5c0ebf854889857200ad45bb4, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   spritesPersonagens:
-  - {fileID: 21300000, guid: 4155bf72b78841e4f93f205642ead2a1, type: 3}
-  - {fileID: 21300000, guid: 39ce434bc86ee374e86efe6704a746d3, type: 3}
-  - {fileID: 21300000, guid: eadd3aacf015c994781e24aa5e71631b, type: 3}
-  - {fileID: 21300000, guid: ee1afd58bafe2c04880b7e239a57586f, type: 3}
+  - {fileID: 21300000, guid: 04c1576c3f1208543bf4702691f5172f, type: 3}
+  - {fileID: 21300000, guid: 83515878c3a8423498f2f54b93bed7d7, type: 3}
+  - {fileID: 21300000, guid: d27b8da050d0eac4d834a4edaa921525, type: 3}
   duracaoRodadaNormal: 90
   duracaoRodadaFinal: 60
   intervaloEntreRodadas: 3
@@ -44040,5 +44039,5 @@ SceneRoots:
   - {fileID: 871819301}
   - {fileID: 1234766475}
   - {fileID: 971123359}
-  - {fileID: 945514965}
   - {fileID: 2045374598}
+  - {fileID: 945514965}

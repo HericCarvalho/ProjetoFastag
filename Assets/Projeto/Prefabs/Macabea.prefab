@@ -81,11 +81,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5477749408508380018, guid: effc99836a16741bbbd8d4d088901117, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0734545
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5477749408508380018, guid: effc99836a16741bbbd8d4d088901117, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5477749408508380018, guid: effc99836a16741bbbd8d4d088901117, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.059701443
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5477749408508380018, guid: effc99836a16741bbbd8d4d088901117, type: 3}
       propertyPath: m_LocalRotation.w
@@ -293,6 +297,10 @@ MonoBehaviour:
       NameHash: -662453572
       Synchronize: 1
       ParameterType: 9
+    - name: Pular
+      NameHash: 569381066
+      Synchronize: 1
+      ParameterType: 9
   AnimatorParametersExpanded: 0
 --- !u!114 &8508216622909468666
 MonoBehaviour:
@@ -368,11 +376,22 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   velocidade: 5
   gravidade: -20
-  "velocidaderota\xE7\xE3o": 10
-  alturapulo: 1.5
+  velocidadeRotacao: 10
+  alturaPulo: 1.5
   distanciaInteracao: 3
+  distanciaCaptura: 2
   cameraDoPrefab: {fileID: 2040066921265344899}
   cameraTarget: {fileID: 6240655175415940087}
+  isPegador:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
+  foiCapturado:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
 --- !u!114 &9063860264075104267
 MonoBehaviour:
   m_ObjectHideFlags: 0
