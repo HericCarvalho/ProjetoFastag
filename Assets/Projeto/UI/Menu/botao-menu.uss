@@ -690,8 +690,6 @@
     left: 28px;
 }
 
-
-
 .foto-mapa {
     flex-direction: row;
     width: 198px;
@@ -722,6 +720,7 @@
     -unity-background-scale-mode: stretch-to-fill;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
+    flex-direction: row;
 }
 
 .conteudo {
