@@ -14,9 +14,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro.unity
     guid: 1e67d1530de17de44ab815eef34be47f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Projeto/Scena/Teste.unity
     guid: 2e39151abca46654f9aa73ec65e54a42
+  - enabled: 1
+    path: Assets/Projeto/Scena/Atividades/Heric/Atividade.unity
+    guid: 51bd2a1f8a954b7458db3cca97c7653c
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 35845fe01580c41289b024647b1d1c53, type: 3}
