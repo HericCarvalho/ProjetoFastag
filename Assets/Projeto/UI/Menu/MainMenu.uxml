@@ -62,28 +62,28 @@
         </ui:VisualElement>
         <ui:Button text="" name="Sair" class="botao-sair" style="top: -140px; right: -1225px;"/>
     </ui:VisualElement>
-    <ui:VisualElement name="TelaCustom" class="tela" style="flex-grow: 1; display: none; background-image: none;">
+    <ui:VisualElement name="TelaCustom" class="tela" style="flex-grow: 1; display: flex; background-image: none;">
         <ui:Image name="Fundo" source="project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/backgrounds/background_vers%C3%A3o1_roxo.svg?fileID=7388822144124034973&amp;guid=519388e01bfa3ae4697631007ad4807d&amp;type=3#background_versão1_roxo" style="width: 100%; height: 100%; position: absolute; filter: blur(13);"/>
-        <ui:VisualElement name="Custombar" style="flex-grow: 1; width: 70%; min-height: auto; max-height: 10%; left: 288px; top: 186px; align-items: center; background-image: url(&quot;project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Partida/Partida_PlacaSuperior.svg?fileID=7388822144124034973&amp;guid=bdf158faf99e1604fb538dd89e30fde2&amp;type=3#Partida_PlacaSuperior&quot;);">
+        <ui:VisualElement name="Custombar" style="flex-grow: 1; width: 100%; min-height: auto; max-height: 15%; left: auto; top: auto; align-items: center; background-image: url(&quot;project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Partida/Partida_PlacaSuperior.svg?fileID=7388822144124034973&amp;guid=bdf158faf99e1604fb538dd89e30fde2&amp;type=3#Partida_PlacaSuperior&quot;);">
             <ui:Button text="&#10;" icon-image="project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Partida/Partida_SalaOnline_Icone_SemGlow.svg?fileID=7388822144124034973&amp;guid=06a512b9dc0cb7c45aa060a4fc81cd12&amp;type=3#Partida_SalaOnline_Icone_SemGlow" name="create" display-tooltip-when-elided="true" triple-click-selects-line="true" class="botao-select-icon" style="left: -338px; bottom: 5px; background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);"/>
             <ui:Button text="" name="lobby" icon-image="project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Partida/Partida_SalaPrivada_Icone_SemGlow.svg?fileID=7388822144124034973&amp;guid=b35e79f652e325b4694df0c25ce4b809&amp;type=3#Partida_SalaPrivada_Icone_SemGlow" class="botao-select-icon" style="background-image: none; background-color: rgba(188, 188, 188, 0);"/>
         </ui:VisualElement>
-        <ui:VisualElement name="createParty" style="flex-grow: 1; width: 70%; height: 0%; align-content: flex-end; max-height: 60%; top: 188px; left: 288px; background-color: rgba(224, 255, 255, 0.73); display: none;">
+        <ui:VisualElement name="createParty" style="flex-grow: 1; width: 100%; height: 0%; align-content: flex-end; max-height: 87%; top: auto; left: auto; background-color: rgba(224, 255, 255, 0.73); display: flex;">
             <ui:Button text="CRIAR PARTIDA" name="createLobby" class="botao-select text" style="top: 100px;"/>
             <ui:Button text="CONFIGURAÇÕES" class="botao-select text"/>
             <ui:Button text="TEM QUE VER2" class="botao-select text" style="top: 165px;"/>
         </ui:VisualElement>
-        <ui:VisualElement name="enterLobby" style="flex-grow: 1; width: 70%; max-height: 60%; top: 188px; left: 288px; background-color: rgba(224, 255, 255, 0.37); display: flex;">
+        <ui:VisualElement name="enterLobby" style="flex-grow: 1; width: 100%; max-height: 86%; top: auto; left: auto; background-color: rgba(224, 255, 255, 0.37); display: none;">
             <ui:TextField label="" placeholder-text="inserir id...." value="" readonly="false" class="text campo-text" style="opacity: 1; width: 60%; height: 10%; top: 222px; right: auto; left: 300px; background-color: rgba(0, 206, 209, 0); font-size: 20px; -unity-text-align: middle-center; color: rgb(0, 0, 0); -unity-background-image-tint-color: rgb(255, 255, 255); border-top-left-radius: -20px; border-top-right-radius: -20px; border-bottom-right-radius: -20px; border-bottom-left-radius: -20px;"/>
             <ui:Button text="" emoji-fallback-support="false" name="enter" class="botao-menu text" style="top: 279px; left: auto;">
                 <ui:Label text="ENTRAR" style="right: 8px;"/>
             </ui:Button>
         </ui:VisualElement>
-        <ui:Button text="" name="fechar" class="botao-sair" style="right: auto; bottom: auto; left: 1590px; top: 143px;"/>
+        <ui:Button text="" name="fechar" class="botao-sair" style="right: auto; bottom: auto; left: 1590px; top: 143px; position: absolute;"/>
     </ui:VisualElement>
-    <ui:VisualElement name="TelaCustomConfig" class="tela" style="flex-grow: 1; background-image: none; display: flex; flex-shrink: 1; width: 100%; height: 100%;">
+    <ui:VisualElement name="TelaCustomConfig" class="tela" style="flex-grow: 1; background-image: none; display: none; flex-shrink: 1; width: 100%; height: 100%;">
         <ui:Image source="project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/backgrounds/background_vers%C3%A3o3_verde.svg?fileID=7388822144124034973&amp;guid=188c17f2958a7b34da319a22211498da&amp;type=3#background_versão3_verde" style="width: 1920px; height: 1080px; position: absolute; top: 0; left: -1px;"/>
-        <ui:VisualElement name="tela_principal" style="flex-grow: 1; width: 100%; height: 100%; flex-basis: 100%; display: none;">
+        <ui:VisualElement name="tela_principal" style="flex-grow: 1; width: 100%; height: 100%; flex-basis: 100%; display: flex;">
             <ui:VisualElement name="botao_Container" style="flex-grow: 1; width: 582px; max-height: 100%; top: 57px; height: 875px; position: relative; flex-shrink: 0;">
                 <ui:Button text="" name="iniciar" class="botao-custom text" style="top: 174px; left: 80px; -unity-text-align: middle-center;">
                     <ui:Label text="INICIO&#10;" enabled="true" class="text-custom"/>
@@ -103,25 +103,28 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="tela_config" style="flex-grow: 1; justify-content: flex-start; background-color: rgba(255, 20, 147, 0); width: 75%; max-height: 80%; align-items: center; align-self: center; top: 103px; display: none; background-image: url(&quot;project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Configura%C3%A7%C3%B5es/Configuracoes_PlacaDeOpcoes.svg?fileID=7388822144124034973&amp;guid=cd6d88713ad6f714db5c525d3ef96899&amp;type=3#Configuracoes_PlacaDeOpcoes&quot;);">
-            <ui:Button text="X" name="close3" class="botao-sair" style="top: 785px; bottom: auto; left: 664px;"/>
+            <ui:Button text="X" name="close3" class="botao-sair" style="top: -42px; bottom: auto; left: 682px; height: 125px; width: 115px;"/>
         </ui:VisualElement>
-        <ui:VisualElement name="tela_mapa" style="flex-grow: 1; flex-direction: row; width: 100%; max-height: 100%; justify-content: center; align-self: center; align-items: auto; align-content: auto; top: auto; height: 100%; display: flex; flex-shrink: 0;">
-            <ui:VisualElement name="mapa_1" class="mapa-fundo" style="flex-grow: 1; flex-direction: row; height: 1090px; top: 15px; left: 331px;">
+        <ui:VisualElement name="tela_mapa" style="width: 100%; max-height: 100%; justify-content: center; align-self: center; align-items: auto; align-content: auto; top: auto; height: 100%; display: none; flex-direction: row;">
+            <ui:VisualElement name="mapa_1" class="mapa-fundo" style="top: auto; left: 230px;">
                 <ui:VisualElement name="moldura_foto" class="moldura-foto conteudo" style="flex-grow: 0; top: -33px; left: 100px; width: 450px; height: 450px;">
                     <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/images.jpg?fileID=2800000&amp;guid=35c9d8093ec2e604e98c0dcbb30e32ef&amp;type=3#images" scale-mode="StretchToFill" name="Image" class="foto-mapa" style="flex-shrink: 0; width: 305px; height: 350px; left: 106px;"/>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="mapa_2" class="mapa-fundo" style="flex-grow: 1; align-items: center; justify-content: center; align-self: auto; visibility: visible; height: 1090px; top: 15px; left: 164px;">
+            <ui:VisualElement name="mapa_2" class="mapa-fundo" style="align-items: center; justify-content: center; align-self: auto; visibility: visible; top: auto; left: 115px;">
                 <ui:VisualElement name="moldura_foto" class="moldura-foto conteudo" style="flex-grow: 0; top: -33px; width: 450px; height: 450px;">
                     <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/dasda.png?fileID=2800000&amp;guid=0211a0d598f09234ab82522137353a43&amp;type=3#dasda" class="foto-mapa"/>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:VisualElement name="mapa_3" class="mapa-fundo" style="flex-grow: 1; align-items: center; justify-content: center; align-self: auto; height: 1090px; top: 15px;">
-                <ui:VisualElement name="MOLDURA" class="moldura-foto conteudo" style="flex-grow: 0; top: 33px;">
+            <ui:VisualElement name="mapa_3" class="mapa-fundo" style="align-items: center; justify-content: center; align-self: auto; top: auto;">
+                <ui:VisualElement name="MOLDURA" class="moldura-foto conteudo" style="flex-grow: 0; top: -33px; width: 450px; height: 450px;">
                     <ui:Image source="project://database/Assets/Projeto/Assets/Torres/placeholders/43dsa.png?fileID=2800000&amp;guid=dc56a7d75e4730f4eac7f08663b32127&amp;type=3#43dsa" class="foto-mapa"/>
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:Button text="" selectable="true" name="close2" class="botao-sair" style="bottom: auto; right: auto;"/>
+            <ui:VisualElement picking-mode="Ignore" name="Titulo-Mapa" style="flex-grow: 1; position: absolute; align-self: flex-start; left: 0; width: 457px; height: 145px; background-image: url(&quot;project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Mapas/Mapas_PlacasParaTitulo.svg?fileID=7388822144124034973&amp;guid=7878feca63183cd4db16a38c9cac34fd&amp;type=3#Mapas_PlacasParaTitulo&quot;); justify-content: center; align-items: center;">
+                <ui:Label text="MAPAS" class="text-titulo-map" style="color: rgb(0, 0, 0); top: -10px; left: -28px;"/>
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

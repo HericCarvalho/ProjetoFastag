@@ -138,21 +138,14 @@
 
 .mapa-fundo {
     flex-grow: 1;
-    flex-shrink: 0;
+    flex-shrink: 1;
     width: 200px;
-    height: 780px;
+    height: 1080px;
     background-color: rgba(255, 20, 147, 0);
-    margin-top: 12px;
-    margin-right: 12px;
-    margin-bottom: 12px;
-    margin-left: 12px;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    top: -20px;
+    top: auto;
     background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Mapas/Mapas_PlacaDeFundoSecundaria1.svg?fileID=7388822144124034973&guid=e598c10454c3f384a84221523c69b4ca&type=3#Mapas_PlacaDeFundoSecundaria1");
     -unity-background-scale-mode: stretch-to-fill;
+    flex-direction: row;
 }
 
 .text-titulo-map {
@@ -702,20 +695,12 @@
 }
 
 .mapa-fundo:hover {
-    flex-grow: 1;
+    flex-grow: 1.5;
     flex-shrink: 0;
-    width: 300px;
-    height: 780px;
+    width: 200px;
+    height: 1080px;
     background-color: rgba(255, 20, 147, 0);
-    margin-top: 12px;
-    margin-right: 12px;
-    margin-bottom: 12px;
-    margin-left: 12px;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    top: -20px;
+    top: auto;
     background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Mapas/Mapas_PlacaDeFundoPrincipal.svg?fileID=7388822144124034973&guid=7a52dc88bea11964a9ce0b5114b2f045&type=3#Mapas_PlacaDeFundoPrincipal");
     -unity-background-scale-mode: stretch-to-fill;
     transition-duration: 0.3s;
