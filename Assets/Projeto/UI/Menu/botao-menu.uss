@@ -479,7 +479,7 @@
 .botao-config1 {
     flex-direction: row;
     width: 450px;
-    height: 165px;
+    height: 200px;
     align-self: center;
     justify-content: center;
     align-content: center;
@@ -502,7 +502,7 @@
     flex-direction: row;
     left: -435px;
     background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Menu/Menu_Botao4_SemGlow.svg?fileID=7388822144124034973&guid=4a8d43570f0cfcf4e978e12464848455&type=3#Menu_Botao4_SemGlow");
-    height: 165px;
+    height: 200px;
     bottom: 74px;
     width: 450px;
 }
@@ -513,6 +513,8 @@
     bottom: -94px;
     background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Menu/Menu_Botao3_SemGlow.svg?fileID=7388822144124034973&guid=0d08da299d3f6e6458a81d07b63569c4&type=3#Menu_Botao3_SemGlow");
     flex-direction: row;
+    width: 450px;
+    height: 200px;
 }
 
 .botao-config4 {
@@ -521,14 +523,14 @@
     left: auto;
     right: 1354px;
     width: 450px;
-    height: 165px;
+    height: 200px;
     bottom: -477px;
 }
 
 .botao-config1:hover {
     flex-direction: row;
     width: 450px;
-    height: 165px;
+    height: 200px;
     align-self: center;
     justify-content: center;
     align-content: center;
@@ -552,7 +554,7 @@
     flex-direction: row;
     left: -435px;
     background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Menu/Menu_Botao4_SemGlow.svg?fileID=7388822144124034973&guid=4a8d43570f0cfcf4e978e12464848455&type=3#Menu_Botao4_SemGlow");
-    height: 165px;
+    height: 200px;
     bottom: 74px;
     width: 450px;
     scale: 1.1 1.1;
@@ -565,6 +567,8 @@
     background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Menu/Menu_Botao3_SemGlow.svg?fileID=7388822144124034973&guid=0d08da299d3f6e6458a81d07b63569c4&type=3#Menu_Botao3_SemGlow");
     flex-direction: row;
     scale: 1.1 1.1;
+    width: 450px;
+    height: 200px;
 }
 
 .botao-config4:hover {
@@ -573,7 +577,7 @@
     left: auto;
     right: 1354px;
     width: 450px;
-    height: 165px;
+    height: 200px;
     bottom: -477px;
     scale: 1.1 1.1;
 }
@@ -581,7 +585,7 @@
 .botao-config1:active {
     flex-direction: row;
     width: 450px;
-    height: 165px;
+    height: 200px;
     align-self: center;
     justify-content: center;
     align-content: center;
@@ -605,7 +609,7 @@
     flex-direction: row;
     left: -435px;
     background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Menu/Menu_Botao2Ativado_ComGlow.svg?fileID=7388822144124034973&guid=04d1479359de4ae4eacc04555b735474&type=3#Menu_Botao2Ativado_ComGlow");
-    height: 165px;
+    height: 200px;
     bottom: 74px;
     width: 450px;
     scale: 1.1 1.1;
@@ -618,6 +622,8 @@
     background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Menu/Menu_Botao3Ativado_ComGlow.svg?fileID=7388822144124034973&guid=879093d726d17fe4db061e8f43964194&type=3#Menu_Botao3Ativado_ComGlow");
     flex-direction: row;
     scale: 1.1 1.1;
+    width: 450px;
+    height: 200px;
 }
 
 .botao-config4:active {
@@ -626,7 +632,7 @@
     left: auto;
     right: 1354px;
     width: 450px;
-    height: 165px;
+    height: 200px;
     bottom: -477px;
     scale: 1.1 1.1;
 }
