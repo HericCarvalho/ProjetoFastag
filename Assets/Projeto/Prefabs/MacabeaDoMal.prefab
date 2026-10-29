@@ -305,7 +305,7 @@ CharacterController:
   serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
-  m_SlopeLimit: 45
+  m_SlopeLimit: 50
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -385,6 +385,10 @@ MonoBehaviour:
       NameHash: -662453572
       Synchronize: 1
       ParameterType: 9
+    - name: Pular
+      NameHash: 569381066
+      Synchronize: 1
+      ParameterType: 9
   AnimatorParametersExpanded: 0
 --- !u!114 &737575680392901133
 MonoBehaviour:
@@ -460,11 +464,22 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   velocidade: 5
   gravidade: -20
-  "velocidaderota\xE7\xE3o": 10
-  alturapulo: 1.5
+  velocidadeRotacao: 10
+  alturaPulo: 1.5
   distanciaInteracao: 3
+  distanciaCaptura: 2
   cameraDoPrefab: {fileID: 1373797725526801896}
   cameraTarget: {fileID: 3987950303989459090}
+  isPegador:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
+  foiCapturado:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
 --- !u!114 &5842287679638704717
 MonoBehaviour:
   m_ObjectHideFlags: 0

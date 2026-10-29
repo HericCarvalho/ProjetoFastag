@@ -174,7 +174,7 @@ CharacterController:
   serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
-  m_SlopeLimit: 45
+  m_SlopeLimit: 50
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -223,7 +223,19 @@ MonoBehaviour:
   m_Animator: {fileID: 8528366303315837411}
   TransitionStateInfoList: []
   AnimatorParameterEntries:
-    ParameterEntries: []
+    ParameterEntries:
+    - name: speed
+      NameHash: 254213878
+      Synchronize: 1
+      ParameterType: 1
+    - name: Pular
+      NameHash: 569381066
+      Synchronize: 1
+      ParameterType: 9
+    - name: Interact
+      NameHash: -662453572
+      Synchronize: 1
+      ParameterType: 9
   AnimatorParametersExpanded: 0
 --- !u!114 &1559985734325446452
 MonoBehaviour:
