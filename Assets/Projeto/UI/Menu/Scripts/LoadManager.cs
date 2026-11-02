@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -36,7 +37,7 @@ public class LoadManager : MonoBehaviour
         if (progressBar == null)
         {
             Debug.LogError(
-                "ERRO: ProgressBar não encontrada. Confira se o Name é exatamente 'ProgressBar'."
+                "ERRO: ProgressBar não encontrada. Confira se o Name é exatamente 'Barra'."
             );
             return;
         }
@@ -55,54 +56,45 @@ public class LoadManager : MonoBehaviour
 
         StartCoroutine(CarregarCena());
     }
-
-
     private IEnumerator CarregarCena()
     {
-        carregamento = SceneManager.LoadSceneAsync(cenaCarregar);
+        float tempoDecorrido = 0f;
+        float duracaoEstimada = (float)videoPlayer.length;
+        if (duracaoEstimada <= 0f) duracaoEstimada = 4f;
 
-        // Impede a troca automática de cena
-        carregamento.allowSceneActivation = false;
-
-        // Carrega até 90%
-        while (carregamento.progress < 0.9f)
+        while (tempoDecorrido < duracaoEstimada && !videoFim)
         {
-            float progresso = carregamento.progress / 0.9f;
-
-            float porcentagem = progresso * 100f;
-
-            progressBar.value = porcentagem;
-
+            tempoDecorrido += Time.deltaTime;
+            float progresso = Mathf.Clamp01(tempoDecorrido / duracaoEstimada) * 100f;
+            progressBar.value = progresso;
             yield return null;
         }
 
-        // Cena está pronta
         progressFim = true;
-
-        // Completa visualmente a barra
         progressBar.value = 100f;
 
         VerificarFim();
     }
-
-
     private void VideoFim(VideoPlayer player)
     {
         videoFim = true;
 
         VerificarFim();
     }
-
-
     private void VerificarFim()
     {
-        // Só inicia a cena quando os dois terminaram
         if (progressFim && videoFim)
         {
-            carregamento.allowSceneActivation = true;
+            if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsServer)
+            {
+                NetworkManager.Singleton.SceneManager.LoadScene(cenaCarregar, LoadSceneMode.Single);
+            }
+            else if (NetworkManager.Singleton == null)
+            {
+                SceneManager.LoadScene(cenaCarregar);
+            }
         }
     }
-
 
     private void OnDestroy()
     {

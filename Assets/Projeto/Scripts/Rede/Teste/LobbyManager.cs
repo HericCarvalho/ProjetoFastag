@@ -16,12 +16,16 @@ public class LobbyManager : NetworkBehaviour
     [SerializeField] private GameObject[] prefabsDoMal = new GameObject[5];
 
     [Header("Sprites dos personagens")]
-    [SerializeField] private Sprite[] spritesPersonagens;
+    [SerializeField] public Sprite[] spritesPersonagens;
 
     [Header("Configuração das rodadas")]
     [SerializeField, Min(1)] private int duracaoRodadaNormal = 90;
     [SerializeField, Min(1)] private int duracaoRodadaFinal = 60;
     [SerializeField, Min(0)] private float intervaloEntreRodadas = 3f;
+
+    [Header("Pontos de Spawn das Equipes")]
+    [SerializeField] private Transform[] pontosSpawnPegadores; 
+    [SerializeField] private Transform[] pontosSpawnVitimas;
 
 
     private VisualElement[] imagensPegadores = new VisualElement[2];
@@ -88,6 +92,8 @@ public class LobbyManager : NetworkBehaviour
 
         Singleton = this;
         slotsJogadores = new NetworkList<DadosJogador>();
+
+        DontDestroyOnLoad(gameObject);
     }
 
     public override void OnNetworkSpawn()
@@ -102,6 +108,7 @@ public class LobbyManager : NetworkBehaviour
         {
             NetworkManager.Singleton.OnClientConnectedCallback += OnClientConectou;
             NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDesconectou;
+            NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += OnSceneLoadEventCompleted;
 
             if (slotsJogadores.Count == 0)
             {
@@ -125,6 +132,7 @@ public class LobbyManager : NetworkBehaviour
                 NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConectou;
                 NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDesconectou;
                 PlayerMovement.JogadorCapturadoNoServidor -= AoCapturarJogador;
+                NetworkManager.Singleton.SceneManager.OnLoadEventCompleted -= OnSceneLoadEventCompleted;
             }
         }
 
@@ -139,8 +147,7 @@ public class LobbyManager : NetworkBehaviour
         if (root == null)
             return;
 
-        painelLobby = root.Q<VisualElement>("Painel_Lobby");
-        BotaoIniciarPartida = root.Q<Button>("BotaoIniciarPartida");
+        BotaoIniciarPartida = root.Q<Button>("iniciar");
         txtContagemRegressiva = root.Q<Label>("TxtContagemRegressiva");
 
 
@@ -426,25 +433,12 @@ public class LobbyManager : NetworkBehaviour
 
     private void IniciarPartida()
     {
-        Debug.Log("[PARTIDA] IniciarPartida foi chamado.");
-
         if (!IsServer)
-        {
-            Debug.LogWarning("[PARTIDA] Este cliente não é o servidor.");
             return;
-        }
 
         List<int> indicesAtivos = ObterSlotsAtivos();
-
-        Debug.Log($"[PARTIDA] Jogadores ativos: {indicesAtivos.Count}");
-
-        if (indicesAtivos.Count != 1 &&
-            indicesAtivos.Count != 2 &&
-            indicesAtivos.Count != 4)
-        {
-            Debug.LogError("[PARTIDA] Quantidade de jogadores inválida.");
+        if (indicesAtivos.Count != 1 && indicesAtivos.Count != 2 && indicesAtivos.Count != 4)
             return;
-        }
 
         SortearEquipes(indicesAtivos);
 
@@ -453,11 +447,7 @@ public class LobbyManager : NetworkBehaviour
         pontosBem = 0;
         partidaFinalizada = false;
 
-        ExibirHUDClientRpc();
-        BloquearCursorClientRpc();
-
-        SpawnarJogadoresDaRodada();
-        IniciarCronometro();
+        NetworkManager.Singleton.SceneManager.LoadScene("LoadScene", UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 
     private List<int> ObterSlotsAtivos()
@@ -486,147 +476,106 @@ public class LobbyManager : NetworkBehaviour
             indicesAtivos[aleatorio] = temp;
         }
 
-        int quantidadeMal = indicesAtivos.Count / 2;
+        int quantidadeMal;
+        if (indicesAtivos.Count == 2)
+        {
+            quantidadeMal = 1; 
+        }
+        else if (indicesAtivos.Count == 1)
+        {
+            quantidadeMal = 1;
+        }
+        else
+        {
+            quantidadeMal = indicesAtivos.Count / 2;
+        }
 
         for (int i = 0; i < indicesAtivos.Count; i++)
         {
             int slotIndex = indicesAtivos[i];
             DadosJogador dados = slotsJogadores[slotIndex];
-            dados.IsPegador = i < quantidadeMal;
+
+            dados.IsPegador = (i < quantidadeMal);
+
             slotsJogadores[slotIndex] = dados;
         }
     }
-
-
     private void SpawnarJogadoresDaRodada()
     {
-        Debug.Log("[TESTE] SolicitarInicioPartida foi chamado.");
-
         if (!IsServer)
             return;
-
-        if (!IsServer)
-        {
-            Debug.LogError("[SPAWN] Este cliente não é o servidor.");
-            return;
-        }
 
         if (NetworkManager.Singleton == null)
-        {
-            Debug.LogError("[SPAWN] NetworkManager.Singleton é nulo.");
             return;
-        }
 
         List<int> slotsAtivos = ObterSlotsAtivos();
-
-        Debug.Log($"[SPAWN] Jogadores conectados: {slotsAtivos.Count}");
-
         if (slotsAtivos.Count == 0)
-        {
-            Debug.LogError("[SPAWN] Nenhum jogador conectado foi encontrado.");
             return;
-        }
+
+        int indicePegadorSpawn = 0;
+        int indiceVitimaSpawn = 0;
 
         foreach (int slotIndex in slotsAtivos)
         {
-
             DadosJogador slot = slotsJogadores[slotIndex];
 
-            Debug.Log(
-                $"[SPAWN] Slot={slotIndex}, ClientId={slot.ClientId}, " +
-                $"Personagem={slot.PersonagemIndex}, Mal={slot.IsPegador}"
-            );
-
-            GameObject[] prefabs = slot.IsPegador
-                ? prefabsDoMal
-                : prefabsDoBem;
+            GameObject[] prefabs = slot.IsPegador ? prefabsDoMal : prefabsDoBem;
 
             if (prefabs == null || prefabs.Length == 0)
-            {
-                Debug.LogError("[SPAWN] Array de prefabs vazio.");
                 continue;
-            }
 
-            if (slot.PersonagemIndex < 0 ||
-                slot.PersonagemIndex >= prefabs.Length)
-            {
-                Debug.LogError(
-                    $"[SPAWN] Índice de personagem inválido: {slot.PersonagemIndex}"
-                );
+            if (slot.PersonagemIndex < 0 || slot.PersonagemIndex >= prefabs.Length)
                 continue;
-            }
 
             GameObject prefab = prefabs[slot.PersonagemIndex];
 
-            if (prefab == null)
-            {
-                Debug.LogError(
-                    $"[SPAWN] O prefab do personagem {slot.PersonagemIndex} " +
-                    $"do time {(slot.IsPegador ? "Mal" : "Bem")} não foi atribuído."
-                );
+            if (prefab == null || !prefab.TryGetComponent<NetworkObject>(out _))
                 continue;
+
+            Transform[] listaSpawns = null;
+            if (SpawnManager.Instance != null)
+            {
+                listaSpawns = slot.IsPegador ? SpawnManager.Instance.GetSpawnsPegadores() : SpawnManager.Instance.GetSpawnsVitimas();
             }
 
-            if (!prefab.TryGetComponent<NetworkObject>(out _))
+            int indiceSpawn = slot.IsPegador ? indicePegadorSpawn++ : indiceVitimaSpawn++;
+
+            Vector3 posicaoSpawn;
+            Quaternion rotacaoSpawn;
+
+            if (listaSpawns != null && indiceSpawn < listaSpawns.Length && listaSpawns[indiceSpawn] != null)
             {
-                Debug.LogError(
-                    $"[SPAWN] O prefab '{prefab.name}' não possui NetworkObject."
-                );
-                continue;
+                posicaoSpawn = listaSpawns[indiceSpawn].position;
+                rotacaoSpawn = listaSpawns[indiceSpawn].rotation;
+            }
+            else
+            {
+                float offsetEquipe = slot.IsPegador ? -5f : 5f;
+                posicaoSpawn = new Vector3(slotIndex * 3f + offsetEquipe, 1f, 0f);
+                rotacaoSpawn = Quaternion.identity;
             }
 
-            if (!NetworkManager.Singleton.ConnectedClients.ContainsKey(slot.ClientId))
-            {
-                Debug.LogError(
-                    $"[SPAWN] ClientId {slot.ClientId} não está conectado."
-                );
-                continue;
-            }
-
-            GameObject instancia = Instantiate(
-                prefab,
-                new Vector3(slotIndex * 3f, 1f, 0f),
-                Quaternion.identity
-            );
-
-            NetworkObject networkObject =
-                instancia.GetComponent<NetworkObject>();
+            GameObject instancia = Instantiate(prefab, posicaoSpawn, rotacaoSpawn);
+            NetworkObject networkObject = instancia.GetComponent<NetworkObject>();
 
             try
             {
                 networkObject.SpawnWithOwnership(slot.ClientId);
 
-                PlayerMovement movimento =
-                    instancia.GetComponent<PlayerMovement>();
-
+                PlayerMovement movimento = instancia.GetComponent<PlayerMovement>();
                 if (movimento != null)
                 {
                     movimento.isPegador.Value = slot.IsPegador;
                     movimento.foiCapturado.Value = false;
                 }
-                else
-                {
-                    Debug.LogWarning(
-                        $"[SPAWN] '{prefab.name}' não possui PlayerMovement."
-                    );
-                }
-
-                Debug.Log(
-                    $"[SPAWN] SUCESSO: '{prefab.name}' para ClientId {slot.ClientId}."
-                );
             }
-            catch (System.Exception e)
+            catch (System.Exception)
             {
-                Debug.LogError(
-                    $"[SPAWN] Falha ao criar '{prefab.name}': {e}"
-                );
-
                 if (instancia != null)
                     Destroy(instancia);
             }
         }
     }
-
 
     private void IniciarCronometro()
     {
@@ -862,15 +811,33 @@ public class LobbyManager : NetworkBehaviour
                 objeto.Despawn(true);
         }
     }
+    private void OnSceneLoadEventCompleted(string sceneName, UnityEngine.SceneManagement.LoadSceneMode loadSceneMode, System.Collections.Generic.List<ulong> clientsCompleted, System.Collections.Generic.List<ulong> clientsTimedOut)
+    {
+        if (!IsServer) return;
 
+        if (sceneName == "Cadeia_Dentro")
+        {
+            StartCoroutine(AtrasarExibicaoHUD());
+        }
+    }
+
+    private IEnumerator AtrasarExibicaoHUD()
+    {
+        yield return null;
+
+        ExibirHUDClientRpc();
+        BloquearCursorClientRpc();
+        SpawnarJogadoresDaRodada();
+        IniciarCronometro();
+    }
     private void AtualizarHUDServidor(int segundos)
     {
         AtualizarHUDClientRpc(segundos, rodadaAtual, pontosMal, pontosBem);
     }
     [Rpc(SendTo.ClientsAndHost)]
-    private void AtualizarHUDClientRpc(int segundos,int rodada,int mal,int bem)
+    private void AtualizarHUDClientRpc(int segundos, int rodada, int mal, int bem)
     {
-        ControladorUI ui = FindFirstObjectByType<ControladorUI>();
+        UIManager ui = FindFirstObjectByType<UIManager>();
 
         if (ui != null)
             ui.AtualizarHUD(segundos, rodada, mal, bem);
@@ -881,17 +848,14 @@ public class LobbyManager : NetworkBehaviour
     [Rpc(SendTo.ClientsAndHost)]
     private void ExibirHUDClientRpc()
     {
-        ControladorUI ui = FindFirstObjectByType<ControladorUI>();
+        UIManager ui = FindFirstObjectByType<UIManager>();
         if (ui != null)
-            ui.ExibirHUD();
+            ui.AtivarHUDPartida(); 
     }
     [Rpc(SendTo.ClientsAndHost)]
-    private void ExibirVitoriaClientRpc(
-    string vencedor,
-    int mal,
-    int bem)
+    private void ExibirVitoriaClientRpc(string vencedor, int mal, int bem)
     {
-        ControladorUI ui = FindFirstObjectByType<ControladorUI>();
+        UIManager ui = FindFirstObjectByType<UIManager>();
 
         if (ui != null)
             ui.ExibirTelaVitoria(vencedor, mal, bem);
@@ -946,7 +910,7 @@ public class LobbyManager : NetworkBehaviour
     [Rpc(SendTo.ClientsAndHost)]
     private void VoltarAoLobbyClientRpc()
     {
-        ControladorUI ui = FindFirstObjectByType<ControladorUI>();
+        UIManager ui = FindFirstObjectByType<UIManager>();
 
         if (ui != null)
             ui.ExibirLobby();

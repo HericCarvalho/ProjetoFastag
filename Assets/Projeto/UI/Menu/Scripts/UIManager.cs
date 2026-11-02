@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using Unity.Netcode;
+using Unity.Netcode.Transports.UTP;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance { get; private set; }
+
     private VisualElement telaInicial;
     private VisualElement telaMenu;
     private VisualElement telaSelect;
@@ -17,12 +21,16 @@ public class UIManager : MonoBehaviour
     private VisualElement telaPrincipal;
     private VisualElement telaMapa;
     private VisualElement telaConfig;
+    private VisualElement telaHUDPartida;
 
     private VisualElement telaAtual;
     private VisualElement subtelaAtual;
 
     private VisualElement TextoInicio;
     private Label texto;
+
+    private TextField inputIP;
+    private TextField inputPorta;
 
     private VisualElement[] telas;
 
@@ -53,6 +61,17 @@ public class UIManager : MonoBehaviour
     [SerializeField] private SoundData clickSound;
     [SerializeField] private SoundData exitSound;
 
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     // =========================================================
     // ON ENABLE
@@ -95,6 +114,10 @@ public class UIManager : MonoBehaviour
         telaPrincipal = root.Q<VisualElement>("tela_principal");
         telaMapa = root.Q<VisualElement>("tela_mapa");
         telaConfig = root.Q<VisualElement>("tela_config");
+        telaHUDPartida = root.Q<VisualElement>("TelaHUD_Partida");
+
+        inputIP = root.Q<TextField>("IP");
+        inputPorta = root.Q<TextField>("Port");
 
         telas = new VisualElement[]
         {
@@ -103,7 +126,8 @@ public class UIManager : MonoBehaviour
             telaSelect,
             telaOptions,
             telaCustom,
-            telaCustomL
+            telaCustomL,
+            telaHUDPartida
         };
 
         telaLobby?.SetEnabled(true);
@@ -111,6 +135,7 @@ public class UIManager : MonoBehaviour
         telaPrincipal?.SetEnabled(true);
         telaMapa?.SetEnabled(true);
         telaConfig?.SetEnabled(true);
+        telaHUDPartida?.SetEnabled(true);
 
         if (telaLobby != null)
             telaLobby.style.display = DisplayStyle.None;
@@ -126,6 +151,9 @@ public class UIManager : MonoBehaviour
 
         if (telaMapa != null)
             telaMapa.style.display = DisplayStyle.None;
+
+        if (telaHUDPartida != null)
+            telaHUDPartida.style.display = DisplayStyle.None;
 
         telaAtual = telaInicial;
 
@@ -169,20 +197,20 @@ public class UIManager : MonoBehaviour
         sair?.RegisterCallback<ClickEvent>(SairJogo);
 
         //botões tela select
-        partida?.RegisterCallback<ClickEvent>(InicioJogo);
+        partida?.RegisterCallback<ClickEvent>(IniciarPartidaRede);
         criar?.RegisterCallback<ClickEvent>(AbrirCustom);
 
 
         //botões tela custom 
         Lobby?.RegisterCallback<ClickEvent>(AbrirLobby);
         Create?.RegisterCallback<ClickEvent>(AbrirParty);
-        createLobby?.RegisterCallback<ClickEvent>(AbrirCustomL);
-        Entrar?.RegisterCallback<ClickEvent>(InicioJogo);
+        createLobby?.RegisterCallback<ClickEvent>(CriarPartidaHost);
+        Entrar?.RegisterCallback<ClickEvent>(ConectarComoCliente);
 
         inicio?.RegisterCallback<ClickEvent>(AbrirMenu);
 
         //botões telaCustomL
-        Iniciar?.RegisterCallback<ClickEvent>(InicioJogo);
+        Iniciar?.RegisterCallback<ClickEvent>(IniciarPartidaRede);
         Conf?.RegisterCallback<ClickEvent>(AbrirConfig);
         Mapa?.RegisterCallback<ClickEvent> (AbrirMapa);
         Voltar?.RegisterCallback<ClickEvent>(VoltarLobby);
@@ -245,18 +273,18 @@ public class UIManager : MonoBehaviour
         options?.UnregisterCallback<ClickEvent>(AbrirOptions);
         sair?.UnregisterCallback<ClickEvent>(SairJogo);
 
-        partida?.UnregisterCallback<ClickEvent>(InicioJogo);
+        partida?.UnregisterCallback<ClickEvent>(IniciarPartidaRede);
         criar?.UnregisterCallback<ClickEvent>(AbrirCustom);
 
         Lobby?.UnregisterCallback<ClickEvent>(AbrirLobby);
         Create?.UnregisterCallback<ClickEvent>(AbrirParty);
-        createLobby?.UnregisterCallback<ClickEvent>(AbrirCustomL);
-        Entrar?.UnregisterCallback<ClickEvent>(InicioJogo);
+        createLobby?.UnregisterCallback<ClickEvent>(CriarPartidaHost);
+        Entrar?.UnregisterCallback<ClickEvent>(ConectarComoCliente);
 
         inicio?.UnregisterCallback<ClickEvent>(AbrirMenu);
 
         //botões telaCustomL
-        Iniciar?.UnregisterCallback<ClickEvent>(InicioJogo);
+        Iniciar?.UnregisterCallback<ClickEvent>(IniciarPartidaRede);
         Conf?.UnregisterCallback<ClickEvent>(AbrirConfig);
         Mapa?.UnregisterCallback<ClickEvent>(AbrirMapa);
         Voltar?.UnregisterCallback<ClickEvent>(VoltarLobby);
@@ -517,4 +545,195 @@ public class UIManager : MonoBehaviour
 
         Application.Quit();
     }
+
+    //Adionado pelo Heric
+    private void CriarPartidaHost(ClickEvent evt)
+    {
+        if (NetworkManager.Singleton != null)
+        {
+            NetworkManager.Singleton.StartHost();
+            Debug.Log("[UIManager] Host iniciado com sucesso!");
+        }
+        else
+        {
+            Debug.LogError("[UIManager] NetworkManager não encontrado na cena!");
+        }
+
+
+        AbrirCustomL(evt);
+    
+    }
+    private void IniciarPartidaRede(ClickEvent evt)
+    {
+        if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsServer)
+        {
+            NetworkManager.Singleton.SceneManager.LoadScene("LoadScene", LoadSceneMode.Single);
+        }
+        else
+        {
+            SceneManager.LoadScene("LoadScene");
+        }
+    }
+    public void AtivarHUDPartida()
+    {
+        if (telaHUDPartida != null)
+        {
+            if (telaInicial != null) telaInicial.style.display = DisplayStyle.None;
+            if (telaMenu != null) telaMenu.style.display = DisplayStyle.None;
+            if (telaSelect != null) telaSelect.style.display = DisplayStyle.None;
+            if (telaOptions != null) telaOptions.style.display = DisplayStyle.None;
+            if (telaCustom != null) telaCustom.style.display = DisplayStyle.None;
+            if (telaLobby != null) telaLobby.style.display = DisplayStyle.None;
+            if (telaParty != null) telaParty.style.display = DisplayStyle.None;
+            if (telaCustomL != null) telaCustomL.style.display = DisplayStyle.None;
+            if (telaPrincipal != null) telaPrincipal.style.display = DisplayStyle.None;
+            if (telaMapa != null) telaMapa.style.display = DisplayStyle.None;
+            if (telaConfig != null) telaConfig.style.display = DisplayStyle.None;
+
+            telaHUDPartida.style.display = DisplayStyle.Flex;
+            Debug.Log("[UIManager] HUD da partida ativada com sucesso!");
+        }
+        else
+        {
+            Debug.LogError("[UIManager] A VisualElement 'TelaHUD_Partida' não foi encontrada no UXML!");
+        }
+    }
+    public void AtualizarHUD(int segundos, int rodada, int mal, int bem)
+    {
+        VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+        if (root == null) return;
+
+        Label lblTempo = root.Q<Label>("time_text");
+        if (lblTempo != null)
+        {
+            int minutos = segundos / 60;
+            int secs = segundos % 60;
+            lblTempo.text = $"{minutos:00}:{secs:00}";
+        }
+        Label lblPlacar = root.Q<Label>("score_text");
+        if (lblPlacar != null)
+        {
+            lblPlacar.text = $"{mal} / {bem}";
+        }
+
+        AtualizarSpritesEquipesUI(root);
+    }
+    private void AtualizarSpritesEquipesUI(VisualElement root)
+    {
+        if (LobbyManager.Singleton == null || LobbyManager.Singleton.spritesPersonagens == null)
+            return;
+
+        VisualElement[] imagensPegadores = new VisualElement[2];
+        imagensPegadores[0] = root.Q<VisualElement>("Pegador_1");
+        imagensPegadores[1] = root.Q<VisualElement>("Pegador_2");
+
+        VisualElement[] imagensVitimas = new VisualElement[2];
+        imagensVitimas[0] = root.Q<VisualElement>("Vitima_1");
+        imagensVitimas[1] = root.Q<VisualElement>("Vitima_2");
+
+        // Limpa as imagens primeiro
+        for (int i = 0; i < imagensPegadores.Length; i++)
+            ConfigurarImagemEquipe(imagensPegadores[i], null);
+
+        for (int i = 0; i < imagensVitimas.Length; i++)
+            ConfigurarImagemEquipe(imagensVitimas[i], null);
+
+        int indicePegador = 0;
+        int indiceVitima = 0;
+
+        foreach (var jogador in LobbyManager.Singleton.slotsJogadores)
+        {
+            if (!jogador.IsOccupied) continue;
+
+            Sprite[] sprites = LobbyManager.Singleton.spritesPersonagens;
+            if (jogador.PersonagemIndex < 0 || jogador.PersonagemIndex >= sprites.Length)
+                continue;
+
+            Sprite sprite = sprites[jogador.PersonagemIndex];
+
+            if (jogador.IsPegador && indicePegador < imagensPegadores.Length)
+            {
+                ConfigurarImagemEquipe(imagensPegadores[indicePegador], sprite);
+                indicePegador++;
+            }
+            else if (!jogador.IsPegador && indiceVitima < imagensVitimas.Length)
+            {
+                ConfigurarImagemEquipe(imagensVitimas[indiceVitima], sprite);
+                indiceVitima++;
+            }
+        }
+    }
+
+    private void ConfigurarImagemEquipe(VisualElement elemento, Sprite sprite)
+    {
+        if (elemento == null) return;
+
+        if (sprite == null)
+        {
+            elemento.style.backgroundImage = StyleKeyword.None;
+            elemento.style.display = DisplayStyle.None;
+            return;
+        }
+
+        elemento.style.backgroundImage = new StyleBackground(sprite);
+        elemento.style.display = DisplayStyle.Flex;
+    }
+
+    public void ExibirTelaVitoria(string vencedor, int mal, int bem)
+    {
+        Debug.Log($"[UIManager] Fim de partida! Vencedor: {vencedor} | Mal: {mal} - Bem: {bem}");
+        // Ative a tela/painel de vitória aqui se tiver criado um dentro da TelaHUD_Partida
+    }
+
+    public void ExibirLobby()
+    {
+        if (telaHUDPartida != null)
+            telaHUDPartida.style.display = DisplayStyle.None;
+
+        MostrarTela(telaCustom);
+        MostrarSubTela(telaParty);
+    }
+    private void ConectarComoCliente(ClickEvent evt)
+    {
+        if (NetworkManager.Singleton == null)
+        {
+            Debug.LogError("[UIManager] NetworkManager não encontrado na cena!");
+            return;
+        }
+
+        string enderecoIP = (inputIP != null && !string.IsNullOrEmpty(inputIP.value)) ? inputIP.value : "127.0.0.1";
+
+        ushort porta = 7777; // Porta padrão do Netcode
+        if (inputPorta != null && !string.IsNullOrEmpty(inputPorta.value))
+        {
+            if (ushort.TryParse(inputPorta.value, out ushort portaConvertida))
+            {
+                porta = portaConvertida;
+            }
+        }
+
+        UnityTransport transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
+        if (transport != null)
+        {
+            transport.SetConnectionData(enderecoIP, porta);
+            Debug.Log($"[UIManager] A tentar conectar ao IP: {enderecoIP} na Porta: {porta}");
+        }
+        else
+        {
+            Debug.LogError("[UIManager] Componente UnityTransport não encontrado no NetworkManager!");
+            return;
+        }
+
+        if (NetworkManager.Singleton.StartClient())
+        {
+            Debug.Log("[UIManager] Cliente iniciado com sucesso! A entrar no lobby...");
+
+            AbrirCustomL(evt);
+        }
+        else
+        {
+            Debug.LogError("[UIManager] Falha ao iniciar o cliente.");
+        }
+    }
+
 }

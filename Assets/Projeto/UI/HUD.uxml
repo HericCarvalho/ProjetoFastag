@@ -1,6 +1,6 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Projeto/UI/Game_HUD/Game_HUD.uss?fileID=7433441132597879392&amp;guid=380bd99719daaa6478d5d2f0a739764d&amp;type=3#Game_HUD"/>
-    <ui:VisualElement name="Painel_Principal" style="flex-grow: 1; background-color: rgba(130, 130, 130, 0.29); display: flex;">
+    <ui:VisualElement name="Painel_Principal" enabled="false" style="flex-grow: 1; background-color: rgba(130, 130, 130, 0.29); display: none;">
         <ui:Label text="Fastag" name="Name" style="width: 400px; height: 150px; position: absolute; top: 130px; left: 740px; -unity-text-align: upper-center; -unity-font-style: bold; font-size: 100px; align-items: center; justify-content: center; align-self: center; align-content: center;"/>
         <ui:VisualElement name="Painel_Port-IP" enabled="true" picking-mode="Position" style="flex-grow: 1; display: none; visibility: visible; justify-content: center; align-items: auto; flex-direction: column-reverse; overflow: visible;">
             <ui:TextField label="IP" placeholder-text="filler text" name="IP" style="left: 680px; top: 350px; bottom: auto; right: 800px; width: 400px; align-items: center; justify-content: center; align-self: stretch; position: absolute; font-size: 22px; -unity-text-align: middle-center; -unity-font-style: bold;"/>
@@ -15,7 +15,7 @@
             <ui:Button text="X" name="Exit" emoji-fallback-support="true" double-click-selects-word="false" triple-click-selects-line="false" display-tooltip-when-elided="true" enabled="true" style="bottom: 0; right: 0; top: auto; left: auto; position: absolute; font-size: 60px; -unity-text-outline-color: rgb(255, 0, 0); -unity-text-outline-width: 1px; background-color: rgba(255, 255, 255, 0); -unity-text-auto-size: none; -unity-background-image-tint-color: rgba(255, 255, 255, 0); -unity-slice-scale: 0; -unity-slice-type: sliced; display: flex; visibility: visible; overflow: visible; opacity: 1; flex-basis: auto; flex-direction: column; align-items: auto; align-content: auto; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;"/>
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="Painel_Lobby" style="flex-grow: 1; align-self: stretch; justify-content: space-around; align-items: center; display: none;">
+    <ui:VisualElement name="Painel_Lobby" enabled="false" style="flex-grow: 1; align-self: stretch; justify-content: space-around; align-items: center; display: none;">
         <ui:VisualElement name="Slot_1" style="flex-grow: 1; flex-direction: column; align-self: flex-start; align-content: flex-start; left: 480px; position: absolute; top: auto; bottom: 250px; width: 480px; justify-content: space-around; align-items: center; -unity-text-align: middle-center; white-space: pre-wrap; height: 520px;">
             <ui:VisualElement name="ImgPersonagem" style="flex-grow: 1; justify-content: space-evenly; align-self: center; align-content: stretch; width: 410px; position: absolute; height: 350px; top: 43px;"/>
             <ui:Button text="Pronto?" name="BotaoPronto" style="-unity-text-align: middle-right; position: absolute; top: 460px; left: 206px;"/>
@@ -47,7 +47,7 @@
         <ui:Label text="" name="TxtContagemRegressiva" style="position: absolute; top: auto; left: auto; bottom: 60px; -unity-font-style: bold; font-size: 50px; -unity-text-align: middle-center;"/>
         <ui:Button text="IniciarPartida" name="BotaoIniciarPartida" style="bottom: -400px;"/>
     </ui:VisualElement>
-    <ui:VisualElement name="Painel_GameUI" style="flex-grow: 1; flex-direction: row; display: none;">
+    <ui:VisualElement name="Painel_GameUI" style="flex-grow: 1; flex-direction: row; display: flex;">
         <ui:VisualElement name="Time_Pegadores" style="flex-grow: 1; height: 200px; width: 400px; min-width: 0; max-width: 1000px; align-items: flex-start; justify-content: flex-start; display: flex; background-size: 100% 100%; -unity-text-align: middle-center; position: absolute; top: 0; left: 250px;">
             <ui:Image name="Pegador_1" style="width: 50%; height: 100%; flex-direction: row; left: 0; position: absolute;"/>
             <ui:Image name="Pegador_2" style="width: 50%; height: 100%; flex-direction: row-reverse; justify-content: flex-end; align-content: stretch; align-self: flex-end; align-items: stretch; right: 0;"/>

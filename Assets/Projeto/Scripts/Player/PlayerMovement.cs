@@ -101,32 +101,55 @@ public class PlayerMovement : NetworkBehaviour
             return;
 
         Transform camTransform = ObterTransformCamera();
+        if (camTransform == null)
+            return;
 
-        if (!Physics.Raycast(
-            camTransform.position,
-            camTransform.forward,
-            out RaycastHit hit,
-            distanciaInteracao))
+        RaycastHit[] hits = Physics.RaycastAll(camTransform.position, camTransform.forward, distanciaInteracao);
+
+        System.Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
+
+        PlayerMovement alvo = null;
+
+        foreach (var hit in hits)
         {
+            PlayerMovement potentialTarget = hit.collider.GetComponentInParent<PlayerMovement>();
+
+            if (potentialTarget != null)
+            {
+                if (potentialTarget == this || potentialTarget.isPegador.Value)
+                {
+                    continue;
+                }
+
+                alvo = potentialTarget;
+                break;
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        if (alvo == null)
+        {
+            Debug.Log("[INTERAGIR] Nenhuma vítima válida no raio de visão (ou bloqueado por obstáculo).");
             return;
         }
 
-        PlayerMovement alvo =
-            hit.collider.GetComponentInParent<PlayerMovement>();
-
-        if (alvo == null || alvo == this || alvo.isPegador.Value)
-            return;
-
         if (alvo.foiCapturado.Value)
+        {
+            Debug.Log("[INTERAGIR] O alvo já foi capturado anteriormente.");
             return;
+        }
 
-        float distancia = Vector3.Distance(
-            transform.position,
-            alvo.transform.position);
-
+        float distancia = Vector3.Distance(transform.position, alvo.transform.position);
         if (distancia > distanciaCaptura)
+        {
+            Debug.Log($"[INTERAGIR] Alvo fora do alcance físico de captura. Distância: {distancia:F2}m");
             return;
+        }
 
+        Debug.Log($"[INTERAGIR] SUCESSO! A solicitar captura para a vítima ID: {alvo.NetworkObjectId}");
         SolicitarCapturaServerRpc(alvo.NetworkObjectId);
     }
 
@@ -197,11 +220,20 @@ public class PlayerMovement : NetworkBehaviour
 
     private Transform ObterTransformCamera()
     {
-        if (Camera.main != null)
-            return Camera.main.transform;
+        if (cameraDoPrefab != null)
+        {
+            return cameraDoPrefab.transform;
+        }
 
         if (cameraTarget != null)
+        {
             return cameraTarget;
+        }
+
+        if (Camera.main != null)
+        {
+            return Camera.main.transform;
+        }
 
         return transform;
     }
