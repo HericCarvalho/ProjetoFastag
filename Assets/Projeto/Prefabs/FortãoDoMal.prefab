@@ -56,6 +56,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3231021624802824392, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
+      propertyPath: Damping.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231021624802824392, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
       propertyPath: Damping.y
       value: 0.1
       objectReference: {fileID: 0}
@@ -128,23 +132,24 @@ PrefabInstance:
       value: Third_Person
       objectReference: {fileID: 0}
     - target: {fileID: 8272968313201860488, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272968313201860488, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
       propertyPath: m_TagString
       value: MainCamera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8272968313201860488, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4212536959675753260}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
 --- !u!114 &1924399727849558048 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 834479067619913071, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
   m_PrefabInstance: {fileID: 1234123810499673423}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7200976289570398919}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
@@ -155,23 +160,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5720065984907458401, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
   m_PrefabInstance: {fileID: 1234123810499673423}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7200976289570398919 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8272968313201860488, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
-  m_PrefabInstance: {fileID: 1234123810499673423}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4212536959675753260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7200976289570398919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc6eaa7cb8e178946810476cbd3b3b82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraLocal
 --- !u!1001 &4357366374943999994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -269,6 +257,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c0ced455af4ed4a878674870a15cbf99, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4081893466725994491}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c0ced455af4ed4a878674870a15cbf99, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6072898235862056429}
   m_SourcePrefab: {fileID: 100100000, guid: c0ced455af4ed4a878674870a15cbf99, type: 3}
 --- !u!1 &3510855459123362475 stripped
 GameObject:
@@ -474,6 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCamera
   ShowTopMostFoldoutHeaderGroup: 1
+  cinemachine: {fileID: 1924399727849558048}
   cameraTarget: {fileID: 2477266200045673900}
   sensitivity: 0.1
 --- !u!114 &4081893466725994491
@@ -493,6 +485,7 @@ MonoBehaviour:
   gravidade: -20
   velocidadeRotacao: 10
   alturaPulo: 1.5
+  multiplicadorDoubleJump: 2
   distanciaInteracao: 3
   distanciaCaptura: 2
   cameraDoPrefab: {fileID: 1924399727849558048}
@@ -503,6 +496,34 @@ MonoBehaviour:
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
   foiCapturado:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
+--- !u!114 &6072898235862056429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3510855459123362475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5fbae21be862134d8ab29fb83645e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPowerUps
+  ShowTopMostFoldoutHeaderGroup: 1
+  slot1:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
+  slot2:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
+  slot2Liberado:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0

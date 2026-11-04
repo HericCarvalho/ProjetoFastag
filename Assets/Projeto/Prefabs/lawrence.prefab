@@ -224,6 +224,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6ff41ae932194ce883c8906b8107920, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8353354037363743921}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a6ff41ae932194ce883c8906b8107920, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7501004262926327472}
   m_SourcePrefab: {fileID: 100100000, guid: a6ff41ae932194ce883c8906b8107920, type: 3}
 --- !u!1 &3714016489112029994 stripped
 GameObject:
@@ -460,8 +463,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCamera
   ShowTopMostFoldoutHeaderGroup: 1
+  cinemachine: {fileID: 0}
   cameraTarget: {fileID: 1284201491224338559}
   sensitivity: 0.1
+--- !u!114 &7501004262926327472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3714016489112029994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5fbae21be862134d8ab29fb83645e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPowerUps
+  ShowTopMostFoldoutHeaderGroup: 1
+  slot1:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
+  slot2:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
+  slot2Liberado:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
 --- !u!4 &4089557621026525584 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a6ff41ae932194ce883c8906b8107920, type: 3}
@@ -555,42 +587,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Third_Person
       objectReference: {fileID: 0}
+    - target: {fileID: 8272968313201860488, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8272968313201860488, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6256788397515008782}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
 --- !u!4 &1613513745422328993 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5720065984907458401, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
   m_PrefabInstance: {fileID: 6414704247948940224}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3155588887025945672 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8272968313201860488, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
-  m_PrefabInstance: {fileID: 6414704247948940224}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6256788397515008782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3155588887025945672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc6eaa7cb8e178946810476cbd3b3b82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraLocal
 --- !u!114 &5949591337322184367 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 834479067619913071, guid: 73e17f487ef95854a875c6edf9400500, type: 3}
   m_PrefabInstance: {fileID: 6414704247948940224}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3155588887025945672}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}

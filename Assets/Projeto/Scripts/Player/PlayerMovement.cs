@@ -15,6 +15,7 @@ public class PlayerMovement : NetworkBehaviour
     [SerializeField] private float gravidade = -20f;
     [SerializeField] private float velocidadeRotacao = 10f;
     [SerializeField] private float alturaPulo = 1.5f;
+    [SerializeField] private float multiplicadorDoubleJump = 1.2f;
 
     [Header("Captura")]
     [SerializeField] private float distanciaInteracao = 3f;
@@ -23,6 +24,8 @@ public class PlayerMovement : NetworkBehaviour
     [Header("Câmera")]
     [SerializeField] private CinemachineCamera cameraDoPrefab;
     [SerializeField] private Transform cameraTarget;
+
+
 
     public NetworkVariable<bool> isPegador =
         new NetworkVariable<bool>(false);
@@ -37,16 +40,21 @@ public class PlayerMovement : NetworkBehaviour
     private Animator animator;
     private float velocidadeVertical;
 
+    private PlayerPowerUps powerUps;
+
+
+    private float tempoUltimoPulo;
+
     private void Awake()
     {
         controlador = GetComponent<CharacterController>();
         controles = new InputSystem_Actions();
         animator = GetComponentInChildren<Animator>();
+        powerUps = GetComponent<PlayerPowerUps>();
     }
 
     public override void OnNetworkSpawn()
     {
-        ConfigurarCamera();
 
         if (!IsOwner)
             return;
@@ -66,14 +74,6 @@ public class PlayerMovement : NetworkBehaviour
         }
     }
 
-    private void ConfigurarCamera()
-    {
-        if (cameraDoPrefab == null)
-            return;
-
-        cameraDoPrefab.gameObject.SetActive(IsOwner);
-        cameraDoPrefab.Priority = IsOwner ? 20 : 0;
-    }
 
     private void Update()
     {
@@ -86,13 +86,30 @@ public class PlayerMovement : NetworkBehaviour
 
     private void Pular(InputAction.CallbackContext context)
     {
-        if (!controlador.isGrounded || foiCapturado.Value)
+        if (foiCapturado.Value)
             return;
 
-        velocidadeVertical = Mathf.Sqrt(alturaPulo * -2f * gravidade);
+        if (controlador.isGrounded)
+        {
+            velocidadeVertical = Mathf.Sqrt(alturaPulo * -2f * gravidade);
+            tempoUltimoPulo = Time.time;
 
-        if (animator != null)
-            animator.SetTrigger("Pular");
+            if (animator != null)
+                animator.SetTrigger("Pular");
+            return;
+        }
+
+        if (Time.time - tempoUltimoPulo < 0.2f)
+            return;
+
+        if (powerUps != null && powerUps.TentarUsar(PowerUpTipo.DoubleJump))
+        {
+            velocidadeVertical = Mathf.Sqrt(alturaPulo * multiplicadorDoubleJump * -2f * gravidade);
+            Debug.Log("[DOUBLEJUMP] usado");
+
+            if (animator != null)
+                animator.SetTrigger("Pular");
+        }
     }
 
     private void Interagir(InputAction.CallbackContext context)
@@ -197,6 +214,7 @@ public class PlayerMovement : NetworkBehaviour
         MorrerClientRpc();
     }
 
+
     [Rpc(SendTo.ClientsAndHost)]
     private void MorrerClientRpc()
     {
@@ -217,23 +235,27 @@ public class PlayerMovement : NetworkBehaviour
         if (IsServer && NetworkObject.IsSpawned)
             NetworkObject.Despawn();
     }
+    [Rpc(SendTo.Owner)]
+    public void DefinirPosicaoInicialRpc(Vector3 posicao, Quaternion rotacao)
+    {
+        if (controlador != null)
+            controlador.enabled = false;
+
+        transform.SetPositionAndRotation(posicao, rotacao);
+
+        if (controlador != null)
+            controlador.enabled = true;
+
+        velocidadeVertical = 0f;
+    }
 
     private Transform ObterTransformCamera()
     {
-        if (cameraDoPrefab != null)
-        {
-            return cameraDoPrefab.transform;
-        }
+        if (Camera.main != null)
+            return Camera.main.transform;
 
         if (cameraTarget != null)
-        {
             return cameraTarget;
-        }
-
-        if (Camera.main != null)
-        {
-            return Camera.main.transform;
-        }
 
         return transform;
     }

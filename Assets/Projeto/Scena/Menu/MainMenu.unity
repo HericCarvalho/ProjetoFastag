@@ -341,7 +341,8 @@ MonoBehaviour:
     NetworkTransport: {fileID: 1326575867}
     PlayerPrefab: {fileID: 0}
     Prefabs:
-      NetworkPrefabsLists: []
+      NetworkPrefabsLists:
+      - {fileID: 11400000, guid: 2a6c7d045cce1fa4080993542974c493, type: 2}
     TickRate: 30
     ClientConnectionBufferTimeout: 10
     ConnectionApproval: 0
@@ -364,7 +365,7 @@ MonoBehaviour:
     NetworkProfilingMetrics: 1
     OldPrefabList: []
   RunInBackground: 1
-  LogLevel: 1
+  LogLevel: 0
 --- !u!1 &1392594414
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +682,14 @@ PrefabInstance:
     - target: {fileID: 681856908714974758, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 855373460
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106822003823965045, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
+      propertyPath: pontosSpawnVitimas.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106822003823965045, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
+      propertyPath: pontosSpawnPegadores.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4607048926617713112, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
       propertyPath: m_Name

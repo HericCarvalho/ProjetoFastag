@@ -70,6 +70,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Projeto\Scripts\Rede\Teste\NetworkCommandLine.cs" />
     <Compile Include="Assets\Projeto\Scripts\Rede\Teste\TestePlayer.cs" />
+    <Compile Include="Assets\Projeto\Scripts\cameradebug.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Projeto\Scripts\Audio\SoundData.cs" />
     <Compile Include="Assets\Projeto\Scripts\Audio\SoundManager.cs" />
@@ -90,7 +91,9 @@
     <Compile Include="Assets\Projeto\Scripts\Rede\Teste\RpcTeste.cs" />
     <Compile Include="Assets\Projeto\Scripts\IA\EvolutionManager.cs" />
     <Compile Include="Assets\Projeto\Scripts\IA\NeuralNetwork.cs" />
+    <Compile Include="Assets\Projeto\Scripts\Player\PowerUPS\PowerUpTipo.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+    <Compile Include="Assets\Projeto\Scripts\Player\PowerUPS\PowerUpPickup.cs" />
     <Compile Include="Assets\Projeto\UI\Menu\Scripts\UIManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
@@ -102,10 +105,10 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Projeto\Scripts\Audio\PersistentSingleton.cs" />
     <Compile Include="Assets\Projeto\Scena\Atividades\Guilherme\Climb.cs" />
-    <Compile Include="Assets\Projeto\Scripts\CameraLocal.cs" />
     <Compile Include="Assets\Projeto\Scripts\Audio\SoundEmitter.cs" />
     <Compile Include="Assets\Projeto\Scripts\Player\PlayerCamera.cs" />
     <Compile Include="Assets\Projeto\Scripts\Audio\SoundBuilder.cs" />
+    <Compile Include="Assets\Projeto\Scripts\SpawnDebug.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\Projeto\UI\ControladorUI.cs" />
@@ -122,6 +125,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+    <Compile Include="Assets\Projeto\Scripts\Player\PowerUPS\PlayerPowerUps.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />

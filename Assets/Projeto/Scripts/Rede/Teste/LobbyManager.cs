@@ -23,13 +23,10 @@ public class LobbyManager : NetworkBehaviour
     [SerializeField, Min(1)] private int duracaoRodadaFinal = 60;
     [SerializeField, Min(0)] private float intervaloEntreRodadas = 3f;
 
-    [Header("Pontos de Spawn das Equipes")]
-    [SerializeField] private Transform[] pontosSpawnPegadores; 
-    [SerializeField] private Transform[] pontosSpawnVitimas;
-
-
     private VisualElement[] imagensPegadores = new VisualElement[2];
     private VisualElement[] imagensVitimas = new VisualElement[2];
+
+    public int RodadaAtual => rodadaAtual;
 
     public struct DadosJogador : INetworkSerializable, System.IEquatable<DadosJogador>
     {
@@ -522,20 +519,38 @@ public class LobbyManager : NetworkBehaviour
             GameObject[] prefabs = slot.IsPegador ? prefabsDoMal : prefabsDoBem;
 
             if (prefabs == null || prefabs.Length == 0)
+            {
+                Debug.LogError($"[SPAWN] Lista de prefabs vazia para {(slot.IsPegador ? "Pegador" : "Vítima")}.");
                 continue;
+            }
 
             if (slot.PersonagemIndex < 0 || slot.PersonagemIndex >= prefabs.Length)
+            {
+                Debug.LogError($"[SPAWN] PersonagemIndex {slot.PersonagemIndex} fora da lista de prefabs ({prefabs.Length}).");
                 continue;
+            }
 
             GameObject prefab = prefabs[slot.PersonagemIndex];
 
             if (prefab == null || !prefab.TryGetComponent<NetworkObject>(out _))
+            {
+                Debug.LogError($"[SPAWN] Prefab nulo ou sem NetworkObject no índice {slot.PersonagemIndex}.");
                 continue;
+            }
+
+            if (!NetworkManager.Singleton.NetworkConfig.Prefabs.Contains(prefab))
+                Debug.LogError($"[SPAWN] '{prefab.name}' NÃO está na Network Prefabs List!");
 
             Transform[] listaSpawns = null;
             if (SpawnManager.Instance != null)
             {
-                listaSpawns = slot.IsPegador ? SpawnManager.Instance.GetSpawnsPegadores() : SpawnManager.Instance.GetSpawnsVitimas();
+                listaSpawns = slot.IsPegador
+                    ? SpawnManager.Instance.GetSpawnsPegadores()
+                    : SpawnManager.Instance.GetSpawnsVitimas();
+            }
+            else
+            {
+                Debug.LogWarning("[SPAWN] SpawnManager.Instance é null: não há SpawnManager na cena.");
             }
 
             int indiceSpawn = slot.IsPegador ? indicePegadorSpawn++ : indiceVitimaSpawn++;
@@ -547,12 +562,15 @@ public class LobbyManager : NetworkBehaviour
             {
                 posicaoSpawn = listaSpawns[indiceSpawn].position;
                 rotacaoSpawn = listaSpawns[indiceSpawn].rotation;
+                Debug.Log($"[SPAWN] {(slot.IsPegador ? "Pegador" : "Vítima")} #{indiceSpawn} -> ponto '{listaSpawns[indiceSpawn].name}' {posicaoSpawn}");
             }
             else
             {
                 float offsetEquipe = slot.IsPegador ? -5f : 5f;
                 posicaoSpawn = new Vector3(slotIndex * 3f + offsetEquipe, 1f, 0f);
                 rotacaoSpawn = Quaternion.identity;
+                Debug.LogWarning($"[SPAWN] FALLBACK para {(slot.IsPegador ? "Pegador" : "Vítima")} #{indiceSpawn}. " +
+                                 $"Lista: {(listaSpawns == null ? "null" : listaSpawns.Length.ToString())} pontos.");
             }
 
             GameObject instancia = Instantiate(prefab, posicaoSpawn, rotacaoSpawn);
@@ -562,15 +580,20 @@ public class LobbyManager : NetworkBehaviour
             {
                 networkObject.SpawnWithOwnership(slot.ClientId);
 
+                Debug.Log($"[SPAWN] {instancia.name} netId={networkObject.NetworkObjectId} owner={networkObject.OwnerClientId}");
+
                 PlayerMovement movimento = instancia.GetComponent<PlayerMovement>();
                 if (movimento != null)
                 {
                     movimento.isPegador.Value = slot.IsPegador;
                     movimento.foiCapturado.Value = false;
+
+                    movimento.DefinirPosicaoInicialRpc(posicaoSpawn, rotacaoSpawn);
                 }
             }
-            catch (System.Exception)
+            catch (System.Exception e)
             {
+                Debug.LogError($"[SPAWN] Falhou no slot {slotIndex}: {e}");
                 if (instancia != null)
                     Destroy(instancia);
             }
