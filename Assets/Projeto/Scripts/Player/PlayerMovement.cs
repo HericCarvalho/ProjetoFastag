@@ -17,6 +17,10 @@ public class PlayerMovement : NetworkBehaviour
     [SerializeField] private float alturaPulo = 1.5f;
     [SerializeField] private float multiplicadorDoubleJump = 1.2f;
 
+    [Header("Dash")]
+    [SerializeField] private float velocidadeDash = 18f;
+    [SerializeField] private float duracaoDash = 0.2f;
+
     [Header("Captura")]
     [SerializeField] private float distanciaInteracao = 3f;
     [SerializeField] private float distanciaCaptura = 2f;
@@ -27,13 +31,13 @@ public class PlayerMovement : NetworkBehaviour
 
 
 
-    public NetworkVariable<bool> isPegador =
-        new NetworkVariable<bool>(false);
+    public NetworkVariable<bool> isPegador = new NetworkVariable<bool>(false);
+    public NetworkVariable<bool> foiCapturado = new NetworkVariable<bool>(false);
 
-    public NetworkVariable<bool> foiCapturado =
-        new NetworkVariable<bool>(false);
+    public NetworkVariable<bool> atordoado = new NetworkVariable<bool>(false);
 
     public static event Action<PlayerMovement> JogadorCapturadoNoServidor;
+
 
     private CharacterController controlador;
     private InputSystem_Actions controles;
@@ -42,6 +46,9 @@ public class PlayerMovement : NetworkBehaviour
 
     private PlayerPowerUps powerUps;
 
+    private float fimAtordoamento;
+    private float dashRestante;
+    private Vector3 dashDirecao;
 
     private float tempoUltimoPulo;
 
@@ -77,6 +84,9 @@ public class PlayerMovement : NetworkBehaviour
 
     private void Update()
     {
+        if (IsServer && atordoado.Value && Time.time >= fimAtordoamento)
+            atordoado.Value = false;
+
         if (!IsOwner || foiCapturado.Value)
             return;
 
@@ -262,7 +272,21 @@ public class PlayerMovement : NetworkBehaviour
 
     private void Movimentar()
     {
-        Vector2 entrada = controles.Player.Move.ReadValue<Vector2>();
+        bool parado = atordoado.Value;
+        if (parado)
+            dashRestante = 0f;
+
+        if (dashRestante > 0f)
+        {
+            dashRestante -= Time.deltaTime;
+
+            Vector3 mov = dashDirecao * velocidadeDash;
+            AplicarGravidade(ref mov);
+            controlador.Move(mov * Time.deltaTime);
+            return;
+        }
+
+        Vector2 entrada = parado ? Vector2.zero : controles.Player.Move.ReadValue<Vector2>();
         Transform cameraTransform = ObterTransformCamera();
 
         Vector3 frente = cameraTransform.forward;
@@ -310,5 +334,31 @@ public class PlayerMovement : NetworkBehaviour
 
         velocidadeVertical += gravidade * Time.deltaTime;
         movimento.y = velocidadeVertical;
+    }
+
+    public void ServidorAtordoar(float duracao)
+    {
+        if (!IsServer || foiCapturado.Value)
+            return;
+
+        fimAtordoamento = Time.time + duracao;
+        atordoado.Value = true;
+    }
+
+    public void IniciarDash()
+    {
+        Vector2 entrada = controles.Player.Move.ReadValue<Vector2>();
+        Transform cam = ObterTransformCamera();
+
+        Vector3 frente = cam.forward; frente.y = 0f; frente.Normalize();
+        Vector3 direita = cam.right; direita.y = 0f; direita.Normalize();
+
+        Vector3 dir = frente * entrada.y + direita * entrada.x;
+        if (dir.sqrMagnitude < 0.01f)
+            dir = transform.forward;
+
+        dashDirecao = dir.normalized;
+        dashRestante = duracaoDash;
+        transform.rotation = Quaternion.LookRotation(dashDirecao);
     }
 }
