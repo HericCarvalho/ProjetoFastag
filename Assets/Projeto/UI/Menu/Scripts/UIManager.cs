@@ -57,6 +57,8 @@ public class UIManager : MonoBehaviour
     private Button Config2;
     private Button Config3;
     private Button Config4;
+    private Button menuVitoria;
+    private Button lobbyVitoria;
 
     [SerializeField] private SoundData clickSound;
     [SerializeField] private SoundData exitSound;
@@ -185,6 +187,8 @@ public class UIManager : MonoBehaviour
         Config2 = root.Q<Button>("config2");
         Config3 = root.Q<Button>("config3");
         Config4 = root.Q<Button>("config4");
+        menuVitoria = root.Q<Button>("BotaoMenuPrincipal");
+        lobbyVitoria = root.Q<Button>("BotaoVoltarLobby");
 
 
         // =====================================================
@@ -223,6 +227,9 @@ public class UIManager : MonoBehaviour
         Close2.RegisterCallback<ClickEvent>(VoltarSubtela);
         Close3.RegisterCallback<ClickEvent>(VoltarSubtela);
 
+        //botoes vitoria
+        menuVitoria?.RegisterCallback<ClickEvent>(VoltarMenuPrincipal);
+        lobbyVitoria?.RegisterCallback<ClickEvent>(VoltarParaLobby);
 
 
         // =====================================================
@@ -254,6 +261,10 @@ public class UIManager : MonoBehaviour
         sair4?.RegisterCallback<ClickEvent>(TocarSomBotao);
         Close2.RegisterCallback<ClickEvent>(TocarSomBotao);
         Close3.RegisterCallback<ClickEvent>(TocarSomBotao);
+
+        //botões vitoria
+        menuVitoria?.RegisterCallback<ClickEvent>(TocarSomBotao);
+        lobbyVitoria?.RegisterCallback<ClickEvent>(TocarSomBotao);
     }
 
 
@@ -295,6 +306,10 @@ public class UIManager : MonoBehaviour
         Close2.UnregisterCallback<ClickEvent>(VoltarSubtela);
         Close3.UnregisterCallback<ClickEvent>(VoltarSubtela);
 
+        //botões vitoria
+        menuVitoria?.UnregisterCallback<ClickEvent>(VoltarMenuPrincipal);
+        lobbyVitoria?.UnregisterCallback<ClickEvent>(VoltarParaLobby);
+
 
         // =====================================================
         // REMOVER SOM DOS BOTÕES
@@ -324,6 +339,10 @@ public class UIManager : MonoBehaviour
         sair4?.UnregisterCallback<ClickEvent>(TocarSomBotao);
         Close2.UnregisterCallback<ClickEvent>(TocarSomBotao);
         Close3.UnregisterCallback<ClickEvent>(TocarSomBotao);
+
+        //botões vitoria
+        menuVitoria?.UnregisterCallback<ClickEvent>(TocarSomBotao);
+        lobbyVitoria?.UnregisterCallback<ClickEvent>(TocarSomBotao);
     }
 
 
@@ -552,13 +571,7 @@ public class UIManager : MonoBehaviour
         if (NetworkManager.Singleton != null)
         {
             NetworkManager.Singleton.StartHost();
-            Debug.Log("[UIManager] Host iniciado com sucesso!");
         }
-        else
-        {
-            Debug.LogError("[UIManager] NetworkManager não encontrado na cena!");
-        }
-
 
         AbrirCustomL(evt);
     
@@ -591,11 +604,6 @@ public class UIManager : MonoBehaviour
             if (telaConfig != null) telaConfig.style.display = DisplayStyle.None;
 
             telaHUDPartida.style.display = DisplayStyle.Flex;
-            Debug.Log("[UIManager] HUD da partida ativada com sucesso!");
-        }
-        else
-        {
-            Debug.LogError("[UIManager] A VisualElement 'TelaHUD_Partida' não foi encontrada no UXML!");
         }
     }
     public void AtualizarHUD(int segundos, int rodada, int mal, int bem)
@@ -681,8 +689,18 @@ public class UIManager : MonoBehaviour
 
     public void ExibirTelaVitoria(string vencedor, int mal, int bem)
     {
-        Debug.Log($"[UIManager] Fim de partida! Vencedor: {vencedor} | Mal: {mal} - Bem: {bem}");
-        // Ative a tela/painel de vitória aqui se tiver criado um dentro da TelaHUD_Partida
+        VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+        if (root == null) return;
+        Label lblVencedor = root.Q<Label>("TextoVencedor");
+        if (lblVencedor != null)
+        {
+            lblVencedor.text = $"Vencedor: {vencedor}";
+        }
+        Label lblPlacar = root.Q<Label>("TextoPlacarFinal");
+        if (lblPlacar != null)
+        {
+            lblPlacar.text = $"{mal} / {bem}";
+        }
     }
 
     public void ExibirLobby()
@@ -697,13 +715,12 @@ public class UIManager : MonoBehaviour
     {
         if (NetworkManager.Singleton == null)
         {
-            Debug.LogError("[UIManager] NetworkManager não encontrado na cena!");
             return;
         }
 
         string enderecoIP = (inputIP != null && !string.IsNullOrEmpty(inputIP.value)) ? inputIP.value : "127.0.0.1";
 
-        ushort porta = 7777; // Porta padrão do Netcode
+        ushort porta = 7777;
         if (inputPorta != null && !string.IsNullOrEmpty(inputPorta.value))
         {
             if (ushort.TryParse(inputPorta.value, out ushort portaConvertida))
@@ -716,24 +733,41 @@ public class UIManager : MonoBehaviour
         if (transport != null)
         {
             transport.SetConnectionData(enderecoIP, porta);
-            Debug.Log($"[UIManager] A tentar conectar ao IP: {enderecoIP} na Porta: {porta}");
         }
         else
         {
-            Debug.LogError("[UIManager] Componente UnityTransport não encontrado no NetworkManager!");
             return;
         }
 
         if (NetworkManager.Singleton.StartClient())
         {
-            Debug.Log("[UIManager] Cliente iniciado com sucesso! A entrar no lobby...");
-
             AbrirCustomL(evt);
         }
-        else
+    }
+    private void VoltarMenuPrincipal(ClickEvent evt)
+    {
+        if (NetworkManager.Singleton != null &&
+            NetworkManager.Singleton.IsListening)
         {
-            Debug.LogError("[UIManager] Falha ao iniciar o cliente.");
+            NetworkManager.Singleton.Shutdown();
         }
+
+        if (telaHUDPartida != null)
+        {
+            telaHUDPartida.style.display = DisplayStyle.None;
+        }
+
+        MostrarTela(telaMenu);
     }
 
+    private void VoltarParaLobby(ClickEvent evt)
+    {
+        if (NetworkManager.Singleton != null &&
+            NetworkManager.Singleton.IsListening)
+        {
+            NetworkManager.Singleton.Shutdown();
+        }
+
+        ExibirLobby();
+    }
 }

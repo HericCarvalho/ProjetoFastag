@@ -377,10 +377,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   ShowTopMostFoldoutHeaderGroup: 1
-  velocidade: 5
+  velocidade: 10
   gravidade: -20
   velocidadeRotacao: 10
   alturaPulo: 1.5
+  multiplicadorDoubleJump: 1.2
   distanciaInteracao: 3
   distanciaCaptura: 2
   cameraDoPrefab: {fileID: 2040066921265344899}
@@ -408,7 +409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCamera
   ShowTopMostFoldoutHeaderGroup: 1
-  cinemachine: {fileID: 0}
+  cinemachine: {fileID: 2040066921265344899}
   cameraTarget: {fileID: 6240655175415940087}
   sensitivity: 0.1
 --- !u!114 &8846723537338691280

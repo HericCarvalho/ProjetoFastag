@@ -510,10 +510,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   ShowTopMostFoldoutHeaderGroup: 1
-  velocidade: 5
+  velocidade: 10
   gravidade: -20
   velocidadeRotacao: 10
   alturaPulo: 1.5
+  multiplicadorDoubleJump: 1.2
   distanciaInteracao: 3
   distanciaCaptura: 2
   cameraDoPrefab: {fileID: 5685815925019929964}
