@@ -402,7 +402,7 @@ public class LobbyManager : NetworkBehaviour
 
     private IEnumerator RoutineContagemRegressiva()
     {
-        for (int tempo = 5; tempo > 0; tempo--)
+        for (int tempo = 3; tempo > 0; tempo--)
         {
             if (txtContagemRegressiva != null)
                 txtContagemRegressiva.text = $"A partida começará em: {tempo}...";
@@ -422,7 +422,7 @@ public class LobbyManager : NetworkBehaviour
     private void EsconderUILobbyLocalmente()
     {
         if (painelLobby == null && root != null)
-            painelLobby = root.Q<VisualElement>("Painel_Lobby");
+            painelLobby = root.Q<VisualElement>("TelaCustomConfig");
 
         if (painelLobby != null)
             painelLobby.style.display = DisplayStyle.None;

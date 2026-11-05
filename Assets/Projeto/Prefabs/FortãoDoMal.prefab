@@ -481,11 +481,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   ShowTopMostFoldoutHeaderGroup: 1
-  velocidade: 5
+  velocidade: 10
   gravidade: -20
   velocidadeRotacao: 10
   alturaPulo: 1.5
   multiplicadorDoubleJump: 2
+  velocidadeDash: 18
+  duracaoDash: 0.2
   distanciaInteracao: 3
   distanciaCaptura: 2
   cameraDoPrefab: {fileID: 1924399727849558048}
@@ -496,6 +498,11 @@ MonoBehaviour:
       MaxSecondsBetweenUpdates: 0
     m_InternalValue: 0
   foiCapturado:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
+  atordoado:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
@@ -513,6 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPowerUps
   ShowTopMostFoldoutHeaderGroup: 1
+  prefabProjetilStun: {fileID: 7982078347561837152, guid: 2804e0d1acdbf5948af47ba0a234704a, type: 3}
   slot1:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0

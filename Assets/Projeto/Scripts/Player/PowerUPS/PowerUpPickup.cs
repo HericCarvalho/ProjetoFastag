@@ -3,7 +3,13 @@ using UnityEngine;
 
 public class PowerUpPickup : NetworkBehaviour
 {
-    [SerializeField] private PowerUpTipo tipo = PowerUpTipo.DoubleJump;
+    [Header("Configuração")]
+    [SerializeField]private PowerUpTipo[] tiposPossiveis =
+    {
+        PowerUpTipo.DoubleJump,
+        PowerUpTipo.Dash,
+        PowerUpTipo.Stun
+    };
     [SerializeField] private float tempoRespawn = 15f;
 
     [Header("Aparência")]
@@ -25,7 +31,6 @@ public class PowerUpPickup : NetworkBehaviour
         materiaisDisponivel = new Material[renderers.Length][];
         materiaisIndisponivel = new Material[renderers.Length][];
 
-        // Monta os dois conjuntos de materiais uma única vez
         for (int i = 0; i < renderers.Length; i++)
         {
             Material[] original = renderers[i].sharedMaterials;
@@ -57,7 +62,6 @@ public class PowerUpPickup : NetworkBehaviour
 
     private void AplicarEstado(bool ativo)
     {
-        // Visual (roda em todos)
         for (int i = 0; i < renderers.Length; i++)
         {
             Renderer r = renderers[i];
@@ -78,11 +82,10 @@ public class PowerUpPickup : NetworkBehaviour
             }
         }
 
-        // Lógica (só o servidor precisa de física e de timer)
         if (gatilho != null)
             gatilho.enabled = IsServer && ativo;
 
-        enabled = IsServer && !ativo; // Update só roda no servidor, só enquanto indisponível
+        enabled = IsServer && !ativo;
     }
 
     private void Update()
@@ -93,17 +96,20 @@ public class PowerUpPickup : NetworkBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (!IsServer || !disponivel.Value)
+        if (!IsServer || !disponivel.Value || tiposPossiveis.Length == 0)
             return;
 
         PlayerPowerUps jogador = other.GetComponentInParent<PlayerPowerUps>();
         if (jogador == null)
             return;
 
-        if (jogador.ServidorTentarPegar(tipo))
+        PowerUpTipo sorteado = tiposPossiveis[Random.Range(0, tiposPossiveis.Length)];
+
+        if (jogador.ServidorTentarPegar(sorteado))
         {
+            Debug.Log($"[POWERUP] {jogador.name} pegou {sorteado}");
             tempoParaReaparecer = Time.time + tempoRespawn;
-            disponivel.Value = true == false; // indisponível
+            disponivel.Value = false;
         }
     }
 }

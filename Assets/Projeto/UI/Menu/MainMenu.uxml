@@ -185,4 +185,11 @@
             <ui:Label text="DERROTA! 😭😭 " enable-rich-text="false" name="lose_text" style="-unity-font-definition: url(&quot;project://database/Assets/Projeto/Assets/Torres/fONTS/Super%20Squad.ttf?fileID=12800000&amp;guid=35c9e0ecc3cc98a44916fcba8c099fa1&amp;type=3#Super Squad&quot;); font-size: 150px; color: rgb(255, 235, 4); display: none;"/>
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:VisualElement name="TelaHUD_Vitoria" style="flex-grow: 1; right: auto; left: auto; display: none;">
+        <ui:Label text="Fim de Partida!!!" name="Fim" style="right: 0; left: 0; align-self: center; align-content: center; -unity-font-style: bold; font-size: 80px; -unity-text-align: middle-center; translate: 0 100px; color: rgb(0, 0, 0);"/>
+        <ui:Label text="" name="TextoVencedor" style="-unity-text-align: middle-center; align-self: center; align-content: center; translate: 0 200px; font-size: 60px; -unity-font-style: bold-and-italic;"/>
+        <ui:Label text="" name="TextoPlacarFinal" style="translate: 0 250px; -unity-text-align: middle-center; font-size: 50px; -unity-font-style: italic;"/>
+        <ui:Button text="Voltar para o Lobby" name="BotaoVoltarLobby" style="align-self: center; align-content: center; translate: 0 380px; font-size: 30px; -unity-font-style: bold; border-left-color: rgb(80, 152, 54); border-right-color: rgb(80, 152, 54); border-top-color: rgb(80, 152, 54); border-bottom-color: rgb(80, 152, 54); border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;"/>
+        <ui:Button text="Voltar para o Menu Principal" name="BotaoMenuPrincipal" style="align-self: center; align-content: center; translate: 0 400px; font-size: 30px; -unity-font-style: bold; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-left-color: rgb(83, 130, 67); border-right-color: rgb(83, 130, 67); border-top-color: rgb(83, 130, 67); border-bottom-color: rgb(83, 130, 67); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;"/>
+    </ui:VisualElement>
 </ui:UXML>
