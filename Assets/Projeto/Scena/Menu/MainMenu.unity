@@ -673,7 +673,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 681856908714974758, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 681856908714974758, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
       propertyPath: m_InScenePlaced
@@ -689,11 +689,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 940589828615353652, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1106822003823965045, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1106822003823965045, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
       propertyPath: pontosSpawnVitimas.Array.size
