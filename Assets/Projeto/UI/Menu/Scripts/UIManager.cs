@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     private VisualElement telaMapa;
     private VisualElement telaConfig;
     private VisualElement telaHUDPartida;
+    private VisualElement telaHUDVitoria;
 
     private VisualElement telaAtual;
     private VisualElement subtelaAtual;
@@ -117,7 +118,7 @@ public class UIManager : MonoBehaviour
         telaMapa = root.Q<VisualElement>("tela_mapa");
         telaConfig = root.Q<VisualElement>("tela_config");
         telaHUDPartida = root.Q<VisualElement>("TelaHUD_Partida");
-
+        telaHUDVitoria = root.Q<VisualElement>("TelaHUD_Vitoria");
         inputIP = root.Q<TextField>("IP");
         inputPorta = root.Q<TextField>("Port");
 
@@ -138,6 +139,7 @@ public class UIManager : MonoBehaviour
         telaMapa?.SetEnabled(true);
         telaConfig?.SetEnabled(true);
         telaHUDPartida?.SetEnabled(true);
+        telaHUDVitoria?.SetEnabled(true);
 
         if (telaLobby != null)
             telaLobby.style.display = DisplayStyle.None;
@@ -156,6 +158,9 @@ public class UIManager : MonoBehaviour
 
         if (telaHUDPartida != null)
             telaHUDPartida.style.display = DisplayStyle.None;
+
+        if (telaHUDVitoria != null)
+            telaHUDVitoria.style.display = DisplayStyle.None;
 
         telaAtual = telaInicial;
 
@@ -639,7 +644,6 @@ public class UIManager : MonoBehaviour
         imagensVitimas[0] = root.Q<VisualElement>("Vitima_1");
         imagensVitimas[1] = root.Q<VisualElement>("Vitima_2");
 
-        // Limpa as imagens primeiro
         for (int i = 0; i < imagensPegadores.Length; i++)
             ConfigurarImagemEquipe(imagensPegadores[i], null);
 
@@ -690,8 +694,21 @@ public class UIManager : MonoBehaviour
     public void ExibirTelaVitoria(string vencedor, int mal, int bem)
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+
         if (root == null) return;
+
         Label lblVencedor = root.Q<Label>("TextoVencedor");
+
+        if (telaHUDPartida != null)
+        {
+            telaHUDPartida.style.display = DisplayStyle.None;
+        }
+
+        if (telaHUDVitoria != null)
+        {
+            telaHUDVitoria.style.display = DisplayStyle.Flex;
+        }
+
         if (lblVencedor != null)
         {
             lblVencedor.text = $"Vencedor: {vencedor}";
@@ -751,7 +768,10 @@ public class UIManager : MonoBehaviour
         {
             NetworkManager.Singleton.Shutdown();
         }
-
+        if (telaHUDVitoria != null)
+        {
+            telaHUDVitoria.style.display = DisplayStyle.None;
+        }
         if (telaHUDPartida != null)
         {
             telaHUDPartida.style.display = DisplayStyle.None;
@@ -766,6 +786,15 @@ public class UIManager : MonoBehaviour
             NetworkManager.Singleton.IsListening)
         {
             NetworkManager.Singleton.Shutdown();
+        }
+
+        if (telaHUDVitoria != null)
+        {
+            telaHUDVitoria.style.display = DisplayStyle.None;
+        }
+        if (telaHUDPartida != null)
+        {
+            telaHUDPartida.style.display = DisplayStyle.None;
         }
 
         ExibirLobby();
