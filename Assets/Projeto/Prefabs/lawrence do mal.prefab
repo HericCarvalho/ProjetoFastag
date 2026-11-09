@@ -326,7 +326,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   cinemachine: {fileID: 5597641397660086088}
   cameraTarget: {fileID: 8713561332766238067}
-  sensitivity: 0.1
+  sensitivity: 0.08
 --- !u!114 &7337753686572820240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,10 +345,10 @@ MonoBehaviour:
   velocidadeRotacao: 10
   alturaPulo: 1.5
   multiplicadorDoubleJump: 2
-  velocidadeDash: 18
+  velocidadeDash: 30
   duracaoDash: 0.2
-  distanciaInteracao: 3
-  distanciaCaptura: 2
+  distanciaInteracao: 4
+  distanciaCaptura: 4
   cameraDoPrefab: {fileID: 5597641397660086088}
   cameraTarget: {fileID: 8713561332766238067}
   isPegador:

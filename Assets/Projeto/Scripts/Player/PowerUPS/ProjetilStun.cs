@@ -11,7 +11,6 @@ public class ProjetilStun : NetworkBehaviour
     private ulong idDono;
     private float tempoMorte;
 
-    // Chamado pelo servidor antes do Spawn
     public void Configurar(Vector3 dir, ulong idObjetoDono)
     {
         direcao = dir;
@@ -22,7 +21,7 @@ public class ProjetilStun : NetworkBehaviour
     {
         if (!IsServer)
         {
-            enabled = false; // só o servidor move; os clients recebem pelo NetworkTransform
+            enabled = false;
             return;
         }
 
@@ -39,7 +38,7 @@ public class ProjetilStun : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!IsServer || other.isTrigger) // ignora pickups e outros triggers
+        if (!IsServer || other.isTrigger) 
             return;
 
         PlayerMovement alvo = other.GetComponentInParent<PlayerMovement>();
@@ -52,7 +51,7 @@ public class ProjetilStun : NetworkBehaviour
             alvo.ServidorAtordoar(duracaoStun);
         }
 
-        Destruir(); // acertou jogador ou parede
+        Destruir();
     }
 
     private void Destruir()

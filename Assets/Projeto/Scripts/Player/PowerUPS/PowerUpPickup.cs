@@ -107,7 +107,6 @@ public class PowerUpPickup : NetworkBehaviour
 
         if (jogador.ServidorTentarPegar(sorteado))
         {
-            Debug.Log($"[POWERUP] {jogador.name} pegou {sorteado}");
             tempoParaReaparecer = Time.time + tempoRespawn;
             disponivel.Value = false;
         }

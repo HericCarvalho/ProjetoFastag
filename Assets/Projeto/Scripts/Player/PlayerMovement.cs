@@ -115,7 +115,6 @@ public class PlayerMovement : NetworkBehaviour
         if (powerUps != null && powerUps.TentarUsar(PowerUpTipo.DoubleJump))
         {
             velocidadeVertical = Mathf.Sqrt(alturaPulo * multiplicadorDoubleJump * -2f * gravidade);
-            Debug.Log("[DOUBLEJUMP] usado");
 
             if (animator != null)
                 animator.SetTrigger("Pular");
@@ -159,24 +158,20 @@ public class PlayerMovement : NetworkBehaviour
 
         if (alvo == null)
         {
-            Debug.Log("[INTERAGIR] Nenhuma vítima válida no raio de visão (ou bloqueado por obstáculo).");
             return;
         }
 
         if (alvo.foiCapturado.Value)
         {
-            Debug.Log("[INTERAGIR] O alvo já foi capturado anteriormente.");
             return;
         }
 
         float distancia = Vector3.Distance(transform.position, alvo.transform.position);
         if (distancia > distanciaCaptura)
         {
-            Debug.Log($"[INTERAGIR] Alvo fora do alcance físico de captura. Distância: {distancia:F2}m");
             return;
         }
 
-        Debug.Log($"[INTERAGIR] SUCESSO! A solicitar captura para a vítima ID: {alvo.NetworkObjectId}");
         SolicitarCapturaServerRpc(alvo.NetworkObjectId);
     }
 

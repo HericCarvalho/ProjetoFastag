@@ -376,13 +376,11 @@ public class LobbyManager : NetworkBehaviour
 
         if (jogadoresAtivos != 1 && jogadoresAtivos != 2 && jogadoresAtivos != 4)
         {
-            Debug.LogWarning("A partida precisa de exatamente 1, 2 ou 4 jogadores.");
             return;
         }
 
         if (!todosProntos)
         {
-            Debug.LogWarning("Todos os jogadores precisam estar prontos.");
             return;
         }
 
@@ -520,7 +518,6 @@ public class LobbyManager : NetworkBehaviour
 
             if (prefabs == null || prefabs.Length == 0)
             {
-                Debug.LogError($"[SPAWN] Lista de prefabs vazia para {(slot.IsPegador ? "Pegador" : "Vítima")}.");
                 continue;
             }
 
