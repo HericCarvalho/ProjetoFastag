@@ -106,6 +106,7 @@ public class LobbyManager : NetworkBehaviour
             NetworkManager.Singleton.OnClientConnectedCallback += OnClientConectou;
             NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDesconectou;
             NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += OnSceneLoadEventCompleted;
+            NetworkManager.Singleton.OnClientStopped += AoClientParar;
 
             if (slotsJogadores.Count == 0)
             {
@@ -130,6 +131,7 @@ public class LobbyManager : NetworkBehaviour
                 NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDesconectou;
                 PlayerMovement.JogadorCapturadoNoServidor -= AoCapturarJogador;
                 NetworkManager.Singleton.SceneManager.OnLoadEventCompleted -= OnSceneLoadEventCompleted;
+                NetworkManager.Singleton.OnClientStopped -= AoClientParar;
             }
         }
 
@@ -695,6 +697,34 @@ public class LobbyManager : NetworkBehaviour
             StopCoroutine(rotinaProximaRodada);
 
         rotinaProximaRodada = StartCoroutine(AvancarParaProximaRodada());
+    }
+    public void MostrarUILobbyLocalmente()
+    {
+        if (painelLobby == null && root != null)
+            painelLobby = root.Q<VisualElement>("Painel_Lobby");
+
+        if (painelLobby != null)
+            painelLobby.style.display = DisplayStyle.Flex;
+
+        AtualizarUI();
+    }
+
+    public void VoltarAoMenuDesconectando()
+    {
+        UnityEngine.Cursor.lockState = UnityEngine.CursorLockMode.None;
+        UnityEngine.Cursor.visible = true;
+
+        if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsListening)
+            NetworkManager.Singleton.Shutdown();
+    }
+    private void AoClientParar(bool eraHost)
+    {
+        if (eraHost) return;
+
+        UnityEngine.Cursor.lockState = UnityEngine.CursorLockMode.None;
+        UnityEngine.Cursor.visible = true;
+        Destroy(gameObject);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
     private void AtualizarSpritesEquipesLocalmente()
     {

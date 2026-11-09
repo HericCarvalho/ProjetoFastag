@@ -720,14 +720,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void ExibirLobby()
-    {
-        if (telaHUDPartida != null)
-            telaHUDPartida.style.display = DisplayStyle.None;
-
-        MostrarTela(telaCustom);
-        MostrarSubTela(telaParty);
-    }
     private void ConectarComoCliente(ClickEvent evt)
     {
         if (NetworkManager.Singleton == null)
@@ -761,42 +753,58 @@ public class UIManager : MonoBehaviour
             AbrirCustomL(evt);
         }
     }
+    public void ExibirLobby()
+    {
+        VisualElement[] esconder =
+        {
+        telaInicial, telaMenu, telaSelect, telaOptions, telaCustom,
+        telaHUDPartida, telaHUDVitoria
+    };
+
+        foreach (VisualElement t in esconder)
+        {
+            if (t != null)
+                t.style.display = DisplayStyle.None;
+        }
+
+        if (telaCustomL != null)
+        {
+            telaCustomL.style.display = DisplayStyle.Flex;
+            telaAtual = telaCustomL;
+        }
+
+        if (telaPrincipal != null)
+            MostrarSubTela(telaPrincipal);
+
+        if (LobbyManager.Singleton != null)
+            LobbyManager.Singleton.MostrarUILobbyLocalmente();
+    }
+
     private void VoltarMenuPrincipal(ClickEvent evt)
     {
-        if (NetworkManager.Singleton != null &&
-            NetworkManager.Singleton.IsListening)
+        if (LobbyManager.Singleton != null)
+        {
+            LobbyManager.Singleton.VoltarAoMenuDesconectando();
+        }
+        else if (NetworkManager.Singleton != null && NetworkManager.Singleton.IsListening)
         {
             NetworkManager.Singleton.Shutdown();
         }
-        if (telaHUDVitoria != null)
-        {
-            telaHUDVitoria.style.display = DisplayStyle.None;
-        }
-        if (telaHUDPartida != null)
-        {
-            telaHUDPartida.style.display = DisplayStyle.None;
-        }
 
+        if (telaHUDVitoria != null) telaHUDVitoria.style.display = DisplayStyle.None;
+        if (telaHUDPartida != null) telaHUDPartida.style.display = DisplayStyle.None;
+        if (telaCustomL != null) telaCustomL.style.display = DisplayStyle.None;
+
+        telaAtual = null;
         MostrarTela(telaMenu);
+        SceneManager.LoadScene("MainMenu");
     }
 
     private void VoltarParaLobby(ClickEvent evt)
     {
-        if (NetworkManager.Singleton != null &&
-            NetworkManager.Singleton.IsListening)
-        {
-            NetworkManager.Singleton.Shutdown();
-        }
-
-        if (telaHUDVitoria != null)
-        {
-            telaHUDVitoria.style.display = DisplayStyle.None;
-        }
-        if (telaHUDPartida != null)
-        {
-            telaHUDPartida.style.display = DisplayStyle.None;
-        }
-
-        ExibirLobby();
+        if (LobbyManager.Singleton != null)
+            LobbyManager.Singleton.SolicitarVoltaAoLobby();
+        else
+            ExibirLobby();
     }
 }

@@ -204,12 +204,20 @@ public class ControladorUI : MonoBehaviour
 
     public void ExibirLobby()
     {
-        DefinirVisibilidade(painelPrincipal, false);
-        DefinirVisibilidade(painelEntrar, false);
-        DefinirVisibilidade(painelPortIP, false);
-        DefinirVisibilidade(painelLobby, true);
-        DefinirVisibilidade(painelGameUI, false);
-        DefinirVisibilidade(painelVitoria, false);
+        string[] telas = { "TelaInicial", "TelaMenu", "TelaSelect", "TelaOPtions",
+                       "TelaCustom", "TelaHUD_Partida", "TelaHUD_Vitoria" };
+
+        foreach (string nome in telas)
+        {
+            VisualElement t = root.Q<VisualElement>(nome);
+            if (t != null) t.style.display = DisplayStyle.None;
+        }
+
+        VisualElement lobby = root.Q<VisualElement>("TelaCustomConfig");
+        if (lobby != null) lobby.style.display = DisplayStyle.Flex;
+
+        if (LobbyManager.Singleton != null)
+            LobbyManager.Singleton.MostrarUILobbyLocalmente();
     }
     public void AtualizarHUD(int segundos, int rodada, int mal, int bem)
     {

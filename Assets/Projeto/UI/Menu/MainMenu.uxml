@@ -1,7 +1,7 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Projeto/UI/Menu/botao-menu.uss?fileID=7433441132597879392&amp;guid=c5d6cf822fdb42946b7d8416b06944bd&amp;type=3#botao-menu"/>
     <Style src="project://database/Assets/Projeto/UI/Menu/transitions.uss?fileID=7433441132597879392&amp;guid=87005daf716472c4b9fa642f282df8a9&amp;type=3#transitions"/>
-    <ui:VisualElement name="TelaInicial" class="tela" style="flex-grow: 1; display: none;">
+    <ui:VisualElement name="TelaInicial" class="tela" style="flex-grow: 1; display: flex;">
         <ui:Button text="" name="Iniciar" style="width: 1920px; height: 1080px; background-color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/backgrounds/background_vers%C3%A3o3_roxo.svg?fileID=7388822144124034973&amp;guid=95c22250fad5cc64086f2674c12c3601&amp;type=3#background_versão3_roxo&quot;); background-size: 100% 100%; -unity-background-image-tint-color: rgb(255, 255, 255); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);"/>
         <ui:VisualElement name="TituloJogo" style="flex-grow: 1; top: 398px; bottom: 246px; left: 501px; right: 501px; position: absolute; justify-content: center; align-items: auto; align-self: center;">
             <ui:Label text="FAST TAG" name="TITULO" style="-unity-text-align: middle-center; color: rgb(131, 204, 59); font-size: 250px; top: -110px; -unity-font-style: bold; -unity-font-definition: url(&quot;project://database/Assets/Projeto/Assets/Torres/fONTS/Super%20Squad%20Italic.ttf?fileID=12800000&amp;guid=a059b2e76c87bf64d83657f0282cfe20&amp;type=3#Super Squad Italic&quot;); -unity-text-outline-color: rgb(59, 53, 185); -unity-text-outline-width: 13px; text-shadow: 200px 200px 10px rgb(91, 11, 255);"/>
@@ -39,7 +39,7 @@
             </ui:Button>
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="TelaOPtions" class="tela" style="flex-grow: 1; display: flex;">
+    <ui:VisualElement name="TelaOPtions" class="tela" style="flex-grow: 1; display: none;">
         <ui:Image name="Fundo" source="project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/background_vers%C3%A3o2_verde.png?fileID=21300000&amp;guid=5aa0a4f4676a2a04e8ef6bdd0335786b&amp;type=3#background_versão2_verde" scale-mode="ScaleToFit" style="width: 100%; height: 100%; filter: blur(13); position: absolute; top: auto; left: 0; -unity-text-align: middle-center;"/>
         <ui:VisualElement name="Options" style="flex-grow: 1; width: 1000px; height: 1000px; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; border-top-width: 45px; border-right-width: 45px; border-bottom-width: 45px; border-left-width: 45px; right: -460px; background-color: rgba(255, 255, 255, 0); background-image: url(&quot;project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Menu_PlacaDeFundo_ComTitulo.png?fileID=21300000&amp;guid=ffd88fe8a91d10f42b650a2cd0243c70&amp;type=3#Menu_PlacaDeFundo_ComTitulo&quot;); top: auto; display: none;">
             <ui:VisualElement name="Titulo" style="flex-grow: 1; width: 40%; height: 10%; max-height: 5%; top: 46px; left: 47px; bottom: auto;">
