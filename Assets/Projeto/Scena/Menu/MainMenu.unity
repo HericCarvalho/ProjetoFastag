@@ -430,6 +430,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioSettings
   audioMixer: {fileID: 24100000, guid: 0c1abade3cfa41842ac0b0814586a494, type: 2}
+  musicaGroup: {fileID: -6563730307859800434, guid: 0c1abade3cfa41842ac0b0814586a494, type: 2}
+  SFXGroup: {fileID: -503977629403050897, guid: 0c1abade3cfa41842ac0b0814586a494, type: 2}
+  UIGroup: {fileID: -5467003678921378695, guid: 0c1abade3cfa41842ac0b0814586a494, type: 2}
   document: {fileID: 468566630}
 --- !u!1 &1414871898
 GameObject:

@@ -53,6 +53,7 @@ public class UIManager : MonoBehaviour
     private Button Mapa ;
     private Button Close2;
     private Button Close3;
+    private Button Close4;
     private Button Voltar;
     private Button Config1;
     private Button Config2;
@@ -187,6 +188,7 @@ public class UIManager : MonoBehaviour
         Mapa = root.Q<Button>("mapas");
         Close2 = root.Q<Button>("close2");
         Close3 = root.Q<Button>("close3");
+        Close4 = root.Q<Button>("close4");
         Voltar = root.Q<Button>("voltar");
         Config1 = root.Q<Button>("config1");
         Config2 = root.Q<Button>("config2");
@@ -231,6 +233,7 @@ public class UIManager : MonoBehaviour
         sair4?.RegisterCallback<ClickEvent>(VoltarTela);
         Close2.RegisterCallback<ClickEvent>(VoltarSubtela);
         Close3.RegisterCallback<ClickEvent>(VoltarSubtela);
+        Close4.RegisterCallback<ClickEvent>(VoltarConfig);
 
         //botoes vitoria
         menuVitoria?.RegisterCallback<ClickEvent>(VoltarMenuPrincipal);
@@ -265,7 +268,8 @@ public class UIManager : MonoBehaviour
         sair3?.RegisterCallback<ClickEvent>(TocarSomBotao);
         sair4?.RegisterCallback<ClickEvent>(TocarSomBotao);
         Close2.RegisterCallback<ClickEvent>(TocarSomBotao);
-        Close3.RegisterCallback<ClickEvent>(TocarSomBotao);
+        Close3.RegisterCallback<ClickEvent>(TocarSomBotao); 
+        Close4.RegisterCallback<ClickEvent>(TocarSomBotao);
 
         //botões vitoria
         menuVitoria?.RegisterCallback<ClickEvent>(TocarSomBotao);
@@ -310,6 +314,7 @@ public class UIManager : MonoBehaviour
         sair4?.UnregisterCallback<ClickEvent>(VoltarTela);
         Close2.UnregisterCallback<ClickEvent>(VoltarSubtela);
         Close3.UnregisterCallback<ClickEvent>(VoltarSubtela);
+        Close4.UnregisterCallback<ClickEvent>(VoltarConfig);
 
         //botões vitoria
         menuVitoria?.UnregisterCallback<ClickEvent>(VoltarMenuPrincipal);
@@ -554,6 +559,11 @@ public class UIManager : MonoBehaviour
     private void VoltarSubtela(ClickEvent evt)
     {
         MostrarSubTela(telaPrincipal);
+    }
+
+    private void VoltarConfig(ClickEvent evt)
+    {
+        MostrarTela(telaOptions);
     }
 
     private void VoltarLobby(ClickEvent evt)

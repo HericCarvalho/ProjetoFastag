@@ -65,12 +65,16 @@
                 <ui:Label text="SOM" class="text-titulo-map" style="height: 100px; width: 584px;"/>
             </ui:VisualElement>
             <ui:VisualElement name="SliderContainer" style="flex-grow: 0; flex-direction: column; flex-shrink: 0; width: 1067px; height: 556px; top: 226px; left: -503px;">
-                <ui:Slider label="" value="42" high-value="100" fill="true" class="slider-1" style="width: 860px; height: 84px; left: 176px; top: 33px;"/>
-                <ui:Slider label="" value="42" high-value="100" fill="true" class="slider-1" style="width: 860px; height: 84px; left: 176px; top: 60px;"/>
-                <ui:Slider label="" value="42" high-value="100" fill="true" class="slider-1" style="width: 860px; height: 84px; left: 176px; top: 87px;"/>
-                <ui:Slider label="" value="42" high-value="100" fill="true" class="slider-1" style="width: 860px; height: 84px; left: 176px; top: 114px;"/>
-                <ui:Toggle label="Toggle"/>
+                <ui:Slider label="" value="0.33" high-value="1" fill="true" name="Vol_Master" class="slider-1" style="width: 860px; height: 84px; left: 176px; top: 33px;"/>
+                <ui:Slider label="" value="42" high-value="1" fill="true" name="Musica" class="slider-1" style="width: 860px; height: 84px; left: 176px; top: 60px;"/>
+                <ui:Slider label="" value="42" high-value="1" fill="true" name="SFX" class="slider-1" style="width: 860px; height: 84px; left: 176px; top: 87px;"/>
+                <ui:Slider label="" value="42" high-value="1" fill="true" name="UI" class="slider-1" style="width: 860px; height: 84px; left: 176px; top: 114px;"/>
+                <ui:Button text="" class="botao-som"/>
+                <ui:Button text="" class="botao-som" style="top: -253px;"/>
+                <ui:Button text="" class="botao-som" style="top: -206px;"/>
+                <ui:Button text="" class="botao-som" style="top: -159px;"/>
             </ui:VisualElement>
+            <ui:Button text="" name="close4" class="botao-sair" style="align-self: flex-start; left: -493px; top: 38px;"/>
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="TelaCustom" class="tela" style="flex-grow: 1; display: none; background-image: none;">
