@@ -717,3 +717,45 @@
 .conteudo {
     visibility: hidden;
 }
+
+.slider-1 {
+    width: 800px;
+    height: 80px;
+}
+
+.slider-1 .unity-base-slider__tracker {
+    height: 18px;
+    background-color: rgb(59, 16, 69);
+    border-width: 0;
+    border-radius: 0;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+}
+
+.slider-1 .unity-base-slider__fill {
+    background-color: rgb(208, 0, 245);
+    border-width: 0;
+    border-radius: 0;
+}
+
+.slider-1 .unity-base-slider__dragger {
+    width: 25px;
+    height: 25px;
+    top: 47px;
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Configura%C3%A7%C3%B5es/Configuracoes_Slider_Botao.svg?fileID=7388822144124034973&guid=09ac0ec941d143848a40a5a9592ddedd&type=3#Configuracoes_Slider_Botao");
+    -unity-background-scale-mode: stretch-to-fill;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+
