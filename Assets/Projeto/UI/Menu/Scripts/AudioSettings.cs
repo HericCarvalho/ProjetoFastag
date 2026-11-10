@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UIElements;
@@ -12,7 +13,7 @@ public class AudioSettings : MonoBehaviour
     private Slider SFX;
     private Slider UI;
 
-    void Start()
+    private void Start()
     {
         VisualElement root = document.rootVisualElement;
 
@@ -21,32 +22,57 @@ public class AudioSettings : MonoBehaviour
         SFX = root.Q<Slider>("SFX");
         UI = root.Q<Slider>("UI");
 
+        
+        float masterVol = PlayerPrefs.GetFloat("MasterVol", 1f);
+        float musicVol = PlayerPrefs.GetFloat("MusicVol", 1f);
+        float sfxVol = PlayerPrefs.GetFloat("SFXVol", 1f);
+        float uiVol = PlayerPrefs.GetFloat("UIVol", 1f);
+
+      
+        Master.value = masterVol;
+        Musica.value = musicVol;
+        SFX.value = sfxVol;
+        UI.value = uiVol;
+
+       
+        SetVolume("MasterVol", masterVol);
+        SetVolume("MusicVol", musicVol);
+        SetVolume("SFXVol", sfxVol);
+        SetVolume("UIVol", uiVol);
+
+        
         Master.RegisterValueChangedCallback(evt =>
         {
-            audioMixer.SetFloat("MasterVol", evt.newValue);
+            SetVolume("MasterVol", evt.newValue);
         });
 
         Musica.RegisterValueChangedCallback(evt =>
         {
-            audioMixer.SetFloat("MusicVol", evt.newValue);
+            SetVolume("MusicVol", evt.newValue);
         });
 
         SFX.RegisterValueChangedCallback(evt =>
         {
-            audioMixer.SetFloat("SFXVol", evt.newValue);
+            SetVolume("SFXVol", evt.newValue);
         });
 
         UI.RegisterValueChangedCallback(evt =>
         {
-            audioMixer.SetFloat("UI/Menu", evt.newValue);
+            SetVolume("UIVol", evt.newValue);
         });
-
-
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SetVolume(string parameter, float value)
     {
         
+        PlayerPrefs.SetFloat(parameter, value);
+        PlayerPrefs.Save();
+
+       
+        float volumeDB = value > 0.0001f
+            ? Mathf.Log10(value) * 20f
+            : -80f;
+
+        audioMixer.SetFloat(parameter, volumeDB);
     }
 }
