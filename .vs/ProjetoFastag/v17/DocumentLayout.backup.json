@@ -1,9 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ra00352581\\Documents\\GitHub\\ProjetoFastag\\",
+  "WorkspaceRootPath": "C:\\Users\\USER\\Documents\\GitHub\\ProjetoFastag\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3836D999-2D5E-2252-618E-FF4682CFB78B}|Assembly-CSharp.csproj|c:\\users\\ra00352581\\documents\\github\\projetofastag\\assets\\projeto\\ui\\menu\\botao-menu.uss||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "AbsoluteMoniker": "D:0:0:{3836D999-2D5E-2252-618E-FF4682CFB78B}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\projetofastag\\assets\\projeto\\ui\\menu\\scripts\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3836D999-2D5E-2252-618E-FF4682CFB78B}|Assembly-CSharp.csproj|solutionrelative:assets\\projeto\\ui\\menu\\scripts\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3836D999-2D5E-2252-618E-FF4682CFB78B}|Assembly-CSharp.csproj|C:\\Users\\USER\\Documents\\GitHub\\ProjetoFastag\\assets\\projeto\\ui\\menu\\botao-menu.uss||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{3836D999-2D5E-2252-618E-FF4682CFB78B}|Assembly-CSharp.csproj|solutionrelative:assets\\projeto\\ui\\menu\\botao-menu.uss||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
@@ -19,15 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "botao-menu.uss",
-              "DocumentMoniker": "C:\\Users\\ra00352581\\Documents\\GitHub\\ProjetoFastag\\Assets\\Projeto\\UI\\Menu\\botao-menu.uss",
-              "RelativeDocumentMoniker": "Assets\\Projeto\\UI\\Menu\\botao-menu.uss",
-              "ToolTip": "C:\\Users\\ra00352581\\Documents\\GitHub\\ProjetoFastag\\Assets\\Projeto\\UI\\Menu\\botao-menu.uss",
-              "RelativeToolTip": "Assets\\Projeto\\UI\\Menu\\botao-menu.uss",
-              "ViewState": "AgIAANECAAAAAAAAAAAAwAQDAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-11-09T14:13:19.008Z",
+              "Title": "UIManager.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\ProjetoFastag\\Assets\\Projeto\\UI\\Menu\\Scripts\\UIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Projeto\\UI\\Menu\\Scripts\\UIManager.cs",
+              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\ProjetoFastag\\Assets\\Projeto\\UI\\Menu\\Scripts\\UIManager.cs",
+              "RelativeToolTip": "Assets\\Projeto\\UI\\Menu\\Scripts\\UIManager.cs",
+              "ViewState": "AgIAAGsBAAAAAAAAAAAqwFMBAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-09T20:58:07.668Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "botao-menu.uss",
+              "DocumentMoniker": "C:\\Users\\USER\\Documents\\GitHub\\ProjetoFastag\\Assets\\Projeto\\UI\\Menu\\botao-menu.uss",
+              "RelativeDocumentMoniker": "Assets\\Projeto\\UI\\Menu\\botao-menu.uss",
+              "ToolTip": "C:\\Users\\USER\\Documents\\GitHub\\ProjetoFastag\\Assets\\Projeto\\UI\\Menu\\botao-menu.uss",
+              "RelativeToolTip": "Assets\\Projeto\\UI\\Menu\\botao-menu.uss",
+              "ViewState": "AgIAAAEDAAAAAAAAAABRwAQDAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-11-09T14:13:19.008Z"
             }
           ]
         }

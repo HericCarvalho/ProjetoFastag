@@ -6,9 +6,6 @@ using UnityEngine.UIElements;
 public class AudioSettings : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
-    [SerializeField] private AudioMixerGroup musicaGroup;
-    [SerializeField] private AudioMixerGroup SFXGroup;
-    [SerializeField] private AudioMixerGroup UIGroup;
     [SerializeField] private UIDocument document;
 
     private Slider Master;
