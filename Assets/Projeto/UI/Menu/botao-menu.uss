@@ -25,7 +25,7 @@
 
 .botao-select {
     height: 20%;
-    width: 50%;
+    width: 70%;
     top: 125px;
     left: 330px;
     background-color: rgba(0, 206, 209, 0);
@@ -322,7 +322,7 @@
 
 .botao-select:hover {
     height: 20%;
-    width: 50%;
+    width: 75%;
     top: 125px;
     left: 330px;
     background-color: rgba(0, 206, 209, 0);
@@ -352,7 +352,7 @@
 
 .botao-select:active {
     height: 20%;
-    width: 50%;
+    width: 72%;
     top: 125px;
     left: 330px;
     background-color: rgba(0, 206, 209, 0);
@@ -378,6 +378,7 @@
     -unity-font-style: bold;
     background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Partida_SalaOnline_RPlacaDeSelecao_ComGlow.png?fileID=21300000&guid=2f9921d1bc496324d8194f31a2df07d9&type=3#Partida_SalaOnline_RPlacaDeSelecao_ComGlow");
     scale: 1.1 1.1;
+    display: none;
 }
 
 .campo-text {
