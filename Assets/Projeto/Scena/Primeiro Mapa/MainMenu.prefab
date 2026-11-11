@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 940589828615353652}
   - component: {fileID: 681856908714974758}
   - component: {fileID: 1106822003823965045}
+  - component: {fileID: 7055697953783501952}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -128,8 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 1210254321
-  InScenePlacedSourceGlobalObjectIdHash: 0
+  GlobalObjectIdHash: 1951956616
+  InScenePlacedSourceGlobalObjectIdHash: 855373460
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 0
@@ -174,13 +175,24 @@ MonoBehaviour:
   duracaoRodadaNormal: 90
   duracaoRodadaFinal: 60
   intervaloEntreRodadas: 3
-  pontosSpawnPegadores:
-  - {fileID: 0}
-  - {fileID: 0}
-  pontosSpawnVitimas:
-  - {fileID: 0}
-  - {fileID: 0}
   slotsJogadores:
     UpdateTraits:
       MinSecondsBetweenUpdates: 0
       MaxSecondsBetweenUpdates: 0
+--- !u!114 &7055697953783501952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607048926617713112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60349deb8e49e44aa58ca40c1b8c487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GraficoConfig
+  document: {fileID: 5282351045831091394}
+  audioSettings: {fileID: 0}
+  defaultWidth: 1920
+  defaultHeight: 1080
+  defaultFullScreen: 1

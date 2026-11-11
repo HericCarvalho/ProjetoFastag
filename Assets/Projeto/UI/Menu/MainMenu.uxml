@@ -40,7 +40,7 @@
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="TelaOPtions" class="tela" style="flex-grow: 1; display: none;">
-        <ui:Image name="Fundo" source="project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/background_vers%C3%A3o2_verde.png?fileID=21300000&amp;guid=5aa0a4f4676a2a04e8ef6bdd0335786b&amp;type=3#background_versão2_verde" scale-mode="ScaleToFit" style="width: 100%; height: 100%; filter: blur(13); position: absolute; top: -1px; left: 0; -unity-text-align: middle-center;"/>
+        <ui:Image name="Fundo" source="project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/background_vers%C3%A3o2_verde.png?fileID=21300000&amp;guid=5aa0a4f4676a2a04e8ef6bdd0335786b&amp;type=3#background_versão2_verde" scale-mode="ScaleToFit" style="width: 100%; height: 100%; filter: blur(13); position: absolute; top: -3px; left: 3px; -unity-text-align: middle-center;"/>
         <ui:VisualElement name="Options" style="flex-grow: 1; width: 1000px; height: 1000px; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; border-top-width: 45px; border-right-width: 45px; border-bottom-width: 45px; border-left-width: 45px; right: -460px; background-color: rgba(255, 255, 255, 0); background-image: url(&quot;project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Menu_PlacaDeFundo_ComTitulo.png?fileID=21300000&amp;guid=ffd88fe8a91d10f42b650a2cd0243c70&amp;type=3#Menu_PlacaDeFundo_ComTitulo&quot;); top: auto; display: none;">
             <ui:VisualElement name="Titulo" style="flex-grow: 1; width: 40%; height: 10%; max-height: 5%; top: 46px; left: 47px; bottom: auto;">
                 <ui:Label text="OPÇÕES" style="-unity-text-align: middle-center; font-size: 68px; color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Projeto/Assets/Torres/fONTS/Super%20Squad.ttf?fileID=12800000&amp;guid=35c9e0ecc3cc98a44916fcba8c099fa1&amp;type=3#Super Squad&quot;); text-shadow: 0 0 0 rgba(0, 0, 0, 0); -unity-text-outline-color: rgb(214, 233, 157); -unity-text-outline-width: 0; text-overflow: clip; rotate: -16deg; top: 9px; left: 8px;"/>
@@ -50,7 +50,7 @@
                     <ui:Label text="SOM&#10;&#10;" class="text text-config" style="-unity-font-style: bold;"/>
                 </ui:Button>
                 <ui:Button text="" name="config2" class="botao-config2" style="width: 450px; background-color: rgba(188, 188, 188, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);">
-                    <ui:Label text="IDIOMA" class="text-config text" style="top: 19px; right: auto; -unity-font-style: bold;"/>
+                    <ui:Label text="GRAFICOS" class="text-config text" style="top: 19px; right: auto; -unity-font-style: bold;"/>
                 </ui:Button>
                 <ui:Button text="" name="config3" class="botao-confg3" style="bottom: -388px; border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); background-color: rgba(188, 188, 188, 0);">
                     <ui:Label text="CONTROLES" class="text-config text" style="-unity-font-style: bold;"/>
@@ -79,6 +79,18 @@
                 <ui:Label text="INTERFACE" name="vol_UI" style="align-self: center; top: -389px; font-size: 29px; -unity-font-style: bold; left: 9px;"/>
             </ui:VisualElement>
             <ui:Button text="" name="close4" class="botao-sair" style="align-self: flex-start; left: -493px; top: 38px;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="GRAFICOS_menu" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_PlacaDeOpcoes.png?fileID=21300000&amp;guid=6af970c3ac08f5642b56f37ae45765c4&amp;type=3#Configuracoes_PlacaDeOpcoes&quot;); width: 70%; max-height: 900px; top: 80px; left: 300px; flex-shrink: 0; flex-direction: row; display: none;">
+            <ui:VisualElement name="TITULO" style="flex-grow: 0; width: 660px; height: 140px; flex-shrink: 0; left: -300px; top: -80px; background-image: url(&quot;project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Configura%C3%A7%C3%B5es/Configuracoes_PlacaDoTitulo.svg?fileID=7388822144124034973&amp;guid=835a8ebdfa4c9b14a888207dd8e1038c&amp;type=3#Configuracoes_PlacaDoTitulo&quot;);">
+                <ui:Label text="gráficos" class="text-titulo-map" style="height: 100px; width: 584px;"/>
+            </ui:VisualElement>
+            <ui:Button text="" name="close5" class="botao-sair" style="align-self: flex-start; left: 569px; top: 38px;"/>
+            <ui:VisualElement name="dropdownContainer" style="flex-grow: 1; width: 80%; flex-shrink: 0; flex-direction: column; height: 64%; align-self: center; top: 50px; right: 573px;">
+                <ui:DropdownField label="RESOLUÇÃO&#10;" choices="1,2,1" name="resolution_tela" style="height: 62px; width: 802px; left: 88px; top: 77px;"/>
+                <ui:DropdownField label="MODO DE TELA&#10;" choices="1,2,1" name="TelaModo" style="height: 62px; width: 802px; left: 88px; top: 125px;"/>
+                <ui:Button text="" name="botao_aceita" class="botao-aceita"/>
+                <ui:Button text="" name="botao_recusa" class="botao-recusa"/>
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="TelaCustom" class="tela" style="flex-grow: 1; display: none; background-image: none;">

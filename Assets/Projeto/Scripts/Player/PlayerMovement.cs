@@ -1,4 +1,5 @@
 
+using AudioSystem;
 using System;
 using System.Collections;
 using Unity.Cinemachine;
@@ -28,6 +29,13 @@ public class PlayerMovement : NetworkBehaviour
     [Header("Câmera")]
     [SerializeField] private CinemachineCamera cameraDoPrefab;
     [SerializeField] private Transform cameraTarget;
+
+    [Header("Sons")]
+    [SerializeField] SoundData passo1;
+    [SerializeField] SoundData passo2;
+    [SerializeField] SoundData dash;
+    [SerializeField] SoundData pulo;
+    [SerializeField] SoundData powerup;
 
 
 

@@ -430,9 +430,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioSettings
   audioMixer: {fileID: 24100000, guid: 0c1abade3cfa41842ac0b0814586a494, type: 2}
-  musicaGroup: {fileID: -6563730307859800434, guid: 0c1abade3cfa41842ac0b0814586a494, type: 2}
-  SFXGroup: {fileID: -503977629403050897, guid: 0c1abade3cfa41842ac0b0814586a494, type: 2}
-  UIGroup: {fileID: -5467003678921378695, guid: 0c1abade3cfa41842ac0b0814586a494, type: 2}
   document: {fileID: 468566630}
 --- !u!1 &1414871898
 GameObject:
@@ -675,36 +672,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 681856908714974758, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 681856908714974758, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
       propertyPath: m_InScenePlaced
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 681856908714974758, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 1951956616
-      objectReference: {fileID: 0}
-    - target: {fileID: 681856908714974758, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
-      propertyPath: InScenePlacedSourceGlobalObjectIdHash
-      value: 855373460
-      objectReference: {fileID: 0}
-    - target: {fileID: 940589828615353652, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1106822003823965045, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1106822003823965045, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
-      propertyPath: pontosSpawnVitimas.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1106822003823965045, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
-      propertyPath: pontosSpawnPegadores.Array.size
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4607048926617713112, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
       propertyPath: m_Name
@@ -750,6 +723,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7055697953783501952, guid: 3c027addf6a85a242a9663ca4bb90f73, type: 3}
+      propertyPath: audioSettings
+      value: 
+      objectReference: {fileID: 1392594417}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

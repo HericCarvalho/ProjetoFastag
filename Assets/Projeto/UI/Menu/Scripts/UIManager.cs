@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     private VisualElement telaHUDVitoria;
     private VisualElement telaOpcoes;
     private VisualElement telaSom;
+    private VisualElement telaGrafico;
 
     private VisualElement telaAtual;
     private VisualElement subtelaAtual;
@@ -56,6 +57,7 @@ public class UIManager : MonoBehaviour
     private Button Close2;
     private Button Close3;
     private Button Close4;
+    private Button Close5;
     private Button Voltar;
     private Button Config1;
     private Button Config2;
@@ -63,6 +65,7 @@ public class UIManager : MonoBehaviour
     private Button Config4;
     private Button menuVitoria;
     private Button lobbyVitoria;
+    
 
     [SerializeField] private SoundData clickSound;
     [SerializeField] private SoundData exitSound;
@@ -115,6 +118,7 @@ public class UIManager : MonoBehaviour
         telaOptions = root.Q<VisualElement>("TelaOPtions");
         telaOpcoes =root.Q<VisualElement>("Options");
         telaSom = root.Q<VisualElement>("Som_menu");
+        telaGrafico = root.Q<VisualElement>("GRAFICOS_menu");
        
         telaCustom = root.Q<VisualElement>("TelaCustom");
         telaLobby = root.Q<VisualElement>("enterLobby");
@@ -194,6 +198,7 @@ public class UIManager : MonoBehaviour
         Close2 = root.Q<Button>("close2");
         Close3 = root.Q<Button>("close3");
         Close4 = root.Q<Button>("close4");
+        Close5 = root.Q<Button>("close5");
         Voltar = root.Q<Button>("voltar");
         Config1 = root.Q<Button>("config1");
         Config2 = root.Q<Button>("config2");
@@ -212,6 +217,7 @@ public class UIManager : MonoBehaviour
         options?.RegisterCallback<ClickEvent>(AbrirOptions);
         sair?.RegisterCallback<ClickEvent>(SairJogo);
         Config1?.RegisterCallback<ClickEvent>(AbrirSom);
+        Config2?.RegisterCallback<ClickEvent>(AbrirGraficos);
         Config4?.RegisterCallback<ClickEvent>(AbrirMenu);
 
 
@@ -242,6 +248,7 @@ public class UIManager : MonoBehaviour
         Close2.RegisterCallback<ClickEvent>(VoltarSubtela);
         Close3.RegisterCallback<ClickEvent>(VoltarSubtela);
         Close4.RegisterCallback<ClickEvent>(VoltarConfig);
+        Close5.RegisterCallback<ClickEvent>(VoltarConfig);
 
         //botoes vitoria
         menuVitoria?.RegisterCallback<ClickEvent>(VoltarMenuPrincipal);
@@ -256,6 +263,8 @@ public class UIManager : MonoBehaviour
         options?.RegisterCallback<ClickEvent>(TocarSomBotao);
         sair?.RegisterCallback<ClickEvent>(TocarSomBotao);
         Config1?.RegisterCallback<ClickEvent>(TocarSomBotao);
+        Config2?.RegisterCallback<ClickEvent>(TocarSomBotao);
+        Config4?.RegisterCallback<ClickEvent>(TocarSomBotao);
 
         partida?.RegisterCallback<ClickEvent>(TocarSomBotao);
         criar?.RegisterCallback<ClickEvent>(TocarSomBotao);
@@ -279,7 +288,8 @@ public class UIManager : MonoBehaviour
         Close2.RegisterCallback<ClickEvent>(TocarSomBotao);
         Close3.RegisterCallback<ClickEvent>(TocarSomBotao);
         Close4.RegisterCallback<ClickEvent>(TocarSomBotao);
-        Config4?.RegisterCallback<ClickEvent>(TocarSomBotao);
+        Close5.RegisterCallback<ClickEvent>(TocarSomBotao);
+
 
         //botões vitoria
         menuVitoria?.RegisterCallback<ClickEvent>(TocarSomBotao);
@@ -303,6 +313,7 @@ public class UIManager : MonoBehaviour
         options?.UnregisterCallback<ClickEvent>(AbrirOptions);
         sair?.UnregisterCallback<ClickEvent>(SairJogo);
         Config1?.UnregisterCallback<ClickEvent>(AbrirSom);
+        Config2?.UnregisterCallback<ClickEvent>(AbrirGraficos);
         Config4?.UnregisterCallback<ClickEvent>(AbrirMenu);
 
         partida?.UnregisterCallback<ClickEvent>(IniciarPartidaRede);
@@ -327,6 +338,7 @@ public class UIManager : MonoBehaviour
         Close2.UnregisterCallback<ClickEvent>(VoltarSubtela);
         Close3.UnregisterCallback<ClickEvent>(VoltarSubtela);
         Close4.UnregisterCallback<ClickEvent>(VoltarConfig);
+        Close5.UnregisterCallback<ClickEvent>(VoltarConfig);
 
         //botões vitoria
         menuVitoria?.UnregisterCallback<ClickEvent>(VoltarMenuPrincipal);
@@ -341,6 +353,7 @@ public class UIManager : MonoBehaviour
         options?.UnregisterCallback<ClickEvent>(TocarSomBotao);
         sair?.UnregisterCallback<ClickEvent>(TocarSomBotao);
         Config1?.UnregisterCallback<ClickEvent>(TocarSomBotao);
+        Config2?.UnregisterCallback<ClickEvent>(TocarSomBotao);
         Config4?.UnregisterCallback<ClickEvent>(TocarSomBotao);
 
         partida?.UnregisterCallback<ClickEvent>(TocarSomBotao);
@@ -363,7 +376,9 @@ public class UIManager : MonoBehaviour
         sair4?.UnregisterCallback<ClickEvent>(TocarSomBotao);
         Close2.UnregisterCallback<ClickEvent>(TocarSomBotao);
         Close3.UnregisterCallback<ClickEvent>(TocarSomBotao);
-        Config4?.UnregisterCallback<ClickEvent>(TocarSomBotao);
+        Close4.UnregisterCallback<ClickEvent>(TocarSomBotao);
+        Close5.UnregisterCallback<ClickEvent>(TocarSomBotao);
+
 
         //botões vitoria
         menuVitoria?.UnregisterCallback<ClickEvent>(TocarSomBotao);
@@ -564,6 +579,11 @@ public class UIManager : MonoBehaviour
     private void AbrirSom(ClickEvent evt)
     {
         MostrarSubTela(telaSom);
+    }
+
+    private void AbrirGraficos(ClickEvent evt)
+    {
+        MostrarSubTela(telaGrafico);
     }
 
 
