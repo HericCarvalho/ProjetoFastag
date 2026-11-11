@@ -7,7 +7,7 @@
     -unity-font-style: bold;
     color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0);
-    width: 232px;
+    width: 263px;
     height: 80px;
     background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/P%C3%A1gina%20Inicial/PaginaInicial_BotaoComumV1.svg?fileID=7388822144124034973&guid=22cfab10b9b4e7e47bacbe037637b91d&type=3#PaginaInicial_BotaoComumV1");
     -unity-background-scale-mode: stretch-to-fill;
@@ -25,7 +25,7 @@
 
 .botao-select {
     height: 20%;
-    width: 50%;
+    width: 70%;
     top: 125px;
     left: 330px;
     background-color: rgba(0, 206, 209, 0);
@@ -263,7 +263,7 @@
     align-content: center;
     -unity-background-image-tint-color: rgb(255, 255, 255);
     flex-direction: column;
-    scale: 1.1 1.1;
+    scale: 1.13 1.15;
     transition-timing-function: ease-in, ease;
     transition-property: scale, background-image;
     transition-duration: 0.3s, 0.1s;
@@ -322,7 +322,7 @@
 
 .botao-select:hover {
     height: 20%;
-    width: 50%;
+    width: 75%;
     top: 125px;
     left: 330px;
     background-color: rgba(0, 206, 209, 0);
@@ -350,35 +350,7 @@
     scale: 1.1 1.1;
 }
 
-.botao-select:active {
-    height: 20%;
-    width: 50%;
-    top: 125px;
-    left: 330px;
-    background-color: rgba(0, 206, 209, 0);
-    border-top-width: 14px;
-    border-right-width: 14px;
-    border-bottom-width: 14px;
-    border-left-width: 14px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-bottom-color: rgba(255, 255, 255, 0);
-    border-top-color: rgba(255, 255, 255, 0);
-    border-right-color: rgba(255, 255, 255, 0);
-    border-left-color: rgba(255, 255, 255, 0);
-    font-size: 35px;
-    color: rgb(255, 255, 255);
-    -unity-text-align: middle-center;
-    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    word-spacing: 0;
-    -unity-paragraph-spacing: 0;
-    letter-spacing: 0;
-    -unity-font-style: bold;
-    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Partida_SalaOnline_RPlacaDeSelecao_ComGlow.png?fileID=21300000&guid=2f9921d1bc496324d8194f31a2df07d9&type=3#Partida_SalaOnline_RPlacaDeSelecao_ComGlow");
-    scale: 1.1 1.1;
-}
+
 
 .campo-text {
     width: 60%;
@@ -402,8 +374,10 @@
     color: white;
     font-size: 16px;
     left: auto;
-    padding-left: 50px;
+    padding-left: 80px;
     padding-top: -3px;
+    flex-direction: row;
+    flex-shrink: 0;
 }
 
 .botao-custom:hover {
@@ -758,4 +732,185 @@
     border-bottom-color: rgba(0, 0, 0, 0);
 }
 
+.botao-som {
+    width: 60px;
+    height: 60px;
+    top: -300px;
+    left: 95px;
+    background-color: rgba(188, 188, 188, 0);
+    background-image: url("project://database/Assets/Projeto/Assets/Torres/placeholders/sound-max.png?fileID=21300000&guid=2f802c4a4b6fa3548ad80157c3ec6fd8&type=3#sound-max");
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+}
 
+.botao-enter {
+    top: auto;
+    left: auto;
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Partida/Partida_SalaPrivada_Bot%C3%A3oOK_SemGlow.svg?fileID=7388822144124034973&guid=5efe5d3270929ad4f8d4d587685b40a2&type=3#Partida_SalaPrivada_BotãoOK_SemGlow");
+    width: 400px;
+    align-self: center;
+    height: 180px;
+    white-space: nowrap;
+    background-color: rgba(188, 188, 188, 0);
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    font-size: 55px;
+    -unity-font-style: normal;
+    flex-direction: row;
+    flex-shrink: 0;
+}
+
+.botao-enter:hover {
+    top: auto;
+    left: auto;
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Partida/Partida_SalaPrivada_Bot%C3%A3oOK_SemGlow.svg?fileID=7388822144124034973&guid=5efe5d3270929ad4f8d4d587685b40a2&type=3#Partida_SalaPrivada_BotãoOK_SemGlow");
+    align-self: center;
+    white-space: nowrap;
+    background-color: rgba(188, 188, 188, 0);
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    font-size: 55px;
+    -unity-font-style: normal;
+    transition-duration: 0.3s;
+    width: 400px;
+    height: 180px;
+    scale: 1.15 1.15;
+}
+
+.botao-enter:active {
+    top: auto;
+    left: auto;
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Partida_SalaPrivada_Bot%C3%A3oOK_ComGlow.png?fileID=21300000&guid=e7452b3e917a7c141ba759db86c50443&type=3#Partida_SalaPrivada_BotãoOK_ComGlow");
+    width: 400px;
+    align-self: center;
+    height: 180px;
+    white-space: nowrap;
+    background-color: rgba(188, 188, 188, 0);
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    font-size: 55px;
+    -unity-font-style: normal;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    scale: 1.3 2;
+}
+
+.botao-select:active {
+    height: 20%;
+    width: 75%;
+    top: 125px;
+    left: 330px;
+    background-color: rgba(0, 206, 209, 0);
+    border-top-width: 14px;
+    border-right-width: 14px;
+    border-bottom-width: 14px;
+    border-left-width: 14px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-color: rgba(255, 255, 255, 0);
+    border-top-color: rgba(255, 255, 255, 0);
+    border-right-color: rgba(255, 255, 255, 0);
+    border-left-color: rgba(255, 255, 255, 0);
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-center;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    word-spacing: 0;
+    -unity-paragraph-spacing: 0;
+    letter-spacing: 0;
+    -unity-font-style: bold;
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Partida_SalaOnline_LPlacaDeSelecao_ComGlow.png?fileID=21300000&guid=f7b8ff8e0df8ad14ca3a01f106f50db5&type=3#Partida_SalaOnline_LPlacaDeSelecao_ComGlow");
+    scale: 1.1 1.1;
+}
+
+.botao-aceita {
+    top: 257px;
+    width: 300px;
+    height: 50px;
+    left: 56px;
+    background-color: rgba(188, 188, 188, 0);
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_Desativado.png?fileID=1190813875&guid=cbe2850c59024eb48bd6e7be902f58b8&type=3#Configuracoes_BotaoSimNao_Desativado_0");
+}
+
+.botao-aceita:hover {
+    top: 257px;
+    width: 300px;
+    height: 50px;
+    left: 56px;
+    background-color: rgba(188, 188, 188, 0);
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_Desativado.png?fileID=1190813875&guid=cbe2850c59024eb48bd6e7be902f58b8&type=3#Configuracoes_BotaoSimNao_Desativado_0");
+    scale: 1.1 1.1;
+}
+
+.botao-aceita:active {
+    top: 257px;
+    width: 300px;
+    height: 50px;
+    left: 56px;
+    background-color: rgba(188, 188, 188, 0);
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_AtivadoSim.png?fileID=-1775306726&guid=f9397fc50ea560841af02b2c82a3434e&type=3#Configuracoes_BotaoSimNao_AtivadoSim_0");
+    scale: 1.05 1.05;
+}
+
+.botao-recusa {
+    top: 257px;
+    width: 300px;
+    height: 50px;
+    left: 56px;
+    background-color: rgba(188, 188, 188, 0);
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_AtivadoSim.png?fileID=552184701&guid=f9397fc50ea560841af02b2c82a3434e&type=3#Configuracoes_BotaoSimNao_AtivadoSim_1");
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+}
+
+.botao-recusa:hover {
+    top: 257px;
+    width: 300px;
+    height: 50px;
+    left: 56px;
+    background-color: rgba(188, 188, 188, 0);
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_AtivadoSim.png?fileID=552184701&guid=f9397fc50ea560841af02b2c82a3434e&type=3#Configuracoes_BotaoSimNao_AtivadoSim_1");
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    scale: 1.1 1.1;
+}
+
+.botao-recusa:active {
+    top: 257px;
+    width: 300px;
+    height: 50px;
+    left: 56px;
+    background-color: rgba(188, 188, 188, 0);
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_AtivadoNao.png?fileID=951575464&guid=3cfecca7ee756484a95983e2ed137aef&type=3#Configuracoes_BotaoSimNao_AtivadoNao_1");
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    scale: 1.05 1.05;
+}
