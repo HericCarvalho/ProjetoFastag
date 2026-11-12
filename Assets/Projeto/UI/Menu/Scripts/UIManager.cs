@@ -26,6 +26,8 @@ public class UIManager : MonoBehaviour
     private VisualElement telaOpcoes;
     private VisualElement telaSom;
     private VisualElement telaGrafico;
+    private VisualElement telaFullScreen;
+    private VisualElement tela16x9;
 
     private VisualElement telaAtual;
     private VisualElement subtelaAtual;
@@ -119,6 +121,8 @@ public class UIManager : MonoBehaviour
         telaOpcoes =root.Q<VisualElement>("Options");
         telaSom = root.Q<VisualElement>("Som_menu");
         telaGrafico = root.Q<VisualElement>("GRAFICOS_menu");
+        tela16x9 = root.Q<VisualElement>("TELA_16X9");
+        telaFullScreen = root.Q<VisualElement>("fullScreen_root");
        
         telaCustom = root.Q<VisualElement>("TelaCustom");
         telaLobby = root.Q<VisualElement>("enterLobby");
@@ -173,6 +177,8 @@ public class UIManager : MonoBehaviour
             telaHUDVitoria.style.display = DisplayStyle.None;
 
         telaAtual = telaInicial;
+
+       ManterViewportAtivo();
 
 
         // =====================================================
@@ -622,6 +628,23 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
+    private void ManterViewportAtivo()
+    {
+        // Tela que ocupa toda a área disponível
+        if (telaFullScreen != null)
+        {
+            telaFullScreen.SetEnabled(true);
+            telaFullScreen.style.display = DisplayStyle.Flex;
+        }
+
+        // Área de interface 16:9
+        if (tela16x9 != null)
+        {
+            tela16x9.SetEnabled(true);
+            tela16x9.style.display = DisplayStyle.Flex;
+        }
+    }
+
     //Adionado pelo Heric
     private void CriarPartidaHost(ClickEvent evt)
     {
@@ -659,7 +682,7 @@ public class UIManager : MonoBehaviour
             if (telaPrincipal != null) telaPrincipal.style.display = DisplayStyle.None;
             if (telaMapa != null) telaMapa.style.display = DisplayStyle.None;
             if (telaConfig != null) telaConfig.style.display = DisplayStyle.None;
-
+            ManterViewportAtivo();
             telaHUDPartida.style.display = DisplayStyle.Flex;
         }
     }
@@ -818,6 +841,8 @@ public class UIManager : MonoBehaviour
             if (t != null)
                 t.style.display = DisplayStyle.None;
         }
+
+        ManterViewportAtivo();
 
         if (telaCustomL != null)
         {
