@@ -1,4 +1,6 @@
 libburst-llvm-19.dylib filter=lfs diff=lfs merge=lfs -text
+*.tif filter=lfs diff=lfs merge=lfs -text
+*.tiff filter=lfs diff=lfs merge=lfs -text
 /Assets/TerrainDemoScene_HDRP/Terrain/Data/Terrain_0_0_8723fb12-db1c-4ba2-97c5-90e784c8adbf.asset filter=lfs diff=lfs merge=lfs -text
 /Assets/TerrainDemoScene_HDRP/Terrain/Data/Terrain_0_1_e85387be-618a-4f11-a28f-1cbc224e6e94.asset filter=lfs diff=lfs merge=lfs -text
 /Assets/TerrainDemoScene_HDRP/Terrain/Data/Terrain_0_2_5f735b10-59bc-418b-b24d-4385eb3a186d.asset filter=lfs diff=lfs merge=lfs -text
