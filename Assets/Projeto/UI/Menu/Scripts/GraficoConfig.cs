@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 
 public class GraficoConfig : MonoBehaviour
 {
+    [Header("Referências")]
     [SerializeField] private UIDocument document;
     [SerializeField] private AudioSettings audioSettings;
 
@@ -12,6 +13,13 @@ public class GraficoConfig : MonoBehaviour
     [SerializeField] private int defaultWidth = 1920;
     [SerializeField] private int defaultHeight = 1080;
     [SerializeField] private bool defaultFullScreen = true;
+
+    [Header("Viewport")]
+    private const float ReferenceWidth = 1920f;
+    private const float ReferenceHeight = 1080f;
+
+    private VisualElement screenRoot;
+    private VisualElement viewport;
 
     private List<Resolution> avaliableResolutions = new();
 
@@ -27,8 +35,18 @@ public class GraficoConfig : MonoBehaviour
 
     void Start()
     {
+        if (document == null)
+        {
+            Debug.LogError("UIDocument não configurado!");
+            return;
+        }
+
         VisualElement root = document.rootVisualElement;
 
+        // CONFIGURAÇÃO DO VIEWPORT
+        ConfigurarViewport(root);
+
+        // BUSCAR ELEMENTOS DO MENU
         resolutionDrop = root.Q<DropdownField>("resolution_tela");
         modoDrop = root.Q<DropdownField>("TelaModo");
 
@@ -40,7 +58,7 @@ public class GraficoConfig : MonoBehaviour
             aceita == null ||
             recusa == null)
         {
-            Debug.LogError("Elementos não encontrados");
+            Debug.LogError("Elementos do menu não encontrados!");
             return;
         }
 
@@ -52,12 +70,85 @@ public class GraficoConfig : MonoBehaviour
             "Tela Cheia"
         };
 
-        // CORREÇÃO: utiliza o método sem parâmetros
         aceita.clicked += AplicarConfig;
         recusa.clicked += RestaurarConfigurations;
 
         CarregarConfigurations();
     }
+
+    // ==========================================
+    // VIEWPORT 16:9
+    // ==========================================
+
+    void ConfigurarViewport(VisualElement root)
+    {
+        screenRoot = root.Q<VisualElement>("fullScreen_root");
+        viewport = root.Q<VisualElement>("TELA_16X9");
+
+        if (screenRoot == null || viewport == null)
+        {
+            Debug.LogError(
+                "FullScreenRoot ou Area16x9 não encontrados no UI Builder!"
+            );
+            return;
+        }
+
+        // Configuração do contêiner externo
+        screenRoot.style.width = Length.Percent(100);
+        screenRoot.style.height = Length.Percent(100);
+
+        screenRoot.style.position = Position.Relative;
+        screenRoot.style.overflow = Overflow.Hidden;
+
+        // Fundo das áreas excedentes (letterbox)
+        screenRoot.style.backgroundColor = Color.clear;
+
+        // Configuração da área 16:9
+        viewport.style.position = Position.Absolute;
+
+        viewport.style.width = ReferenceWidth;
+        viewport.style.height = ReferenceHeight;
+
+        viewport.style.flexGrow = 0;
+        viewport.style.flexShrink = 0;
+
+        viewport.style.overflow = Overflow.Hidden;
+
+        // Atualiza quando o tamanho da tela mudar
+        screenRoot.RegisterCallback<GeometryChangedEvent>(
+            AtualizarViewport
+        );
+
+        AjustarViewport();
+    }
+
+    void AtualizarViewport(GeometryChangedEvent evt)
+    {
+        AjustarViewport();
+    }
+
+    void AjustarViewport()
+    {
+        if (screenRoot == null || viewport == null)
+            return;
+
+        float largura = screenRoot.contentRect.width;
+        float altura = screenRoot.contentRect.height;
+
+        if (largura <= 0 || altura <= 0)
+            return;
+
+        // Centraliza a área 1920x1080
+        float posicaoX = (largura - ReferenceWidth) / 2f;
+        float posicaoY = (altura - ReferenceHeight) / 2f;
+
+        viewport.style.left = posicaoX;
+        viewport.style.top = posicaoY;
+    }
+
+    // ==========================================
+    // RESOLUÇÕES
+    // ==========================================
 
     void CarregarResolutions()
     {
@@ -129,14 +220,15 @@ public class GraficoConfig : MonoBehaviour
             }
 
             if (diferenca == 0)
-            {
                 break;
-            }
         }
 
-        // CORREÇÃO: retorno fora do FOR
         return melhorIndice;
     }
+
+    // ==========================================
+    // APLICAR CONFIGURAÇÕES
+    // ==========================================
 
     void AplicarConfig()
     {
@@ -175,7 +267,15 @@ public class GraficoConfig : MonoBehaviour
 
             PlayerPrefs.Save();
         }
+
+        Debug.Log(
+            $"Resolução solicitada: {selectedResolution.width}x{selectedResolution.height}"
+        );
     }
+
+    // ==========================================
+    // RESTAURAR CONFIGURAÇÕES
+    // ==========================================
 
     void RestaurarConfigurations()
     {
@@ -189,5 +289,21 @@ public class GraficoConfig : MonoBehaviour
         AplicarConfigurations(true);
 
         Debug.Log("Configurações restauradas!");
+    }
+
+    private void OnDestroy()
+    {
+        if (screenRoot != null)
+        {
+            screenRoot.UnregisterCallback<GeometryChangedEvent>(
+                AtualizarViewport
+            );
+        }
+
+        if (aceita != null)
+            aceita.clicked -= AplicarConfig;
+
+        if (recusa != null)
+            recusa.clicked -= RestaurarConfigurations;
     }
 }
