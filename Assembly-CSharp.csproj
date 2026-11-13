@@ -72,6 +72,7 @@
     <Compile Include="Assets\Projeto\Scripts\Rede\Teste\TestePlayer.cs" />
     <Compile Include="Assets\Projeto\UI\Menu\Scripts\GraficoConfig.cs" />
     <Compile Include="Assets\Projeto\Scripts\cameradebug.cs" />
+    <Compile Include="Assets\TerrainDemoScene_HDRP\Scripts\Readme.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Projeto\Scripts\Audio\SoundData.cs" />
     <Compile Include="Assets\Projeto\Scripts\Audio\SoundManager.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Assets\Projeto\Scripts\IA\EvolutionManager.cs" />
     <Compile Include="Assets\Projeto\Scripts\IA\NeuralNetwork.cs" />
     <Compile Include="Assets\Projeto\Scripts\Player\PowerUPS\PowerUpTipo.cs" />
+    <Compile Include="Assets\TerrainDemoScene_HDRP\Scripts\SceneAnnotation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Projeto\Scripts\Player\PowerUPS\PowerUpPickup.cs" />
     <Compile Include="Assets\Projeto\UI\Menu\Scripts\UIManager.cs" />
@@ -101,6 +103,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Projeto\Scripts\Rede\Teste\LobbyManager.cs" />
+    <Compile Include="Assets\TerrainDemoScene_HDRP\Scripts\TerrainTreeToggle.cs" />
     <Compile Include="Assets\Projeto\Scripts\Audio\GameObjectExtensions.cs" />
     <Compile Include="Assets\Projeto\Scripts\Audio\AudioExtensions.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
@@ -135,28 +138,66 @@
     <Compile Include="Assets\Projeto\Scripts\Audio\MusicManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\TerrainDemoScene_HDRP\Notes\Stamps.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\ThirdPartyNotices.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMPro.cginc" />
+    <None Include="Assets\TerrainDemoScene_HDRP\Notes\FadeDistances.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\Notes\ImportingMaps.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TerrainDemoScene_HDRP\Notes\DiffusionProfiles.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Roboto-Bold - License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
     <None Include="Assets\Projeto\Scena\Atividades\Heric\Heric.uxml" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Unity - OFL.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Roboto-Bold - AFL.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\Projeto\UI\HUD.uxml" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMPro_Mobile.cginc" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF SSD.shader" />
+    <None Include="Assets\TerrainDemoScene_HDRP\Scripts\Resources\SceneAnnotation.uxml" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TerrainDemoScene_HDRP\Notes\Layers.txt" />
     <None Include="Assets\Projeto\UI\Game_HUD\Game_HUD.uxml" />
     <None Include="Assets\Projeto\UI\Menu\botao-menu.uss" />
     <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
+    <None Include="Assets\TerrainDemoScene_HDRP\Notes\Welcome.txt" />
     <None Include="Assets\Projeto\UI\Menu\transitions.uss" />
     <None Include="Assets\Projeto\Scena\Atividades\Guilherme\Guilherme.uss" />
     <None Include="Assets\botaoFechar.uss" />
     <None Include="Assets\Projeto\UI\Menu\Load.uxml" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF-Surface.shader" />
     <None Include="Assets\Projeto\UI\Game_HUD\Game_HUD.uss" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TerrainDemoScene_HDRP\Notes\Reflections.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF.shader" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMPro_Properties.cginc" />
+    <None Include="Assets\TerrainDemoScene_HDRP\Scripts\Resources\SceneAnnotationUI.uss" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMPro_Surface.cginc" />
+    <None Include="Assets\TerrainDemoScene_HDRP\Notes\DenseDetails.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\Notes\ProxyTerrain.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Fonts\License.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\Notes\Tiles.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TerrainDemoScene_HDRP\Notes\SkyboxAssets.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TerrainDemoScene_HDRP\Notes\WaterShader.txt" />
     <None Include="Assets\Projeto\UI\Menu\MainMenu.uxml" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\Notes\SpeedTrees.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMP_SDF-Mobile.shader" />
     <None Include="Assets\Projeto\Scena\Atividades\Guilherme\Guilherme.uxml" />
     <None Include="Assets\TerrainSampleAssets\ShaderGraphs\CustomFunctions\CustomLighting.hlsl" />
     <None Include="Assets\_header.uss" />
+    <None Include="Assets\TerrainDemoScene_HDRP\TextMeshPro\Shaders\TextMeshPro\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
+    <None Include="Assets\TerrainDemoScene_HDRP\Notes\ProceduralSkies.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -1379,10 +1420,6 @@
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.InferenceEngine.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.InferenceEngine.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.TerrainTools">
       <HintPath>Library\ScriptAssemblies\Unity.TerrainTools.dll</HintPath>
       <Private>False</Private>
@@ -1395,8 +1432,8 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    <Reference Include="Unity.InferenceEngine.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.InferenceEngine.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
@@ -1405,6 +1442,10 @@
     </Reference>
     <Reference Include="Unity.Services.Authentication.PlayerAccounts">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Authentication.PlayerAccounts.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
@@ -1471,16 +1512,16 @@
       <HintPath>Library\ScriptAssemblies\PrimeTween.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.AppUI">
       <HintPath>Library\ScriptAssemblies\Unity.AppUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Multiplayer.Tools.Common">
       <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Tools.Common.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.Sprite.AIIntegration.Editor">
@@ -1555,8 +1596,8 @@
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.2D.Editor.Overrides.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.ML-Agents.Input">
-      <HintPath>Library\ScriptAssemblies\Unity.ML-Agents.Input.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Multiplayer.Tools.NetworkProfiler.Runtime">
@@ -1571,8 +1612,8 @@
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+    <Reference Include="Unity.ML-Agents.Input">
+      <HintPath>Library\ScriptAssemblies\Unity.ML-Agents.Input.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
@@ -1707,12 +1748,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Center.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.InferenceEngine.Tokenization">
-      <HintPath>Library\ScriptAssemblies\Unity.InferenceEngine.Tokenization.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.TerrainTools.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TerrainTools.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.InferenceEngine.Tokenization">
+      <HintPath>Library\ScriptAssemblies\Unity.InferenceEngine.Tokenization.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.XR.Management.Editor">
