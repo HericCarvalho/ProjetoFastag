@@ -350,8 +350,6 @@
     scale: 1.1 1.1;
 }
 
-
-
 .campo-text {
     width: 60%;
     height: 10%;
@@ -913,4 +911,27 @@
     border-top-color: rgba(149, 149, 149, 0);
     border-bottom-color: rgba(149, 149, 149, 0);
     scale: 1.05 1.05;
+}
+
+.drop-novo {
+    height: 62px;
+    width: 802px;
+    left: 88px;
+    top: 77px;
+}
+
+.drop-novo .unity-base-popup-field__input {
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Configura%C3%A7%C3%B5es/Configuracoes_BotaoDeOpcoes_Desativado.svg?fileID=7388822144124034973&guid=43a5869ebed54ce40ad20ac5f4256828&type=3#Configuracoes_BotaoDeOpcoes_Desativado");
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.drop-novo .unity-base-popup-field__text {
+    color: rgb(104, 255, 95);
+    left: 60px;
+    font-size: 22px;
+    -unity-text-align: middle-left;
 }
