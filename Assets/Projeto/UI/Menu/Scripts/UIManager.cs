@@ -219,7 +219,7 @@ public class UIManager : MonoBehaviour
         // =====================================================
 
         //botões menu
-        jogar?.RegisterCallback<ClickEvent>(AbrirJogo);
+        jogar?.RegisterCallback<ClickEvent>(AbrirCustom);
         options?.RegisterCallback<ClickEvent>(AbrirOptions);
         sair?.RegisterCallback<ClickEvent>(SairJogo);
         Config1?.RegisterCallback<ClickEvent>(AbrirSom);
@@ -315,7 +315,7 @@ public class UIManager : MonoBehaviour
 
 
         //botoes 
-        jogar?.UnregisterCallback<ClickEvent>(AbrirJogo);
+        jogar?.UnregisterCallback<ClickEvent>(AbrirCustom);
         options?.UnregisterCallback<ClickEvent>(AbrirOptions);
         sair?.UnregisterCallback<ClickEvent>(SairJogo);
         Config1?.UnregisterCallback<ClickEvent>(AbrirSom);
@@ -534,10 +534,10 @@ public class UIManager : MonoBehaviour
     }
 
 
-    private void AbrirJogo(ClickEvent evt)
-    {
-        MostrarTela(telaSelect);
-    }
+   // private void AbrirJogo(ClickEvent evt)
+   // {
+   //     MostrarTela(telaSelect);
+   // }
 
 
     private void AbrirCustom(ClickEvent evt)

@@ -467,10 +467,10 @@ MonoBehaviour:
     m_Value: 0
   m_MaximumRadiusInPixels:
     m_OverrideState: 1
-    m_Value: 40
+    m_Value: 32
   m_BilateralUpsample:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   m_DirectionCount:
     m_OverrideState: 1
     m_Value: 2
@@ -508,7 +508,6 @@ MonoBehaviour:
   - {fileID: 4243559514226530934}
   - {fileID: -5953487721782932850}
   - {fileID: 7599614742806643090}
-  - {fileID: 0}
 --- !u!114 &2074566681320067156
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -593,10 +592,10 @@ MonoBehaviour:
     m_Value: 64
   m_VolumetricFogBudget:
     m_OverrideState: 1
-    m_Value: 0.33
+    m_Value: 0.333
   m_ResolutionDepthRatio:
     m_OverrideState: 1
-    m_Value: 0.666
+    m_Value: 0.5
   directionalLightsOnly:
     m_OverrideState: 0
     m_Value: 0

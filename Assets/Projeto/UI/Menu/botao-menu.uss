@@ -663,13 +663,14 @@
 
 .foto-mapa {
     flex-direction: row;
-    width: 198px;
-    height: 218px;
+    width: 305px;
+    height: 350px;
     align-self: center;
     justify-content: center;
     left: 72px;
     top: -5px;
     rotate: 0 0 0 0;
+    flex-shrink: 0;
 }
 
 .mapa-fundo:hover {
@@ -736,7 +737,7 @@
     top: -300px;
     left: 95px;
     background-color: rgba(188, 188, 188, 0);
-    background-image: url("project://database/Assets/Projeto/Assets/Torres/placeholders/sound-max.png?fileID=21300000&guid=2f802c4a4b6fa3548ad80157c3ec6fd8&type=3#sound-max");
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_IconeDeSom_Alto.png?fileID=21300000&guid=0bb9abb3fe9b0404db843f50e027d128&type=3#Configuracoes_IconeDeSom_Alto");
     border-left-color: rgba(149, 149, 149, 0);
     border-right-color: rgba(149, 149, 149, 0);
     border-top-color: rgba(149, 149, 149, 0);
@@ -841,7 +842,12 @@
     border-right-color: rgba(149, 149, 149, 0);
     border-top-color: rgba(149, 149, 149, 0);
     border-bottom-color: rgba(149, 149, 149, 0);
-    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_Desativado.png?fileID=1190813875&guid=cbe2850c59024eb48bd6e7be902f58b8&type=3#Configuracoes_BotaoSimNao_Desativado_0");
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_Base.png?fileID=-1200085262&guid=b7bad3b95410eab48b38a3fe04cfde78&type=3#Configuracoes_BotaoSimNao_Base_0");
+    color: rgb(104, 255, 95);
+    font-size: 24px;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+    -unity-font-definition: url("project://database/Assets/Projeto/Assets/Torres/fONTS/TT%20Octosquares%20Trial%20Regular.ttf?fileID=12800000&guid=423adaa323f67814e991ab9b49550be4&type=3#TT Octosquares Trial Regular");
 }
 
 .botao-aceita:hover {
@@ -854,7 +860,7 @@
     border-right-color: rgba(149, 149, 149, 0);
     border-top-color: rgba(149, 149, 149, 0);
     border-bottom-color: rgba(149, 149, 149, 0);
-    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_Desativado.png?fileID=1190813875&guid=cbe2850c59024eb48bd6e7be902f58b8&type=3#Configuracoes_BotaoSimNao_Desativado_0");
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_Base.png?fileID=-1200085262&guid=b7bad3b95410eab48b38a3fe04cfde78&type=3#Configuracoes_BotaoSimNao_Base_0");
     scale: 1.1 1.1;
 }
 
@@ -868,7 +874,7 @@
     border-right-color: rgba(149, 149, 149, 0);
     border-top-color: rgba(149, 149, 149, 0);
     border-bottom-color: rgba(149, 149, 149, 0);
-    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_AtivadoSim.png?fileID=-1775306726&guid=f9397fc50ea560841af02b2c82a3434e&type=3#Configuracoes_BotaoSimNao_AtivadoSim_0");
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_Base.png?fileID=-1200085262&guid=b7bad3b95410eab48b38a3fe04cfde78&type=3#Configuracoes_BotaoSimNao_Base_0");
     scale: 1.05 1.05;
 }
 
@@ -878,11 +884,16 @@
     height: 50px;
     left: 56px;
     background-color: rgba(188, 188, 188, 0);
-    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_AtivadoSim.png?fileID=552184701&guid=f9397fc50ea560841af02b2c82a3434e&type=3#Configuracoes_BotaoSimNao_AtivadoSim_1");
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_Base.png?fileID=442284739&guid=b7bad3b95410eab48b38a3fe04cfde78&type=3#Configuracoes_BotaoSimNao_Base_1");
     border-left-color: rgba(149, 149, 149, 0);
     border-right-color: rgba(149, 149, 149, 0);
     border-top-color: rgba(149, 149, 149, 0);
     border-bottom-color: rgba(149, 149, 149, 0);
+    font-size: 24px;
+    color: rgb(104, 255, 95);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    -unity-font-definition: url("project://database/Assets/Projeto/Assets/Torres/fONTS/TT%20Octosquares%20Trial%20Regular.ttf?fileID=12800000&guid=423adaa323f67814e991ab9b49550be4&type=3#TT Octosquares Trial Regular");
 }
 
 .botao-recusa:hover {
@@ -891,7 +902,7 @@
     height: 50px;
     left: 56px;
     background-color: rgba(188, 188, 188, 0);
-    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_AtivadoSim.png?fileID=552184701&guid=f9397fc50ea560841af02b2c82a3434e&type=3#Configuracoes_BotaoSimNao_AtivadoSim_1");
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_Base.png?fileID=442284739&guid=b7bad3b95410eab48b38a3fe04cfde78&type=3#Configuracoes_BotaoSimNao_Base_1");
     border-left-color: rgba(149, 149, 149, 0);
     border-right-color: rgba(149, 149, 149, 0);
     border-top-color: rgba(149, 149, 149, 0);
@@ -905,7 +916,7 @@
     height: 50px;
     left: 56px;
     background-color: rgba(188, 188, 188, 0);
-    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_AtivadoNao.png?fileID=951575464&guid=3cfecca7ee756484a95983e2ed137aef&type=3#Configuracoes_BotaoSimNao_AtivadoNao_1");
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Configuracoes_BotaoSimNao_Base.png?fileID=442284739&guid=b7bad3b95410eab48b38a3fe04cfde78&type=3#Configuracoes_BotaoSimNao_Base_1");
     border-left-color: rgba(149, 149, 149, 0);
     border-right-color: rgba(149, 149, 149, 0);
     border-top-color: rgba(149, 149, 149, 0);
@@ -934,4 +945,140 @@
     left: 60px;
     font-size: 22px;
     -unity-text-align: middle-left;
+}
+
+.botao-anterior {
+    position: absolute;
+    top: 130px;
+    left: 19px;
+    background-color: rgba(188, 188, 188, 0);
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/SelecaoDePersonagem_Botao_Desativado.png?fileID=2800000&guid=7574f928bfcbb9049b81d29a6b9da408&type=3#SelecaoDePersonagem_Botao_Desativado");
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    width: 40px;
+    height: 40px;
+}
+
+.botao-anterior:hover {
+    position: absolute;
+    top: 130px;
+    left: 19px;
+    background-color: rgba(188, 188, 188, 0);
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/SelecaoDePersonagem_Botao_Desativado.png?fileID=2800000&guid=7574f928bfcbb9049b81d29a6b9da408&type=3#SelecaoDePersonagem_Botao_Desativado");
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    width: 40px;
+    height: 40px;
+    scale: 1.1 1.1;
+}
+
+.botao-anterior:active {
+    position: absolute;
+    top: 130px;
+    left: 19px;
+    background-color: rgba(188, 188, 188, 0);
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/SelecaoDePersonagem_Botao_Ativado.png?fileID=2800000&guid=d5a3a79bbdb8ef1428a64bbd5ae109f2&type=3#SelecaoDePersonagem_Botao_Ativado");
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    width: 40px;
+    height: 40px;
+    scale: 1.05 1.05;
+}
+
+.botao-proximo {
+    white-space: pre-wrap;
+    -unity-text-align: upper-left;
+    text-overflow: clip;
+    position: absolute;
+    top: 130px;
+    left: 207px;
+    background-color: rgba(188, 188, 188, 0);
+    width: 40px;
+    height: 40px;
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/SelecaoDePersonagem_Botao_Desativado.png?fileID=2800000&guid=7574f928bfcbb9049b81d29a6b9da408&type=3#SelecaoDePersonagem_Botao_Desativado");
+    rotate: 180deg;
+}
+
+.botao-proximo:hover {
+    white-space: pre-wrap;
+    -unity-text-align: upper-left;
+    text-overflow: clip;
+    position: absolute;
+    top: 130px;
+    left: 207px;
+    background-color: rgba(188, 188, 188, 0);
+    width: 35px;
+    height: 35px;
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/SelecaoDePersonagem_Botao_Desativado.png?fileID=2800000&guid=7574f928bfcbb9049b81d29a6b9da408&type=3#SelecaoDePersonagem_Botao_Desativado");
+    rotate: 180deg;
+    scale: 1.1 1.1;
+}
+
+.botao-proximo:active {
+    white-space: pre-wrap;
+    -unity-text-align: upper-left;
+    text-overflow: clip;
+    position: absolute;
+    top: 130px;
+    left: 207px;
+    background-color: rgba(188, 188, 188, 0);
+    width: 35px;
+    height: 35px;
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/SelecaoDePersonagem_Botao_Ativado.png?fileID=2800000&guid=d5a3a79bbdb8ef1428a64bbd5ae109f2&type=3#SelecaoDePersonagem_Botao_Ativado");
+    rotate: 180deg;
+    scale: 1.05 1.05;
+}
+
+.moldura {
+    flex-grow: 0;
+    width: 329px;
+    height: 208px;
+    flex-shrink: 0;
+    align-self: flex-end;
+    background-image: url("project://database/Assets/Projeto/Assets/Esther/FAST_TAG_UI_SVG/Png/Lobby_PlacaDianteiraDeParticipantes_MolduraDePerfil2.png?fileID=905675946&guid=03e769a904214c34981c81a411351a67&type=3#Lobby_PlacaDianteiraDeParticipantes_MolduraDePerfil2_0");
+    -unity-background-scale-mode: stretch-to-fill;
+    top: auto;
+    left: -25px;
+}
+
+.img-personagem {
+    flex-grow: 1;
+    justify-content: space-evenly;
+    align-self: center;
+    align-content: stretch;
+    width: 205px;
+    position: absolute;
+    height: 134px;
+    top: 22px;
+    left: 32px;
+}
+
+.tipo-player {
+    width: 196px;
+    height: 16px;
+    font-size: 25px;
+    -unity-font-style: bold;
+    -unity-font-definition: url("project://database/Assets/Projeto/Assets/Torres/fONTS/TT%20Octosquares%20Trial%20Regular.ttf?fileID=12800000&guid=423adaa323f67814e991ab9b49550be4&type=3#TT Octosquares Trial Regular");
+    top: -179px;
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-center;
+    -unity-background-image-tint-color: rgb(0, 255, 0);
 }

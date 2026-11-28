@@ -1,22 +1,22 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-USER" at "2026-11-28T11:38:01.4736512Z"
 Built from '6000.3/respin/6000.3.6f1-732c1ec89f18' branch; Version is '6000.3.6f1 (bbb010bdb8a3) revision 12300304'; Using compiler version '194234433'; Build Type 'Release'
-OS: 'Windows 11  (10.0.26200) Education' Language: 'pt' Physical Memory: 16053 MB
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-RA00352581" at "2026-11-25T14:09:21.6401419Z"
+OS: 'Windows 11  (10.0.26200) Professional' Language: 'pt' Physical Memory: 16251 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-11-25T14:09:21Z
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 6932, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+Date: 2026-11-28T11:38:01Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 29224, path: "C:/Program Files/WindowsApps/UnityTechnologies.UnityHub_4.0.2.65535_x64__2vrhnee42bhxm/app/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
-  Version:                 1.18.3+d7ffd15
-  Session Id:              13cc3298e55c4da9979a5ec9433500f9
-  Correlation Id:          9af7ac00dc165e292ea18d88d561d699
-  External correlation Id: 8318742027650151332
-  Machine Id:              a89HytwGQmFNIt0MWeeLIpqBp4A=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-RA00352581" (connect: 0.00s, validation: 0.00s, handshake: 0.05s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-RA00352581-notifications" at "2026-11-25T14:09:21.6974309Z"
-[Licensing::Module] Licensing Background thread has ended after 0.06s
+  Version:                 1.19.0+4cc3dda
+  Session Id:              982fa4a4b693491e882dede3ad92bdd4
+  Correlation Id:          2711ae8e423d88c8415a182302685f33
+  External correlation Id: 8153406467806744045
+  Machine Id:              btvG4lBhOAFXGKjvtq/IBWTh6Sc=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-USER" (connect: 0.00s, validation: 0.00s, handshake: 0.17s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-USER-notifications" at "2026-11-28T11:38:01.6520459Z"
+[Licensing::Module] Licensing Background thread has ended after 0.18s
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.3.6f1\Editor\Unity.exe
@@ -26,23 +26,23 @@ C:\Program Files\Unity\Hub\Editor\6000.3.6f1\Editor\Unity.exe
 -name
 AssetImportWorker1
 -projectPath
-C:/Users/ra00352581/Documents/GitHub/ProjetoFastag
+C:/Users/USER/Documents/GitHub/ProjetoFastag
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-50875
+58125
 -licensingIpc
-LicenseClient-RA00352581
+LicenseClient-USER
 -job-worker-count
-9
+5
 -background-job-worker-count
 8
 -gc-helper-count
 1
 -name
 AssetImport
-Successfully changed project path to: C:/Users/ra00352581/Documents/GitHub/ProjetoFastag
-C:/Users/ra00352581/Documents/GitHub/ProjetoFastag
+Successfully changed project path to: C:/Users/USER/Documents/GitHub/ProjetoFastag
+C:/Users/USER/Documents/GitHub/ProjetoFastag
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
     "memorysetup-temp-allocator-size-audio-worker=65536"
@@ -78,17 +78,13 @@ C:/Users/ra00352581/Documents/GitHub/ProjetoFastag
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
     "memorysetup-temp-allocator-size-cloud-worker=32768"
-Player connection [8724]  Target information:
+Player connection [31984]  Target information:
 
-Player connection [8724]  * "[IP] 172.17.1.12 [Port] 0 [Flags] 2 [Guid] 1791083780 [EditorId] 1791083780 [Version] 1048832 [Id] WindowsEditor(7,DSP-BRJ3055CFY) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [31984]  * "[IP] 192.168.1.18 [Port] 0 [Flags] 2 [Guid] 2022812205 [EditorId] 2022812205 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-CI0PE3N) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [8724]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 1791083780 [EditorId] 1791083780 [Version] 1048832 [Id] WindowsEditor(7,DSP-BRJ3055CFY) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Player connection [8724]  * "[IP] 172.19.0.1 [Port] 0 [Flags] 2 [Guid] 1791083780 [EditorId] 1791083780 [Version] 1048832 [Id] WindowsEditor(7,DSP-BRJ3055CFY) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Player connection [8724] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [8724] Host joined alternative multi-casting on [225.0.0.222:34997]...
-JobSystem: Creating JobQueue using job-worker-count value 9
+Player connection [31984] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [31984] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 5
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
@@ -99,77 +95,71 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 9.25 ms, found 5 plugins.
-Preloading 1 native plugins for Editor in 1.71 ms.
+Refreshing native plugins compatible for Editor in 386.79 ms, found 5 plugins.
+Preloading 1 native plugins for Editor in 2.83 ms.
 Initialize engine version: 6000.3.6f1 (bbb010bdb8a3)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/ra00352581/Documents/GitHub/ProjetoFastag/Assets
+[Subsystems] Discovering subsystems at path C:/Users/USER/Documents/GitHub/ProjetoFastag/Assets
 GfxDevice: creating device client; kGfxThreadingModeNonThreaded
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA T400 4GB (ID=0x1ff2)
+    Renderer: NVIDIA GeForce RTX 5060 (ID=0x2d05)
     Vendor:   NVIDIA
-    VRAM:     3943 MB
-    Driver:   32.0.15.8216
+    VRAM:     7896 MB
+    Driver:   32.0.16.1088
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56932
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56980
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 [Licensing::Client] Successfully resolved entitlement details
 [Licensing::Module] License group:
-  Id: E4-2RMZ-WRAS-7R6G-ZJBC-XXXX
-  Product: Unity Education
-  Type: ULF
-  Expiration: 2027-08-07T18:04:47Z
-Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-[Licensing::Client] Successfully resolved entitlement details
+  Id: 1238996-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-[Licensing::Client] Successfully resolved entitlement details
-Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
-Registered in 0.009870 seconds.
-- Loaded All Assemblies, in  0.477 seconds
-[usbmuxd] Start listen thread
-[usbmuxd] Listen thread started
-Native extension for iOS target not found
+Registered in 0.339093 seconds.
+- Loaded All Assemblies, in  9.691 seconds
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 197 ms
-Native extension for UWP target not found
+Android Extension - Scanning For ADB Devices 343 ms
 Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.660 seconds
-Domain Reload Profiling: 1136ms
-	BeginReloadAssembly (155ms)
+- Finished resetting the current domain, in  0.903 seconds
+Domain Reload Profiling: 10589ms
+	BeginReloadAssembly (9001ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (44ms)
-	RebuildNativeTypeToScriptingClass (15ms)
-	initialDomainReloadingComplete (63ms)
-	LoadAllAssembliesAndSetupDomain (199ms)
-		LoadAssemblies (153ms)
+	RebuildCommonClasses (42ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (403ms)
+	LoadAllAssembliesAndSetupDomain (228ms)
+		LoadAssemblies (9003ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (194ms)
-			TypeCache.Refresh (193ms)
-				TypeCache.ScanAssembly (176ms)
+		AnalyzeDomain (208ms)
+			TypeCache.Refresh (206ms)
+				TypeCache.ScanAssembly (190ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (661ms)
+	FinalizeReload (904ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (622ms)
+		SetupLoadedEditorAssemblies (837ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (304ms)
+			InitializePlatformSupportModulesInManaged (451ms)
 			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (86ms)
-			ProcessInitializeOnLoadAttributes (156ms)
-			ProcessInitializeOnLoadMethodAttributes (72ms)
+			BeforeProcessingInitializeOnLoad (85ms)
+			ProcessInitializeOnLoadAttributes (171ms)
+			ProcessInitializeOnLoadMethodAttributes (125ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -180,15 +170,14 @@ Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
 [Licensing::Client] Successfully resolved entitlement details
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  1.193 seconds
+- Loaded All Assemblies, in 16.891 seconds
 'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
 'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
-Refreshing native plugins compatible for Editor in 3.44 ms, found 5 plugins.
-Native extension for iOS target not found
+Refreshing native plugins compatible for Editor in 9.43 ms, found 5 plugins.
 Native extension for Android target not found
-Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.53 ms, found 5 plugins.
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 8.52 ms, found 5 plugins.
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
@@ -204,39 +193,39 @@ Mono: successfully reloaded assembly
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  1.238 seconds
-Domain Reload Profiling: 2426ms
-	BeginReloadAssembly (189ms)
+- Finished resetting the current domain, in  4.207 seconds
+Domain Reload Profiling: 21056ms
+	BeginReloadAssembly (262ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (7ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (34ms)
-	RebuildCommonClasses (36ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (63ms)
-	LoadAllAssembliesAndSetupDomain (887ms)
-		LoadAssemblies (453ms)
+		CreateAndSetChildDomain (44ms)
+	RebuildCommonClasses (55ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (90ms)
+	LoadAllAssembliesAndSetupDomain (16428ms)
+		LoadAssemblies (15864ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (536ms)
-			TypeCache.Refresh (361ms)
-				TypeCache.ScanAssembly (337ms)
-			BuildScriptInfoCaches (155ms)
-			ResolveRequiredComponents (13ms)
-	FinalizeReload (1238ms)
+		AnalyzeDomain (718ms)
+			TypeCache.Refresh (498ms)
+				TypeCache.ScanAssembly (461ms)
+			BuildScriptInfoCaches (193ms)
+			ResolveRequiredComponents (19ms)
+	FinalizeReload (4207ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1051ms)
+		SetupLoadedEditorAssemblies (3926ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (11ms)
-			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (202ms)
-			ProcessInitializeOnLoadAttributes (395ms)
-			ProcessInitializeOnLoadMethodAttributes (435ms)
-			AfterProcessingInitializeOnLoad (3ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (339ms)
+			ProcessInitializeOnLoadAttributes (902ms)
+			ProcessInitializeOnLoadMethodAttributes (2648ms)
+			AfterProcessingInitializeOnLoad (14ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
 WARNING: Shader Unsupported: 'Hidden/Universal Render Pipeline/Terrain/Lit (Base Pass)' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
@@ -255,350 +244,359 @@ WARNING: Shader If subshaders removal was intentional, you may have forgotten tu
 WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshaders removed
 WARNING: Shader Did you use #pragma only_renderers and omit this platform?
 WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 3.34 ms, found 5 plugins.
-Preloading 1 native plugins for Editor in 0.06 ms.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 13.86 ms, found 5 plugins.
+Preloading 1 native plugins for Editor in 0.27 ms.
 Unloading 82 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 13167 unused Assets / (27.3 MB). Loaded Objects now: 14359.
-Memory consumption went from 322.9 MB to 295.6 MB.
-Total: 15.706400 ms (FindLiveObjects: 0.979600 ms CreateObjectMapping: 0.947000 ms MarkObjects: 6.491200 ms  DeleteObjects: 7.287500 ms)
+Unloading 13167 unused Assets / (28.0 MB). Loaded Objects now: 14367.
+Memory consumption went from 328.0 MB to 299.9 MB.
+Total: 34.766300 ms (FindLiveObjects: 3.325000 ms CreateObjectMapping: 2.863400 ms MarkObjects: 12.523300 ms  DeleteObjects: 16.053200 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 173.089158 seconds.
-  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro.unity
-  artifactKey: Guid(1e67d1530de17de44ab815eef34be47f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro.unity using Guid(1e67d1530de17de44ab815eef34be47f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '07a4787984eb1d7502ea69408ddd8153') in 0.0661092 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 483.842859 seconds.
+  path: Assets/Projeto/Assets/Torres/Texxturas/Cuzinha/Prop_KitchenTable_04.fbx
+  artifactKey: Guid(c998d5a8d373816408e715e5c9440a9b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Torres/Texxturas/Cuzinha/Prop_KitchenTable_04.fbx using Guid(c998d5a8d373816408e715e5c9440a9b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '071ab32b989ded6271d7ae1a9c52072c') in 0.2377905 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Projeto/Assets/Henrique/variação mesa/Material.004.mat
-  artifactKey: Guid(a0b7bc9ae82f9eb4f93da4a8119b61de) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Projeto/Assets/Henrique/variação mesa/Material.004.mat using Guid(a0b7bc9ae82f9eb4f93da4a8119b61de) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ba07f986588ff844040f2ab34e4dc01b') in 0.0885286 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 860.977551 seconds.
-  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Cadeia_Dentro Baking Set.asset
-  artifactKey: Guid(224809621a2a6a84391a7229812e1578) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Cadeia_Dentro Baking Set.asset using Guid(224809621a2a6a84391a7229812e1578) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '10d4a8610f2fe6a63633bd1d74ae7fc9') in 0.2381992 seconds
-Number of updated asset objects reloaded before import = 4Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Cadeia_Dentro Baking Set-Default.CellData.bytes
-  artifactKey: Guid(3fe8196761a671445bb70793d445f765) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Cadeia_Dentro Baking Set-Default.CellData.bytes using Guid(3fe8196761a671445bb70793d445f765) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '86f50ab21178169f700585bf2377ce6b') in 0.0223705 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Cadeia_Dentro Baking Set-Default.CellOptionalData.bytes
-  artifactKey: Guid(59fdc211df4ce5641b7be2d48168a3c9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Cadeia_Dentro Baking Set-Default.CellOptionalData.bytes using Guid(59fdc211df4ce5641b7be2d48168a3c9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c8437a45d0f9c6e68719827eed82df35') in 0.0239623 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000208 seconds.
-  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Cadeia_Dentro Baking Set.CellSupportData.bytes
-  artifactKey: Guid(2ba00b81bc1f2c44587beed1b6beb249) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Cadeia_Dentro Baking Set.CellSupportData.bytes using Guid(2ba00b81bc1f2c44587beed1b6beb249) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '47515ae1fecf2a59079a17571b94871e') in 0.022408 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Cadeia_Dentro Baking Set.CellSharedData.bytes
-  artifactKey: Guid(32144ad932e09aa4c8d6350bde0bb0da) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Cadeia_Dentro Baking Set.CellSharedData.bytes using Guid(32144ad932e09aa4c8d6350bde0bb0da) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9089acdd846455332a8fb5f5e780a332') in 0.0242777 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 1660.058072 seconds.
-  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro.unity
-  artifactKey: Guid(1e67d1530de17de44ab815eef34be47f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro.unity using Guid(1e67d1530de17de44ab815eef34be47f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd65454d94731aa616d48cbeabb14b6f8') in 0.0243639 seconds
-Number of updated asset objects reloaded before import = 1Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 578.714013 seconds.
-  path: Assets/Projeto/Assets/Guilherme/BANHEIROS CABINE.fbx
-  artifactKey: Guid(dca64980f9c753d44a1ab27801aab307) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Projeto/Assets/Guilherme/BANHEIROS CABINE.fbx using Guid(dca64980f9c753d44a1ab27801aab307) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4e5fd830afc339df8e306a4ce298dfe7') in 0.1084071 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 39
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.472924 seconds.
-  path: Assets/Projeto/Assets/Henrique/balcão/Material.002_Base_metalness.png
-  artifactKey: Guid(ab5a771d27bb0dc4e987717487f71e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/balcão/Material.002_Base_metalness.png using Guid(ab5a771d27bb0dc4e987717487f71e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[Licensing::Client] Successfully resolved entitlement details
-[Licensing::Client] Successfully resolved entitlement details
-[Licensing::Client] Successfully resolved entitlement details
- -> (artifact id: 'cf75e534c60953010dcd8ffb3dd56f19') in 0.134947 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Projeto/Assets/Henrique/balcão/Material.002_Specular_roughness.png
-  artifactKey: Guid(206eb4c9ff6e5d146b351fcd1bf82168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/balcão/Material.002_Specular_roughness.png using Guid(206eb4c9ff6e5d146b351fcd1bf82168) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd42ad1ffc35a19d30c621453a46f158a') in 0.0183985 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Projeto/Assets/Henrique/balcão/Material.002_Normal_OpenGL.png
-  artifactKey: Guid(b610e8ce425f493429fa3aba16e70731) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/balcão/Material.002_Normal_OpenGL.png using Guid(b610e8ce425f493429fa3aba16e70731) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8f3396bf4f8f396f36556ccc5f515eb0') in 0.0173846 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.076570 seconds.
-  path: Assets/Projeto/Assets/Henrique/cadeira/Material.001_Height.png
-  artifactKey: Guid(cf5b45fd8efc89643b054e8d6451835b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/cadeira/Material.001_Height.png using Guid(cf5b45fd8efc89643b054e8d6451835b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a5d09ea77924a9b88c3c71287f4667af') in 0.0139319 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Projeto/Assets/Henrique/cadeira/Material.001_Normal.png
-  artifactKey: Guid(16fb382cc73f9eb45a38b06a70fa9b7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/cadeira/Material.001_Normal.png using Guid(16fb382cc73f9eb45a38b06a70fa9b7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '051d1c42d2477feb2ee518d52b29c7ac') in 0.0174005 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Projeto/Assets/Henrique/cadeira/Material.001_Roughness.png
-  artifactKey: Guid(392ae8846f8324f45a6f8f3632ddec38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/cadeira/Material.001_Roughness.png using Guid(392ae8846f8324f45a6f8f3632ddec38) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '53e12c9f25b33a89f9dc2a36edc7129d') in 0.0202857 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 50.820106 seconds.
-  path: Assets/Projeto/Assets/Henrique/Personagens/Kya Texturizada (1).fbx
-  artifactKey: Guid(0d9b2ee5ce1a9834abc59405b90a630e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/Personagens/Kya Texturizada (1).fbx using Guid(0d9b2ee5ce1a9834abc59405b90a630e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3190c4ecb698d67e8b5918d6eb3124cd') in 0.869919 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 143
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Projeto/Assets/Henrique/Personagens/Líriope doppel Texturizado.fbx
-  artifactKey: Guid(c6186c32be5210d469c7fb861906d99d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Projeto/Assets/Henrique/Personagens/Líriope doppel Texturizado.fbx using Guid(c6186c32be5210d469c7fb861906d99d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e3a912c4f0034768112eb5503f07f720') in 0.0138591 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 79
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.323259 seconds.
-  path: Assets/Projeto/Assets/Henrique/variação copo/Material.003.mat
-  artifactKey: Guid(447425492b1d1a44b91296cdff24ac0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/variação copo/Material.003.mat using Guid(447425492b1d1a44b91296cdff24ac0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8280077e31f33d3d3fe93216c19f1890') in 0.1255076 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.871812 seconds.
-  path: Assets/Projeto/Assets/Henrique/variação mesa/mesa variada.fbx
-  artifactKey: Guid(cea1bba3f372eb24283120d429aafc41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/variação mesa/mesa variada.fbx using Guid(cea1bba3f372eb24283120d429aafc41) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9c7ede283f118173e9d362158451536d') in 0.0244163 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.125197 seconds.
-  path: Assets/Projeto/Assets/Henrique/variedade balcão/Material.002_Base_metalness.png
-  artifactKey: Guid(43bade62a63825d40afb55a42fb0689f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/variedade balcão/Material.002_Base_metalness.png using Guid(43bade62a63825d40afb55a42fb0689f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '59b7a53abdf6725eaa0017e8da423e6c') in 0.0146364 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Projeto/Assets/Henrique/variedade balcão/Material.005.mat
-  artifactKey: Guid(56b1b5c9e0a1cd341a4261c5df4a5f28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/variedade balcão/Material.005.mat using Guid(56b1b5c9e0a1cd341a4261c5df4a5f28) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a21c45250d7353cfe37945805ab16353') in 0.0189832 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Projeto/Assets/Henrique/variedade balcão/Material.002_Normal.png
-  artifactKey: Guid(a319def851b517846bb4d1fd33ba0e41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/variedade balcão/Material.002_Normal.png using Guid(a319def851b517846bb4d1fd33ba0e41) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5069f32607924698f4ff3740cdcd39b1') in 0.0100776 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 32.879396 seconds.
-  path: Assets/Projeto/Assets/Henrique/variedade cadeira/Material.001_Base_color.png
-  artifactKey: Guid(b0c908a9598207a42b785309dce803d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/variedade cadeira/Material.001_Base_color.png using Guid(b0c908a9598207a42b785309dce803d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6f40f20c77d42a6c1da94e5c7dbc1950') in 0.0123245 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Projeto/Assets/Henrique/variedade cadeira/Material.001_Normal.png
-  artifactKey: Guid(7f053bbcfe0029842a5216dcf7ac61c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/variedade cadeira/Material.001_Normal.png using Guid(7f053bbcfe0029842a5216dcf7ac61c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1eb68f2b1a75ba32b708b7bedd6c9361') in 0.0110872 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Projeto/Assets/Henrique/variedade cadeira/Material.001_Roughness.png
-  artifactKey: Guid(b9c02f440bc713d44bf71a40adfc9d8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/variedade cadeira/Material.001_Roughness.png using Guid(b9c02f440bc713d44bf71a40adfc9d8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd3141ee870d7fd2abd400610dadedfbb') in 0.0102679 seconds
+  Time since last request: 0.000046 seconds.
+  path: Assets/Projeto/Assets/Torres/Shader/Pixel.shadergraph
+  artifactKey: Guid(a37b482fc651be94fa713fdac734d782) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Torres/Shader/Pixel.shadergraph using Guid(a37b482fc651be94fa713fdac734d782) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9e2d0f8f96635c37e9d8595ba81ab5d5') in 0.0395399 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000033 seconds.
-  path: Assets/Projeto/Assets/Henrique/variedade cadeira/Material.001_Normal_OpenGL.png
-  artifactKey: Guid(f21194776034aa849824c3a8825f76dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/variedade cadeira/Material.001_Normal_OpenGL.png using Guid(f21194776034aa849824c3a8825f76dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5031e6a4f78ec2817cbf55c49a8c620f') in 0.0133449 seconds
+  path: Assets/Settings/HDRP Balanced.asset
+  artifactKey: Guid(3e2e6bfc59709614ab90c0cd7d755e48) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Settings/HDRP Balanced.asset using Guid(3e2e6bfc59709614ab90c0cd7d755e48) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6fa8d9996b764ba65c32ae4fc186688c') in 0.0720953 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Global Volume Profile.asset
+  artifactKey: Guid(cd783859eab2239449419f24389cf9dc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Global Volume Profile.asset using Guid(cd783859eab2239449419f24389cf9dc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '48712de604ea92a10f91443d2fcc8389') in 0.0154345 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Projeto/Assets/Torres/Texxturas/Cuzinha/Prop_KitchenTable_02.fbx
+  artifactKey: Guid(c5d3e66cfd7227245990b410b4f9bced) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Torres/Texxturas/Cuzinha/Prop_KitchenTable_02.fbx using Guid(c5d3e66cfd7227245990b410b4f9bced) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '79ceae0adf47a08cb3e1adc3afeb62ac') in 0.0286184 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Projeto/Assets/Torres/Texxturas/Cuzinha/Prop_Oven_01.fbx
+  artifactKey: Guid(f0383f07a0d07fd41a15b3f610a66c99) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Torres/Texxturas/Cuzinha/Prop_Oven_01.fbx using Guid(f0383f07a0d07fd41a15b3f610a66c99) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5443048d6c087df49d09971ef766ab49') in 0.0295312 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 19
+
+========================================================================
+Received Import Request.
+  Time since last request: 182.680596 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Global Volume Profile.asset
+  artifactKey: Guid(cd783859eab2239449419f24389cf9dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Global Volume Profile.asset using Guid(cd783859eab2239449419f24389cf9dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '83474866997cf3e1ec6057faffe9a42b') in 0.0252408 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/LightingData.asset
+  artifactKey: Guid(c4986a14626bd3f47865697aad5b74d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/LightingData.asset using Guid(c4986a14626bd3f47865697aad5b74d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2b1af4c1d7ae5dfb87c1b0fca774310e') in 0.0088226 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
 ========================================================================
 Received Import Request.
-  Time since last request: 16.058412 seconds.
-  path: Assets/Projeto/Assets/Henrique/variedade cadeira 2/Material.001_Height.png
-  artifactKey: Guid(0f02f31b3de49094bae2f7250c1730d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/variedade cadeira 2/Material.001_Height.png using Guid(0f02f31b3de49094bae2f7250c1730d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4df494408451d6021a47ba44861baed0') in 0.0152825 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  Time since last request: 81.393497 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-17_comp_dir.png
+  artifactKey: Guid(9acfde2e5ce577e4986127eab95d84e5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-17_comp_dir.png using Guid(9acfde2e5ce577e4986127eab95d84e5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter)[Licensing::Client] Successfully resolved entitlement details
+ -> (artifact id: 'c45833bfa75d14e41433cc7323dc4577') in 0.076333 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-2_comp_dir.png
+  artifactKey: Guid(68e448a43a4bc9a48a6908b512d603fc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-2_comp_dir.png using Guid(68e448a43a4bc9a48a6908b512d603fc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '74d84423801d8d8633ebf69150ce4fa8') in 0.0196726 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-14_comp_dir.png
+  artifactKey: Guid(522fcd665e51fc04994e7a7e3e639a53) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-14_comp_dir.png using Guid(522fcd665e51fc04994e7a7e3e639a53) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '178b89d72e84c2dab0011b3c3e0dfedc') in 0.0241634 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000025 seconds.
-  path: Assets/Projeto/Assets/Henrique/variedade cadeira 2/Material.001_Normal.png
-  artifactKey: Guid(81affe5d5b1c55a4e96627ce3a4606b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/variedade cadeira 2/Material.001_Normal.png using Guid(81affe5d5b1c55a4e96627ce3a4606b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '48b5f6d79a9c4967ca4bebb45b167d28') in 0.0184709 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-5_comp_dir.png
+  artifactKey: Guid(0a5bd9b8a13d3d845b1e5e01338d8617) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-5_comp_dir.png using Guid(0a5bd9b8a13d3d845b1e5e01338d8617) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '975e48891b241902b70ba7099555035d') in 0.0192483 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Projeto/Assets/Henrique/variedade cadeira 2/Material.001_Roughness.png
-  artifactKey: Guid(f3141a2a08699374b8de66cc9a225b1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/variedade cadeira 2/Material.001_Roughness.png using Guid(f3141a2a08699374b8de66cc9a225b1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f8c9990d50baa9715cad17e7fc56341b') in 0.0129202 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  Time since last request: 0.000039 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-14_comp_light.exr
+  artifactKey: Guid(4756ba7d176ee67418bace033562489f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-14_comp_light.exr using Guid(4756ba7d176ee67418bace033562489f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'de0fd2f8d967753ba98c1f3527c3382c') in 0.0216643 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000020 seconds.
-  path: Assets/Projeto/Assets/Henrique/variedade cadeira 2/Material.001_Normal_OpenGL.png
-  artifactKey: Guid(1f30e050ceeaa1046a1aaa431846da64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/variedade cadeira 2/Material.001_Normal_OpenGL.png using Guid(1f30e050ceeaa1046a1aaa431846da64) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '74f0451e4e7cf05650e8dddb76fef0b3') in 0.0104912 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-15_comp_light.exr
+  artifactKey: Guid(01c26e6c448759042ba830ac09e5fca2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-15_comp_light.exr using Guid(01c26e6c448759042ba830ac09e5fca2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '25758e916805001456cc7dba81233e04') in 0.0212483 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.248311 seconds.
-  path: Assets/Projeto/Assets/Henrique/variedade cama/Material.002.mat
-  artifactKey: Guid(9b0aefd5f9e3aa3498a50f7171bab6fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Henrique/variedade cama/Material.002.mat using Guid(9b0aefd5f9e3aa3498a50f7171bab6fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e1b1a3565872ba7b0bf2b35c9138e905') in 0.034716 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 0.000035 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-3_comp_dir.png
+  artifactKey: Guid(e42596d50186bf84bb6a3492e9b804e7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-3_comp_dir.png using Guid(e42596d50186bf84bb6a3492e9b804e7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4fada261b1417537a2283b37f2e39d5a') in 0.0206133 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.175707 seconds.
-  path: Assets/Projeto/Assets/Guilherme/MODELOS/Lawrence v1.png
-  artifactKey: Guid(d27b8da050d0eac4d834a4edaa921525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Guilherme/MODELOS/Lawrence v1.png using Guid(d27b8da050d0eac4d834a4edaa921525) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ede3df447fe5b1ea578af3fbfeb598de') in 0.0272276 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 0.000023 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-9_comp_dir.png
+  artifactKey: Guid(845e13c4faf0ad043b06442f8d404663) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-9_comp_dir.png using Guid(845e13c4faf0ad043b06442f8d404663) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6f3e9faf142548eb8cb8440cbde42fc3') in 0.019622 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.222469 seconds.
-  path: Assets/Projeto/Assets/Guilherme/MODELOS/caixa cabeça p baixo.fbx
-  artifactKey: Guid(5f51ee94a2c90614bb41f6a56b83b844) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Guilherme/MODELOS/caixa cabeça p baixo.fbx using Guid(5f51ee94a2c90614bb41f6a56b83b844) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ebc48903fdd1f82d2895427c22514e8b') in 0.1527276 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.712744 seconds.
-  path: Assets/Projeto/Assets/Guilherme/MODELOS/caixa cabeça p baixo.fbx
-  artifactKey: Guid(5f51ee94a2c90614bb41f6a56b83b844) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Projeto/Assets/Guilherme/MODELOS/caixa cabeça p baixo.fbx using Guid(5f51ee94a2c90614bb41f6a56b83b844) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd89fea859694e2372a55ac971c86917e') in 0.0212612 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.142451 seconds.
-  path: Assets/Projeto/Assets/Guilherme/Barra de carregar/loadVid.renderTexture
-  artifactKey: Guid(98a74be2ecbe543488993d9dc6f24d94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Guilherme/Barra de carregar/loadVid.renderTexture using Guid(98a74be2ecbe543488993d9dc6f24d94) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '028322c68d56ca973f27d9c92c48ce6c') in 0.0522309 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.295410 seconds.
-  path: Assets/Projeto/Assets/Guilherme/Musicas/g63-Menu-Levantem-novamente.wav
-  artifactKey: Guid(f3a7b5d737a279841aff2c3ecd33a527) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Guilherme/Musicas/g63-Menu-Levantem-novamente.wav using Guid(f3a7b5d737a279841aff2c3ecd33a527) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dee0a5250ee33cdbaf894b7769ecf211') in 0.0320779 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 29.793992 seconds.
-  path: Assets/Projeto/Assets/Torres/Texxturas/choveiro/choveiro_Material.001_MaskMap.png
-  artifactKey: Guid(0e712d2aaf8a457428f00844c2b0c6ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Torres/Texxturas/choveiro/choveiro_Material.001_MaskMap.png using Guid(0e712d2aaf8a457428f00844c2b0c6ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '38e6ad2f45badf177dd3c3790868c2fb') in 0.0171708 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  Time since last request: 0.000042 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-15_comp_dir.png
+  artifactKey: Guid(5eec73209eeddee4ba5bce945a9f41f7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-15_comp_dir.png using Guid(5eec73209eeddee4ba5bce945a9f41f7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cc849f88145ffabfb44edbb2dd6399bb') in 0.0189306 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000025 seconds.
-  path: Assets/Projeto/Assets/Torres/Texxturas/choveiro/choveiro_Material._Normal.png
-  artifactKey: Guid(f7287657e7aa75540a8a9fc46bffb6ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Torres/Texxturas/choveiro/choveiro_Material._Normal.png using Guid(f7287657e7aa75540a8a9fc46bffb6ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0b41a607c3e1b1b332425622e4de4d25') in 0.0174142 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-10_comp_dir.png
+  artifactKey: Guid(34870b9d948c7104d981d1d6e7983870) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-10_comp_dir.png using Guid(34870b9d948c7104d981d1d6e7983870) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'ec25a04db4a401afd6332f45d8009aad') in 0.0301678 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Projeto/Assets/Torres/Texxturas/choveiro/Sink_Diffuse.png
-  artifactKey: Guid(dae509f8e9b099640b76f88ee181b259) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Torres/Texxturas/choveiro/Sink_Diffuse.png using Guid(dae509f8e9b099640b76f88ee181b259) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '68a6388e82f7bd2947b5a7979dbd9018') in 0.0141861 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  Time since last request: 0.000038 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-7_comp_light.exr
+  artifactKey: Guid(6e994fd7a11b2b24eaf379a52ee3b429) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-7_comp_light.exr using Guid(6e994fd7a11b2b24eaf379a52ee3b429) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd2f5cbff45efa87ccee684cf469c8ac3') in 0.0205194 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-6_comp_light.exr
+  artifactKey: Guid(b5cf3b09f4ba0ba42bcda6a76eabf87b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-6_comp_light.exr using Guid(b5cf3b09f4ba0ba42bcda6a76eabf87b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd996ee4c592096487c01ebe5e075d807') in 0.0232171 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-1_comp_dir.png
+  artifactKey: Guid(b3d7e3a75e80e83408e3a3041f82efb9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-1_comp_dir.png using Guid(b3d7e3a75e80e83408e3a3041f82efb9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2155241787cde2978216daf801521695') in 0.0216568 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000028 seconds.
-  path: Assets/Projeto/Assets/Torres/Texxturas/choveiro/choveiro_Material._BaseMap.png
-  artifactKey: Guid(ed744c25eca81794d83267a2056833b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Torres/Texxturas/choveiro/choveiro_Material._BaseMap.png using Guid(ed744c25eca81794d83267a2056833b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fd1d07e4239b34ceb18fd1c611dfa46a') in 0.0140196 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-8_comp_dir.png
+  artifactKey: Guid(3a4ee22d83e015744b65fd4ef8d9938b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-8_comp_dir.png using Guid(3a4ee22d83e015744b65fd4ef8d9938b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6b926f310f0ec0b6289c5fc4b265d9be') in 0.0201429 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Projeto/Assets/Torres/Texxturas/choveiro/Sink.obj
-  artifactKey: Guid(8fcc50301c0d19641ba8539111fdb2bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Torres/Texxturas/choveiro/Sink.obj using Guid(8fcc50301c0d19641ba8539111fdb2bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '284d8ce9074920e8342d8d0221dd159c') in 0.0385788 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+  Time since last request: 0.000036 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-4_comp_light.exr
+  artifactKey: Guid(0d04c23d3a0e9cb48a16063356372d68) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-4_comp_light.exr using Guid(0d04c23d3a0e9cb48a16063356372d68) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0dfcf67dc6b2e36b5f2f6c6cbf1dd275') in 0.0233905 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Projeto/Assets/Torres/Texxturas/choveiro/Coveiro.mat
-  artifactKey: Guid(ea5125636fa8d01448a68d93630b1a65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Projeto/Assets/Torres/Texxturas/choveiro/Coveiro.mat using Guid(ea5125636fa8d01448a68d93630b1a65) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f04be94d67ed216aa329ce997e80c538') in 0.0258895 seconds
+  Time since last request: 0.000027 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-0_comp_light.exr
+  artifactKey: Guid(52ef65ff7d8dde147902edb5aa86ba07) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-0_comp_light.exr using Guid(52ef65ff7d8dde147902edb5aa86ba07) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f53460eac7ee9bf06a0764ae7225f70d') in 0.0212252 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-10_comp_light.exr
+  artifactKey: Guid(232efb03dedb65a4aaccf47ae9c1a8dc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-10_comp_light.exr using Guid(232efb03dedb65a4aaccf47ae9c1a8dc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '770272fa5c6f09684fa1c4acd4c80124') in 0.021024 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-6_comp_dir.png
+  artifactKey: Guid(a4a105acf016247408c82eda0df615cb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-6_comp_dir.png using Guid(a4a105acf016247408c82eda0df615cb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7cbb9cf916fe31bedb1100eda4d400ea') in 0.0209891 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000091 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-13_comp_light.exr
+  artifactKey: Guid(67caedf793291734e83f1f3cd194b44c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-13_comp_light.exr using Guid(67caedf793291734e83f1f3cd194b44c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '44446b1c9f05b81ed5c2e18c60bcc6c8') in 0.0293267 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-13_comp_dir.png
+  artifactKey: Guid(da6865826f93fdd4e80d4ca37f9b341b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-13_comp_dir.png using Guid(da6865826f93fdd4e80d4ca37f9b341b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8f87b9197bff594285d41beecd3be05b') in 0.0268285 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-20_comp_dir.png
+  artifactKey: Guid(838a6a78489b85148bd797a3b500bb75) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Lightmap-20_comp_dir.png using Guid(838a6a78489b85148bd797a3b500bb75) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '99e2e16434dc238259d9b5555cd4d60c') in 0.0253062 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 595.784688 seconds.
+  path: Assets/Projeto/Assets/Torres/Texxturas/concrete_ground_01_1k/eSCADA.mat
+  artifactKey: Guid(058023fcfab255b49b56d1618ac123df) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Torres/Texxturas/concrete_ground_01_1k/eSCADA.mat using Guid(058023fcfab255b49b56d1618ac123df) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b96516bc2f5cd61a44f29fc4944eb2f5') in 0.0510575 seconds
+Number of updated asset objects reloaded before import = 3Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Global Volume Profile.asset
+  artifactKey: Guid(cd783859eab2239449419f24389cf9dc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro/Global Volume Profile.asset using Guid(cd783859eab2239449419f24389cf9dc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '45e0ab57445f3854e628574a867ab458') in 0.0151894 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Projeto/Assets/Torres/Texxturas/armario/Armario2.mat
+  artifactKey: Guid(4496ebbfc0bd4064787651573d7489d6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Assets/Torres/Texxturas/armario/Armario2.mat using Guid(4496ebbfc0bd4064787651573d7489d6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'dba13824ac7ad814bd1fc9990caa0085') in 0.0420106 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
 
+========================================================================
+Received Import Request.
+  Time since last request: 658.337173 seconds.
+  path: Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro.unity
+  artifactKey: Guid(1e67d1530de17de44ab815eef34be47f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Projeto/Scena/Primeiro Mapa/Cadeia_Dentro.unity using Guid(1e67d1530de17de44ab815eef34be47f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'f39737ea78ca68a8ee6105e5b2f390ab') in 0.0322956 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  4.498 seconds
+'Packages/com.unity.cinemachine/Editor/Obsolete/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.cinemachine/Editor/Editors/CinemachineVirtualCameraBaseEditor.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 9.04 ms, found 5 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 10.90 ms, found 5 plugins.
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  2.084 seconds
+Domain Reload Profiling: 6574ms
+	BeginReloadAssembly (638ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (15ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (3ms)
+		CreateAndSetChildDomain (158ms)
+	RebuildCommonClasses (134ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (93ms)
+	LoadAllAssembliesAndSetupDomain (3610ms)
+		LoadAssemblies (2841ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (1075ms)
+			TypeCache.Refresh (17ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (1028ms)
+			ResolveRequiredComponents (20ms)
+	FinalizeReload (2085ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1637ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (13ms)
+			BeforeProcessingInitializeOnLoad (404ms)
+			ProcessInitializeOnLoadAttributes (775ms)
+			ProcessInitializeOnLoadMethodAttributes (411ms)
+			AfterProcessingInitializeOnLoad (17ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (59ms)
+WARNING: Shader Unsupported: 'Hidden/Universal Render Pipeline/Terrain/Lit (Base Pass)' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Universal Render Pipeline/Terrain/Lit (Base Pass)' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Universal Render Pipeline/Terrain/Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Universal Render Pipeline/Terrain/Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Builtin_TerrainVisualization' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Refreshing native plugins compatible for Editor in 9.74 ms, found 5 plugins.
+Preloading 1 native plugins for Editor in 0.11 ms.
+Unloading 77 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13165 unused Assets / (29.4 MB). Loaded Objects now: 14400.
+Memory consumption went from 345.5 MB to 316.1 MB.
+Total: 29.848800 ms (FindLiveObjects: 2.075800 ms CreateObjectMapping: 2.379800 ms MarkObjects: 10.255400 ms  DeleteObjects: 15.135700 ms)
+
+Prepare: number of updated asset objects reloaded= 0

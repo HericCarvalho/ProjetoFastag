@@ -167,6 +167,9 @@ MonoBehaviour:
   mode:
     m_OverrideState: 1
     m_Value: 2
+  useFullACES:
+    m_OverrideState: 0
+    m_Value: 0
   toeStrength:
     m_OverrideState: 0
     m_Value: 0
@@ -191,6 +194,33 @@ MonoBehaviour:
   lutContribution:
     m_OverrideState: 0
     m_Value: 1
+  neutralHDRRangeReductionMode:
+    m_OverrideState: 0
+    m_Value: 2
+  acesPreset:
+    m_OverrideState: 0
+    m_Value: 3
+  fallbackMode:
+    m_OverrideState: 0
+    m_Value: 1
+  hueShiftAmount:
+    m_OverrideState: 0
+    m_Value: 0
+  detectPaperWhite:
+    m_OverrideState: 0
+    m_Value: 0
+  paperWhite:
+    m_OverrideState: 0
+    m_Value: 300
+  detectBrightnessLimits:
+    m_OverrideState: 0
+    m_Value: 1
+  minNits:
+    m_OverrideState: 0
+    m_Value: 0.005
+  maxNits:
+    m_OverrideState: 0
+    m_Value: 1000
 --- !u!114 &-8035344859297502338
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -236,6 +266,9 @@ MonoBehaviour:
     m_Value:
       serializedVersion: 2
       m_Bits: 4294967295
+  specularOcclusion:
+    m_OverrideState: 0
+    m_Value: 0.5
   occluderMotionRejection:
     m_OverrideState: 0
     m_Value: 1
@@ -375,6 +408,7 @@ MonoBehaviour:
   m_Name: HDShadowSettings
   m_EditorClassIdentifier: 
   active: 1
+  interCascadeBorders: 1
   maxShadowDistance:
     m_OverrideState: 1
     m_Value: 6000
@@ -395,16 +429,16 @@ MonoBehaviour:
     m_Value: 0.08
   cascadeShadowBorder0:
     m_OverrideState: 1
-    m_Value: 0.026666667
+    m_Value: 0.013423443
   cascadeShadowBorder1:
     m_OverrideState: 1
-    m_Value: 0.040000003
+    m_Value: 0.040408254
   cascadeShadowBorder2:
     m_OverrideState: 1
-    m_Value: 0.027027028
+    m_Value: 0.014709266
   cascadeShadowBorder3:
     m_OverrideState: 1
-    m_Value: 0.02173913
+    m_Value: 0.011879659
 --- !u!114 &-39695220522053965
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -824,7 +858,7 @@ MonoBehaviour:
     m_Value: 0.15
   m_SampleCount:
     m_OverrideState: 1
-    m_Value: 6
+    m_Value: 4
 --- !u!114 &5474929373765956333
 MonoBehaviour:
   m_ObjectHideFlags: 3

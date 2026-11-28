@@ -616,7 +616,6 @@ MonoBehaviour:
   - {fileID: -5395188716466844859}
   - {fileID: -1866066661025734797}
   - {fileID: 6186339678307692593}
-  - {fileID: 0}
 --- !u!114 &1551631308494743422
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -945,10 +944,10 @@ MonoBehaviour:
     m_Value: 64
   m_VolumetricFogBudget:
     m_OverrideState: 0
-    m_Value: 0.33
+    m_Value: 0.333
   m_ResolutionDepthRatio:
     m_OverrideState: 0
-    m_Value: 0.666
+    m_Value: 0.5
   directionalLightsOnly:
     m_OverrideState: 0
     m_Value: 0
